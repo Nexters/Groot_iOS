@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import Photos
 
 class Plant: NSObject {
 
-    
     var name: String
     var species: String
     var drinkingDay: Int

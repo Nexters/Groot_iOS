@@ -22,7 +22,6 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate, UINavigation
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        // Do any additional setup after loading the view.
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
         }
@@ -61,16 +60,6 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate, UINavigation
         return predicate.evaluate(with: password)
     }
 
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     @IBAction func EmailSignUpButtonTouched(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         
