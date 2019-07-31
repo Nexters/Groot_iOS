@@ -25,8 +25,9 @@
 		CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */; };
 		CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */; };
 		CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522F22F2085200F2E777 /* Detail.storyboard */; };
-		CE5F523422F208AF00F2E777 /* DiaryCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F523222F208AF00F2E777 /* DiaryCardCollectionViewCell.swift */; };
-		CE5F523522F208AF00F2E777 /* DiaryCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F523322F208AF00F2E777 /* DiaryCardCollectionViewCell.xib */; };
+		CE5F523822F20AE700F2E777 /* DiarySmallCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F523622F20AE700F2E777 /* DiarySmallCardTableViewCell.swift */; };
+		CE5F523922F20AE700F2E777 /* DiarySmallCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F523722F20AE700F2E777 /* DiarySmallCardTableViewCell.xib */; };
+		CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */; };
 		CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262B22E2EC0E00264114 /* AppDelegate.swift */; };
 		CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262D22E2EC0E00264114 /* ViewController.swift */; };
 		CE69263322E2EC1000264114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE69263222E2EC1000264114 /* Assets.xcassets */; };
@@ -54,8 +55,9 @@
 		CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE5F522F22F2085200F2E777 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
-		CE5F523222F208AF00F2E777 /* DiaryCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardCollectionViewCell.swift; sourceTree = "<group>"; };
-		CE5F523322F208AF00F2E777 /* DiaryCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE5F523622F20AE700F2E777 /* DiarySmallCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySmallCardTableViewCell.swift; sourceTree = "<group>"; };
+		CE5F523722F20AE700F2E777 /* DiarySmallCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiarySmallCardTableViewCell.xib; sourceTree = "<group>"; };
+		CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
 		CE69262822E2EC0E00264114 /* Pliary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pliary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE69262B22E2EC0E00264114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE69262D22E2EC0E00264114 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */,
+				CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -179,8 +182,8 @@
 		CE5F523122F2085600F2E777 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CE5F523222F208AF00F2E777 /* DiaryCardCollectionViewCell.swift */,
-				CE5F523322F208AF00F2E777 /* DiaryCardCollectionViewCell.xib */,
+				CE5F523622F20AE700F2E777 /* DiarySmallCardTableViewCell.swift */,
+				CE5F523722F20AE700F2E777 /* DiarySmallCardTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -311,10 +314,10 @@
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
+				CE5F523922F20AE700F2E777 /* DiarySmallCardTableViewCell.xib in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
-				CE5F523522F208AF00F2E777 /* DiaryCardCollectionViewCell.xib in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
 				CE5F521C22F1FA6800F2E777 /* GoogleService-Info.plist in Resources */,
@@ -389,7 +392,6 @@
 			files = (
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */,
-				CE5F523422F208AF00F2E777 /* DiaryCardCollectionViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
@@ -397,9 +399,11 @@
 				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
+				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
+				CE5F523822F20AE700F2E777 /* DiarySmallCardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
