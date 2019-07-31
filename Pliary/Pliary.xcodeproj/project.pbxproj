@@ -121,19 +121,11 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CE5F521322F1F69300F2E777 /* WriteDiary */ = {
+		CE5F521D22F1FBE400F2E777 /* WriteDiary */ = {
 			isa = PBXGroup;
 			children = (
-				CE5F521422F1F77900F2E777 /* ViewController */,
 			);
 			path = WriteDiary;
-			sourceTree = "<group>";
-		};
-		CE5F521422F1F77900F2E777 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CE69261F22E2EC0E00264114 = {
@@ -159,7 +151,7 @@
 			children = (
 				CE5F520F22F1F62A00F2E777 /* Login */,
 				CE5F521222F1F68F00F2E777 /* Home */,
-				CE5F521322F1F69300F2E777 /* WriteDiary */,
+				CE5F521D22F1FBE400F2E777 /* WriteDiary */,
 				CE5F520522F1F45700F2E777 /* Model */,
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
