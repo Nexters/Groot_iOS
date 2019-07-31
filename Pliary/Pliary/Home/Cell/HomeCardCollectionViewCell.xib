@@ -1,21 +1,94 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCardCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCardCollectionViewCell" customModule="Pliary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="274" height="365"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                <rect key="frame" x="0.0" y="0.0" width="274" height="365"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-t0-LG1">
+                        <rect key="frame" x="0.0" y="0.0" width="274" height="365"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-Rh-Jhv">
+                                <rect key="frame" x="16" y="16" width="242" height="269"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.85098039215686272" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBlack" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-gx-DY5">
+                                <rect key="frame" x="16" y="325" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="ARe-H4-q1v"/>
+                                    <constraint firstAttribute="height" constant="20" id="uwA-aB-WVA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y56-rp-PYB">
+                                <rect key="frame" x="42" y="321" width="67" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="VXN-qm-JQm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="22"/>
+                                <color key="textColor" red="0.25490196078431371" green="0.2627450980392157" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="멋쟁이투투에게 물주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIw-u8-uUj">
+                                <rect key="frame" x="16" y="301" width="125" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="edC-oH-4dw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.5490196078431373" green="0.56470588235294117" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8G-aF-bnu">
+                                <rect key="frame" x="184" y="255" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XXW-AD-GJr"/>
+                                    <constraint firstAttribute="height" constant="60" id="pA4-fa-Nze"/>
+                                </constraints>
+                                <state key="normal" image="AddWater"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Y56-rp-PYB" secondAttribute="bottom" constant="16" id="2yb-Pr-A0D"/>
+                            <constraint firstAttribute="trailing" secondItem="gt7-Rh-Jhv" secondAttribute="trailing" constant="16" id="63q-Ga-QV3"/>
+                            <constraint firstItem="Y56-rp-PYB" firstAttribute="top" secondItem="yIw-u8-uUj" secondAttribute="bottom" constant="4" id="IKl-0V-rqe"/>
+                            <constraint firstItem="Y56-rp-PYB" firstAttribute="leading" secondItem="Do7-gx-DY5" secondAttribute="trailing" constant="6" id="Jlf-WT-dsl"/>
+                            <constraint firstItem="Y56-rp-PYB" firstAttribute="top" secondItem="C8G-aF-bnu" secondAttribute="bottom" constant="6" id="NlF-Yq-gde"/>
+                            <constraint firstItem="gt7-Rh-Jhv" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="ORg-xM-7e7"/>
+                            <constraint firstItem="yIw-u8-uUj" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="P3m-Fi-0Ee"/>
+                            <constraint firstAttribute="bottom" secondItem="Do7-gx-DY5" secondAttribute="bottom" constant="20" id="gMi-I1-7pZ"/>
+                            <constraint firstItem="Do7-gx-DY5" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="gXe-uu-4ZM"/>
+                            <constraint firstItem="yIw-u8-uUj" firstAttribute="top" secondItem="gt7-Rh-Jhv" secondAttribute="bottom" constant="16" id="kHR-cW-u9h"/>
+                            <constraint firstItem="gt7-Rh-Jhv" firstAttribute="top" secondItem="Ybe-t0-LG1" secondAttribute="top" constant="16" id="mqt-Pj-BEN"/>
+                            <constraint firstAttribute="trailing" secondItem="C8G-aF-bnu" secondAttribute="trailing" constant="30" id="yIf-5W-BQs"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ybe-t0-LG1" secondAttribute="trailing" id="CD3-tJ-zDf"/>
+                <constraint firstItem="Ybe-t0-LG1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uyQ-Nb-UwT"/>
+                <constraint firstAttribute="bottom" secondItem="Ybe-t0-LG1" secondAttribute="bottom" id="vxr-0I-fSf"/>
+                <constraint firstItem="Ybe-t0-LG1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xuV-ff-e7j"/>
+            </constraints>
+            <size key="customSize" width="274" height="365"/>
+            <point key="canvasLocation" x="191.30434782608697" y="258.14732142857144"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="AddWater" width="50" height="50"/>
+        <image name="WaterBlack" width="26" height="26"/>
+    </resources>
 </document>

@@ -23,6 +23,8 @@
 		CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */; };
 		CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */; };
 		CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522922F1FF0100F2E777 /* Constant.swift */; };
+		CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */; };
+		CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */; };
 		CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262B22E2EC0E00264114 /* AppDelegate.swift */; };
 		CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262D22E2EC0E00264114 /* ViewController.swift */; };
 		CE69263322E2EC1000264114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE69263222E2EC1000264114 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 		CE5F522922F1FF0100F2E777 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE69262822E2EC0E00264114 /* Pliary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pliary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE69262B22E2EC0E00264114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE69262D22E2EC0E00264114 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			children = (
 				CE5F522122F1FE1700F2E777 /* HomeCardCollectionViewCell.swift */,
 				CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */,
+				CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */,
+				CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE5F522022F1FDBB00F2E777 /* WriteDiary.storyboard in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
@@ -365,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,

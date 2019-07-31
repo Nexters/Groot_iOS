@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddCardCollectionViewCell" customModule="Pliary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="235" height="297"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="235" height="297"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQY-4n-FwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="235" height="297"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lJ-XX-rYS">
+                                <rect key="frame" x="98.5" y="129" width="38" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="YC9-ht-ut9"/>
+                                </constraints>
+                                <state key="normal" image="BtnAdd"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5lJ-XX-rYS" firstAttribute="centerY" secondItem="GQY-4n-FwJ" secondAttribute="centerY" id="KAC-qo-vlf"/>
+                            <constraint firstItem="5lJ-XX-rYS" firstAttribute="centerX" secondItem="GQY-4n-FwJ" secondAttribute="centerX" id="jxk-9w-2vZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="GQY-4n-FwJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Sv-Le-Vws"/>
+                <constraint firstAttribute="trailing" secondItem="GQY-4n-FwJ" secondAttribute="trailing" id="My4-lf-5RI"/>
+                <constraint firstItem="GQY-4n-FwJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gPB-nx-2Z9"/>
+                <constraint firstAttribute="bottom" secondItem="GQY-4n-FwJ" secondAttribute="bottom" id="pCB-0Z-m6a"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="235" height="297"/>
+            <point key="canvasLocation" x="271.73913043478262" y="235.37946428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="BtnAdd" width="40" height="39"/>
+    </resources>
+</document>
