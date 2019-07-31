@@ -110,6 +110,9 @@
                                     <constraint firstAttribute="width" constant="36" id="eHQ-2M-JPP"/>
                                 </constraints>
                                 <state key="normal" image="Profile"/>
+                                <connections>
+                                    <action selector="tabProfileImageButton:" destination="bM5-VK-brj" eventType="touchUpInside" id="zSk-dr-HDF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -139,6 +142,15 @@
                             <constraint firstAttribute="trailing" secondItem="bJU-Qp-cJS" secondAttribute="trailing" constant="36" id="w2q-gA-St0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="rsc-Yc-se2" id="vFw-2p-y3Z"/>
+                        <outlet property="customNameLabel" destination="GnH-mv-TSW" id="sZN-fZ-yzu"/>
+                        <outlet property="englishNameLabel" destination="Mqs-FH-vbx" id="h9T-cC-Oqv"/>
+                        <outlet property="koreanNameLabel" destination="Xo3-aJ-fXs" id="BNj-Jx-erX"/>
+                        <outlet property="profileImageButton" destination="bJU-Qp-cJS" id="ft7-Gd-vO0"/>
+                        <outlet property="selectedSlideView" destination="49H-sB-fPC" id="iTv-75-Lzc"/>
+                        <outlet property="slideBackgroundView" destination="JCg-6w-GMA" id="OCd-uk-yfg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flU-hA-Vyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
