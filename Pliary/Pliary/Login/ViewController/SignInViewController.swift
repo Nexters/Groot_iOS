@@ -10,19 +10,22 @@ import UIKit
 import Firebase
 
 
-class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    // @IBOutlet weak var signOutButton: UIButton!
+    
+    @IBAction func BackButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        passwordTextField.isSecureTextEntry = true
         
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
@@ -37,11 +40,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
 //        appDelegate.window! = MainViewController
     }
     
-    @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -55,12 +53,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
     func updateLoginButtonState() {
         let email : String = emailTextField.text ?? ""
         let password : String = passwordTextField.text ?? ""
-        
-        loginButton.isEnabled = isExistsEmail(email: email)
-    }
-    func isExistsEmail(email: String) -> Bool {
-        // email 중복 체크
-        return true
     }
     
     @IBAction func EmailSIgnInButtonTouched(_ sender: Any) {
@@ -76,5 +68,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UINavigationC
             let manager :FirebaseAuthenticationManager = FirebaseAuthenticationManager.shared
             manager.firebaseErrorHandle(code: error)
         }
+    }
+    
+    @IBAction func PopupViewLoad(_ sender: UIButton) {
+        
+        let popup: PasswordResetPopupView = UINib(nibName: PasswordResetPopupView.identifier, bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PasswordResetPopupView
+        popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
+        
+        self.view.addSubview(popup);
+        
     }
 }
