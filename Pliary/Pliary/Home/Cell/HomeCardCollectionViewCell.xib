@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-t0-LG1">
-                        <rect key="frame" x="0.0" y="0.0" width="274" height="365"/>
+                        <rect key="frame" x="10" y="0.0" width="254" height="365"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-Rh-Jhv">
-                                <rect key="frame" x="16" y="16" width="242" height="269"/>
+                                <rect key="frame" x="16" y="16" width="222" height="269"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.85098039215686272" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBlack" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-gx-DY5">
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8G-aF-bnu">
-                                <rect key="frame" x="184" y="255" width="60" height="60"/>
+                                <rect key="frame" x="164" y="255" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="XXW-AD-GJr"/>
                                     <constraint firstAttribute="height" constant="60" id="pA4-fa-Nze"/>
@@ -78,8 +78,8 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ybe-t0-LG1" secondAttribute="trailing" id="CD3-tJ-zDf"/>
-                <constraint firstItem="Ybe-t0-LG1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uyQ-Nb-UwT"/>
+                <constraint firstAttribute="trailing" secondItem="Ybe-t0-LG1" secondAttribute="trailing" constant="10" id="Ywp-fa-8Rr"/>
+                <constraint firstItem="Ybe-t0-LG1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="rbn-Tl-Dhc"/>
                 <constraint firstAttribute="bottom" secondItem="Ybe-t0-LG1" secondAttribute="bottom" id="vxr-0I-fSf"/>
                 <constraint firstItem="Ybe-t0-LG1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xuV-ff-e7j"/>
             </constraints>

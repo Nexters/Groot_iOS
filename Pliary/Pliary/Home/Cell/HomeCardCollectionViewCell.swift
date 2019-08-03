@@ -14,4 +14,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
+    func setUp(with: Plant) {
+    }
+    
 }

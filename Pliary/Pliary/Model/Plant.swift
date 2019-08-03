@@ -14,7 +14,7 @@ class Plant: NSObject {
     var species: String
     var drinkingDay: Int
 
-    init( name: String, species: String, drinkingDay: Int) {
+    init(name: String, species: String, drinkingDay: Int) {
         self.name = name
         self.species = species
         self.drinkingDay = drinkingDay
