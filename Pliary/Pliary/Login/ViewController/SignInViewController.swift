@@ -25,7 +25,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        passwordTextField.isSecureTextEntry = true
+        emailTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
+        passwordTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
         
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
@@ -37,7 +38,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     private func mainView(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        appDelegate.window! = MainViewController
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -53,15 +53,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func updateLoginButtonState() {
         let email : String = emailTextField.text ?? ""
         let password : String = passwordTextField.text ?? ""
+        
+        loginButton.isEnabled = true
     }
     
     @IBAction func EmailSIgnInButtonTouched(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            
             guard let error = AuthErrorCode(rawValue: (error?._code)!) else {
                 // Successfully login!
                 print(user)
-                
                 return
             }
             // Error!
@@ -72,7 +72,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func PopupViewLoad(_ sender: UIButton) {
         
-        let popup: PasswordResetPopupView = UINib(nibName: PasswordResetPopupView.identifier, bundle: nil).instantiate(withOwner: self, options: nil)[0] as! PasswordResetPopupView
+        let popup = UINib(nibName: String(PasswordResetPopupView.identifier), bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
+
         popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
         

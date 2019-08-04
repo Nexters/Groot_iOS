@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController,  UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     let imagePickerController = UIImagePickerController()
 
@@ -19,9 +19,12 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var emailResetButton: UIButton!
     @IBOutlet weak var passwordResetButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var passwordGuideLabel: UILabel!
     @IBOutlet weak var emailGuideLabel: UILabel!
-    @IBOutlet weak var warningAlertImage: UIImageView!
-    @IBOutlet weak var successAlertImage: UIImageView!
+    @IBOutlet weak var emailWarningAlert: UIImageView!
+    @IBOutlet weak var passwordWarningAlert: UIImageView!
+    @IBOutlet weak var emailSuccessAlert: UIImageView!
+    @IBOutlet weak var passwordSuccessAlert: UIImageView!
     @IBOutlet weak var userProfileImageView: UIImageView!
 
 
@@ -38,10 +41,15 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+  
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
         emailGuideLabel.frame.size = CGSize(width: 0, height: 0)
+        emailTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
+        passwordTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
+        
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
             return
@@ -60,6 +68,7 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         signUpButton.isEnabled = false
         emailResetButton.isHidden = false
+        passwordResetButton.isHidden = false
     }
 
     func updateLoginButtonState() {
@@ -68,32 +77,43 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate {
         
         if !isValidEmailAddress(email: email) {
             emailResetButton.isHidden = true
-            warningAlertImage.isHidden = false
-            successAlertImage.isHidden = true
+            emailWarningAlert.isHidden = false
+            emailSuccessAlert.isHidden = true
 //            emailGuideLabel.isHidden = false
+            emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
             emailGuideLabel.text = "이메일 형식에 맞지 않습니다."
             emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
-        } else if !isExistsEmail(email: email) {
+        } else if isExistsEmail(email: email) {
             emailResetButton.isHidden = true
-            warningAlertImage.isHidden = false
-            successAlertImage.isHidden = true
+            emailWarningAlert.isHidden = false
+            emailSuccessAlert.isHidden = true
 //            emailGuideLabel.isHidden = false
-            emailGuideLabel.text = "이미 사용중인 이메일입니다."
             emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
+            emailGuideLabel.text = "이미 사용중인 이메일입니다."
         } else {
             emailGuideLabel.text = ""
-            emailGuideLabel.frame.size = CGSize(width: 0, height: 0)
+            emailGuideLabel.frame.size = CGSize(width: 303, height: 0)
 //            emailGuideLabel.isHidden = true
             emailResetButton.isHidden = true
-            warningAlertImage.isHidden = true
-            successAlertImage.isHidden = false
+            emailWarningAlert.isHidden = true
+            emailSuccessAlert.isHidden = false
         }
         
-        if password != ""  {
+        if isValidPassword(password: password) {
+            passwordGuideLabel.frame.size = CGSize(width: 303, height: 0)
+            passwordGuideLabel.text = ""
+            passwordWarningAlert.isHidden = true
             passwordResetButton.isHidden = true
+            passwordSuccessAlert.isHidden = false
+        } else {
+            passwordGuideLabel.frame.size = CGSize(width: 303, height: 16)
+            passwordGuideLabel.text = "대문자, 소문자, 숫자 조합 8글자 이상"
+            passwordWarningAlert.isHidden = false
+            passwordResetButton.isHidden = true
+            passwordSuccessAlert.isHidden = true
         }
         
-        if isValidEmailAddress(email: email) && (password != "") {
+        if isValidEmailAddress(email: email) && isValidPassword(password: password) {
             signUpButton.isEnabled = true
             signUpButton.backgroundColor = UIColor(red: 106.0/255.0, green: 167.0/255.0, blue: 111.0/255.0, alpha: 1.0)
             
@@ -104,7 +124,6 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate {
             signUpButton.setTitleColor(UIColor(red: 205.0/255.0, green: 205.0/255.0, blue: 205.0/255.0, alpha: 1.0), for: .normal)
             signUpButton.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
             signUpButton.layer.applySketchShadow(color: UIColor.white, alpha: 0, x: 0, y: 0, blur: 0, spread: 0)
-
         }
         
     }
@@ -115,59 +134,53 @@ class SignUpViewController: UIViewController,  UITextFieldDelegate {
         
         return predicate.evaluate(with: email)
     }
-
+    func isValidPassword(password: String) -> Bool {
+        let passwordRegEx = "\\A(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\\D*\\d)\\S{8,}\\z"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+        return predicate.evaluate(with: password)
+    }
     func isExistsEmail(email: String) -> Bool {
         // email 중복 체크
-        return true
+        return false
     }
     
     @IBAction func EmailSignUpButtonTouched(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            guard let user = authResult?.user else { return }
-            
-            if error == nil {
-                // TODO: 회원가입 정상 처리 후 다음 로직, 로그인 페이지 or 바로 로그인 시키기
-            } else {
-                // TODO: 회원가입 실패
-            }
-        }
-//        Auth.auth().createUser(withEmail: email, password: password) {
-//            (authResult, error) in
+//        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
 //            guard let user = authResult?.user else { return }
 //
-//             print(user)
-//            guard let error = AuthErrorCode(rawValue: (error?._code)!) else {
-//                // Successfully signed up!
-//                print(authResult)
-//                return
+//            if error == nil {
+//                // TODO: 회원가입 정상 처리 후 다음 로직, 로그인 페이지 or 바로 로그인 시키기
+//                print("signup success")
+//                print(error?.localizedDescription)
+//            } else {
+//                // TODO: 회원가입 실패
+//                print("signup error")
+//                print(error?.localizedDescription)
 //            }
-//            // Error!
-//            let manager :FirebaseAuthenticationManager = FirebaseAuthenticationManager.shared
-//
-//            manager.firebaseErrorHandle(code: error)
-
 //        }
-    
-    }
-    
-    
-    //MARK: Actions
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        // Hide the keyboard.
+        do {
+            try Auth.auth().useUserAccessGroup("groot.nexters.pliary.Pliary")
+        } catch let error as NSError {
+            print("Error changing user access group: %@", error)
+        }
         
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        let imagePickerController = UIImagePickerController()
         
-        // Only allow photos to be picked, not taken.
-        imagePickerController.sourceType = .photoLibrary
-        
-        // Make sure ViewController is notified when the user picks an image.
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
 
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            guard let error = AuthErrorCode(rawValue: (error?._code)!) else {
+                // Successfully signed up!
+                guard let user = authResult?.user else { return }
+                print(user)
+                return
+            }
+            // Error!
+            let manager :FirebaseAuthenticationManager = FirebaseAuthenticationManager.shared
+            manager.firebaseErrorHandle(code: error)
+        }
+    
+    }
     
 }
 

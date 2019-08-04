@@ -9,15 +9,9 @@
 import UIKit
 
 class PasswordResetPopupView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
+   
+    
     // identifier
     class var identifier: String {
         return "PasswordResetPopupView"
@@ -30,4 +24,5 @@ class PasswordResetPopupView: UIView {
     @IBAction func PopupViewCloseButtonClick(_ sender: UIButton) {
         removeFromSuperview()
     }
+    
 }

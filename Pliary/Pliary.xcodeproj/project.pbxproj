@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		26A082DE0FFD946C9B334E27 /* Pods_Pliary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */; };
+		760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB41D22F6DED50035F22E /* UITextField+Ext.swift */; };
 		762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B4FF122F1B129002C24EF /* SignInViewController.swift */; };
 		763D972F22F1D58600E50F21 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763D972E22F1D58600E50F21 /* Login.storyboard */; };
+		765DC25A22F5E87400F4DBE6 /* PasswordResetPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */; };
+		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
+		765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */; };
+		765DC26022F5E94900F4DBE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 765DC25F22F5E94900F4DBE6 /* GoogleService-Info.plist */; };
+		765DC26222F5F2AD00F4DBE6 /* PasswordResetPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */; };
+		765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */; };
+		765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */; };
 		76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */; };
 		76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
@@ -17,7 +25,6 @@
 		CE5F520922F1F45700F2E777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520722F1F45700F2E777 /* User.swift */; };
 		CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5F521522F1F7A500F2E777 /* Sample.xcassets */; };
 		CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F521722F1F7CF00F2E777 /* Home.storyboard */; };
-		CE5F521C22F1FA6800F2E777 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE5F521B22F1FA6800F2E777 /* GoogleService-Info.plist */; };
 		CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522122F1FE1700F2E777 /* HomeCardCollectionViewCell.swift */; };
 		CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */; };
 		CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */; };
@@ -36,8 +43,17 @@
 
 /* Begin PBXFileReference section */
 		33B6DE139F2B3BBBECBB2112 /* Pods-Pliary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.debug.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.debug.xcconfig"; sourceTree = "<group>"; };
+		760DB41D22F6DED50035F22E /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		760DB41F22F6FB2E0035F22E /* Pliary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pliary.entitlements; sourceTree = "<group>"; };
 		762B4FF122F1B129002C24EF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		763D972E22F1D58600E50F21 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordResetPopupView.swift; path = Pliary/Login/View/PasswordResetPopupView.swift; sourceTree = SOURCE_ROOT; };
+		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		765DC25F22F5E94900F4DBE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PasswordResetPopupView.xib; path = Pliary/Login/View/PasswordResetPopupView.xib; sourceTree = SOURCE_ROOT; };
+		765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
+		765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordResetPopupViewController.swift; path = ../Extension/PasswordResetPopupViewController.swift; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
 		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +63,6 @@
 		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE5F521522F1F7A500F2E777 /* Sample.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sample.xcassets; sourceTree = "<group>"; };
 		CE5F521722F1F7CF00F2E777 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		CE5F521B22F1FA6800F2E777 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE5F522122F1FE1700F2E777 /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
@@ -78,6 +93,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		765DC25622F5E85400F4DBE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */,
+				765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */,
+			);
+			name = View;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		765DC26522F5F68000F4DBE6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		9C092CBD9F305B95F3D12E24 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +148,8 @@
 		CE5F520F22F1F62A00F2E777 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				765DC26522F5F68000F4DBE6 /* Extension */,
+				765DC25622F5E85400F4DBE6 /* View */,
 				CE5F520C22F1F48300F2E777 /* Manager */,
 				CE5F521022F1F64600F2E777 /* ViewController */,
 				763D972E22F1D58600E50F21 /* Login.storyboard */,
@@ -125,6 +160,7 @@
 		CE5F521022F1F64600F2E777 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */,
 				CE69262D22E2EC0E00264114 /* ViewController.swift */,
 				76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */,
 				762B4FF122F1B129002C24EF /* SignInViewController.swift */,
@@ -165,8 +201,11 @@
 		CE5F522522F1FECC00F2E777 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */,
+				765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */,
 				CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */,
 				CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */,
+				760DB41D22F6DED50035F22E /* UITextField+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -209,6 +248,7 @@
 		CE69262A22E2EC0E00264114 /* Pliary */ = {
 			isa = PBXGroup;
 			children = (
+				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
 				CE5F522622F1FED000F2E777 /* Constant */,
 				CE5F522522F1FECC00F2E777 /* Extension */,
 				CE5F520F22F1F62A00F2E777 /* Login */,
@@ -218,7 +258,7 @@
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
 				CE69263722E2EC1000264114 /* Info.plist */,
-				CE5F521B22F1FA6800F2E777 /* GoogleService-Info.plist */,
+				765DC25F22F5E94900F4DBE6 /* GoogleService-Info.plist */,
 			);
 			path = Pliary;
 			sourceTree = "<group>";
@@ -285,6 +325,11 @@
 					CE69262722E2EC0E00264114 = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -316,11 +361,12 @@
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE5F523922F20AE700F2E777 /* DiarySmallCardTableViewCell.xib in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
+				765DC26022F5E94900F4DBE6 /* GoogleService-Info.plist in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
+				765DC26222F5F2AD00F4DBE6 /* PasswordResetPopupView.xib in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
-				CE5F521C22F1FA6800F2E777 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,16 +436,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
+				765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */,
 				CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
+				765DC25A22F5E87400F4DBE6 /* PasswordResetPopupView.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
+				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
+				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
+				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
@@ -542,8 +594,9 @@
 			baseConfigurationReference = 33B6DE139F2B3BBBECBB2112 /* Pods-Pliary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				DEVELOPMENT_TEAM = TQYNACGA69;
 				INFOPLIST_FILE = Pliary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -552,7 +605,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary.Pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -562,8 +615,9 @@
 			baseConfigurationReference = C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				DEVELOPMENT_TEAM = TQYNACGA69;
 				INFOPLIST_FILE = Pliary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -572,7 +626,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary.Pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
