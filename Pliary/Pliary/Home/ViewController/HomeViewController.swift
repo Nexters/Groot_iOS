@@ -13,21 +13,36 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var englishNameLabel: UILabel!
     @IBOutlet weak var koreanNameLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
+    
     @IBOutlet weak var slideBackgroundView: UIView!
     @IBOutlet weak var selectedSlideView: UIView!
+    @IBOutlet weak var slideViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var slideViewLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     
     private var indexOfCellBeforeDragging = 0
     
-    var plants: [Plant] = []
+    var plants: [Plant] = [] {
+        didSet {
+            slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
+        }
+    }
     var plantsCount: Int {
         return plants.count + 1
     }
     
     @IBAction func tabProfileImageButton(_ sender: Any) {
         
+    }
+    
+    private func setUpSlideView() {
+        slideBackgroundView.clipsToBounds = true
+        selectedSlideView.clipsToBounds = true
+        
+        slideBackgroundView.layer.cornerRadius = slideBackgroundView.frame.height / 2
+        selectedSlideView.layer.cornerRadius = selectedSlideView.frame.height / 2
     }
     
     private func setUpCollectionView() {
@@ -68,6 +83,7 @@ extension HomeViewController {
         
         setExample()
         setUpCollectionView()
+        setUpSlideView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -114,9 +130,12 @@ extension HomeViewController: UICollectionViewDelegate {
                 scrollView.layoutIfNeeded()
             }, completion: nil)
             
+            slideViewLeadingConstraint.constant = CGFloat(snapToIndex) * slideViewWidthConstraint.constant
         } else {
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            
+            slideViewLeadingConstraint.constant = CGFloat(indexOfMajorCell) * slideViewWidthConstraint.constant
         }
     }
 }

@@ -151,6 +151,8 @@
                         <outlet property="profileImageButton" destination="bJU-Qp-cJS" id="ft7-Gd-vO0"/>
                         <outlet property="selectedSlideView" destination="49H-sB-fPC" id="iTv-75-Lzc"/>
                         <outlet property="slideBackgroundView" destination="JCg-6w-GMA" id="OCd-uk-yfg"/>
+                        <outlet property="slideViewLeadingConstraint" destination="9Uo-54-7fu" id="3lE-QO-U2Z"/>
+                        <outlet property="slideViewWidthConstraint" destination="7rY-kT-gMp" id="zCg-RG-evF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flU-hA-Vyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
