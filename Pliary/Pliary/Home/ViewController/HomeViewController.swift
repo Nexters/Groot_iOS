@@ -62,9 +62,17 @@ class HomeViewController: UIViewController {
     
     private func configureCollectionViewLayoutItemSize() {
         let inset: CGFloat = 40
+        let indexPath = IndexPath.init(item: 0, section: 0)
+        let firstCell = collectionView.cellForItem(at: indexPath)
         
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         collectionViewLayout.itemSize = CGSize(width: collectionView.frame.size.width - inset * 2, height: collectionView.frame.size.height)
+        
+        if let cell = firstCell as? HomeCardCollectionViewCell {
+            cell.topLayoutConstraint.constant = 0
+        } else if let cell = firstCell as? AddCardCollectionViewCell {
+            cell.topLayoutConstraint.constant = 0
+        }
     }
     
     func setExample() {
@@ -101,6 +109,24 @@ extension HomeViewController: UICollectionViewDelegate {
         let safeIndex = max(0, min(plantsCount - 1, index))
         
         return safeIndex
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let inset: CGFloat = 40
+        let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
+        let currentIndex = scrollView.contentOffset.x / unitScrollSize
+        
+        collectionView.visibleCells.forEach {
+            let index = Int($0.center.x / unitScrollSize)
+            let difference = abs(CGFloat(index) - currentIndex)
+            let topConstraint = difference * 20
+            
+            if let cell = $0 as? HomeCardCollectionViewCell {
+                cell.topLayoutConstraint.constant = topConstraint
+            } else if let cell = $0 as? AddCardCollectionViewCell {
+                cell.topLayoutConstraint.constant = topConstraint
+            }
+        }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

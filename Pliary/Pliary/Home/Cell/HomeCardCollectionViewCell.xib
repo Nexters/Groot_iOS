@@ -19,21 +19,21 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-t0-LG1">
-                        <rect key="frame" x="10" y="0.0" width="254" height="365"/>
+                        <rect key="frame" x="10" y="20" width="254" height="325"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-Rh-Jhv">
-                                <rect key="frame" x="16" y="16" width="222" height="269"/>
+                                <rect key="frame" x="16" y="16" width="222" height="229"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.85098039215686272" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBlack" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-gx-DY5">
-                                <rect key="frame" x="16" y="325" width="20" height="20"/>
+                                <rect key="frame" x="16" y="285" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="ARe-H4-q1v"/>
                                     <constraint firstAttribute="height" constant="20" id="uwA-aB-WVA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y56-rp-PYB">
-                                <rect key="frame" x="42" y="321" width="67" height="28"/>
+                                <rect key="frame" x="42" y="281" width="67" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="VXN-qm-JQm"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="멋쟁이투투에게 물주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIw-u8-uUj">
-                                <rect key="frame" x="16" y="301" width="125" height="16"/>
+                                <rect key="frame" x="16" y="261" width="125" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="edC-oH-4dw"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8G-aF-bnu">
-                                <rect key="frame" x="164" y="255" width="60" height="60"/>
+                                <rect key="frame" x="164" y="215" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="XXW-AD-GJr"/>
                                     <constraint firstAttribute="height" constant="60" id="pA4-fa-Nze"/>
@@ -78,12 +78,16 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="Ybe-t0-LG1" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="CDD-v5-fJS"/>
+                <constraint firstItem="Ybe-t0-LG1" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Yk3-zQ-Zep"/>
                 <constraint firstAttribute="trailing" secondItem="Ybe-t0-LG1" secondAttribute="trailing" constant="10" id="Ywp-fa-8Rr"/>
                 <constraint firstItem="Ybe-t0-LG1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="rbn-Tl-Dhc"/>
-                <constraint firstAttribute="bottom" secondItem="Ybe-t0-LG1" secondAttribute="bottom" id="vxr-0I-fSf"/>
-                <constraint firstItem="Ybe-t0-LG1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xuV-ff-e7j"/>
+                <constraint firstItem="Ybe-t0-LG1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="xuV-ff-e7j"/>
             </constraints>
             <size key="customSize" width="274" height="365"/>
+            <connections>
+                <outlet property="topLayoutConstraint" destination="xuV-ff-e7j" id="Ea2-hO-GvA"/>
+            </connections>
             <point key="canvasLocation" x="191.30434782608697" y="258.14732142857144"/>
         </collectionViewCell>
     </objects>

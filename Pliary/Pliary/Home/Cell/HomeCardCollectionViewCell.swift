@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeCardCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
