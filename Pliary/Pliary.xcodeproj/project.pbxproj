@@ -14,7 +14,6 @@
 		765DC25A22F5E87400F4DBE6 /* PasswordResetPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */; };
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
 		765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */; };
-		765DC26022F5E94900F4DBE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 765DC25F22F5E94900F4DBE6 /* GoogleService-Info.plist */; };
 		765DC26222F5F2AD00F4DBE6 /* PasswordResetPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */; };
 		765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */; };
 		765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */; };
@@ -39,6 +38,7 @@
 		CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262D22E2EC0E00264114 /* ViewController.swift */; };
 		CE69263322E2EC1000264114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE69263222E2EC1000264114 /* Assets.xcassets */; };
 		CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE69263422E2EC1000264114 /* LaunchScreen.storyboard */; };
+		CEE0E19122F7BCC200ED0C31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E19022F7BCC200ED0C31 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,6 @@
 		765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordResetPopupView.swift; path = Pliary/Login/View/PasswordResetPopupView.swift; sourceTree = SOURCE_ROOT; };
 		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
-		765DC25F22F5E94900F4DBE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PasswordResetPopupView.xib; path = Pliary/Login/View/PasswordResetPopupView.xib; sourceTree = SOURCE_ROOT; };
 		765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordResetPopupViewController.swift; path = ../Extension/PasswordResetPopupViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		CE69263222E2EC1000264114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE69263522E2EC1000264114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE69263722E2EC1000264114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE0E19022F7BCC200ED0C31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +258,7 @@
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
 				CE69263722E2EC1000264114 /* Info.plist */,
-				765DC25F22F5E94900F4DBE6 /* GoogleService-Info.plist */,
+				CEE0E19022F7BCC200ED0C31 /* GoogleService-Info.plist */,
 			);
 			path = Pliary;
 			sourceTree = "<group>";
@@ -361,10 +361,10 @@
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE5F523922F20AE700F2E777 /* DiarySmallCardTableViewCell.xib in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
-				765DC26022F5E94900F4DBE6 /* GoogleService-Info.plist in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				765DC26222F5F2AD00F4DBE6 /* PasswordResetPopupView.xib in Resources */,
+				CEE0E19122F7BCC200ED0C31 /* GoogleService-Info.plist in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
 			);
@@ -596,7 +596,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TQYNACGA69;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
 				INFOPLIST_FILE = Pliary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -617,7 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TQYNACGA69;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
 				INFOPLIST_FILE = Pliary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
