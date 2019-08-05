@@ -142,6 +142,9 @@
                             <constraint firstAttribute="trailing" secondItem="bJU-Qp-cJS" secondAttribute="trailing" constant="36" id="w2q-gA-St0"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="rsc-Yc-se2" id="vFw-2p-y3Z"/>
                         <outlet property="collectionViewLayout" destination="MLb-26-7s3" id="4Qr-Fd-fmr"/>

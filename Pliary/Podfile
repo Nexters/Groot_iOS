@@ -8,6 +8,6 @@ target 'Pliary' do
   pod 'Firebase/Auth'
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/Auth'
+  pod 'Hero'
   # Pods for Pliary
-
 end

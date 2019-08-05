@@ -49,12 +49,14 @@ PODS:
   - GoogleUtilities/UserDefaults (6.2.3):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.2)
+  - Hero (1.4.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - FirebaseUI/Auth
   - FirebaseUI/Google
   - GoogleSignIn
+  - Hero
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -67,6 +69,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - Hero
 
 SPEC CHECKSUMS:
   Firebase: dedc9e48ea3f3649ad5f6b982f8a0c73508a14b5
@@ -78,7 +81,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
 
-PODFILE CHECKSUM: d26afa37d0d34d9cee7afea89dec746df62c072a
+PODFILE CHECKSUM: 73c0c4fd6de1a83f4ef229b6c9fc7264f28dec9c
 
 COCOAPODS: 1.7.4

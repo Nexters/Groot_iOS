@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class HomeViewController: UIViewController {
     
@@ -58,6 +59,8 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionViewLayout.minimumLineSpacing = 0
+        collectionView.delaysContentTouches = false
+        collectionView.hero.isEnabled = true
     }
     
     private func configureCollectionViewLayoutItemSize() {
@@ -73,6 +76,8 @@ class HomeViewController: UIViewController {
         } else if let cell = firstCell as? AddCardCollectionViewCell {
             cell.topLayoutConstraint.constant = 0
         }
+        
+        collectionView.layoutIfNeeded()
     }
     
     func setExample() {
@@ -100,8 +105,7 @@ extension HomeViewController {
     }
 }
 
-// MARK: - Delegate UICollectionViewDelegate
-extension HomeViewController: UICollectionViewDelegate {
+extension HomeViewController {
     private func indexOfMajorCell() -> Int {
         let itemWidth = collectionViewLayout.itemSize.width
         let proportionalOffset = collectionView.contentOffset.x / itemWidth
@@ -162,6 +166,40 @@ extension HomeViewController: UICollectionViewDelegate {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             
             slideViewLeadingConstraint.constant = CGFloat(indexOfMajorCell) * slideViewWidthConstraint.constant
+        }
+    }
+}
+
+// MARK: - Delegate UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellID = "plantCell\(indexPath.item)"
+        let plantID = "plantImage\(indexPath.item)"
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
+            cell.plantView.hero.id = plantID
+            cell.contentView.hero.id = cellID
+            cell.plantView.hero.modifiers = [.source(heroID: plantID), .spring(stiffness: 250, damping: 25)]
+            cell.contentView.hero.modifiers = [.source(heroID: cellID), .spring(stiffness: 250, damping: 25)]
+        } else {
+            return
+        }
+        
+        let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: Bundle(for: DetailViewController.self))
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController {
+            detailVC.hero.isEnabled = true
+            detailVC.hero.modalAnimationType = .none
+            
+            detailVC.plantView.hero.id = plantID
+            detailVC.plantView.hero.modifiers = [.source(heroID: plantID), .spring(stiffness: 250, damping: 25)]
+            
+            detailVC.view.hero.id = cellID
+            detailVC.view.hero.modifiers = [.source(heroID: cellID), .spring(stiffness: 250, damping: 25)]
+            
+            detailVC.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
+            
+            present(detailVC, animated: true, completion: nil)
+            configureCollectionViewLayoutItemSize()
         }
     }
 }

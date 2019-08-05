@@ -86,6 +86,7 @@
             </constraints>
             <size key="customSize" width="274" height="365"/>
             <connections>
+                <outlet property="plantView" destination="gt7-Rh-Jhv" id="JqA-pe-QOZ"/>
                 <outlet property="topLayoutConstraint" destination="xuV-ff-e7j" id="Ea2-hO-GvA"/>
             </connections>
             <point key="canvasLocation" x="191.30434782608697" y="258.14732142857144"/>

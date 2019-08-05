@@ -8,4 +8,7 @@
 
 import Foundation
 
-
+struct StoryboardName {
+    static let home = "Home"
+    static let detail = "Detail"
+}

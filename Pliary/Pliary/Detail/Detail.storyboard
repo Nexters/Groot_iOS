@@ -1,7 +1,84 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Zg-gt-PBd">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="PQA-1B-6Df">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nf9-wy-CsI" customClass="DetailViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iRw-zD-mK1"/>
+                        <viewControllerLayoutGuide type="bottom" id="uKX-X1-TsR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8U2-PZ-Iuv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iKi-4R-sl8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gha-bd-L4f">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.85098039219999999" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gha-bd-L4f" firstAttribute="leading" secondItem="8U2-PZ-Iuv" secondAttribute="leading" id="4bh-N2-TCX"/>
+                            <constraint firstAttribute="trailing" secondItem="iKi-4R-sl8" secondAttribute="trailing" id="7Dh-m5-UYD"/>
+                            <constraint firstItem="uKX-X1-TsR" firstAttribute="top" secondItem="iKi-4R-sl8" secondAttribute="bottom" id="HQX-po-Y15"/>
+                            <constraint firstItem="iKi-4R-sl8" firstAttribute="leading" secondItem="8U2-PZ-Iuv" secondAttribute="leading" id="WHV-Lo-XNF"/>
+                            <constraint firstItem="Gha-bd-L4f" firstAttribute="top" secondItem="8U2-PZ-Iuv" secondAttribute="top" id="aMn-11-OfY"/>
+                            <constraint firstAttribute="trailing" secondItem="Gha-bd-L4f" secondAttribute="trailing" id="gV8-fq-i9n"/>
+                            <constraint firstItem="Gha-bd-L4f" firstAttribute="height" secondItem="8U2-PZ-Iuv" secondAttribute="height" multiplier="3:4" id="hXG-vQ-bz6"/>
+                            <constraint firstItem="iKi-4R-sl8" firstAttribute="top" secondItem="8U2-PZ-Iuv" secondAttribute="top" id="isk-oy-idd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="w8u-kV-o2e"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="plantView" destination="Gha-bd-L4f" id="bN3-HI-SsR"/>
+                        <outlet property="tableView" destination="iKi-4R-sl8" id="nfo-ev-lNx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KJm-R6-DZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.92753623188409" y="-44.196428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3de-1j-q1N">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Niz-hv-9qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" navigationBarHidden="YES" id="1Zg-gt-PBd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rsj-gQ-iwK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="Nf9-wy-CsI" kind="relationship" relationship="rootViewController" id="ukc-md-3wl"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-527.536231884058" y="-43.526785714285715"/>
+        </scene>
+    </scenes>
 </document>

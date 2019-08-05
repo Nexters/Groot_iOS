@@ -39,6 +39,8 @@
 		CE69263322E2EC1000264114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE69263222E2EC1000264114 /* Assets.xcassets */; };
 		CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE69263422E2EC1000264114 /* LaunchScreen.storyboard */; };
 		CEE0E19122F7BCC200ED0C31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E19022F7BCC200ED0C31 /* GoogleService-Info.plist */; };
+		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
+		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,8 @@
 		CE69263522E2EC1000264114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE69263722E2EC1000264114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE0E19022F7BCC200ED0C31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 		CE5F521D22F1FBE400F2E777 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				CEE0E19422F848CB00ED0C31 /* ViewController */,
 				CE5F523122F2085600F2E777 /* Cell */,
 				CE5F522F22F2085200F2E777 /* Detail.storyboard */,
 			);
@@ -201,6 +206,7 @@
 		CE5F522522F1FECC00F2E777 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */,
 				765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */,
 				765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */,
 				CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */,
@@ -287,6 +293,14 @@
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		CEE0E19422F848CB00ED0C31 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +456,7 @@
 				CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
 				765DC25A22F5E87400F4DBE6 /* PasswordResetPopupView.swift in Sources */,
+				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
 				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
@@ -449,6 +464,7 @@
 				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
 				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
+				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
