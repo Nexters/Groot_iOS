@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     
     private var indexOfCellBeforeDragging = 0
+    private var first: Bool = true
     
     var plants: [Plant] = [] {
         didSet {
@@ -65,11 +66,16 @@ class HomeViewController: UIViewController {
     
     private func configureCollectionViewLayoutItemSize() {
         let inset: CGFloat = 40
-        let indexPath = IndexPath.init(item: 0, section: 0)
-        let firstCell = collectionView.cellForItem(at: indexPath)
         
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         collectionViewLayout.itemSize = CGSize(width: collectionView.frame.size.width - inset * 2, height: collectionView.frame.size.height)
+        
+        collectionView.layoutIfNeeded()
+    }
+    
+    private func setFirstCellSize() {
+        let indexPath = IndexPath.init(item: 0, section: 0)
+        let firstCell = collectionView.cellForItem(at: indexPath)
         
         if let cell = firstCell as? HomeCardCollectionViewCell {
             cell.topLayoutConstraint.constant = 0
@@ -82,6 +88,9 @@ class HomeViewController: UIViewController {
     
     func setExample() {
         let plant = Plant.init(name: "", species: "", drinkingDay: 0)
+        plants.append(plant)
+        plants.append(plant)
+        plants.append(plant)
         plants.append(plant)
         plants.append(plant)
         plants.append(plant)
@@ -102,6 +111,11 @@ extension HomeViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         configureCollectionViewLayoutItemSize()
+        
+        if first {
+            setFirstCellSize()
+            first = false
+        }
     }
 }
 
@@ -179,8 +193,8 @@ extension HomeViewController: UICollectionViewDelegate {
         if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
             cell.plantView.hero.id = plantID
             cell.contentView.hero.id = cellID
-            cell.plantView.hero.modifiers = [.source(heroID: plantID), .spring(stiffness: 250, damping: 25)]
-            cell.contentView.hero.modifiers = [.source(heroID: cellID), .spring(stiffness: 250, damping: 25)]
+            
+            cell.contentView.hero.modifiers = [.translate(), .useGlobalCoordinateSpace]
         } else {
             return
         }
@@ -191,15 +205,13 @@ extension HomeViewController: UICollectionViewDelegate {
             detailVC.hero.modalAnimationType = .none
             
             detailVC.plantView.hero.id = plantID
-            detailVC.plantView.hero.modifiers = [.source(heroID: plantID), .spring(stiffness: 250, damping: 25)]
             
             detailVC.view.hero.id = cellID
-            detailVC.view.hero.modifiers = [.source(heroID: cellID), .spring(stiffness: 250, damping: 25)]
+            detailVC.view.hero.modifiers = [.translate(), .useGlobalCoordinateSpace]
             
             detailVC.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
             
             present(detailVC, animated: true, completion: nil)
-            configureCollectionViewLayoutItemSize()
         }
     }
 }
