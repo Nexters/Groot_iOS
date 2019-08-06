@@ -40,24 +40,43 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-  
-        
+    
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
         emailGuideLabel.frame.size = CGSize(width: 0, height: 0)
         emailTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
         passwordTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
             return
         }
     }
-    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if(textField.isEqual(emailTextField)) {
+            passwordTextField.becomeFirstResponder()
+        } else if(textField.isEqual(passwordTextField)) {
+            passwordTextField.resignFirstResponder()
+        }
         return true
     }
     
@@ -166,8 +185,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             print("Error changing user access group: %@", error)
         }
         
-        
-
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             guard let error = AuthErrorCode(rawValue: (error?._code)!) else {
                 // Successfully signed up!
@@ -180,6 +197,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             manager.firebaseErrorHandle(code: error)
         }
     
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
     
 }

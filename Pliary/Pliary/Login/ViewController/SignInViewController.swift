@@ -42,6 +42,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if(textField.isEqual(emailTextField)) {
+            passwordTextField.becomeFirstResponder()
+        } else if(textField.isEqual(passwordTextField)) {
+            passwordTextField.resignFirstResponder()
+        }
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -80,4 +85,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(popup);
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
 }
