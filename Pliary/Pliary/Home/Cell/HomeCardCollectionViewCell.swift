@@ -12,6 +12,8 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var plantView: UIView!
     @IBOutlet weak var addWaterButton: UIButton!
+    @IBOutlet weak var dayLeftLabel: UILabel!
+    @IBOutlet weak var blackWaterImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

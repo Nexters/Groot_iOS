@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var profileImageButton: UIButton!
     @IBOutlet weak var englishNameLabel: UILabel!
     @IBOutlet weak var koreanNameLabel: UILabel!
+    @IBOutlet weak var nameSplitLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
     
     @IBOutlet weak var slideBackgroundView: UIView!
@@ -190,17 +191,39 @@ extension HomeViewController: UICollectionViewDelegate {
         let cellID = "plantCell\(indexPath.item)"
         let plantID = "plantImage\(indexPath.item)"
         let addWaterID = "addWater\(indexPath.item)"
+        let blackWaterID = "blackWater\(indexPath.item)"
+        let dayLeftID = "dayLeft\(indexPath.item)"
+        let englishNameID = "englishName"
+        let koreanNameID = "koreanName"
+        let customNameID = "customName"
+        let splitName = "splitName"
+        
+        englishNameLabel.hero.isEnabled = true
+        englishNameLabel.hero.id = englishNameID
+        koreanNameLabel.hero.isEnabled = true
+        koreanNameLabel.hero.id = koreanNameID
+        customNameLabel.hero.isEnabled = true
+        customNameLabel.hero.id = customNameID
+        nameSplitLabel.hero.isEnabled = true
+        nameSplitLabel.hero.id = splitName
         
         if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
             cell.hero.isEnabled = true
-            cell.plantView.hero.isEnabled = true
-            cell.contentView.hero.isEnabled = true
-            cell.addWaterButton.hero.isEnabled = true
             
+            cell.plantView.hero.isEnabled = true
             cell.plantView.hero.id = plantID
-            cell.contentView.hero.id = cellID
+            
+            cell.addWaterButton.hero.isEnabled = true
             cell.addWaterButton.hero.id = addWaterID
             
+            cell.blackWaterImageView.hero.isEnabled = true
+            cell.blackWaterImageView.hero.id = blackWaterID
+            
+            cell.dayLeftLabel.hero.isEnabled = true
+            cell.dayLeftLabel.hero.id = dayLeftID
+            
+            cell.contentView.hero.isEnabled = true
+            cell.contentView.hero.id = cellID
             cell.contentView.hero.modifiers = [.translate(), .useGlobalCoordinateSpace]
         } else {
             return
@@ -210,18 +233,39 @@ extension HomeViewController: UICollectionViewDelegate {
         if let detailVC = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController {
             
             detailVC.hero.isEnabled = true
-            detailVC.plantView.hero.isEnabled = true
-            detailVC.view.hero.isEnabled = true
-            detailVC.addWaterButton.hero.isEnabled = true
-            
             detailVC.hero.modalAnimationType = .none
             
-            detailVC.plantView.hero.id = plantID
+            detailVC.view.hero.isEnabled = true
             detailVC.view.hero.id = cellID
-            detailVC.addWaterButton.hero.id = addWaterID
-            
             detailVC.view.hero.modifiers = [.translate(), .useGlobalCoordinateSpace]
-            detailVC.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
+            
+            let indexPath = IndexPath.init(row: 0, section: 0)
+            detailVC.setUpTableView()
+            detailVC.tableView.reloadData()
+            detailVC.tableView.hero.isEnabled = true
+            
+            if let cell = detailVC.tableView.cellForRow(at: indexPath) as? MainDetailTableViewCell {
+                cell.plantView.hero.isEnabled = true
+                cell.plantView.hero.id = plantID
+                
+                cell.addWaterButton.hero.isEnabled = true
+                cell.addWaterButton.hero.id = addWaterID
+                
+                cell.blackWaterImageView.hero.isEnabled = true
+                cell.blackWaterImageView.hero.id = blackWaterID
+                
+                cell.dayLeftLabel.hero.isEnabled = true
+                cell.dayLeftLabel.hero.id = dayLeftID
+                
+//                cell.englishNameLabel.hero.isEnabled = true
+//                cell.englishNameLabel.hero.id = englishNameID
+//                cell.koreanNameLabel.hero.isEnabled = true
+//                cell.koreanNameLabel.hero.id = koreanNameID
+//                cell.customNameLabel.hero.isEnabled = true
+//                cell.customNameLabel.hero.id = customNameID
+//                cell.nameSplitLabel.hero.isEnabled = true
+//                cell.nameSplitLabel.hero.id = splitName
+            }
             
             present(detailVC, animated: true, completion: nil)
         }

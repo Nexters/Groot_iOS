@@ -6,9 +6,13 @@
 //  Copyright © 2019 groot.nexters.pliary. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct StoryboardName {
     static let home = "Home"
     static let detail = "Detail"
+}
+
+struct Color {
+    static let cardBackground = UIColor.init(red: 238/255, green: 217/255, blue: 190/255, alpha: 1)
 }

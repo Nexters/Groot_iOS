@@ -12,9 +12,16 @@ import Hero
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addWaterButton: UIButton!
-    @IBOutlet var plantView: UIView! = UIView()
-    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    
+    func setUpTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.contentInset = UIEdgeInsets(top: -UIApplication.shared.statusBarFrame.size.height, left: 0, bottom: 0, right: 0)
+        
+        let mainDetailName = MainDetailTableViewCell.reuseIdentifier
+        let mainDetailNib = UINib(nibName: mainDetailName, bundle: nil)
+        tableView.register(mainDetailNib, forCellReuseIdentifier: mainDetailName)
+    }
     
     @objc func handlePan(gr: UIPanGestureRecognizer) {
         let translation = gr.translation(in: view)
@@ -37,13 +44,36 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
-        view.addSubview(visualEffectView)
-        view.sendSubviewToBack(visualEffectView)
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:))))
+        setUpTableView()
+        tableView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:))))
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+}
+
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.height
+    }
+}
+
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            if let mainDetailCell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
+                return mainDetailCell
+            }
+        }
+        
+        
+        return UITableViewCell()
+    }
+    
+    
 }

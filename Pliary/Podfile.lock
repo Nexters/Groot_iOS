@@ -14,12 +14,7 @@ PODS:
   - FirebaseCore (6.1.0):
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/Logger (~> 6.0)
-  - FirebaseUI/Auth (8.0.4):
-    - Firebase/Auth (~> 6.0)
-    - GoogleUtilities/UserDefaults
-  - FirebaseUI/Google (8.0.4):
-    - FirebaseUI/Auth
-    - GoogleSignIn (~> 4.0)
+  - FSCalendar (2.8.0)
   - GoogleSignIn (4.4.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -46,15 +41,12 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.2.3)"
   - GoogleUtilities/Reachability (6.2.3):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.2.3):
-    - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.2)
   - Hero (1.4.0)
 
 DEPENDENCIES:
   - Firebase/Auth
-  - FirebaseUI/Auth
-  - FirebaseUI/Google
+  - FSCalendar
   - GoogleSignIn
   - Hero
 
@@ -64,7 +56,7 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
-    - FirebaseUI
+    - FSCalendar
     - GoogleSignIn
     - GoogleToolboxForMac
     - GoogleUtilities
@@ -76,13 +68,13 @@ SPEC CHECKSUMS:
   FirebaseAuth: a06ad63e9bf4c86165b54cceb1c14d4f4c38d419
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: aecf02fb2274ec361b9bebeac112f5daa18273bd
-  FirebaseUI: d92c980c1c7e553df3c5e7b0725baeb13f80f6d2
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
 
-PODFILE CHECKSUM: 73c0c4fd6de1a83f4ef229b6c9fc7264f28dec9c
+PODFILE CHECKSUM: 2335ca9e81d60021d51c5bedb7ddef88bd678b99
 
 COCOAPODS: 1.7.4

@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="40" id="jpK-P0-Hib"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                                <color key="textColor" red="0.25490196078431371" green="0.2627450980392157" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.16862745100000001" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스투키" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo3-aJ-fXs">
@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="height" constant="20" id="I8b-Sn-d2W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="18"/>
-                                <color key="textColor" red="0.25490196079999999" green="0.26274509800000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.16862745100000001" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njq-lE-Zeb">
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="height" constant="20" id="THB-GX-7CP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="18"/>
-                                <color key="textColor" red="0.25490196079999999" green="0.26274509800000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.16862745100000001" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="멋쟁이 투투" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnH-mv-TSW">
@@ -70,7 +70,7 @@
                                     <constraint firstAttribute="height" constant="20" id="Sn1-Ty-ytt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="18"/>
-                                <color key="textColor" red="0.25490196079999999" green="0.26274509800000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.16862745100000001" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCg-6w-GMA">
@@ -151,6 +151,7 @@
                         <outlet property="customNameLabel" destination="GnH-mv-TSW" id="sZN-fZ-yzu"/>
                         <outlet property="englishNameLabel" destination="Mqs-FH-vbx" id="h9T-cC-Oqv"/>
                         <outlet property="koreanNameLabel" destination="Xo3-aJ-fXs" id="BNj-Jx-erX"/>
+                        <outlet property="nameSplitLabel" destination="Njq-lE-Zeb" id="qDd-V4-SL6"/>
                         <outlet property="profileImageButton" destination="bJU-Qp-cJS" id="ft7-Gd-vO0"/>
                         <outlet property="selectedSlideView" destination="49H-sB-fPC" id="iTv-75-Lzc"/>
                         <outlet property="slideBackgroundView" destination="JCg-6w-GMA" id="OCd-uk-yfg"/>

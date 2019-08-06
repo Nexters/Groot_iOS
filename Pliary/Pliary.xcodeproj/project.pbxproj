@@ -41,6 +41,8 @@
 		CEE0E19122F7BCC200ED0C31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E19022F7BCC200ED0C31 /* GoogleService-Info.plist */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
+		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
+		CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		CEE0E19022F7BCC200ED0C31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
+		CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,8 @@
 			children = (
 				CE5F523622F20AE700F2E777 /* DiarySmallCardTableViewCell.swift */,
 				CE5F523722F20AE700F2E777 /* DiarySmallCardTableViewCell.xib */,
+				CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */,
+				CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
+				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiarySmallCardTableViewCell.xib in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
@@ -469,6 +476,7 @@
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
+				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiarySmallCardTableViewCell.swift in Sources */,
