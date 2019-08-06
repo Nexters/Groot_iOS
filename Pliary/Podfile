@@ -6,8 +6,7 @@ target 'Pliary' do
   use_frameworks!
   pod 'GoogleSignIn'
   pod 'Firebase/Auth'
-  pod 'FirebaseUI/Google'
-  pod 'FirebaseUI/Auth'
+  pod 'FSCalendar'
   pod 'Hero'
   # Pods for Pliary
 end

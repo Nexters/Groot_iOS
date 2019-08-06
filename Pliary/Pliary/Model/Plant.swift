@@ -12,11 +12,11 @@ class Plant: NSObject {
 
     var name: String
     var species: String
-    var drinkingDay: Int
+    var wateringDay: Int
 
     init(name: String, species: String, drinkingDay: Int) {
         self.name = name
         self.species = species
-        self.drinkingDay = drinkingDay
+        self.wateringDay = drinkingDay
     }
 }
