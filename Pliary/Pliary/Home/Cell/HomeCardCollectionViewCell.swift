@@ -11,6 +11,7 @@ import UIKit
 class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var plantView: UIView!
+    @IBOutlet weak var addWaterButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

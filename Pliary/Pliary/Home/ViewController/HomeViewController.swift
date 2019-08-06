@@ -189,10 +189,17 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cellID = "plantCell\(indexPath.item)"
         let plantID = "plantImage\(indexPath.item)"
+        let addWaterID = "addWater\(indexPath.item)"
         
         if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
+            cell.hero.isEnabled = true
+            cell.plantView.hero.isEnabled = true
+            cell.contentView.hero.isEnabled = true
+            cell.addWaterButton.hero.isEnabled = true
+            
             cell.plantView.hero.id = plantID
             cell.contentView.hero.id = cellID
+            cell.addWaterButton.hero.id = addWaterID
             
             cell.contentView.hero.modifiers = [.translate(), .useGlobalCoordinateSpace]
         } else {
@@ -201,14 +208,19 @@ extension HomeViewController: UICollectionViewDelegate {
         
         let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: Bundle(for: DetailViewController.self))
         if let detailVC = storyboard.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController {
+            
             detailVC.hero.isEnabled = true
+            detailVC.plantView.hero.isEnabled = true
+            detailVC.view.hero.isEnabled = true
+            detailVC.addWaterButton.hero.isEnabled = true
+            
             detailVC.hero.modalAnimationType = .none
             
             detailVC.plantView.hero.id = plantID
-            
             detailVC.view.hero.id = cellID
-            detailVC.view.hero.modifiers = [.translate(), .useGlobalCoordinateSpace]
+            detailVC.addWaterButton.hero.id = addWaterID
             
+            detailVC.view.hero.modifiers = [.translate(), .useGlobalCoordinateSpace]
             detailVC.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
             
             present(detailVC, animated: true, completion: nil)

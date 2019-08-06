@@ -12,6 +12,7 @@ import Hero
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addWaterButton: UIButton!
     @IBOutlet var plantView: UIView! = UIView()
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     

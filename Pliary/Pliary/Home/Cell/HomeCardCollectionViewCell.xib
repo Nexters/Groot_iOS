@@ -86,6 +86,7 @@
             </constraints>
             <size key="customSize" width="274" height="365"/>
             <connections>
+                <outlet property="addWaterButton" destination="C8G-aF-bnu" id="nEp-Ho-eNh"/>
                 <outlet property="plantView" destination="gt7-Rh-Jhv" id="JqA-pe-QOZ"/>
                 <outlet property="topLayoutConstraint" destination="xuV-ff-e7j" id="Ea2-hO-GvA"/>
             </connections>
