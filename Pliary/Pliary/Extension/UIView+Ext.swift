@@ -20,6 +20,7 @@ import UIKit
             return UIColor(cgColor: color)
         }
     }
+    
     @IBInspectable var borderWidth: CGFloat {
         set {
             layer.borderWidth = newValue
@@ -28,6 +29,7 @@ import UIKit
             return layer.borderWidth
         }
     }
+    
     @IBInspectable var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
@@ -36,6 +38,15 @@ import UIKit
         get {
             return layer.cornerRadius
         }
+    }
+    
+    static func createViewFromNib<T: UIView>(nibName: String) -> T {
+        let bundle = Bundle(for: T.self)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? T else {
+            fatalError("failed init.")
+        }
+        return view
     }
 }
 

@@ -84,9 +84,10 @@ extension HomeViewController: UICollectionViewDelegate {
         detailVC.tableView.hero.isEnabled = true
         
         guard let detailCell = detailVC.tableView.cellForRow(at: index) as? MainDetailTableViewCell else {
+            present(detailVC, animated: true, completion: nil)
             return
         }
-        
+
         enableHero(view: detailCell.plantView, id: plantID)
         enableHero(view: detailCell.addWaterButton, id: addWaterID)
         enableHero(view: detailCell.blackWaterImageView, id: blackWaterID)

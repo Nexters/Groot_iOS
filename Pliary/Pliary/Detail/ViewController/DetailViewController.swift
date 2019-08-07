@@ -12,6 +12,11 @@ import Hero
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var diaryCards: [DiaryCard] = []
+    var diaryCardsCount: Int {
+        return 10
+//        return diaryCards.count + 1
+    }
     
     func setUpTableView() {
         tableView.delegate = self
@@ -21,6 +26,14 @@ class DetailViewController: UIViewController {
         let mainDetailName = MainDetailTableViewCell.reuseIdentifier
         let mainDetailNib = UINib(nibName: mainDetailName, bundle: nil)
         tableView.register(mainDetailNib, forCellReuseIdentifier: mainDetailName)
+        
+        let dayWithPlantName = DayWithPlantTableViewCell.reuseIdentifier
+        let dayWithPlantNib = UINib(nibName: dayWithPlantName, bundle: nil)
+        tableView.register(dayWithPlantNib, forCellReuseIdentifier: dayWithPlantName)
+        
+        let diaryCardWithAllName = DiaryCardWithAllTableViewCell.reuseIdentifier
+        let diaryCardWithAllNib = UINib(nibName: diaryCardWithAllName, bundle: nil)
+        tableView.register(diaryCardWithAllNib, forCellReuseIdentifier: diaryCardWithAllName)
     }
     
     func setUpGesture() {
@@ -72,7 +85,21 @@ extension DetailViewController: UIGestureRecognizerDelegate {
 
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return tableView.frame.height
+        } else if indexPath.row == 0 {
+            return DayWithPlantTableViewCell.height
+        } else {
+            return DiaryCardWithAllTableViewCell.height
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else {
+            return DetailTableHeaderView.height
+        }
     }
 }
 
@@ -85,14 +112,32 @@ extension DetailViewController: UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 1
+            return diaryCardsCount
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return nil
+        } else {
+            let headerView = DetailTableHeaderView.instance()
+            headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: DetailTableHeaderView.height)
+            return headerView
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0 {
-            if let mainDetailCell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
-                return mainDetailCell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
+                return cell
+            }
+        } else if indexPath.row == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
+                return cell
+            }
+        } else {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
+                return cell
             }
         }
         

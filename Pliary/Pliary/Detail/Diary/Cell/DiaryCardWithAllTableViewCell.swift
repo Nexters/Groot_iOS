@@ -10,6 +10,8 @@ import UIKit
 
 class DiaryCardWithAllTableViewCell: UITableViewCell {
 
+    static let height: CGFloat = 300
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
