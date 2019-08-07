@@ -33,11 +33,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y56-rp-PYB">
-                                <rect key="frame" x="42" y="281" width="67" height="28"/>
+                                <rect key="frame" x="42" y="281" width="63" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="VXN-qm-JQm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="22"/>
                                 <color key="textColor" red="0.25490196078431371" green="0.2627450980392157" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>

@@ -31,6 +31,16 @@
                         <color key="textColor" red="0.16862745100000001" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWN-ZV-whA">
+                        <rect key="frame" x="36" y="100" width="319" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Wa2-fv-u9c"/>
+                            <constraint firstAttribute="height" constant="40" id="d3K-pd-2MB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="36"/>
+                        <color key="textColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJE-g4-op9">
                         <rect key="frame" x="329" y="112" width="24" height="24"/>
                         <constraints>
@@ -39,16 +49,6 @@
                         </constraints>
                         <state key="normal" image="BtnMore"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWN-ZV-whA">
-                        <rect key="frame" x="36" y="100" width="268" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Wa2-fv-u9c"/>
-                            <constraint firstAttribute="height" constant="40" id="d3K-pd-2MB"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                        <color key="textColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스투키" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huv-Ga-LBY">
                         <rect key="frame" x="36" y="148" width="47" height="20"/>
                         <constraints>
@@ -76,12 +76,12 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5C-Rb-Gb4">
-                        <rect key="frame" x="62" y="464.5" width="67" height="28"/>
+                        <rect key="frame" x="62" y="464.5" width="63" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="N5r-ei-Zed"/>
                             <constraint firstAttribute="height" constant="28" id="q0Q-VM-Qbv"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="22"/>
+                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="22"/>
                         <color key="textColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -129,7 +129,7 @@
                     <constraint firstItem="GA0-EP-rL2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="QHH-hU-fhU"/>
                     <constraint firstItem="0py-sq-4wQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qx1-Wq-Z27"/>
                     <constraint firstItem="RJE-g4-op9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="112" id="dHV-5q-4ay"/>
-                    <constraint firstAttribute="trailing" secondItem="IWN-ZV-whA" secondAttribute="trailing" constant="87" id="e7f-Ii-fJe"/>
+                    <constraint firstAttribute="trailing" secondItem="IWN-ZV-whA" secondAttribute="trailing" constant="36" id="e7f-Ii-fJe"/>
                     <constraint firstAttribute="trailing" secondItem="ZYn-2j-Tak" secondAttribute="trailing" constant="36" id="exI-e7-Qzi"/>
                     <constraint firstItem="huv-Ga-LBY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="g0J-n8-QIG"/>
                     <constraint firstAttribute="bottom" secondItem="0py-sq-4wQ" secondAttribute="bottom" constant="176" id="gwa-oS-dGm"/>
