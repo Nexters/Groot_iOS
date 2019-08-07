@@ -12,14 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="76" id="KGk-i7-Jjw" customClass="WateringInfoCardTableViewCell" customModule="Pliary" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="335" height="76.5"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WateringInfoTableViewCell" rowHeight="76" id="KGk-i7-Jjw" customClass="WateringInfoTableViewCell" customModule="Pliary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="46"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="335" height="76"/>
+                <rect key="frame" x="0.0" y="0.0" width="335" height="45.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBlue" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-bM-uG8">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterGreen" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-bM-uG8">
                         <rect key="frame" x="15" y="16" width="13" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="13" id="EqQ-wl-T1l"/>
@@ -36,16 +36,6 @@
                         <color key="textColor" red="0.25490196079999999" green="0.26274509800000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcV-jv-cVx">
-                        <rect key="frame" x="16" y="42.5" width="292" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="C3w-Ak-nZz"/>
-                            <constraint firstAttribute="width" constant="292" id="Rqt-mk-EwL"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                        <color key="textColor" red="0.5490196078431373" green="0.56470588235294117" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BtnMore" translatesAutoresizingMaskIntoConstraints="NO" id="g08-1T-UZH">
                         <rect key="frame" x="297" y="11" width="24" height="24"/>
                         <constraints>
@@ -53,6 +43,16 @@
                             <constraint firstAttribute="height" constant="24" id="w5I-oR-FCm"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물을 주었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcV-jv-cVx">
+                        <rect key="frame" x="113" y="17" width="176" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="C3w-Ak-nZz"/>
+                            <constraint firstAttribute="width" constant="176" id="Rqt-mk-EwL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                        <color key="textColor" red="0.5490196078431373" green="0.56470588235294117" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="1dH-bM-uG8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="7hb-Pz-p2t"/>
@@ -60,17 +60,22 @@
                     <constraint firstAttribute="trailing" secondItem="g08-1T-UZH" secondAttribute="trailing" constant="14" id="XaQ-Lm-gqe"/>
                     <constraint firstItem="1dH-bM-uG8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="jGS-uD-z2c"/>
                     <constraint firstItem="W7p-8C-X3a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="tUy-px-ZKK"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="dcV-jv-cVx" secondAttribute="bottom" constant="7" id="uAv-YW-KHw"/>
-                    <constraint firstItem="dcV-jv-cVx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="x2c-Bt-PTA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dcV-jv-cVx" secondAttribute="bottom" constant="2" id="uAv-YW-KHw"/>
+                    <constraint firstItem="dcV-jv-cVx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="97" id="x2c-Bt-PTA"/>
                     <constraint firstItem="W7p-8C-X3a" firstAttribute="leading" secondItem="1dH-bM-uG8" secondAttribute="trailing" constant="8" id="xBd-n2-zMg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="165.59999999999999" y="296.85157421289358"/>
+            <connections>
+                <outlet property="dateLabel" destination="W7p-8C-X3a" id="x7T-Gq-ccH"/>
+                <outlet property="msgLabel" destination="dcV-jv-cVx" id="xz1-zW-OHv"/>
+                <outlet property="waterImage" destination="1dH-bM-uG8" id="0Bx-ZZ-jyx"/>
+            </connections>
+            <point key="canvasLocation" x="165.59999999999999" y="296.40179910044981"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="BtnMore" width="24" height="24"/>
-        <image name="WaterBlue" width="26" height="26"/>
+        <image name="WaterGreen" width="13" height="15"/>
     </resources>
 </document>

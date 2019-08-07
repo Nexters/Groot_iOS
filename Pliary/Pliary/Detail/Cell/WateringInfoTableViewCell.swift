@@ -8,8 +8,11 @@
 
 import UIKit
 
-class WateringInfoCardTableViewCell: UITableViewCell {
+class WateringInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var waterImage: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var msgLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
