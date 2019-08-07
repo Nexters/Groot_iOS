@@ -203,6 +203,8 @@
 		CE5F521D22F1FBE400F2E777 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				CEE0E1A522FB26C400ED0C31 /* Calendar */,
+				CEE0E1A422FB26B900ED0C31 /* Diary */,
 				CEE0E19422F848CB00ED0C31 /* ViewController */,
 				CE5F523122F2085600F2E777 /* Cell */,
 				CE5F522F22F2085200F2E777 /* Detail.storyboard */,
@@ -245,10 +247,6 @@
 		CE5F523122F2085600F2E777 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
-				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
-				CE5F523622F20AE700F2E777 /* DiarySmallCardTableViewCell.swift */,
-				CE5F523722F20AE700F2E777 /* DiarySmallCardTableViewCell.xib */,
 				CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */,
 				CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */,
 			);
@@ -323,7 +321,6 @@
 		CEE0E19422F848CB00ED0C31 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				76C7530322FB0C6800F4443E /* CalendarViewController.swift */,
 				CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */,
 			);
 			path = ViewController;
@@ -336,6 +333,41 @@
 				CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */,
 			);
 			path = RegisterPlant;
+			sourceTree = "<group>";
+		};
+		CEE0E1A422FB26B900ED0C31 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E1A722FB26FC00ED0C31 /* Cell */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		CEE0E1A522FB26C400ED0C31 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				76C7530322FB0C6800F4443E /* CalendarViewController.swift */,
+				CEE0E1A622FB26CC00ED0C31 /* Cell */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		CEE0E1A622FB26CC00ED0C31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
+				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CEE0E1A722FB26FC00ED0C31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F523622F20AE700F2E777 /* DiarySmallCardTableViewCell.swift */,
+				CE5F523722F20AE700F2E777 /* DiarySmallCardTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
