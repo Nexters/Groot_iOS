@@ -45,6 +45,8 @@
 		CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */; };
 		CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */; };
 		CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */; };
+		CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */; };
+		CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainDetailTableViewCell.xib; sourceTree = "<group>"; };
 		CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CardScroll.swift"; sourceTree = "<group>"; };
 		CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Segue.swift"; sourceTree = "<group>"; };
+		CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterPlant.storyboard; sourceTree = "<group>"; };
+		CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +271,7 @@
 				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
 				CE5F522622F1FED000F2E777 /* Constant */,
 				CE5F522522F1FECC00F2E777 /* Extension */,
+				CEE0E19F22FB03F900ED0C31 /* RegisterPlant */,
 				CE5F520F22F1F62A00F2E777 /* Login */,
 				CE5F521222F1F68F00F2E777 /* Home */,
 				CE5F521D22F1FBE400F2E777 /* Detail */,
@@ -313,6 +318,15 @@
 				CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CEE0E19F22FB03F900ED0C31 /* RegisterPlant */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */,
+				CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */,
+			);
+			path = RegisterPlant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +404,7 @@
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
+				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
 				765DC26222F5F2AD00F4DBE6 /* PasswordResetPopupView.xib in Resources */,
 				CEE0E19122F7BCC200ED0C31 /* GoogleService-Info.plist in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
@@ -464,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */,
+				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */,
 				CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */,

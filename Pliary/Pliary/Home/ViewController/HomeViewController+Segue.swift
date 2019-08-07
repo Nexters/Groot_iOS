@@ -16,21 +16,36 @@ extension HomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath)
         
-        guard let selectedCell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell else {
+        if let cell = selectedCell as? HomeCardCollectionViewCell {
+            goDetailViewController(with: cell, item: indexPath.item)
+        } else if (selectedCell as? AddCardCollectionViewCell) != nil {
+            goRegisterViewController()
+        }
+        
+    }
+    
+    func goRegisterViewController() {
+        let storyboard = UIStoryboard.init(name: StoryboardName.regiserPlant, bundle: Bundle(for: RegisterPlantViewController.self))
+        guard let registerVC = storyboard.instantiateViewController(withIdentifier: RegisterPlantViewController.identifier) as? RegisterPlantViewController else {
             return
         }
         
+        present(registerVC, animated: true, completion: nil)
+    }
+    
+    func goDetailViewController(with selectedCell: HomeCardCollectionViewCell, item: Int) {
         let englishNameID = "englishName"
         let koreanNameID = "koreanName"
         let customNameID = "customName"
         let splitName = "splitName"
         
-        let cellID = "plantCell\(indexPath.item)"
-        let plantID = "plantImage\(indexPath.item)"
-        let addWaterID = "addWater\(indexPath.item)"
-        let blackWaterID = "blackWater\(indexPath.item)"
-        let dayLeftID = "dayLeft\(indexPath.item)"
+        let cellID = "plantCell\(item)"
+        let plantID = "plantImage\(item)"
+        let addWaterID = "addWater\(item)"
+        let blackWaterID = "blackWater\(item)"
+        let dayLeftID = "dayLeft\(item)"
         
         view.bringSubviewToFront(englishNameLabel)
         view.bringSubviewToFront(koreanNameLabel)

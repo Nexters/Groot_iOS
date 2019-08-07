@@ -28,6 +28,23 @@ class DetailViewController: UIViewController {
         tableView.addGestureRecognizer(gesture)
         gesture.delegate = self
     }
+}
+
+extension DetailViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUpTableView()
+        setUpGesture()
+    }
+}
+
+extension DetailViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
+        -> Bool {
+            return true
+    }
     
     @objc func handlePan(gr: UIPanGestureRecognizer) {
         guard tableView.contentOffset.y == 0 else {
@@ -53,46 +70,27 @@ class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setUpTableView()
-        setUpGesture()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-}
-
-extension DetailViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
-        -> Bool {
-            return true
-    }
-}
-
 extension DetailViewController: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        guard scrollView.contentOffset.y < 0 else {
-//            return
-//        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height
     }
 }
 
 extension DetailViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return 1
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 && indexPath.row == 0 {
             if let mainDetailCell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
                 return mainDetailCell
             }
