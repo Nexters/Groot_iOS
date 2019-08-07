@@ -81,6 +81,16 @@ extension DetailViewController: UIGestureRecognizerDelegate {
             }
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y <= view.frame.height {
+            tableView.isPagingEnabled = true
+            tableView.bounces = false
+        } else {
+            tableView.isPagingEnabled = false
+            tableView.bounces = true
+        }
+    }
 }
 
 extension DetailViewController: UITableViewDelegate {
