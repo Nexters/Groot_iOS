@@ -30,7 +30,8 @@ class DetailViewController: UIViewController {
     }
     
     @objc func handlePan(gr: UIPanGestureRecognizer) {
-        guard tableView.contentOffset.y < 0 else {
+        guard tableView.contentOffset.y == 0 else {
+            Hero.shared.cancel()
             return
         }
         
