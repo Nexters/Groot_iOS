@@ -23,15 +23,26 @@ class DetailViewController: UIViewController {
         tableView.register(mainDetailNib, forCellReuseIdentifier: mainDetailName)
     }
     
+    func setUpGesture() {
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
+        tableView.addGestureRecognizer(gesture)
+        gesture.delegate = self
+    }
+    
     @objc func handlePan(gr: UIPanGestureRecognizer) {
+        guard tableView.contentOffset.y < 0 else {
+            return
+        }
+        
         let translation = gr.translation(in: view)
+        let velocity = gr.velocity(in: view)
+        
         switch gr.state {
         case .began:
             dismiss(animated: true, completion: nil)
         case .changed:
             Hero.shared.update(translation.y / view.bounds.height)
         default:
-            let velocity = gr.velocity(in: view)
             if ((translation.y + velocity.y) / view.bounds.height) > 0.5 {
                 Hero.shared.finish()
             } else {
@@ -44,8 +55,9 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpTableView()
-        tableView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:))))
+        setUpGesture()
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,7 +65,21 @@ extension DetailViewController {
     }
 }
 
+extension DetailViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
+        -> Bool {
+            return true
+    }
+}
+
 extension DetailViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        guard scrollView.contentOffset.y < 0 else {
+//            return
+//        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height
     }
@@ -70,7 +96,6 @@ extension DetailViewController: UITableViewDataSource {
                 return mainDetailCell
             }
         }
-        
         
         return UITableViewCell()
     }

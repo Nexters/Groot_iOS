@@ -110,6 +110,9 @@
                             <constraint firstAttribute="height" constant="22" id="G6f-gy-fgW"/>
                         </constraints>
                         <state key="normal" image="BottomArrow"/>
+                        <connections>
+                            <action selector="tapNextPageButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ht6-fa-JKX"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

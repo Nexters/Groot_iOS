@@ -28,4 +28,7 @@ class MainDetailTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func tapNextPageButton(_ sender: Any) {
+        
+    }
 }
