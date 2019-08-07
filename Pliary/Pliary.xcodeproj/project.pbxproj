@@ -43,6 +43,8 @@
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
 		CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */; };
+		CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */; };
+		CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
 		CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainDetailTableViewCell.xib; sourceTree = "<group>"; };
+		CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CardScroll.swift"; sourceTree = "<group>"; };
+		CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Segue.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				CE5F520322F1F43500F2E777 /* HomeViewController.swift */,
+				CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */,
+				CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -467,8 +473,10 @@
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
 				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
+				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
+				CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */,
 				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
