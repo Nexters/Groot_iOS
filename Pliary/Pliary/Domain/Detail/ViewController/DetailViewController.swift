@@ -21,7 +21,17 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func tapWriteDiaryButton(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: StoryboardName.writeDiary, bundle: Bundle(for: WriteDiaryViewController.self))
+        guard let writeDiaryVC = storyboard.instantiateViewController(withIdentifier: WriteDiaryViewController.identifier) as? WriteDiaryViewController else {
+            return
+        }
         
+        writeDiaryVC.hero.isEnabled = true
+        writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
+        
+        present(writeDiaryVC, animated: true, completion: {
+            writeDiaryVC.hero.modalAnimationType = .pull(direction: .right)
+        })
     }
     
     func setUpTableView() {

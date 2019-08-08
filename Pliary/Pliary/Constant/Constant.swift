@@ -12,6 +12,7 @@ struct StoryboardName {
     static let home = "Home"
     static let detail = "Detail"
     static let regiserPlant = "RegisterPlant"
+    static let writeDiary = "WriteDiary"
 }
 
 struct Color {

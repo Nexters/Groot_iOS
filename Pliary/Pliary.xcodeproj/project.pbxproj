@@ -192,6 +192,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		CE09477322FC6CC500E7C8A8 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E1A422FB26B900ED0C31 /* Diary */,
+				CEE0E1A522FB26C400ED0C31 /* Calendar */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
 		CE5F520522F1F45700F2E777 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,8 +255,7 @@
 		CE5F521D22F1FBE400F2E777 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				CEE0E1A522FB26C400ED0C31 /* Calendar */,
-				CEE0E1A422FB26B900ED0C31 /* Diary */,
+				CE09477322FC6CC500E7C8A8 /* Section */,
 				CEE0E19422F848CB00ED0C31 /* ViewController */,
 				CE5F523122F2085600F2E777 /* Cell */,
 				CE5F522F22F2085200F2E777 /* Detail.storyboard */,
