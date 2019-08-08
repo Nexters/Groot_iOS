@@ -48,6 +48,18 @@ import UIKit
         }
         return view
     }
+    
+    func drawDottedLine(start p0: CGPoint, end p1: CGPoint, view: UIView) {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1).cgColor
+        shapeLayer.lineWidth = 1
+        shapeLayer.lineDashPattern = [6, 4]
+        
+        let path = CGMutablePath()
+        path.addLines(between: [p0, p1])
+        shapeLayer.path = path
+        view.layer.addSublayer(shapeLayer)
+    }
 }
 
 extension CALayer {

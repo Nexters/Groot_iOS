@@ -15,6 +15,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calendarView: UIView!
+    @IBOutlet weak var waterImageView: UIView!
     
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     
@@ -29,7 +30,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         return formatter
     }()
     
-
+    
     var dates = [Date]()
     
     
@@ -44,14 +45,16 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         super.viewDidLoad()
         
         loadDates()
-            
+        
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         let nibName = UINib(nibName: "WateringInfoTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "WateringInfoTableViewCell")
         self.view.addSubview(self.tableView)
-
         
+        waterImageView.drawDottedLine(start: CGPoint(x: waterImageView.bounds.minX + 20, y: waterImageView.bounds.minY), end: CGPoint(x: waterImageView.bounds.maxX - 20, y: waterImageView.bounds.minY), view: waterImageView)
+
         calendar.delegate = self
         calendar.dataSource = self
         calendar.today = nil
@@ -72,16 +75,16 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.appearance.headerMinimumDissolvedAlpha = 0.0
     }
     
-//    // MARK:- FSCalendarDataSource
-//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-//
-//        let day: Int! = self.gregorian.component(.day, from: date)
-//        return day % 5 == 0 ? day/5 : 0;
-//    }
+    //    // MARK:- FSCalendarDataSource
+    //    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    //
+    //        let day: Int! = self.gregorian.component(.day, from: date)
+    //        return day % 5 == 0 ? day/5 : 0;
+    //    }
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         return self.gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
     }
-
+    
     // MARK:- FSCalendarDelegate
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("calendar did select date \(self.formatter.string(from: date))")
@@ -89,7 +92,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             calendar.setCurrentPage(date, animated: true)
         }
     }
-
+    
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.formatter.string(from: calendar.currentPage))")
     }
@@ -119,7 +122,22 @@ extension CalendarViewController: UITableViewDataSource {
         cell.waterImage.image = UIImage(named: "WaterGreen")
         cell.dateLabel.text = self.formatterForCell.string(from: date)
         cell.msgLabel.text = "물을 주었습니다."
+        cell.separatorInset = UIEdgeInsets.zero
+        
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let verticalPadding: CGFloat = 20
+        
+
+        let maskLayer = CALayer()
+        maskLayer.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1).cgColor
+        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
+        
+        cell.layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
+        cell.layer.mask = maskLayer
+
+    }
 }
