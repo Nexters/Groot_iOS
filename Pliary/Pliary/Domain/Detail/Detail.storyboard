@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aTe-0O-U5Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aTe-0O-U5Y">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,22 +73,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pj6-XA-BnQ">
-                                <rect key="frame" x="20" y="483" width="374" height="233"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WateringInfoTableViewCell" rowHeight="80" id="juJ-IJ-kqo" customClass="WateringInfoTableViewCell" customModule="Pliary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="juJ-IJ-kqo" id="FrH-hG-eog">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="79.666666666666671"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY6-fk-ocV">
-                                <rect key="frame" x="20" y="62" width="374" height="411"/>
+                                <rect key="frame" x="20" y="62" width="374" height="391"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzu-Wm-E3m">
                                         <rect key="frame" x="0.0" y="331" width="374" height="60"/>
@@ -183,21 +169,35 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="lfM-9w-GBK" secondAttribute="bottom" constant="88" id="AGh-CS-Oaz"/>
+                                    <constraint firstAttribute="bottom" secondItem="lfM-9w-GBK" secondAttribute="bottom" constant="68" id="AGh-CS-Oaz"/>
                                     <constraint firstItem="lfM-9w-GBK" firstAttribute="top" secondItem="wY6-fk-ocV" secondAttribute="top" id="CAS-Q7-09X"/>
                                     <constraint firstItem="lfM-9w-GBK" firstAttribute="leading" secondItem="wY6-fk-ocV" secondAttribute="leading" constant="10" id="Mib-Lo-bQ2"/>
                                     <constraint firstItem="dzu-Wm-E3m" firstAttribute="leading" secondItem="wY6-fk-ocV" secondAttribute="leading" id="Qjg-on-jMd"/>
                                     <constraint firstItem="dzu-Wm-E3m" firstAttribute="centerX" secondItem="lfM-9w-GBK" secondAttribute="centerX" id="TAt-hf-P1j"/>
                                     <constraint firstAttribute="trailing" secondItem="dzu-Wm-E3m" secondAttribute="trailing" id="dpd-7F-ReB"/>
-                                    <constraint firstAttribute="bottom" secondItem="dzu-Wm-E3m" secondAttribute="bottom" constant="20" id="gRJ-Ij-5O9"/>
+                                    <constraint firstAttribute="bottom" secondItem="dzu-Wm-E3m" secondAttribute="bottom" id="gRJ-Ij-5O9"/>
                                     <constraint firstItem="dzu-Wm-E3m" firstAttribute="top" secondItem="wY6-fk-ocV" secondAttribute="top" constant="331" id="rBJ-LU-WGc"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pj6-XA-BnQ">
+                                <rect key="frame" x="20" y="463" width="374" height="253"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WateringInfoTableViewCell" rowHeight="80" id="juJ-IJ-kqo" customClass="WateringInfoTableViewCell" customModule="Pliary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="juJ-IJ-kqo" id="FrH-hG-eog">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Pj6-XA-BnQ" firstAttribute="top" secondItem="wY6-fk-ocV" secondAttribute="bottom" constant="10" id="8VE-HX-s6L"/>
-                            <constraint firstAttribute="bottom" secondItem="wY6-fk-ocV" secondAttribute="bottom" constant="263" id="GKE-YE-XDH"/>
+                            <constraint firstAttribute="bottom" secondItem="wY6-fk-ocV" secondAttribute="bottom" constant="283" id="GKE-YE-XDH"/>
                             <constraint firstItem="wY6-fk-ocV" firstAttribute="centerX" secondItem="vXR-qu-xvg" secondAttribute="centerX" id="Kzw-Jb-qf3"/>
                             <constraint firstItem="wY6-fk-ocV" firstAttribute="top" secondItem="oge-UB-6ox" secondAttribute="bottom" constant="42" id="Wxh-Wh-7jX"/>
                             <constraint firstItem="wY6-fk-ocV" firstAttribute="trailing" secondItem="Pj6-XA-BnQ" secondAttribute="trailing" id="hKM-jB-N9O"/>

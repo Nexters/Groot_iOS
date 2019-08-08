@@ -269,7 +269,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Ite-xM-OSg"/>
                                     <constraint firstAttribute="width" constant="44" id="NiZ-bM-wsr"/>
                                 </constraints>
-                                <state key="normal" image="Camera"/>
+                                <state key="normal" image="Camera1"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -589,7 +589,7 @@
         <image name="AlertWarning" width="24" height="24"/>
         <image name="BtnAllowLeft" width="24" height="24"/>
         <image name="BtnDelete" width="24" height="24"/>
-        <image name="Camera" width="24" height="24"/>
+        <image name="Camera1" width="24" height="24"/>
         <image name="DefaultProfileImage" width="58" height="68"/>
         <image name="Email" width="26" height="18"/>
         <image name="Google" width="26" height="18"/>
