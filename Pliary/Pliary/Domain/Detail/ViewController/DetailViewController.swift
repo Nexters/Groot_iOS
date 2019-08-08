@@ -11,11 +11,17 @@ import Hero
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var writeDiaryButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    
     var diaryCards: [DiaryCard] = []
     var diaryCardsCount: Int {
         return 10
-//        return diaryCards.count + 1
+//        return diaryCards.count + 2
+    }
+    
+    @IBAction func tapWriteDiaryButton(_ sender: Any) {
+        
     }
     
     func setUpTableView() {
@@ -83,12 +89,18 @@ extension DetailViewController: UIGestureRecognizerDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= view.frame.height {
+        if scrollView.contentOffset.y < view.frame.height {
             tableView.isPagingEnabled = true
             tableView.bounces = false
+            writeDiaryButton.isHidden = true
+        } else if scrollView.contentOffset.y == view.frame.height {
+            tableView.isPagingEnabled = true
+            tableView.bounces = false
+            writeDiaryButton.isHidden = false
         } else {
             tableView.isPagingEnabled = false
             tableView.bounces = true
+            writeDiaryButton.isHidden = false
         }
     }
 }

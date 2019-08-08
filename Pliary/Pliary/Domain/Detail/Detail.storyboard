@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aTe-0O-U5Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aTe-0O-U5Y">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,12 +26,25 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6R-L5-Vqb">
+                                <rect key="frame" x="314" y="636" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="TSb-Oz-QRW"/>
+                                    <constraint firstAttribute="width" constant="65" id="kcQ-Pg-jgF"/>
+                                </constraints>
+                                <state key="normal" image="BtnWrite"/>
+                                <connections>
+                                    <action selector="tapWriteDiaryButton:" destination="Nf9-wy-CsI" eventType="touchUpInside" id="omG-TQ-cS8"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iKi-4R-sl8" secondAttribute="trailing" id="7Dh-m5-UYD"/>
                             <constraint firstItem="uKX-X1-TsR" firstAttribute="top" secondItem="iKi-4R-sl8" secondAttribute="bottom" id="HQX-po-Y15"/>
                             <constraint firstItem="iKi-4R-sl8" firstAttribute="leading" secondItem="8U2-PZ-Iuv" secondAttribute="leading" id="WHV-Lo-XNF"/>
+                            <constraint firstAttribute="trailing" secondItem="T6R-L5-Vqb" secondAttribute="trailing" constant="35" id="drL-Tn-TCi"/>
+                            <constraint firstItem="uKX-X1-TsR" firstAttribute="top" secondItem="T6R-L5-Vqb" secondAttribute="bottom" constant="35" id="gwD-Ml-5IU"/>
                             <constraint firstItem="iKi-4R-sl8" firstAttribute="top" secondItem="8U2-PZ-Iuv" secondAttribute="top" id="isk-oy-idd"/>
                         </constraints>
                     </view>
@@ -41,6 +54,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tableView" destination="iKi-4R-sl8" id="nfo-ev-lNx"/>
+                        <outlet property="writeDiaryButton" destination="T6R-L5-Vqb" id="d8h-hg-iX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJm-R6-DZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,6 +219,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BtnWrite" width="75" height="75"/>
         <image name="WaterBlue" width="26" height="26"/>
         <image name="WaterGreen" width="13" height="15"/>
     </resources>

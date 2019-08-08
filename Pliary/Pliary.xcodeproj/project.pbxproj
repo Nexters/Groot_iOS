@@ -11,10 +11,8 @@
 		760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB41D22F6DED50035F22E /* UITextField+Ext.swift */; };
 		762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B4FF122F1B129002C24EF /* SignInViewController.swift */; };
 		763D972F22F1D58600E50F21 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763D972E22F1D58600E50F21 /* Login.storyboard */; };
-		765DC25A22F5E87400F4DBE6 /* PasswordResetPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */; };
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
 		765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */; };
-		765DC26222F5F2AD00F4DBE6 /* PasswordResetPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */; };
 		765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */; };
 		765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */; };
 		76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */; };
@@ -22,6 +20,10 @@
 		76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530322FB0C6800F4443E /* CalendarViewController.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
+		CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */; };
+		CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */; };
+		CE09477022FC6B9F00E7C8A8 /* WriteDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09476F22FC6B9F00E7C8A8 /* WriteDiary.storyboard */; };
+		CE09477222FC6BBF00E7C8A8 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* WriteDiaryViewController.swift */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
 		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
 		CE5F520922F1F45700F2E777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520722F1F45700F2E777 /* User.swift */; };
@@ -63,10 +65,8 @@
 		760DB41F22F6FB2E0035F22E /* Pliary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pliary.entitlements; sourceTree = "<group>"; };
 		762B4FF122F1B129002C24EF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		763D972E22F1D58600E50F21 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordResetPopupView.swift; path = Pliary/Login/View/PasswordResetPopupView.swift; sourceTree = SOURCE_ROOT; };
 		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
-		765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PasswordResetPopupView.xib; path = Pliary/Login/View/PasswordResetPopupView.xib; sourceTree = SOURCE_ROOT; };
 		765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordResetPopupViewController.swift; path = ../Extension/PasswordResetPopupViewController.swift; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +76,10 @@
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
 		CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pliary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordResetPopupView.xib; sourceTree = "<group>"; };
+		CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetPopupView.swift; sourceTree = "<group>"; };
+		CE09476F22FC6B9F00E7C8A8 /* WriteDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteDiary.storyboard; sourceTree = "<group>"; };
+		CE09477122FC6BBF00E7C8A8 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
 		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -125,16 +129,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		765DC25622F5E85400F4DBE6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				765DC26122F5F2AC00F4DBE6 /* PasswordResetPopupView.xib */,
-				765DC25822F5E87400F4DBE6 /* PasswordResetPopupView.swift */,
-			);
-			name = View;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		765DC26522F5F68000F4DBE6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +154,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE09476322FC6A7000E7C8A8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F520F22F1F62A00F2E777 /* Login */,
+				CE5F521222F1F68F00F2E777 /* Home */,
+				CEE0E19F22FB03F900ED0C31 /* RegisterPlant */,
+				CE5F521D22F1FBE400F2E777 /* Detail */,
+				CE09476422FC6AA100E7C8A8 /* WriteDiary */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CE09476422FC6AA100E7C8A8 /* WriteDiary */ = {
+			isa = PBXGroup;
+			children = (
+				CE09476E22FC6B9000E7C8A8 /* ViewController */,
+				CE09476F22FC6B9F00E7C8A8 /* WriteDiary.storyboard */,
+			);
+			path = WriteDiary;
+			sourceTree = "<group>";
+		};
+		CE09476922FC6B4F00E7C8A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */,
+				CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE09476E22FC6B9000E7C8A8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477122FC6BBF00E7C8A8 /* WriteDiaryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		CE5F520522F1F45700F2E777 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +213,8 @@
 		CE5F520F22F1F62A00F2E777 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CE09476922FC6B4F00E7C8A8 /* View */,
 				765DC26522F5F68000F4DBE6 /* Extension */,
-				765DC25622F5E85400F4DBE6 /* View */,
 				CE5F520C22F1F48300F2E777 /* Manager */,
 				CE5F521022F1F64600F2E777 /* ViewController */,
 				763D972E22F1D58600E50F21 /* Login.storyboard */,
@@ -287,18 +319,15 @@
 		CE69262A22E2EC0E00264114 /* Pliary */ = {
 			isa = PBXGroup;
 			children = (
-				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
+				CE09476322FC6A7000E7C8A8 /* Domain */,
 				CE5F522622F1FED000F2E777 /* Constant */,
 				CE5F522522F1FECC00F2E777 /* Extension */,
-				CEE0E19F22FB03F900ED0C31 /* RegisterPlant */,
-				CE5F520F22F1F62A00F2E777 /* Login */,
-				CE5F521222F1F68F00F2E777 /* Home */,
-				CE5F521D22F1FBE400F2E777 /* Detail */,
 				CE5F520522F1F45700F2E777 /* Model */,
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
 				CE69263722E2EC1000264114 /* Info.plist */,
 				CEE0E1B022FB302D00ED0C31 /* GoogleService-Info.plist */,
+				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
 			);
 			path = Pliary;
 			sourceTree = "<group>";
@@ -452,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
@@ -461,10 +491,10 @@
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
+				CE09477022FC6B9F00E7C8A8 /* WriteDiary.storyboard in Resources */,
 				CEE0E1B122FB302D00ED0C31 /* GoogleService-Info.plist in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
-				765DC26222F5F2AD00F4DBE6 /* PasswordResetPopupView.xib in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
 				76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */,
@@ -540,10 +570,10 @@
 				765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */,
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
+				CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */,
 				765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */,
 				CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
-				765DC25A22F5E87400F4DBE6 /* PasswordResetPopupView.swift in Sources */,
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
@@ -565,6 +595,7 @@
 				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
 				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
+				CE09477222FC6BBF00E7C8A8 /* WriteDiaryViewController.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,
