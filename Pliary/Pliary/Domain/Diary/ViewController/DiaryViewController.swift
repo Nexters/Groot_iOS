@@ -1,5 +1,5 @@
 //
-//  WriteDiaryViewController.swift
+//  DiaryViewController.swift
 //  Pliary
 //
 //  Created by jeewoong.han on 08/08/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import Hero
 
-class WriteDiaryViewController: UIViewController {
+class DiaryViewController: UIViewController {
 
     @objc func handlePan(gr: UIPanGestureRecognizer) {
         let translation = gr.translation(in: view)
@@ -30,7 +30,7 @@ class WriteDiaryViewController: UIViewController {
     }
 }
 
-extension WriteDiaryViewController {
+extension DiaryViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

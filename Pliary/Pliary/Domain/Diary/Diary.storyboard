@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Write Diary View Controller-->
+        <!--Diary View Controller-->
         <scene sceneID="5gW-xL-K9P">
             <objects>
-                <viewController storyboardIdentifier="WriteDiaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pvo-3C-6fO" customClass="WriteDiaryViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pvo-3C-6fO" customClass="DiaryViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f8F-Ny-RMT"/>
                         <viewControllerLayoutGuide type="bottom" id="7Bf-F9-moA"/>
