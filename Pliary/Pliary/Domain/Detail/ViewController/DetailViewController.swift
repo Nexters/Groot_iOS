@@ -11,6 +11,11 @@ import Hero
 
 class DetailViewController: UIViewController {
 
+    enum Section: String {
+        case diaryCard
+        case calendar
+    }
+    
     @IBOutlet weak var writeDiaryButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,8 +24,13 @@ class DetailViewController: UIViewController {
         return 10
 //        return diaryCards.count + 2
     }
+    var currentSection: Section = .diaryCard
     
     @IBAction func tapWriteDiaryButton(_ sender: Any) {
+        goDiaryViewController(with: nil)
+    }
+    
+    func goDiaryViewController(with diaryCard: DiaryCard?) {
         let storyboard = UIStoryboard.init(name: StoryboardName.diary, bundle: Bundle(for: DiaryViewController.self))
         guard let writeDiaryVC = storyboard.instantiateViewController(withIdentifier: DiaryViewController.identifier) as? DiaryViewController else {
             return
@@ -29,9 +39,11 @@ class DetailViewController: UIViewController {
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
         
-        present(writeDiaryVC, animated: true, completion: {
-            writeDiaryVC.hero.modalAnimationType = .pull(direction: .right)
-        })
+        DispatchQueue.main.async {
+            self.present(writeDiaryVC, animated: true, completion: {
+                writeDiaryVC.hero.modalAnimationType = .pull(direction: .right)
+            })
+        }
     }
     
     func setUpTableView() {
@@ -122,7 +134,7 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
             return tableView.frame.height
-        } else if indexPath.row == 0 {
+        } else if currentSection == .diaryCard, indexPath.row == 0 {
             return DayWithPlantTableViewCell.height
         } else {
             return DiaryCardWithAllTableViewCell.height
@@ -156,7 +168,6 @@ extension DetailViewController: UITableViewDataSource {
             return nil
         } else {
             let headerView = DetailTableHeaderView.instance()
-            headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: DetailTableHeaderView.height)
             return headerView
         }
     }
@@ -167,11 +178,11 @@ extension DetailViewController: UITableViewDataSource {
                 return cell
             }
         } else if indexPath.row == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
+            if currentSection == .diaryCard, let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
                 return cell
             }
         } else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
+            if currentSection == .diaryCard, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
                 return cell
             }
         }
@@ -179,5 +190,13 @@ extension DetailViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            // resume animation
+        } else if currentSection == .diaryCard, indexPath.row != 0  {
+//            let diaryCard = DiaryCard[indexPath.row]
+            goDiaryViewController(with: nil)
+        }
+    }
     
 }
