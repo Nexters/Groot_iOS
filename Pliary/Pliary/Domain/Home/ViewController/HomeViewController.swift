@@ -36,10 +36,6 @@ class HomeViewController: UIViewController {
         return plants.count + 1
     }
     
-    @IBAction func tabProfileImageButton(_ sender: Any) {
-        
-    }
-    
     private func setUpSlideView() {
         slideBackgroundView.clipsToBounds = true
         selectedSlideView.clipsToBounds = true

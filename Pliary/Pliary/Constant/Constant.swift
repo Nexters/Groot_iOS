@@ -10,6 +10,7 @@ import UIKit
 
 struct StoryboardName {
     static let home = "Home"
+    static let setting = "Setting"
     static let detail = "Detail"
     static let regiserPlant = "RegisterPlant"
     static let diary = "Diary"

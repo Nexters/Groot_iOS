@@ -10,6 +10,23 @@ import UIKit
 
 // MARK: - Delegate UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
+    
+    @IBAction func tabProfileImageButton(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: StoryboardName.setting, bundle: Bundle(for: SettingViewController.self))
+        guard let settingVC = storyboard.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else {
+            return
+        }
+        
+        settingVC.hero.isEnabled = true
+        settingVC.hero.modalAnimationType = .push(direction: .left)
+        
+        DispatchQueue.main.async {
+            self.present(settingVC, animated: true, completion: {
+                settingVC.hero.modalAnimationType = .pull(direction: .right)
+            })
+        }
+    }
+    
     func enableHero(view: UIView, id: String) {
         view.hero.isEnabled = true
         view.hero.id = id
@@ -32,7 +49,9 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
         
-        present(registerVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(registerVC, animated: true, completion: nil)
+        }
     }
     
     func goDetailViewController(with selectedCell: HomeCardCollectionViewCell, item: Int) {
@@ -84,7 +103,11 @@ extension HomeViewController: UICollectionViewDelegate {
         detailVC.tableView.hero.isEnabled = true
         
         guard let detailCell = detailVC.tableView.cellForRow(at: index) as? MainDetailTableViewCell else {
-            present(detailVC, animated: true, completion: nil)
+            
+            DispatchQueue.main.async {
+                self.present(detailVC, animated: true, completion: nil)
+            }
+            
             return
         }
 
@@ -97,6 +120,8 @@ extension HomeViewController: UICollectionViewDelegate {
         enableHero(view: detailCell.customNameLabel, id: customNameID)
         enableHero(view: detailCell.nameSplitLabel, id: splitName)
         
-        present(detailVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(detailVC, animated: true, completion: nil)
+        }
     }
 }

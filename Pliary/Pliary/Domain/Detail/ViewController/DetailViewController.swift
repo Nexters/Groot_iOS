@@ -91,7 +91,7 @@ extension DetailViewController: UIGestureRecognizerDelegate {
     }
     
     @objc func handlePan(gr: UIPanGestureRecognizer) {
-        guard tableView.contentOffset.y <= tableView.frame.size.height / 2 else {
+        guard tableView.contentOffset.y <= 20 else {
             Hero.shared.cancel()
             return
         }

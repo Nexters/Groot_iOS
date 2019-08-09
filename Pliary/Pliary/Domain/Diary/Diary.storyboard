@@ -60,6 +60,9 @@
                             <constraint firstItem="CHu-2j-rYH" firstAttribute="top" secondItem="f8F-Ny-RMT" secondAttribute="bottom" id="zSQ-OS-k7Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationRightButton" destination="d6O-gH-VIh" id="GqO-BD-Qe3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQT-BV-2a3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
