@@ -112,6 +112,7 @@ extension HomeViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         configureCollectionViewLayoutItemSize()
+        slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
         
         if first {
             setFirstCellSize()
