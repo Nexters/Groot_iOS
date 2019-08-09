@@ -195,7 +195,7 @@
 		CE09477322FC6CC500E7C8A8 /* Section */ = {
 			isa = PBXGroup;
 			children = (
-				CEE0E1A422FB26B900ED0C31 /* Diary */,
+				CEE0E1A422FB26B900ED0C31 /* DiaryCard */,
 				CEE0E1A522FB26C400ED0C31 /* Calendar */,
 			);
 			path = Section;
@@ -385,12 +385,12 @@
 			path = RegisterPlant;
 			sourceTree = "<group>";
 		};
-		CEE0E1A422FB26B900ED0C31 /* Diary */ = {
+		CEE0E1A422FB26B900ED0C31 /* DiaryCard */ = {
 			isa = PBXGroup;
 			children = (
 				CEE0E1A722FB26FC00ED0C31 /* Cell */,
 			);
-			path = Diary;
+			path = DiaryCard;
 			sourceTree = "<group>";
 		};
 		CEE0E1A522FB26C400ED0C31 /* Calendar */ = {
