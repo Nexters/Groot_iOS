@@ -14,5 +14,5 @@ class DetailTableHeaderView: UIView {
         return view
     }
     
-    static let height: CGFloat = (92 + UIApplication.shared.statusBarFrame.height)
+    static let height: CGFloat = (92 + UIApplication.shared.statusBarFrame.height / 2)
 }

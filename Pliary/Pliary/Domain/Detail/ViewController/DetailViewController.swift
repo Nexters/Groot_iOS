@@ -37,7 +37,6 @@ class DetailViewController: UIViewController {
     func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.contentInset = UIEdgeInsets(top: -UIApplication.shared.statusBarFrame.size.height, left: 0, bottom: 0, right: 0)
         
         let mainDetailName = MainDetailTableViewCell.reuseIdentifier
         let mainDetailNib = UINib(nibName: mainDetailName, bundle: nil)
@@ -66,6 +65,10 @@ extension DetailViewController {
         setUpTableView()
         setUpGesture()
     }
+    
+    override func viewDidLayoutSubviews() {
+        tableView.contentInset.top = -UIApplication.shared.statusBarFrame.size.height
+    }
 }
 
 extension DetailViewController: UIGestureRecognizerDelegate {
@@ -76,7 +79,7 @@ extension DetailViewController: UIGestureRecognizerDelegate {
     }
     
     @objc func handlePan(gr: UIPanGestureRecognizer) {
-        guard tableView.contentOffset.y == 0 else {
+        guard tableView.contentOffset.y <= tableView.frame.size.height / 2 else {
             Hero.shared.cancel()
             return
         }
@@ -99,11 +102,11 @@ extension DetailViewController: UIGestureRecognizerDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < view.frame.height {
+        if scrollView.contentOffset.y < tableView.frame.height {
             tableView.isPagingEnabled = true
             tableView.bounces = false
             writeDiaryButton.isHidden = true
-        } else if scrollView.contentOffset.y == view.frame.height {
+        } else if scrollView.contentOffset.y == tableView.frame.height {
             tableView.isPagingEnabled = true
             tableView.bounces = false
             writeDiaryButton.isHidden = false
