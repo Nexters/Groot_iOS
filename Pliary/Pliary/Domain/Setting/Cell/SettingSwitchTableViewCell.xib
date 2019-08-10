@@ -18,6 +18,28 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="344" height="78.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물 주기 알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmj-Wy-hBi">
+                        <rect key="frame" x="36" y="38" width="78" height="20"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                        <color key="textColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qF5-4u-bTQ">
+                        <rect key="frame" x="260" y="36" width="50" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="Cse-Cq-sA4"/>
+                            <constraint firstAttribute="width" constant="48" id="aXT-k2-bRE"/>
+                        </constraints>
+                        <color key="onTintColor" red="0.41568627450980389" green="0.65490196078431373" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fmj-Wy-hBi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="dng-J3-nqD"/>
+                    <constraint firstItem="fmj-Wy-hBi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="38" id="nh5-g7-TFP"/>
+                    <constraint firstAttribute="trailing" secondItem="qF5-4u-bTQ" secondAttribute="trailing" constant="36" id="o4i-3a-MVv"/>
+                    <constraint firstItem="qF5-4u-bTQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="vjl-cQ-WBr"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="155.07246376811597" y="131.58482142857142"/>
