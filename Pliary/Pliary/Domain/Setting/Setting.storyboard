@@ -25,13 +25,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="403"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="42I-A1-dgg">
-                                <rect key="frame" x="36" y="124" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="3il-Re-rF0"/>
-                                    <constraint firstAttribute="height" constant="90" id="aHC-zJ-j0O"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysf-G5-i0B">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
@@ -57,14 +50,6 @@
                                 <rect key="frame" x="0.0" y="403" width="414" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzJ-gH-SK5">
-                                <rect key="frame" x="100" y="188" width="26" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="26" id="DBn-Fg-6BH"/>
-                                    <constraint firstAttribute="height" constant="26" id="YxO-qA-0dK"/>
-                                </constraints>
-                                <state key="normal" image="Camera2"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -74,15 +59,11 @@
                             <constraint firstItem="ysf-G5-i0B" firstAttribute="leading" secondItem="cAH-mu-fBE" secondAttribute="leading" id="K6C-Cy-QSM"/>
                             <constraint firstItem="Kj1-B8-eSJ" firstAttribute="top" secondItem="AjJ-jd-5GG" secondAttribute="bottom" id="Mgq-Ha-OoY"/>
                             <constraint firstAttribute="trailing" secondItem="ysf-G5-i0B" secondAttribute="trailing" id="bED-8e-1pm"/>
-                            <constraint firstItem="uzJ-gH-SK5" firstAttribute="top" secondItem="ysf-G5-i0B" secondAttribute="bottom" constant="84" id="cCM-MG-foX"/>
                             <constraint firstItem="YMA-R6-5je" firstAttribute="top" secondItem="cAH-mu-fBE" secondAttribute="top" id="cDh-c2-OC9"/>
                             <constraint firstItem="YMA-R6-5je" firstAttribute="height" secondItem="cAH-mu-fBE" secondAttribute="height" multiplier="45:100" id="gsA-l3-1Hf"/>
                             <constraint firstAttribute="trailing" secondItem="YMA-R6-5je" secondAttribute="trailing" id="kAZ-ra-9NZ"/>
                             <constraint firstAttribute="trailing" secondItem="AjJ-jd-5GG" secondAttribute="trailing" id="mpx-gK-LHi"/>
-                            <constraint firstItem="42I-A1-dgg" firstAttribute="leading" secondItem="cAH-mu-fBE" secondAttribute="leading" constant="36" id="pNQ-4o-aOX"/>
                             <constraint firstItem="AjJ-jd-5GG" firstAttribute="leading" secondItem="cAH-mu-fBE" secondAttribute="leading" id="woI-4Q-4p3"/>
-                            <constraint firstItem="uzJ-gH-SK5" firstAttribute="leading" secondItem="cAH-mu-fBE" secondAttribute="leading" constant="100" id="ziO-cW-xj2"/>
-                            <constraint firstItem="42I-A1-dgg" firstAttribute="top" secondItem="ysf-G5-i0B" secondAttribute="bottom" constant="20" id="ztt-cR-Rui"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -93,7 +74,5 @@
     </scenes>
     <resources>
         <image name="BtnAllowLeft" width="24" height="24"/>
-        <image name="Camera2" width="26" height="26"/>
-        <image name="Profile" width="36" height="36"/>
     </resources>
 </document>

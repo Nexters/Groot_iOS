@@ -26,6 +26,12 @@
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
 		CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09477522FDEC8200E7C8A8 /* Setting.storyboard */; };
 		CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */; };
+		CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */; };
+		CE09477C22FE6CAF00E7C8A8 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */; };
+		CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */; };
+		CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */; };
+		CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */; };
+		CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
 		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
 		CE5F520922F1F45700F2E777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520722F1F45700F2E777 /* User.swift */; };
@@ -84,6 +90,12 @@
 		CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		CE09477522FDEC8200E7C8A8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
+		CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNextTableViewCell.swift; sourceTree = "<group>"; };
+		CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNextTableViewCell.xib; sourceTree = "<group>"; };
+		CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -209,10 +221,32 @@
 		CE09477422FDEC6D00E7C8A8 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				CE09477E22FE6D9100E7C8A8 /* ViewController */,
+				CE09477D22FE6D8D00E7C8A8 /* Cell */,
 				CE09477522FDEC8200E7C8A8 /* Setting.storyboard */,
-				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		CE09477D22FE6D8D00E7C8A8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */,
+				CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */,
+				CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */,
+				CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */,
+				CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */,
+				CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE09477E22FE6D9100E7C8A8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CE5F520522F1F45700F2E777 /* Model */ = {
@@ -503,6 +537,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE09477C22FE6CAF00E7C8A8 /* UserProfileView.xib in Resources */,
+				CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */,
 				CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
@@ -514,6 +550,7 @@
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
+				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
 				CE09477022FC6B9F00E7C8A8 /* Diary.storyboard in Resources */,
 				CEE0E1B122FB302D00ED0C31 /* GoogleService-Info.plist in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
@@ -611,12 +648,15 @@
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
+				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
 				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
+				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
+				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
 				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
 				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
