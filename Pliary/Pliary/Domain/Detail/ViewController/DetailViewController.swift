@@ -31,9 +31,9 @@ class DetailViewController: UIViewController {
     }
     
     func goDiaryViewController(with diaryCard: DiaryCard?) {
-        let storyboard = UIStoryboard.init(name: StoryboardName.diary, bundle: Bundle(for: DiaryViewController.self))
+        let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: Bundle(for: DiaryViewController.self))
         guard let writeDiaryVC = storyboard.instantiateViewController(withIdentifier: DiaryViewController.identifier) as? DiaryViewController else {
-            return
+            return 
         }
         
         writeDiaryVC.hero.isEnabled = true
