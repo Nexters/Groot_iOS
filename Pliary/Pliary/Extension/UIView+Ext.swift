@@ -9,6 +9,8 @@
 import UIKit
 
 @IBDesignable extension UIView {
+    class var identifier: String { return String(describing: self) }
+    
     @IBInspectable var borderColor: UIColor? {
         set {
             layer.borderColor = newValue?.cgColor

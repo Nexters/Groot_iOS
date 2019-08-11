@@ -10,7 +10,7 @@ import UIKit
 
 class DetailTableHeaderView: UIView {
     static func instance() -> DetailTableHeaderView {
-        let view: DetailTableHeaderView = UIView.createViewFromNib(nibName: "DetailTableHeaderView")
+        let view: DetailTableHeaderView = UIView.createViewFromNib(nibName: DetailTableHeaderView.identifier)
         return view
     }
     

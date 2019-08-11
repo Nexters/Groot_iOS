@@ -10,15 +10,8 @@ import UIKit
 
 class PasswordResetPopupView: UIView {
     
-   
-    
-    // identifier
-    class var identifier: String {
-        return "PasswordResetPopupView"
-    }
-    
     class func instanceFromNib() -> UIView {
-        return UINib(nibName: self.identifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
+        return UINib(nibName: PasswordResetPopupView.identifier, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
     
     @IBAction func PopupViewCloseButtonClick(_ sender: UIButton) {

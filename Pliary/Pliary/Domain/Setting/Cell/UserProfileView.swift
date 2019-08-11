@@ -11,7 +11,7 @@ import UIKit
 class UserProfileView: UIView {
     
     static func instance() -> UserProfileView {
-        let view: UserProfileView = UIView.createViewFromNib(nibName: "UserProfileView")
+        let view: UserProfileView = UIView.createViewFromNib(nibName: UserProfileView.identifier)
         return view
     }
     

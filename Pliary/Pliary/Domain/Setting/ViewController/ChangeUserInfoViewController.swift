@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class ChangeUserInfoViewController: UIViewController, UITextFieldDelegate {
 
@@ -24,6 +25,24 @@ class ChangeUserInfoViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func handlePan(gr: UIPanGestureRecognizer) {
+        let translation = gr.translation(in: view)
+        let velocity = gr.velocity(in: view)
+        
+        switch gr.state {
+        case .began:
+            dismiss(animated: true, completion: nil)
+        case .changed:
+            Hero.shared.update(translation.x / view.bounds.width)
+        default:
+            if ((translation.x + velocity.x) / view.bounds.width) > 0.5 {
+                Hero.shared.finish()
+            } else {
+                Hero.shared.cancel()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +58,9 @@ class ChangeUserInfoViewController: UIViewController, UITextFieldDelegate {
         changePWButton.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
+        view.addGestureRecognizer(gesture)
     }
     
     @objc func dismissKeyboard() {

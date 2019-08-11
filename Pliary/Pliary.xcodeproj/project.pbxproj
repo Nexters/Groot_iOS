@@ -32,10 +32,8 @@
 		CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */; };
 		CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */; };
 		CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */; };
-		CE0947A422FE888C00E7C8A8 /* UserSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09479E22FE888C00E7C8A8 /* UserSetting.storyboard */; };
-		CE0947A522FE888C00E7C8A8 /* UserSettingViewController+ UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0947A022FE888C00E7C8A8 /* UserSettingViewController+ UIImagePickerControllerDelegate.swift */; };
 		CE0947A622FE888C00E7C8A8 /* ChangeUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0947A222FE888C00E7C8A8 /* ChangeUserInfoViewController.swift */; };
-		CE0947A722FE888C00E7C8A8 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0947A322FE888C00E7C8A8 /* UserSettingViewController.swift */; };
+		CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0947AA23003B9700E7C8A8 /* Setting.swift */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
 		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
 		CE5F520922F1F45700F2E777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520722F1F45700F2E777 /* User.swift */; };
@@ -100,10 +98,8 @@
 		CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNextTableViewCell.xib; sourceTree = "<group>"; };
 		CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
-		CE09479E22FE888C00E7C8A8 /* UserSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserSetting.storyboard; sourceTree = "<group>"; };
-		CE0947A022FE888C00E7C8A8 /* UserSettingViewController+ UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserSettingViewController+ UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		CE0947A222FE888C00E7C8A8 /* ChangeUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserInfoViewController.swift; sourceTree = "<group>"; };
-		CE0947A322FE888C00E7C8A8 /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		CE0947AA23003B9700E7C8A8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -181,7 +177,6 @@
 		CE09476322FC6A7000E7C8A8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CE09479D22FE888C00E7C8A8 /* UserSetting */,
 				CE09477422FDEC6D00E7C8A8 /* Setting */,
 				CE5F520F22F1F62A00F2E777 /* Login */,
 				CE5F521222F1F68F00F2E777 /* Home */,
@@ -233,6 +228,7 @@
 				CE09477E22FE6D9100E7C8A8 /* ViewController */,
 				CE09477D22FE6D8D00E7C8A8 /* Cell */,
 				CE09477522FDEC8200E7C8A8 /* Setting.storyboard */,
+				CE0947AA23003B9700E7C8A8 /* Setting.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -254,35 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
+				CE0947A222FE888C00E7C8A8 /* ChangeUserInfoViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		CE09479D22FE888C00E7C8A8 /* UserSetting */ = {
-			isa = PBXGroup;
-			children = (
-				CE09479E22FE888C00E7C8A8 /* UserSetting.storyboard */,
-				CE09479F22FE888C00E7C8A8 /* Extension */,
-				CE0947A122FE888C00E7C8A8 /* ViewContoller */,
-			);
-			path = UserSetting;
-			sourceTree = "<group>";
-		};
-		CE09479F22FE888C00E7C8A8 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				CE0947A022FE888C00E7C8A8 /* UserSettingViewController+ UIImagePickerControllerDelegate.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		CE0947A122FE888C00E7C8A8 /* ViewContoller */ = {
-			isa = PBXGroup;
-			children = (
-				CE0947A222FE888C00E7C8A8 /* ChangeUserInfoViewController.swift */,
-				CE0947A322FE888C00E7C8A8 /* UserSettingViewController.swift */,
-			);
-			path = ViewContoller;
 			sourceTree = "<group>";
 		};
 		CE5F520522F1F45700F2E777 /* Model */ = {
@@ -575,7 +545,6 @@
 			files = (
 				CE09477C22FE6CAF00E7C8A8 /* UserProfileView.xib in Resources */,
 				CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */,
-				CE0947A422FE888C00E7C8A8 /* UserSetting.storyboard in Resources */,
 				CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
@@ -674,13 +643,13 @@
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
-				CE0947A722FE888C00E7C8A8 /* UserSettingViewController.swift in Sources */,
 				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
 				CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */,
 				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
+				CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
@@ -692,7 +661,6 @@
 				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
-				CE0947A522FE888C00E7C8A8 /* UserSettingViewController+ UIImagePickerControllerDelegate.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
 				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
