@@ -22,7 +22,13 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
             return
         }
         
-        userProfileImageView.image = selectedImage.resize(withSize: CGSize(width: 151.0, height: 151.0), contentMode: .contentAspectFill)
+        let userProfile = UserProfileView.instance()
+        userProfile.profileImageView.image = selectedImage
+        userProfile.profileImageView.contentMode = .scaleAspectFill
+        userProfile.frame = CGRect(x: 0, y: 0, width: userProfileView.bounds.width, height: userProfileView.bounds.height)
+        
+        userProfileView.addSubview(userProfile);
+        
         dismiss(animated: true, completion: nil)
     }
     //MARK: Actions

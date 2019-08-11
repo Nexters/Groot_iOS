@@ -52,13 +52,11 @@ class PasswordResetPopupViewController: UIViewController, UITextFieldDelegate {
             emailResetButton.isHidden = true
             warningAlertImage.isHidden = false
             successAlertImage.isHidden = true
-            //            emailGuideLabel.isHidden = false
             emailGuideLabel.text = "이메일 형식에 맞지 않습니다."
             emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
         } else {
             emailGuideLabel.text = ""
             emailGuideLabel.frame.size = CGSize(width: 0, height: 0)
-            //            emailGuideLabel.isHidden = true
             emailResetButton.isHidden = true
             warningAlertImage.isHidden = true
             successAlertImage.isHidden = false
@@ -66,14 +64,14 @@ class PasswordResetPopupViewController: UIViewController, UITextFieldDelegate {
         
         if isValidEmailAddress(email: email) {
             emailResetButton.isEnabled = true
-            emailResetButton.backgroundColor = UIColor(red: 106.0/255.0, green: 167.0/255.0, blue: 111.0/255.0, alpha: 1.0)
+            emailResetButton.backgroundColor = Color.green
             
-            emailResetButton.layer.applySketchShadow(color: UIColor(red: 105.0/255.0, green: 146.0/255.0, blue: 117.0/255.0, alpha: 0.4), alpha: 0.4, x: 0, y: 10, blur: 14, spread: 0)
+            emailResetButton.layer.applySketchShadow(color: Color.buttonShadow, alpha: 0.4, x: 0, y: 10, blur: 14, spread: 0)
             emailResetButton.setTitleColor(UIColor.white, for: .normal)
         } else {
             emailResetButton.isEnabled = false
-            emailResetButton.setTitleColor(UIColor(red: 205.0/255.0, green: 205.0/255.0, blue: 205.0/255.0, alpha: 1.0), for: .normal)
-            emailResetButton.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+            emailResetButton.setTitleColor(Color.gray5, for: .normal)
+            emailResetButton.backgroundColor = Color.gray7
             emailResetButton.layer.applySketchShadow(color: UIColor.white, alpha: 0, x: 0, y: 0, blur: 0, spread: 0)
             
         }
