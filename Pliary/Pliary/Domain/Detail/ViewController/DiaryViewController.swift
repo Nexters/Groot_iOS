@@ -11,6 +11,7 @@ import Hero
 
 class DiaryViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var navigationRightButton: UIButton!
     
     var currentDiaryCard: DiaryCard? {
@@ -48,5 +49,7 @@ extension DiaryViewController {
         super.viewDidLoad()
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
         view.addGestureRecognizer(gesture)
+        
+        scrollView.contentSize.height = 100000
     }
 }

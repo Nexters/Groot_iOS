@@ -22,7 +22,6 @@
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
 		CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */; };
 		CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */; };
-		CE09477022FC6B9F00E7C8A8 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09476F22FC6B9F00E7C8A8 /* Diary.storyboard */; };
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
 		CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09477522FDEC8200E7C8A8 /* Setting.storyboard */; };
 		CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */; };
@@ -88,7 +87,6 @@
 		CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pliary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordResetPopupView.xib; sourceTree = "<group>"; };
 		CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetPopupView.swift; sourceTree = "<group>"; };
-		CE09476F22FC6B9F00E7C8A8 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		CE09477522FDEC8200E7C8A8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -182,18 +180,8 @@
 				CE5F521222F1F68F00F2E777 /* Home */,
 				CEE0E19F22FB03F900ED0C31 /* RegisterPlant */,
 				CE5F521D22F1FBE400F2E777 /* Detail */,
-				CE09476422FC6AA100E7C8A8 /* Diary */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		CE09476422FC6AA100E7C8A8 /* Diary */ = {
-			isa = PBXGroup;
-			children = (
-				CE09476E22FC6B9000E7C8A8 /* ViewController */,
-				CE09476F22FC6B9F00E7C8A8 /* Diary.storyboard */,
-			);
-			path = Diary;
 			sourceTree = "<group>";
 		};
 		CE09476922FC6B4F00E7C8A8 /* View */ = {
@@ -203,14 +191,6 @@
 				CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		CE09476E22FC6B9000E7C8A8 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CE09477322FC6CC500E7C8A8 /* Section */ = {
@@ -426,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */,
+				CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -557,7 +538,6 @@
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
-				CE09477022FC6B9F00E7C8A8 /* Diary.storyboard in Resources */,
 				CEE0E1B122FB302D00ED0C31 /* GoogleService-Info.plist in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
