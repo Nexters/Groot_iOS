@@ -27,7 +27,8 @@ class DetailViewController: UIViewController {
     
     func setExample() {
         let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
-        let diary = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: UIImage(named: "sampleDiary"))
+        let diary = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: UIImage(named: "SampleDiary"))
+        
         diaryCards.append(diary)
         diaryCards.append(diary)
         diaryCards.append(diary)
@@ -50,12 +51,16 @@ class DetailViewController: UIViewController {
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
-        writeDiaryVC.currentDiaryCard = diaryCard
         
         DispatchQueue.main.async {
             self.present(writeDiaryVC, animated: true, completion: {
                 writeDiaryVC.hero.modalAnimationType = .pull(direction: .right)
             })
+            
+            if diaryCard != nil {
+                writeDiaryVC.currentMode = .showDiary
+                writeDiaryVC.currentDiaryCard = diaryCard
+            }
         }
     }
     

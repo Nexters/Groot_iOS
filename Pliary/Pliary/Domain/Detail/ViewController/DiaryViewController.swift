@@ -17,12 +17,29 @@ enum DiaryViewMode {
 
 class DiaryViewController: UIViewController {
     
+    @IBOutlet weak var addOrSubtractImageView: UIImageView!
+    @IBOutlet weak var addOrSubtractContentView: UIView!
+    @IBOutlet weak var diaryImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var diaryDateLabel: UILabel!
+    @IBOutlet weak var placeholderLabel: UILabel!
+    @IBOutlet weak var diaryTextView: UITextView!
+    
     @IBOutlet weak var navigationRightButton: UIButton!
+    
     
     var currentMode: DiaryViewMode = .writeNewDiary {
         didSet {
-            
+            switch currentMode {
+            case .writeNewDiary:
+                ()
+            case .editDiary:
+                ()
+            case .showDiary:
+                addOrSubtractContentView.isHidden = true
+                diaryImageView.image = currentDiaryCard?.diaryImage
+                diaryDateLabel.text = currentDiaryCard?.timeStamp
+            }
         }
     }
     
@@ -30,6 +47,14 @@ class DiaryViewController: UIViewController {
         didSet {
             reload()
         }
+    }
+    
+    @IBAction func tapAddOrSubtractButton(_ sender: Any) {
+        
+    }
+    
+    @IBAction func tapRightNavigationButton(_ sender: Any) {
+        
     }
     
     @objc func handlePan(gr: UIPanGestureRecognizer) {
@@ -51,7 +76,22 @@ class DiaryViewController: UIViewController {
     }
     
     private func reload() {
+        diaryDateLabel.text = currentDiaryCard?.timeStamp
         
+        if currentDiaryCard?.diaryText == nil {
+            placeholderLabel.isHidden = false
+        } else {
+            placeholderLabel.isHidden = true
+            diaryTextView.text = currentDiaryCard?.diaryText
+        }
+        
+        if currentDiaryCard?.diaryImage == nil {
+            addOrSubtractContentView.isHidden = false
+            diaryImageView.image = nil
+        } else {
+            addOrSubtractContentView.isHidden = true
+            diaryImageView.image = currentDiaryCard?.diaryImage
+        }
     }
 }
 
