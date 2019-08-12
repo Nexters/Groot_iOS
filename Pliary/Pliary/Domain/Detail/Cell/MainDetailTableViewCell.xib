@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="614.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0py-sq-4wQ">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0py-sq-4wQ" customClass="AnimationView" customModule="Lottie">
                         <rect key="frame" x="0.0" y="0.0" width="391" height="438.5"/>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.85098039219999999" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>

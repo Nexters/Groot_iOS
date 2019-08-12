@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Lottie
 
 class MainDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var plantView: UIView!
+    @IBOutlet weak var plantView: AnimationView!
     @IBOutlet weak var blackWaterImageView: UIImageView!
     @IBOutlet weak var addWaterButton: UIButton!
     @IBOutlet weak var dayLeftLabel: UILabel!

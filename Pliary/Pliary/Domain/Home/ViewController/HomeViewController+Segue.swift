@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 // MARK: - Delegate UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
@@ -120,8 +121,21 @@ extension HomeViewController: UICollectionViewDelegate {
         enableHero(view: detailCell.customNameLabel, id: customNameID)
         enableHero(view: detailCell.nameSplitLabel, id: splitName)
         
-        DispatchQueue.main.async {
-            self.present(detailVC, animated: true, completion: nil)
-        }
+        
+        let url = URL(string: "https://assets7.lottiefiles.com/packages/lf20_ydl0uM.json")!
+        //        let animation = Animation.named("plant1")
+        
+        Animation.loadedFrom(url: url, closure: { animation in
+            detailCell.plantView.animation = animation
+            detailCell.plantView.contentMode = .scaleAspectFill
+            detailCell.plantView.loopMode = .loop
+            
+            DispatchQueue.main.async {
+                self.present(detailVC, animated: true, completion: {
+                    detailCell.plantView.play()
+                })
+            }
+        }, animationCache: nil)
+        
     }
 }
