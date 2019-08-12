@@ -9,10 +9,22 @@
 import UIKit
 import Hero
 
+enum DiaryViewMode {
+    case showDiary
+    case editDiary
+    case writeNewDiary
+}
+
 class DiaryViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var navigationRightButton: UIButton!
+    
+    var currentMode: DiaryViewMode = .writeNewDiary {
+        didSet {
+            
+        }
+    }
     
     var currentDiaryCard: DiaryCard? {
         didSet {
