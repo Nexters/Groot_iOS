@@ -22,12 +22,12 @@ extension HomeViewController {
         let inset: CGFloat = 40
         let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
         let currentIndex = scrollView.contentOffset.x / unitScrollSize
-        
+
         collectionView.visibleCells.forEach {
             let index = Int($0.center.x / unitScrollSize)
             let difference = abs(CGFloat(index) - currentIndex)
             let topConstraint = difference * 20
-            
+
             if let cell = $0 as? HomeCardCollectionViewCell {
                 cell.topLayoutConstraint.constant = topConstraint
             } else if let cell = $0 as? AddCardCollectionViewCell {

@@ -21,10 +21,15 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         let url = URL(string: "https://assets7.lottiefiles.com/packages/lf20_ydl0uM.json")!
 //        let animation = Animation.named("plant1")
+//        self.plantView.animation = animation
+//
+//        self.plantView.play()
+//        self.plantView.contentMode = .scaleAspectFill
+//        self.plantView.loopMode = .loop
         
         Animation.loadedFrom(url: url, closure: { animation in
             self.plantView.animation = animation
-            
+
             self.plantView.play()
             self.plantView.contentMode = .scaleAspectFill
             self.plantView.loopMode = .loop
@@ -33,7 +38,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     }
 
     func setUp(with: Plant) {
-        plantView.play()
+//        plantView.play()
     }
     
 }
