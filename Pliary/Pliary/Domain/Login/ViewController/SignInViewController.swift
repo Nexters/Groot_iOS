@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Hero
 
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
@@ -25,19 +26,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        emailTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
-        passwordTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
+        emailTextField.setBottomBorder(color: Color.gray7)
+        passwordTextField.setBottomBorder(color: Color.gray7)
         
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
-            mainView()
             return
         }
-        updateLoginButtonState()
-    }
-    
-    private func mainView(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -77,13 +72,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func PopupViewLoad(_ sender: UIButton) {
         
-        let popup = UINib(nibName: String(PasswordResetPopupView.identifier), bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
+        let popup = PasswordResetPopupView.createViewFromNib(nibName: PasswordResetPopupView.identifier)
 
         popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
         
         self.view.addSubview(popup);
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

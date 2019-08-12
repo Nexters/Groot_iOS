@@ -6,9 +6,9 @@
 //  Copyright © 2019년 groot.nexters.pliary. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class User : NSObject {
+struct User {
     
     var userId: String
     var idToken: String
@@ -16,9 +16,9 @@ class User : NSObject {
     var givenName: String
     var familyName: String
     var email: String
-    var photo: UIImage?
+    var photo: String?
 
-    init(userId: String , idToken: String, fullName: String, givenName: String, familyName: String, email: String, photo: UIImage?) {
+    init(userId: String , idToken: String, fullName: String, givenName: String, familyName: String, email: String, photo: String) {
         self.userId = userId
         self.idToken = idToken
         self.fullName = fullName

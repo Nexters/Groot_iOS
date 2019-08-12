@@ -49,9 +49,9 @@
 		CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */; };
 		CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */; };
 		CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262B22E2EC0E00264114 /* AppDelegate.swift */; };
-		CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262D22E2EC0E00264114 /* ViewController.swift */; };
 		CE69263322E2EC1000264114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE69263222E2EC1000264114 /* Assets.xcassets */; };
 		CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE69263422E2EC1000264114 /* LaunchScreen.storyboard */; };
+		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -115,10 +115,10 @@
 		CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
 		CE69262822E2EC0E00264114 /* Pliary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pliary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE69262B22E2EC0E00264114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE69262D22E2EC0E00264114 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE69263222E2EC1000264114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE69263522E2EC1000264114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE69263722E2EC1000264114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */,
-				CE69262D22E2EC0E00264114 /* ViewController.swift */,
+				CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */,
 				76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */,
 				762B4FF122F1B129002C24EF /* SignInViewController.swift */,
 			);
@@ -618,7 +618,6 @@
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */,
 				765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */,
-				CE69262E22E2EC0E00264114 /* ViewController.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
@@ -637,6 +636,7 @@
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
 				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
+				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
 				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,

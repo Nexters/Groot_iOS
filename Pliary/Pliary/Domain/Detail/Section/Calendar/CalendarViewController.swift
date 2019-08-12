@@ -49,8 +49,11 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        let nibName = UINib(nibName: "WateringInfoTableViewCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "WateringInfoTableViewCell")
+        
+        
+        let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
+        let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
+        tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
         self.view.addSubview(self.tableView)
         
         waterImageView.drawDottedLine(start: CGPoint(x: waterImageView.bounds.minX + 20, y: waterImageView.bounds.minY), end: CGPoint(x: waterImageView.bounds.maxX - 20, y: waterImageView.bounds.minY), view: waterImageView)
@@ -114,10 +117,8 @@ extension CalendarViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "WateringInfoTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WateringInfoTableViewCell else {
-            fatalError("The dequeued cell is not an instance of WateringInfoTableViewCell.")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.reuseIdentifier, for: indexPath) as? WateringInfoTableViewCell ?? WateringInfoTableViewCell()
+        
         let date = dates[indexPath.row]
         cell.waterImage.image = UIImage(named: "WaterGreen")
         cell.dateLabel.text = self.formatterForCell.string(from: date)

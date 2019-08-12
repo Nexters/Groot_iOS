@@ -21,10 +21,22 @@ class DetailViewController: UIViewController {
     
     var diaryCards: [DiaryCard] = []
     var diaryCardsCount: Int {
-        return 10
-//        return diaryCards.count + 2
+        return diaryCards.count + 2
     }
     var currentSection: Section = .diaryCard
+    
+    func setExample() {
+        let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
+        let diary = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: UIImage(named: "sampleDiary"))
+        diaryCards.append(diary)
+        diaryCards.append(diary)
+        diaryCards.append(diary)
+        diaryCards.append(diary)
+        diaryCards.append(diary)
+        diaryCards.append(diary)
+        diaryCards.append(diary)
+        diaryCards.append(diary)
+    }
     
     @IBAction func tapWriteDiaryButton(_ sender: Any) {
         goDiaryViewController(with: nil)
@@ -38,6 +50,7 @@ class DetailViewController: UIViewController {
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
+        writeDiaryVC.currentDiaryCard = diaryCard
         
         DispatchQueue.main.async {
             self.present(writeDiaryVC, animated: true, completion: {
@@ -76,6 +89,7 @@ extension DetailViewController {
         
         setUpTableView()
         setUpGesture()
+        setExample()
     }
     
     override func viewDidLayoutSubviews() {
@@ -194,8 +208,8 @@ extension DetailViewController: UITableViewDataSource {
         if indexPath.section == 0 && indexPath.row == 0 {
             // resume animation
         } else if currentSection == .diaryCard, indexPath.row != 0  {
-//            let diaryCard = DiaryCard[indexPath.row]
-            goDiaryViewController(with: nil)
+            let diaryCard = diaryCards[indexPath.row]
+            goDiaryViewController(with: diaryCard)
         }
     }
     

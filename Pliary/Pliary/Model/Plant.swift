@@ -6,9 +6,9 @@
 //  Copyright © 2019년 groot.nexters.pliary. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Plant: NSObject {
+struct Plant {
 
     var name: String
     var species: String
