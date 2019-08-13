@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
     
     var diaryCards: [DiaryCard] = []
     var diaryCardsCount: Int {
-        return diaryCards.count + 2
+        return diaryCards.count + 1
     }
     var currentSection: Section = .diaryCard
     
@@ -98,6 +98,8 @@ extension DetailViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         tableView.contentInset.top = -UIApplication.shared.statusBarFrame.size.height
     }
 }
@@ -213,7 +215,7 @@ extension DetailViewController: UITableViewDataSource {
         if indexPath.section == 0 && indexPath.row == 0 {
             // resume animation
         } else if currentSection == .diaryCard, indexPath.row != 0  {
-            let diaryCard = diaryCards[indexPath.row]
+            let diaryCard = diaryCards[indexPath.row - 1]
             goDiaryViewController(with: diaryCard)
         }
     }

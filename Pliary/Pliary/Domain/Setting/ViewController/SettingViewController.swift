@@ -124,6 +124,8 @@ extension SettingViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         userProfileView?.frame = CGRect(origin: .zero, size: profileBackgrondView.frame.size)
     }
 }
