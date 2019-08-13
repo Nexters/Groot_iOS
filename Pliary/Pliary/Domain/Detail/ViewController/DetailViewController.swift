@@ -86,6 +86,19 @@ class DetailViewController: UIViewController {
         tableView.addGestureRecognizer(gesture)
         gesture.delegate = self
     }
+    
+    func animatePlant(_ bool: Bool) {
+        for cell in tableView.visibleCells {
+            if let plantCell = cell as? MainDetailTableViewCell {
+                if bool {
+                    plantCell.plantView.startAnimatingGif()
+                } else {
+                    plantCell.plantView.stopAnimatingGif()
+                }
+                return
+            }
+        }
+    }
 }
 
 extension DetailViewController {
@@ -135,6 +148,8 @@ extension DetailViewController: UIGestureRecognizerDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        animatePlant(false)
+        
         if scrollView.contentOffset.y < tableView.frame.height {
             tableView.isPagingEnabled = true
             tableView.bounces = false
@@ -148,6 +163,18 @@ extension DetailViewController: UIGestureRecognizerDelegate {
             tableView.bounces = true
             writeDiaryButton.isHidden = false
         }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if tableView.isDecelerating == false {
+            // Perform whichever function you desire for when scrolling has stopped
+            animatePlant(true)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // Perform whichever function you desire for when scrolling has stopped
+        animatePlant(true)
     }
 }
 

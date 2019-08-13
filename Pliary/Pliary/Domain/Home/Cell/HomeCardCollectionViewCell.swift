@@ -21,7 +21,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         do {
-            let gif = try UIImage(gifName: "plant1.gif", levelOfIntegrity:0.3)
+            let gif = try UIImage(gifName: "plant.gif", levelOfIntegrity: 0.5)
             plantView.setGifImage(gif)
             plantView.startAnimatingGif()
         } catch {
