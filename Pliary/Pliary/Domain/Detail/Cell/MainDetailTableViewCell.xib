@@ -18,10 +18,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="614.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0py-sq-4wQ" customClass="AnimationView" customModule="Lottie">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w84-eI-BEg">
                         <rect key="frame" x="0.0" y="0.0" width="391" height="438.5"/>
-                        <color key="backgroundColor" red="0.93333333330000001" green="0.85098039219999999" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="멋쟁이 투투" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zus-a4-Oq7">
                         <rect key="frame" x="106" y="148" width="249" height="20"/>
                         <constraints>
@@ -118,32 +117,32 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="zus-a4-Oq7" secondAttribute="trailing" constant="36" id="37s-FB-EzU"/>
                     <constraint firstItem="IWN-ZV-whA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="100" id="6cT-Uc-8c3"/>
-                    <constraint firstAttribute="trailing" secondItem="0py-sq-4wQ" secondAttribute="trailing" id="8E9-uA-xhd"/>
-                    <constraint firstItem="0py-sq-4wQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8FN-rd-V9a"/>
                     <constraint firstItem="c5C-Rb-Gb4" firstAttribute="leading" secondItem="GA0-EP-rL2" secondAttribute="trailing" constant="6" id="8IO-aG-teb"/>
                     <constraint firstItem="bwl-hn-6Fg" firstAttribute="leading" secondItem="huv-Ga-LBY" secondAttribute="trailing" constant="9" id="9mc-6o-cVE"/>
-                    <constraint firstItem="c5C-Rb-Gb4" firstAttribute="top" secondItem="0py-sq-4wQ" secondAttribute="bottom" constant="26" id="APx-Hb-e86"/>
                     <constraint firstItem="huv-Ga-LBY" firstAttribute="top" secondItem="IWN-ZV-whA" secondAttribute="bottom" constant="8" id="AzC-xT-TDf"/>
+                    <constraint firstItem="1ml-kM-a18" firstAttribute="top" secondItem="ZYn-2j-Tak" secondAttribute="bottom" constant="3" id="ByN-xH-DlN"/>
                     <constraint firstAttribute="bottom" secondItem="1ml-kM-a18" secondAttribute="bottom" constant="10" id="Cnl-vF-Gwc"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="Csu-Yb-Rux"/>
                     <constraint firstAttribute="trailing" secondItem="RJE-g4-op9" secondAttribute="trailing" constant="38" id="HXT-Qq-bVa"/>
                     <constraint firstAttribute="trailing" secondItem="mpd-Ze-Utk" secondAttribute="trailing" constant="36" id="K8X-bV-vrn"/>
                     <constraint firstItem="IWN-ZV-whA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="PGI-IA-T2Q"/>
                     <constraint firstItem="GA0-EP-rL2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="QHH-hU-fhU"/>
-                    <constraint firstItem="0py-sq-4wQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qx1-Wq-Z27"/>
+                    <constraint firstItem="w84-eI-BEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RtN-rr-UTa"/>
                     <constraint firstItem="RJE-g4-op9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="112" id="dHV-5q-4ay"/>
                     <constraint firstAttribute="trailing" secondItem="IWN-ZV-whA" secondAttribute="trailing" constant="36" id="e7f-Ii-fJe"/>
                     <constraint firstAttribute="trailing" secondItem="ZYn-2j-Tak" secondAttribute="trailing" constant="36" id="exI-e7-Qzi"/>
                     <constraint firstItem="huv-Ga-LBY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="g0J-n8-QIG"/>
-                    <constraint firstAttribute="bottom" secondItem="0py-sq-4wQ" secondAttribute="bottom" constant="176" id="gwa-oS-dGm"/>
                     <constraint firstItem="zus-a4-Oq7" firstAttribute="leading" secondItem="bwl-hn-6Fg" secondAttribute="trailing" constant="9" id="isZ-OV-RR9"/>
-                    <constraint firstItem="GA0-EP-rL2" firstAttribute="top" secondItem="0py-sq-4wQ" secondAttribute="bottom" constant="28" id="joy-VE-nrZ"/>
+                    <constraint firstItem="GA0-EP-rL2" firstAttribute="top" secondItem="w84-eI-BEg" secondAttribute="bottom" constant="28" id="iw2-nW-x68"/>
+                    <constraint firstAttribute="bottom" secondItem="w84-eI-BEg" secondAttribute="bottom" constant="176" id="l45-wL-VGy"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="top" secondItem="c5C-Rb-Gb4" secondAttribute="bottom" constant="15" id="mOT-8A-gJ0"/>
                     <constraint firstItem="1ml-kM-a18" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ojn-wT-Iem"/>
                     <constraint firstItem="bwl-hn-6Fg" firstAttribute="top" secondItem="IWN-ZV-whA" secondAttribute="bottom" constant="8" id="oqN-aN-NRl"/>
                     <constraint firstAttribute="trailing" secondItem="1ml-kM-a18" secondAttribute="trailing" id="qOP-Uu-NYy"/>
                     <constraint firstItem="zus-a4-Oq7" firstAttribute="top" secondItem="IWN-ZV-whA" secondAttribute="bottom" constant="8" id="s9l-I5-q39"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="top" secondItem="mpd-Ze-Utk" secondAttribute="bottom" constant="38" id="tMp-sX-WYs"/>
+                    <constraint firstAttribute="trailing" secondItem="w84-eI-BEg" secondAttribute="trailing" id="tzL-Sh-w9g"/>
+                    <constraint firstItem="w84-eI-BEg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zIf-bO-qnz"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -154,7 +153,7 @@
                 <outlet property="englishNameLabel" destination="IWN-ZV-whA" id="NX7-gG-RQj"/>
                 <outlet property="koreanNameLabel" destination="huv-Ga-LBY" id="dUg-XC-6Sy"/>
                 <outlet property="nameSplitLabel" destination="bwl-hn-6Fg" id="jTh-1R-NSR"/>
-                <outlet property="plantView" destination="0py-sq-4wQ" id="ArG-2m-khA"/>
+                <outlet property="plantView" destination="w84-eI-BEg" id="Vpg-mW-vAK"/>
             </connections>
             <point key="canvasLocation" x="180.43478260869566" y="168.41517857142856"/>
         </tableViewCell>

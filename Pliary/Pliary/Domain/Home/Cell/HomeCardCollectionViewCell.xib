@@ -21,10 +21,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-t0-LG1">
                         <rect key="frame" x="10" y="20" width="254" height="325"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-Rh-Jhv" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="16" y="16" width="222" height="229"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBlack" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-gx-DY5">
                                 <rect key="frame" x="16" y="285" width="20" height="20"/>
                                 <constraints>
@@ -50,6 +46,9 @@
                                 <color key="textColor" red="0.5490196078431373" green="0.56470588235294117" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbw-pq-0tM">
+                                <rect key="frame" x="16" y="16" width="222" height="229"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8G-aF-bnu">
                                 <rect key="frame" x="164" y="215" width="60" height="60"/>
                                 <constraints>
@@ -62,16 +61,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Y56-rp-PYB" secondAttribute="bottom" constant="16" id="2yb-Pr-A0D"/>
-                            <constraint firstAttribute="trailing" secondItem="gt7-Rh-Jhv" secondAttribute="trailing" constant="16" id="63q-Ga-QV3"/>
                             <constraint firstItem="Y56-rp-PYB" firstAttribute="top" secondItem="yIw-u8-uUj" secondAttribute="bottom" constant="4" id="IKl-0V-rqe"/>
                             <constraint firstItem="Y56-rp-PYB" firstAttribute="leading" secondItem="Do7-gx-DY5" secondAttribute="trailing" constant="6" id="Jlf-WT-dsl"/>
                             <constraint firstItem="Y56-rp-PYB" firstAttribute="top" secondItem="C8G-aF-bnu" secondAttribute="bottom" constant="6" id="NlF-Yq-gde"/>
-                            <constraint firstItem="gt7-Rh-Jhv" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="ORg-xM-7e7"/>
                             <constraint firstItem="yIw-u8-uUj" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="P3m-Fi-0Ee"/>
+                            <constraint firstItem="cbw-pq-0tM" firstAttribute="top" secondItem="Ybe-t0-LG1" secondAttribute="top" constant="16" id="ULs-sr-Dco"/>
+                            <constraint firstAttribute="trailing" secondItem="cbw-pq-0tM" secondAttribute="trailing" constant="16" id="ZTY-7J-gUE"/>
                             <constraint firstAttribute="bottom" secondItem="Do7-gx-DY5" secondAttribute="bottom" constant="20" id="gMi-I1-7pZ"/>
                             <constraint firstItem="Do7-gx-DY5" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="gXe-uu-4ZM"/>
-                            <constraint firstItem="yIw-u8-uUj" firstAttribute="top" secondItem="gt7-Rh-Jhv" secondAttribute="bottom" constant="16" id="kHR-cW-u9h"/>
-                            <constraint firstItem="gt7-Rh-Jhv" firstAttribute="top" secondItem="Ybe-t0-LG1" secondAttribute="top" constant="16" id="mqt-Pj-BEN"/>
+                            <constraint firstItem="yIw-u8-uUj" firstAttribute="top" secondItem="cbw-pq-0tM" secondAttribute="bottom" constant="16" id="jvR-RE-y3J"/>
+                            <constraint firstItem="cbw-pq-0tM" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="oOe-ba-OR1"/>
                             <constraint firstAttribute="trailing" secondItem="C8G-aF-bnu" secondAttribute="trailing" constant="30" id="yIf-5W-BQs"/>
                         </constraints>
                     </view>
@@ -89,7 +88,7 @@
                 <outlet property="addWaterButton" destination="C8G-aF-bnu" id="nEp-Ho-eNh"/>
                 <outlet property="blackWaterImageView" destination="Do7-gx-DY5" id="CsE-bV-Exk"/>
                 <outlet property="dayLeftLabel" destination="Y56-rp-PYB" id="KlA-kM-obs"/>
-                <outlet property="plantView" destination="gt7-Rh-Jhv" id="JqA-pe-QOZ"/>
+                <outlet property="plantView" destination="cbw-pq-0tM" id="N1E-bB-GyE"/>
                 <outlet property="topLayoutConstraint" destination="xuV-ff-e7j" id="Ea2-hO-GvA"/>
             </connections>
             <point key="canvasLocation" x="191.30434782608697" y="258.14732142857144"/>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Lottie
+import SwiftyGif
 
 // MARK: - Delegate UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
@@ -122,20 +122,17 @@ extension HomeViewController: UICollectionViewDelegate {
         enableHero(view: detailCell.nameSplitLabel, id: splitName)
         
         
-        let url = URL(string: "https://assets7.lottiefiles.com/packages/lf20_ydl0uM.json")!
-        //        let animation = Animation.named("plant1")
-        
-        Animation.loadedFrom(url: url, closure: { animation in
-            detailCell.plantView.animation = animation
-            detailCell.plantView.contentMode = .scaleAspectFill
-            detailCell.plantView.loopMode = .loop
+        do {
+            let gif = try UIImage(gifName: "plant1.gif", levelOfIntegrity:0.3)
+            detailCell.plantView.setGifImage(gif)
+            present(detailVC, animated: true, completion: {
+                detailCell.plantView.startAnimatingGif()
+            })
             
-            DispatchQueue.main.async {
-                self.present(detailVC, animated: true, completion: {
-                    detailCell.plantView.play()
-                })
-            }
-        }, animationCache: nil)
+            
+        } catch {
+            print(error)
+        }
         
     }
 }

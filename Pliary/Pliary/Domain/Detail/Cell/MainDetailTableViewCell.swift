@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Lottie
+import SwiftyGif
 
 class MainDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var plantView: AnimationView!
+    @IBOutlet weak var plantView: UIImageView!
     @IBOutlet weak var blackWaterImageView: UIImageView!
     @IBOutlet weak var addWaterButton: UIButton!
     @IBOutlet weak var dayLeftLabel: UILabel!
@@ -23,10 +23,6 @@ class MainDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     @IBAction func tapNextPageButton(_ sender: Any) {
