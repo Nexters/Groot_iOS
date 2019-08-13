@@ -35,6 +35,10 @@ struct Color {
     static let buttonShadow = UIColor(red: 105.0/255.0, green: 146.0/255.0, blue: 117.0/255.0, alpha: 0.4)
 }
 
+
 struct Image {
-    static let sampleDiaryImage = UIImage()
+    static let completeButton = UIImage(named: "BtnComplete")
+    static let moreButton = UIImage(named: "BtnMore")
+    static let plusButton = UIImage(named: "BtnAddBlack")
+    static let minusButton = UIImage(named: "BtnSubtract")
 }

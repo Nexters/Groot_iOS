@@ -123,7 +123,7 @@ extension HomeViewController: UICollectionViewDelegate {
         
         
         do {
-            let gif = try UIImage(gifName: "plant.gif", levelOfIntegrity: 0.5)
+            let gif = try UIImage(gifName: "plant.gif", levelOfIntegrity: 1)
             detailCell.plantView.setGifImage(gif)
             present(detailVC, animated: true, completion: {
                 detailCell.plantView.startAnimatingGif()
