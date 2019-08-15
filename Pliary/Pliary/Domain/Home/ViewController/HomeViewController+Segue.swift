@@ -93,10 +93,10 @@ extension HomeViewController: UICollectionViewDelegate {
         
         detailVC.hero.isEnabled = true
         detailVC.hero.modalAnimationType = .none
+        detailVC.selectedPlant = selectedCell.plant
         detailVC.view.hero.modifiers = [.cascade]
         
         enableHero(view: detailVC.view, id: cellID)
-        
         
         let index = IndexPath.init(row: 0, section: 0)
         detailVC.setUpTableView()

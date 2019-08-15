@@ -20,12 +20,35 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nameSplitLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
     
+    weak var delegate: DetailEventDelegate?
+    private var plant: Plant?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }
     
-    @IBAction func tapNextPageButton(_ sender: Any) {
+    @IBAction func tapMoreButton(_ sender: Any) {
+        guard let plant = plant else {
+            return
+        }
         
+        delegate?.detailEvent(plant, event: .modifyOrDeletePlant)
+    }
+    
+    @IBAction func tapAddWaterButton(_ sender: Any) {
+        guard let plant = plant else {
+            return
+        }
+        
+        delegate?.detailEvent(plant, event: .waterToPlant)
+    }
+    
+    @IBAction func tapNextPageButton(_ sender: Any) {
+        delegate?.detailEvent(event: .scrollToNextPage)
+    }
+    
+    func setUp(with plant: Plant?) {
+        self.plant = plant
     }
 }

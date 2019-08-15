@@ -18,7 +18,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var blackWaterImageView: UIImageView!
     
     weak var delegate: HomeEventDelegate?
-    private var plant: Plant?
+    var plant: Plant?
     
     override func awakeFromNib() {
         super.awakeFromNib()
