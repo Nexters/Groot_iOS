@@ -25,6 +25,10 @@ class SettingViewController: UIViewController {
         return [changePassword, logout, deleteAccount, updateAlert]
     }
     
+    @IBAction func tapBackButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func handlePan(gr: UIPanGestureRecognizer) {
         let translation = gr.translation(in: view)
         let velocity = gr.velocity(in: view)

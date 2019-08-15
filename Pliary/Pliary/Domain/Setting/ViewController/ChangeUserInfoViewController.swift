@@ -21,7 +21,7 @@ class ChangeUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var changePWButton: UIButton!
     
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func tapBackButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
