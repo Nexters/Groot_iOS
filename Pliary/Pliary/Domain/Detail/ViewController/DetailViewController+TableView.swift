@@ -79,6 +79,8 @@ extension DetailViewController: UITableViewDataSource {
             return nil
         } else {
             let headerView = DetailTableHeaderView.instance(with: currentSection)
+            headerView.delegate = self
+            
             return headerView
         }
     }
@@ -87,6 +89,7 @@ extension DetailViewController: UITableViewDataSource {
         if indexPath.section == 0 && indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
                 cell.setUp(with: selectedPlant)
+                cell.delegate = self
                 return cell
             }
         } else if indexPath.row == 0 {
@@ -95,6 +98,9 @@ extension DetailViewController: UITableViewDataSource {
             }
         } else {
             if currentSection == .diaryCard, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
+                let diaryCard = diaryCards[indexPath.row - 1]
+                cell.setUp(with: diaryCard)
+                cell.delegate = self
                 return cell
             }
         }

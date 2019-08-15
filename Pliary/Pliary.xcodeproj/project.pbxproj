@@ -62,7 +62,8 @@
 		CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */; };
 		CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */; };
 		CE8C84082305B4C60083B3A9 /* DetailEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84072305B4C60083B3A9 /* DetailEventDelegate.swift */; };
-		CE8C840A2305BB480083B3A9 /* DetailViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84092305BB480083B3A9 /* DetailViewController+tableView.swift */; };
+		CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */; };
+		CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -140,7 +141,8 @@
 		CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringDelayPopupSubview.xib; sourceTree = "<group>"; };
 		CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringEventDelegate.swift; sourceTree = "<group>"; };
 		CE8C84072305B4C60083B3A9 /* DetailEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventDelegate.swift; sourceTree = "<group>"; };
-		CE8C84092305BB480083B3A9 /* DetailViewController+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+tableView.swift"; sourceTree = "<group>"; };
+		CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+TableView.swift"; sourceTree = "<group>"; };
+		CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Event.swift"; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -454,7 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */,
-				CE8C84092305BB480083B3A9 /* DetailViewController+tableView.swift */,
+				CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */,
+				CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */,
 				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
 				CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */,
+				CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */,
 				CE8C84082305B4C60083B3A9 /* DetailEventDelegate.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
@@ -705,7 +709,7 @@
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
 				CE0947A622FE888C00E7C8A8 /* ChangeUserInfoViewController.swift in Sources */,
 				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
-				CE8C840A2305BB480083B3A9 /* DetailViewController+tableView.swift in Sources */,
+				CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */,
 				CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,

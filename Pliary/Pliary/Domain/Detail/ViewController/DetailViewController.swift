@@ -16,10 +16,21 @@ class DetailViewController: UIViewController {
     
     var selectedPlant: Plant?
     var diaryCards: [DiaryCard] = []
+    
     var diaryCardsCount: Int {
         return diaryCards.count + 1
     }
-    var currentSection: Section = .diaryCard
+    
+    var currentSection: Section = .diaryCard {
+        didSet {
+            if oldValue != currentSection {
+                tableView.reloadData()
+            } else {
+                let indexPath = IndexPath(row: 0, section: 1)
+                tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+    }
     
     func setExample() {
         let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
