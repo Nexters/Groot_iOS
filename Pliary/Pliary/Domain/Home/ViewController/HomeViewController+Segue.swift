@@ -136,3 +136,15 @@ extension HomeViewController: UICollectionViewDelegate {
         
     }
 }
+
+extension HomeViewController: HomeEventDelegate {
+    func homeEvent(_ plant: Plant, event: HomeEvent) {
+        switch event {
+        case .waterToPlant:
+            let waterPopup = WateringPopupView.instance(with: plant)
+            waterPopup.frame = view.frame
+            waterPopup.setSelectView()
+            view.addSubview(waterPopup)
+        }
+    }
+}

@@ -56,6 +56,11 @@
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
 		CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F823059D590083B3A9 /* WateringPopupView.xib */; };
 		CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */; };
+		CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */; };
+		CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */; };
+		CE8C84012305A6190083B3A9 /* WateringDelayPopupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */; };
+		CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */; };
+		CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -127,6 +132,11 @@
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
 		CE8C83F823059D590083B3A9 /* WateringPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringPopupView.xib; sourceTree = "<group>"; };
 		CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventDelegate.swift; sourceTree = "<group>"; };
+		CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSelectPopupSubview.swift; sourceTree = "<group>"; };
+		CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringSelectPopupSubview.xib; sourceTree = "<group>"; };
+		CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringDelayPopupSubview.swift; sourceTree = "<group>"; };
+		CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringDelayPopupSubview.xib; sourceTree = "<group>"; };
+		CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringEventDelegate.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -416,10 +426,23 @@
 		CE8C83F523059CAB0083B3A9 /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
-				CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */,
-				CE8C83F823059D590083B3A9 /* WateringPopupView.xib */,
+				CE8C84042305A63D0083B3A9 /* Watering */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		CE8C84042305A63D0083B3A9 /* Watering */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */,
+				CE8C83F823059D590083B3A9 /* WateringPopupView.xib */,
+				CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */,
+				CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */,
+				CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */,
+				CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */,
+				CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */,
+			);
+			path = Watering;
 			sourceTree = "<group>";
 		};
 		CEE0E19422F848CB00ED0C31 /* ViewController */ = {
@@ -559,11 +582,13 @@
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
+				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
 				CEE0E1B122FB302D00ED0C31 /* GoogleService-Info.plist in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE8C83F4230306830083B3A9 /* plant.gif in Resources */,
+				CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
 				76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */,
 			);
@@ -660,7 +685,9 @@
 				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
 				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
+				CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */,
 				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
+				CE8C84012305A6190083B3A9 /* WateringDelayPopupSubview.swift in Sources */,
 				CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
@@ -674,6 +701,7 @@
 				CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
+				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

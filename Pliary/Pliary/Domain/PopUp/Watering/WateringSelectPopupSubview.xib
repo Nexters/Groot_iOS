@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WateringSelectPopupSubview" customModule="Pliary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="311" height="210"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="화분 흙의 습도를 확인해주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzR-Jb-AvE">
+                    <rect key="frame" x="22" y="30" width="267" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="XPa-5e-fel"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                    <color key="textColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgW-fA-gjo">
+                    <rect key="frame" x="22" y="68" width="267" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="3Ms-JH-AWn"/>
+                    </constraints>
+                    <string key="text">손가락으로 화분의 흙을 눌러보고
+건조하다면 물을 주세요.</string>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                    <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTq-Y1-H7o">
+                    <rect key="frame" x="18" y="136" width="132" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="132" id="Zef-8i-Byc"/>
+                        <constraint firstAttribute="height" constant="56" id="wau-r6-bQz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
+                    <state key="normal" title="미루기">
+                        <color key="titleColor" red="0.41568627450980389" green="0.65490196078431373" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapDelayButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mu1-de-zlT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-fZ-qAR">
+                    <rect key="frame" x="161" y="136" width="132" height="56"/>
+                    <color key="backgroundColor" red="0.41568627450000001" green="0.65490196079999996" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="axS-U6-mbg"/>
+                        <constraint firstAttribute="width" constant="132" id="keQ-5U-odL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
+                    <state key="normal" title="물주기">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapWateringButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="KQa-BZ-2ch"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MzR-Jb-AvE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="5Xl-qK-GEO"/>
+                <constraint firstItem="RTq-Y1-H7o" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="FPb-fy-5gK"/>
+                <constraint firstItem="dgW-fA-gjo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="Fbn-dh-FGp"/>
+                <constraint firstItem="RTq-Y1-H7o" firstAttribute="top" secondItem="dgW-fA-gjo" secondAttribute="bottom" constant="30" id="Vdt-75-GYH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MzR-Jb-AvE" secondAttribute="trailing" constant="22" id="fCP-3d-zrR"/>
+                <constraint firstItem="MzR-Jb-AvE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="imG-gd-XF5"/>
+                <constraint firstItem="EiS-fZ-qAR" firstAttribute="leading" secondItem="RTq-Y1-H7o" secondAttribute="trailing" constant="11" id="l5S-e1-cDB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dgW-fA-gjo" secondAttribute="trailing" constant="22" id="q2f-uD-rUP"/>
+                <constraint firstItem="dgW-fA-gjo" firstAttribute="top" secondItem="MzR-Jb-AvE" secondAttribute="bottom" constant="14" id="tR9-Vi-cKd"/>
+                <constraint firstItem="EiS-fZ-qAR" firstAttribute="top" secondItem="dgW-fA-gjo" secondAttribute="bottom" constant="30" id="zlc-sk-6Ib"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="delayButton" destination="RTq-Y1-H7o" id="zGh-u0-xi6"/>
+                <outlet property="wateringButton" destination="EiS-fZ-qAR" id="3RR-4u-MTB"/>
+            </connections>
+            <point key="canvasLocation" x="78.260869565217391" y="-73.660714285714278"/>
+        </view>
+    </objects>
+</document>
