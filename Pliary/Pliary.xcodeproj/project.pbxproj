@@ -53,6 +53,9 @@
 		CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE69263422E2EC1000264114 /* LaunchScreen.storyboard */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
+		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
+		CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F823059D590083B3A9 /* WateringPopupView.xib */; };
+		CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -121,6 +124,9 @@
 		CE69263722E2EC1000264114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
+		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
+		CE8C83F823059D590083B3A9 /* WateringPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringPopupView.xib; sourceTree = "<group>"; };
+		CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventDelegate.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 		CE09476322FC6A7000E7C8A8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C83F523059CAB0083B3A9 /* PopUp */,
 				CE09477422FDEC6D00E7C8A8 /* Setting */,
 				CE5F520F22F1F62A00F2E777 /* Login */,
 				CE5F521222F1F68F00F2E777 /* Home */,
@@ -283,6 +290,7 @@
 			children = (
 				CE5F521E22F1FC4C00F2E777 /* Cell */,
 				CE69263F22E2EC2700264114 /* ViewController */,
+				CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */,
 				CE5F521722F1F7CF00F2E777 /* Home.storyboard */,
 			);
 			path = Home;
@@ -403,6 +411,15 @@
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		CE8C83F523059CAB0083B3A9 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */,
+				CE8C83F823059D590083B3A9 /* WateringPopupView.xib */,
+			);
+			path = PopUp;
 			sourceTree = "<group>";
 		};
 		CEE0E19422F848CB00ED0C31 /* ViewController */ = {
@@ -534,6 +551,7 @@
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
+				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
@@ -643,6 +661,7 @@
 				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
 				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
+				CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
@@ -652,6 +671,7 @@
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
 				CE0947A622FE888C00E7C8A8 /* ChangeUserInfoViewController.swift in Sources */,
 				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
+				CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,

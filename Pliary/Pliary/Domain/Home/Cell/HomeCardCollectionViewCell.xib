@@ -56,6 +56,9 @@
                                     <constraint firstAttribute="height" constant="60" id="pA4-fa-Nze"/>
                                 </constraints>
                                 <state key="normal" image="AddWater"/>
+                                <connections>
+                                    <action selector="tapAddWaterButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="rYA-6K-NCX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,7 +98,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="AddWater" width="50" height="50"/>
+        <image name="AddWater" width="72" height="72"/>
         <image name="Background" width="849" height="894"/>
         <image name="WaterBlack" width="26" height="26"/>
     </resources>

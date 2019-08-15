@@ -88,9 +88,19 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCardCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeCardCollectionViewCell ?? HomeCardCollectionViewCell()
             let plant = plants[indexPath.item]
             cell.setUp(with: plant)
-            
+            cell.delegate = self
             return cell
         }
     }
 }
 
+extension HomeViewController: HomeEventDelegate {
+    func homeEvent(_ plant: Plant, event: HomeEvent) {
+        switch event {
+        case .waterToPlant:
+            let waterPopup = WateringPopupView.instance()
+            waterPopup.frame = view.frame
+            view.addSubview(waterPopup)
+        }
+    }
+}

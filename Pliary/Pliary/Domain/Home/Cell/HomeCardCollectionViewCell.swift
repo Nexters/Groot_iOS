@@ -17,6 +17,9 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dayLeftLabel: UILabel!
     @IBOutlet weak var blackWaterImageView: UIImageView!
     
+    weak var delegate: HomeEventDelegate?
+    private var plant: Plant?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,8 +33,16 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         
     }
 
-    func setUp(with: Plant) {
+    @IBAction func tapAddWaterButton(_ sender: Any) {
+        guard let plant = plant else {
+            return 
+        }
         
+        delegate?.homeEvent(plant, event: .waterToPlant)
+    }
+    
+    func setUp(with plant: Plant) {
+        self.plant = plant
     }
     
 }
