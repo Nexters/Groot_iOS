@@ -11,54 +11,14 @@ import Hero
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var writeDiaryButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var selectedPlant: Plant?
-    var diaryCards: [DiaryCard] = []
-    var recordCards: [RecordCard] = []
-    
-    var diaryCardsCount: Int {
-        return diaryCards.count + 2
-    }
-    
-    var recordCardsCount: Int {
-        return recordCards.count + 2
-    }
-    
+
     var currentSection: Section = .diaryCard {
         didSet {
-            DispatchQueue.main.async {
-                if oldValue != self.currentSection {
-                    self.tableView.reloadData()
-                    self.tableView.layoutIfNeeded()
-                } else {
-                    let indexPath = IndexPath(row: 0, section: 1)
-                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-                }
-            }
+            
         }
-    }
-    
-    func setExample() {
-        let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
-        let diary = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: UIImage(named: "SampleDiary"))
-        
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        
-        let card = RecordCard(timeStamp: "2019.11.02", dayCompareToSchedule: 0)
-        recordCards.append(card)
-    }
-    
-    @IBAction func tapWriteDiaryButton(_ sender: Any) {
-        goDiaryViewController(with: nil)
     }
     
     func goDiaryViewController(with diaryCard: DiaryCard?) {
@@ -86,29 +46,11 @@ class DetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let mainDetailName = MainDetailTableViewCell.reuseIdentifier
-        let mainDetailNib = UINib(nibName: mainDetailName, bundle: nil)
-        tableView.register(mainDetailNib, forCellReuseIdentifier: mainDetailName)
+        let mainDetailNib = UINib(nibName: MainDetailTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(mainDetailNib, forCellReuseIdentifier: MainDetailTableViewCell.reuseIdentifier)
         
-        let dayWithPlantName = DayWithPlantTableViewCell.reuseIdentifier
-        let dayWithPlantNib = UINib(nibName: dayWithPlantName, bundle: nil)
-        tableView.register(dayWithPlantNib, forCellReuseIdentifier: dayWithPlantName)
-        
-        let diaryCardWithAllName = DiaryCardWithAllTableViewCell.reuseIdentifier
-        let diaryCardWithAllNib = UINib(nibName: diaryCardWithAllName, bundle: nil)
-        tableView.register(diaryCardWithAllNib, forCellReuseIdentifier: diaryCardWithAllName)
-        
-        let calendarName = CalendarTableViewCell.reuseIdentifier
-        let calendarNib = UINib(nibName: calendarName, bundle: nil)
-        tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
-        
-        let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
-        let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
-        tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
-        
-        let emptyCellName = EmptyTableViewCell.reuseIdentifier
-        let emptyCellNib = UINib(nibName: emptyCellName, bundle: nil)
-        tableView.register(emptyCellNib, forCellReuseIdentifier: emptyCellName)
+        let sectionNib = UINib(nibName: SectionTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(sectionNib, forCellReuseIdentifier: SectionTableViewCell.reuseIdentifier)
     }
     
     func setUpGesture() {
@@ -137,12 +79,10 @@ extension DetailViewController {
         
         setUpTableView()
         setUpGesture()
-        setExample()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         tableView.contentInset.top = -UIApplication.shared.statusBarFrame.size.height
     }
 }

@@ -23,6 +23,8 @@ extension DetailViewController: DetailEventDelegate {
         case .scrollToPreviousPage:
             let indexPath = IndexPath(row: 0, section: 0)
             tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        case .goDiaryViewController(let card):
+            goDiaryViewController(with: card)
         }
     }
     

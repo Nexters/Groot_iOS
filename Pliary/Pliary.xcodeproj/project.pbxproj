@@ -69,6 +69,12 @@
 		CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */; };
 		CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */; };
 		CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841523064DB00083B3A9 /* RecordCard.swift */; };
+		CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */; };
+		CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */; };
+		CE8C841D230655B60083B3A9 /* DiarySectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */; };
+		CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */; };
+		CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */; };
+		CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -153,6 +159,12 @@
 		CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		CE8C841523064DB00083B3A9 /* RecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCard.swift; sourceTree = "<group>"; };
+		CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
+		CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
+		CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiarySectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -376,6 +388,8 @@
 				CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */,
 				CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */,
 				CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */,
+				CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */,
+				CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -505,6 +519,8 @@
 		CEE0E1A622FB26CC00ED0C31 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */,
+				CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */,
 				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
 				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
 				CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */,
@@ -516,6 +532,8 @@
 		CEE0E1A722FB26FC00ED0C31 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */,
+				CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */,
 				CE5F523622F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift */,
 				CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */,
 				CEE0E1A822FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift */,
@@ -593,10 +611,12 @@
 			files = (
 				CE09477C22FE6CAF00E7C8A8 /* UserProfileView.xib in Resources */,
 				CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */,
+				CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */,
 				CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */,
 				CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
+				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
@@ -610,6 +630,7 @@
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
 				CEE0E1B122FB302D00ED0C31 /* GoogleService-Info.plist in Resources */,
+				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
@@ -699,6 +720,7 @@
 				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
+				CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */,
 				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
 				CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */,
 				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
@@ -721,6 +743,7 @@
 				CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
+				CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
 				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
@@ -734,6 +757,7 @@
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
 				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,
+				CE8C841D230655B60083B3A9 /* DiarySectionCollectionViewCell.swift in Sources */,
 				CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

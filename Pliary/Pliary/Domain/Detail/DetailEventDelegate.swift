@@ -25,6 +25,7 @@ enum DetailLayoutEvent {
     case scrollToPreviousPage
     case changeSectionToDiary
     case changeSectionToCalendar
+    case goDiaryViewController(with: DiaryCard?)
 }
 
 enum DetailDiaryCardEvent {
