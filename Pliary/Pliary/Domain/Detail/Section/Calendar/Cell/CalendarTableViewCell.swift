@@ -10,7 +10,7 @@ import UIKit
 
 class CalendarTableViewCell: UITableViewCell {
 
-    static let height: CGFloat = 387
+    static let height: CGFloat = 427
     
     override func awakeFromNib() {
         super.awakeFromNib()

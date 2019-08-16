@@ -521,10 +521,10 @@
 			children = (
 				CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */,
 				CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */,
-				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
-				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
 				CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */,
 				CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */,
+				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
+				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -534,10 +534,10 @@
 			children = (
 				CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */,
 				CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */,
-				CE5F523622F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift */,
-				CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */,
 				CEE0E1A822FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift */,
 				CEE0E1A922FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib */,
+				CE5F523622F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift */,
+				CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
