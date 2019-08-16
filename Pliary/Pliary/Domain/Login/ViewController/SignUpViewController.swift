@@ -56,26 +56,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        ProfileImageViewLoad()
-        
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        passwordTextField.isSecureTextEntry = true
-        emailTextField.setBottomBorder(color: Color.gray7)
-        passwordTextField.setBottomBorder(color: Color.gray7)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
-        if let user = Auth.auth().currentUser {
-            // 이미 login 상태
-            return
-        }
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
-        view.addGestureRecognizer(gesture)
-    }
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
@@ -131,28 +111,23 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         if !isValidEmailAddress(email: email) {
             showEmailAlert(reset: true, warning: false, succeess: true)
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
             emailGuideLabel.text = "이메일 형식에 맞지 않습니다."
             emailTextField.setBottomBorder(color: Color.gray7)
         } else if isExistsEmail(email: email) {
             showEmailAlert(reset: true, warning: false, succeess: true)
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
             emailGuideLabel.text = "이미 사용중인 이메일입니다."
             emailTextField.setBottomBorder(color: Color.gray7)
         } else {
             emailGuideLabel.text = ""
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 0)
             showEmailAlert(reset: true, warning: true, succeess: false)
             emailTextField.setBottomBorder(color: Color.green)
         }
         
         if isValidPassword(password: password) {
-            passwordGuideLabel.frame.size = CGSize(width: 303, height: 0)
             passwordGuideLabel.text = ""
             showPasswordAlert(reset: true, warning: true, succeess: false)
             passwordTextField.setBottomBorder(color: Color.green)
         } else {
-            passwordGuideLabel.frame.size = CGSize(width: 303, height: 16)
             passwordGuideLabel.text = "대문자, 소문자, 숫자 조합 8글자 이상"
             showPasswordAlert(reset: true, warning: false, succeess: true)
             passwordTextField.setBottomBorder(color: Color.gray7)
@@ -234,9 +209,67 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         userProfileView.addSubview(userProfile);
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
-    }
-    
 }
 
+extension SignUpViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ProfileImageViewLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        passwordTextField.isSecureTextEntry = true
+        
+        emailTextField.setBottomBorder(color: Color.gray7)
+        passwordTextField.setBottomBorder(color: Color.gray7)
+        
+        if let user = Auth.auth().currentUser {
+            // 이미 login 상태
+            return
+        }
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        view.endEditing(true)
+    }
+}
+//
+//extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//
+//        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+//            print("Expected a dictionary containing an image, but was provided the following: \(info)")
+//            return
+//        }
+//
+//        //        userProfileImageView.image = selectedImage.resize(withSize: CGSize(width: 151.0, height: 151.0), contentMode: .contentAspectFill)
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+//
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.sourceType = .photoLibrary
+//        imagePickerController.delegate = self
+//        present(imagePickerController, animated: true, completion: nil)
+//    }
+//}

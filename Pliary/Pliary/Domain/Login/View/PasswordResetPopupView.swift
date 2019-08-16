@@ -29,6 +29,7 @@ class PasswordResetPopupView: UIView, UITextFieldDelegate {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        
     }
     
     override func awakeFromNib() {
@@ -103,4 +104,10 @@ class PasswordResetPopupView: UIView, UITextFieldDelegate {
         
         return predicate.evaluate(with: email)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.endEditing(true)
+    }
+    
+    
 }

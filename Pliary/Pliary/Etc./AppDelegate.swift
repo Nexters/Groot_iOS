@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("didDisconnectWith \(error.localizedDescription)")
             return
         } else {
-            print("didDisconnectWith \(user.profile.email)")
+            print("didDisconnectWith \(String(describing: user.profile.email))")
         }
     }
 }
