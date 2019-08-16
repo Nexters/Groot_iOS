@@ -45,11 +45,40 @@ extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
             return tableView.frame.height
-        } else if currentSection == .diaryCard, indexPath.row == 0 {
-            return DayWithPlantTableViewCell.height
-        } else {
-            return DiaryCardWithAllTableViewCell.height
         }
+        
+        // Diary Card
+        if currentSection == .diaryCard {
+            if indexPath.row == 0 {
+                return DayWithPlantTableViewCell.height
+            } else if indexPath.row == diaryCardsCount - 1 {
+                
+                var height = tableView.frame.height
+                height = height - DayWithPlantTableViewCell.height
+                height = height - DetailTableHeaderView.height
+                height = height - (DiaryCardWithAllTableViewCell.height * CGFloat(diaryCards.count))
+                
+                if height > 0 {
+                    return height
+                } else {
+                    return 0
+                }
+                
+            } else {
+                return DiaryCardWithAllTableViewCell.height
+            }
+        }
+        
+        // Calendar
+        if currentSection == .calendar {
+            if indexPath.row == 0 {
+                return CalendarTableViewCell.height
+            } else {
+                return WateringInfoTableViewCell.height
+            }
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -69,8 +98,10 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
-        } else {
+        } else if currentSection == .diaryCard {
             return diaryCardsCount
+        } else {
+            return 3
         }
     }
     
@@ -88,19 +119,43 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
+                
                 cell.setUp(with: selectedPlant)
                 cell.delegate = self
+                
                 return cell
             }
-        } else if indexPath.row == 0 {
-            if currentSection == .diaryCard, let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
+        }
+        
+        // Diary Card
+        if currentSection == .diaryCard {
+            if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
+                
                 return cell
-            }
-        } else {
-            if currentSection == .diaryCard, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
+            }  else if indexPath.row == diaryCardsCount - 1, let cell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.reuseIdentifier) as? EmptyTableViewCell {
+                
+                if diaryCards.isEmpty {
+                    cell.growthLabel.isHidden = false
+                }
+                
+                return cell
+            } else if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
+                
                 let diaryCard = diaryCards[indexPath.row - 1]
                 cell.setUp(with: diaryCard)
                 cell.delegate = self
+                
+                return cell
+            }
+        }
+        
+        // Calendar
+        if currentSection == .calendar {
+            if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell {
+                
+                return cell
+            } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {
+                
                 return cell
             }
         }

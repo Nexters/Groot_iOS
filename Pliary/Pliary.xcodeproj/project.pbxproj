@@ -64,6 +64,10 @@
 		CE8C84082305B4C60083B3A9 /* DetailEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84072305B4C60083B3A9 /* DetailEventDelegate.swift */; };
 		CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */; };
 		CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */; };
+		CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */; };
+		CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */; };
+		CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */; };
+		CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -143,6 +147,10 @@
 		CE8C84072305B4C60083B3A9 /* DetailEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventDelegate.swift; sourceTree = "<group>"; };
 		CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+TableView.swift"; sourceTree = "<group>"; };
 		CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Event.swift"; sourceTree = "<group>"; };
+		CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
+		CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -363,6 +371,8 @@
 				CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */,
 				CEE0E1AC22FB2BE900ED0C31 /* DetailTableHeaderView.swift */,
 				CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */,
+				CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */,
+				CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -494,6 +504,8 @@
 			children = (
 				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
 				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
+				CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */,
+				CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -578,12 +590,14 @@
 			files = (
 				CE09477C22FE6CAF00E7C8A8 /* UserProfileView.xib in Resources */,
 				CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */,
+				CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */,
 				CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
+				CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
@@ -674,6 +688,7 @@
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */,
 				765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */,
+				CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
@@ -690,6 +705,7 @@
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
+				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,

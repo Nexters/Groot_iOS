@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     var diaryCards: [DiaryCard] = []
     
     var diaryCardsCount: Int {
-        return diaryCards.count + 1
+        return diaryCards.count + 2
     }
     
     var currentSection: Section = .diaryCard {
@@ -86,6 +86,18 @@ class DetailViewController: UIViewController {
         let diaryCardWithAllName = DiaryCardWithAllTableViewCell.reuseIdentifier
         let diaryCardWithAllNib = UINib(nibName: diaryCardWithAllName, bundle: nil)
         tableView.register(diaryCardWithAllNib, forCellReuseIdentifier: diaryCardWithAllName)
+        
+        let calendarName = CalendarTableViewCell.reuseIdentifier
+        let calendarNib = UINib(nibName: calendarName, bundle: nil)
+        tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
+        
+        let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
+        let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
+        tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
+        
+        let emptyCellName = EmptyTableViewCell.reuseIdentifier
+        let emptyCellNib = UINib(nibName: emptyCellName, bundle: nil)
+        tableView.register(emptyCellNib, forCellReuseIdentifier: emptyCellName)
     }
     
     func setUpGesture() {
