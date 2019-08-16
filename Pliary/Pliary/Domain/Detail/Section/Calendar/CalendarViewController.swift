@@ -54,7 +54,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
         let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
         tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
-        self.view.addSubview(self.tableView)
+        self.view.addSubview(tableView)
         
         waterImageView.drawDottedLine(start: CGPoint(x: waterImageView.bounds.minX + 20, y: waterImageView.bounds.minY), end: CGPoint(x: waterImageView.bounds.maxX - 20, y: waterImageView.bounds.minY), view: waterImageView)
 

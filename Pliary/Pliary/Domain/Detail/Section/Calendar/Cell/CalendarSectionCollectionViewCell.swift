@@ -22,7 +22,6 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
     private func setExample() {
         let card = RecordCard(timeStamp: "2019.11.02", dayCompareToSchedule: 0)
         recordCards.append(card)
-        recordCards.append(card)
     }
     
     private func setTableView() {
