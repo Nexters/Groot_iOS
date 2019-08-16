@@ -16,18 +16,26 @@ class DetailViewController: UIViewController {
     
     var selectedPlant: Plant?
     var diaryCards: [DiaryCard] = []
+    var recordCards: [RecordCard] = []
     
     var diaryCardsCount: Int {
         return diaryCards.count + 2
     }
     
+    var recordCardsCount: Int {
+        return recordCards.count + 2
+    }
+    
     var currentSection: Section = .diaryCard {
         didSet {
-            if oldValue != currentSection {
-                tableView.reloadData()
-            } else {
-                let indexPath = IndexPath(row: 0, section: 1)
-                tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            DispatchQueue.main.async {
+                if oldValue != self.currentSection {
+                    self.tableView.reloadData()
+                    self.tableView.layoutIfNeeded()
+                } else {
+                    let indexPath = IndexPath(row: 0, section: 1)
+                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                }
             }
         }
     }
@@ -44,6 +52,9 @@ class DetailViewController: UIViewController {
         diaryCards.append(diary)
         diaryCards.append(diary)
         diaryCards.append(diary)
+        
+        let card = RecordCard(timeStamp: "2019.11.02", dayCompareToSchedule: 0)
+        recordCards.append(card)
     }
     
     @IBAction func tapWriteDiaryButton(_ sender: Any) {

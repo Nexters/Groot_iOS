@@ -68,6 +68,7 @@
 		CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */; };
 		CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */; };
 		CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */; };
+		CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841523064DB00083B3A9 /* RecordCard.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -151,6 +152,7 @@
 		CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		CE8C841523064DB00083B3A9 /* RecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCard.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				CE5F520622F1F45700F2E777 /* Plant.swift */,
 				CE5F520722F1F45700F2E777 /* User.swift */,
 				CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */,
+				CE8C841523064DB00083B3A9 /* RecordCard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
 				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,
+				CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

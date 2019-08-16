@@ -54,8 +54,9 @@ extension DetailViewController: UITableViewDelegate {
             } else if indexPath.row == diaryCardsCount - 1 {
                 
                 var height = tableView.frame.height
-                height = height - DayWithPlantTableViewCell.height
+                
                 height = height - DetailTableHeaderView.height
+                height = height - DayWithPlantTableViewCell.height
                 height = height - (DiaryCardWithAllTableViewCell.height * CGFloat(diaryCards.count))
                 
                 if height > 0 {
@@ -73,6 +74,20 @@ extension DetailViewController: UITableViewDelegate {
         if currentSection == .calendar {
             if indexPath.row == 0 {
                 return CalendarTableViewCell.height
+            } else if indexPath.row == recordCardsCount - 1 {
+                
+                var height = tableView.frame.height
+                
+                height = height - DetailTableHeaderView.height
+                height = height - CalendarTableViewCell.height
+                height = height - (WateringInfoTableViewCell.height * CGFloat(recordCards.count))
+                
+                if height > 0 {
+                    return height
+                } else {
+                    return 0
+                }
+                
             } else {
                 return WateringInfoTableViewCell.height
             }
@@ -101,7 +116,7 @@ extension DetailViewController: UITableViewDataSource {
         } else if currentSection == .diaryCard {
             return diaryCardsCount
         } else {
-            return 3
+            return recordCardsCount
         }
     }
     
@@ -152,6 +167,9 @@ extension DetailViewController: UITableViewDataSource {
         // Calendar
         if currentSection == .calendar {
             if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell {
+                
+                return cell
+            } else if indexPath.row == recordCardsCount - 1, let cell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.reuseIdentifier) as? EmptyTableViewCell {
                 
                 return cell
             } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {
