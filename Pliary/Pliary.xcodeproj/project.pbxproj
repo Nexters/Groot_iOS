@@ -75,6 +75,7 @@
 		CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */; };
 		CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */; };
 		CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */; };
+		CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -165,6 +166,7 @@
 		CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiarySectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarSectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPlantViewController.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 			children = (
 				CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */,
 				CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */,
+				CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */,
 			);
 			path = RegisterPlant;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
+				CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */,
 				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
