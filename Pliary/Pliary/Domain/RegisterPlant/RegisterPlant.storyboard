@@ -96,8 +96,8 @@
                                     <constraint firstAttribute="height" constant="1" id="znp-3o-WrW"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vWc-Iq-p8L">
-                                <rect key="frame" x="0.0" y="327.5" width="414" height="30"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vWc-Iq-p8L">
+                                <rect key="frame" x="36" y="327.5" width="342" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="S1f-n5-gl9"/>
@@ -138,14 +138,14 @@
                             <constraint firstItem="awg-Xj-sy6" firstAttribute="top" secondItem="zRL-JT-Vcs" secondAttribute="bottom" constant="66" id="fbB-6b-Fmg"/>
                             <constraint firstItem="f73-bh-aeM" firstAttribute="leading" secondItem="ynU-za-npW" secondAttribute="leading" constant="36" id="fjj-pg-boM"/>
                             <constraint firstAttribute="trailing" secondItem="VCR-jU-eJH" secondAttribute="trailing" constant="36" id="j8n-k9-4F4"/>
-                            <constraint firstAttribute="trailing" secondItem="vWc-Iq-p8L" secondAttribute="trailing" id="m3V-mP-2Na"/>
+                            <constraint firstAttribute="trailing" secondItem="vWc-Iq-p8L" secondAttribute="trailing" constant="36" id="m3V-mP-2Na"/>
                             <constraint firstAttribute="trailing" secondItem="Hf7-ni-qXn" secondAttribute="trailing" constant="36" id="nmO-yY-hXU"/>
                             <constraint firstItem="hyX-DS-0i3" firstAttribute="top" secondItem="VCR-jU-eJH" secondAttribute="bottom" constant="9" id="oD9-oU-qj4"/>
                             <constraint firstItem="hyX-DS-0i3" firstAttribute="leading" secondItem="ynU-za-npW" secondAttribute="leading" constant="36" id="oO7-bG-maq"/>
                             <constraint firstAttribute="trailing" secondItem="qLh-wy-vw2" secondAttribute="trailing" constant="36" id="sqy-oN-spy"/>
                             <constraint firstItem="qLh-wy-vw2" firstAttribute="top" secondItem="vWc-Iq-p8L" secondAttribute="bottom" constant="2" id="uAl-AB-1jp"/>
                             <constraint firstAttribute="trailing" secondItem="f73-bh-aeM" secondAttribute="trailing" constant="36" id="uaW-4y-QO7"/>
-                            <constraint firstItem="vWc-Iq-p8L" firstAttribute="leading" secondItem="ynU-za-npW" secondAttribute="leading" id="xaY-W2-WK6"/>
+                            <constraint firstItem="vWc-Iq-p8L" firstAttribute="leading" secondItem="ynU-za-npW" secondAttribute="leading" constant="36" id="xaY-W2-WK6"/>
                             <constraint firstItem="f73-bh-aeM" firstAttribute="top" secondItem="hyX-DS-0i3" secondAttribute="bottom" constant="32.5" id="yff-mY-TTv"/>
                             <constraint firstAttribute="trailing" secondItem="hyX-DS-0i3" secondAttribute="trailing" constant="36" id="zTc-Lk-ugD"/>
                         </constraints>
