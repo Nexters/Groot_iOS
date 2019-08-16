@@ -71,9 +71,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func PopupViewLoad(_ sender: UIButton) {
-        
-        let popup = PasswordResetPopupView.createViewFromNib(nibName: PasswordResetPopupView.identifier)
 
+        let popup = PasswordResetPopupView.instance()
+        
         popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
         
