@@ -10,7 +10,7 @@ import UIKit
 
 class WateringInfoTableViewCell: UITableViewCell {
 
-    static let height: CGFloat = 67
+    static let height: CGFloat = 96
     
     @IBOutlet weak var waterImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
