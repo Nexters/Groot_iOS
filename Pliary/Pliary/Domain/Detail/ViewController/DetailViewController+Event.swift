@@ -31,7 +31,7 @@ extension DetailViewController: DetailEventDelegate {
     func detailEvent(_ plant: Plant, event: DetailPlantEvent) {
         switch event {
         case .modifyOrDeletePlant:
-            showModifyDeleteAlert()
+            showModifyDeleteAlert(mode: .plant(plant))
         case .waterToPlant:
             let waterPopup = WateringPopupView.instance(with: plant)
             waterPopup.frame = view.frame
@@ -43,7 +43,7 @@ extension DetailViewController: DetailEventDelegate {
     func detailEvent(_ diaryCard: DiaryCard, event: DetailDiaryCardEvent) {
         switch event {
         case .modifyOrDeleteDiaryCard:
-            showModifyDeleteAlert()
+            showModifyDeleteAlert(mode: .diaryCard(diaryCard))
         }
     }
     
@@ -51,12 +51,36 @@ extension DetailViewController: DetailEventDelegate {
 
 extension DetailViewController {
     
-    private func showModifyDeleteAlert() {
+    enum AlertMode {
+        case plant(Plant)
+        case diaryCard(DiaryCard)
+    }
+    
+    private func showModifyDeleteAlert(mode: AlertMode) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let modifyAction = UIAlertAction(title: "수정", style: .default, handler: { _ in
-            
+            switch mode {
+            case .plant(let plant):
+                let storyboard = UIStoryboard.init(name: StoryboardName.regiserPlant, bundle: Bundle(for: ModifyPlantViewController.self))
+                guard let modifyVC = storyboard.instantiateViewController(withIdentifier: ModifyPlantViewController.identifier) as? ModifyPlantViewController else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.present(modifyVC, animated: true, completion: nil)
+                }
+            case .diaryCard(let card):
+                ()
+            }
         })
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+            
+            switch mode {
+            case .plant(let plant):
+                ()
+            case .diaryCard(let card):
+                ()
+            }
+            
             self.dismiss(animated: true, completion: nil)
         })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler : nil )

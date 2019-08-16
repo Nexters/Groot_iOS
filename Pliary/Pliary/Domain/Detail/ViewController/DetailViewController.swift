@@ -115,7 +115,9 @@ extension DetailViewController: UIGestureRecognizerDelegate {
         
         switch gr.state {
         case .began:
-            dismiss(animated: true, completion: nil)
+            if velocity.y > 0 {
+                dismiss(animated: true, completion: nil)
+            }
         case .changed:
             Hero.shared.update(translation.y / view.bounds.height)
         default:
