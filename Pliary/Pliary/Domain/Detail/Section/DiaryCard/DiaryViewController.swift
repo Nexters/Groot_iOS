@@ -26,35 +26,8 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var navigationRightButton: UIButton!
     
-    var currentMode: DiaryViewMode = .writeNewDiary {
-        didSet {
-            switch currentMode {
-            case .writeNewDiary:
-                navigationRightButton.setImage(Image.completeButton, for: .normal)
-                diaryTextView.isSelectable = true
-                diaryTextView.isEditable = true
-                addOrSubtractContentView.isHidden = false
-            case .editDiary:
-                navigationRightButton.setImage(Image.completeButton, for: .normal)
-                diaryTextView.isSelectable = true
-                diaryTextView.isEditable = true
-                addOrSubtractContentView.isHidden = false
-            case .showDiary:
-                navigationRightButton.setImage(Image.moreButton, for: .normal)
-                diaryTextView.isSelectable = false
-                diaryTextView.isEditable = false
-                addOrSubtractContentView.isHidden = true
-                diaryImageView.image = currentDiaryCard?.diaryImage
-                diaryDateLabel.text = currentDiaryCard?.timeStamp
-            }
-        }
-    }
-    
-    var currentDiaryCard: DiaryCard? {
-        didSet {
-            reload()
-        }
-    }
+    var currentMode: DiaryViewMode = .writeNewDiary
+    var currentDiaryCard: DiaryCard?
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -67,11 +40,34 @@ class DiaryViewController: UIViewController {
     @IBAction func tapRightNavigationButton(_ sender: Any) {
         switch currentMode {
         case .writeNewDiary:
-            currentMode = .showDiary
+            changeMode(.showDiary)
         case .editDiary:
-            currentMode = .showDiary
+            changeMode(.showDiary)
         case .showDiary:
             showModifyDeleteAlert()
+        }
+    }
+    
+    private func changeMode(_ mode: DiaryViewMode) {
+        currentMode = mode
+        switch mode {
+        case .writeNewDiary:
+            navigationRightButton.setImage(Image.completeButton, for: .normal)
+            diaryTextView.isSelectable = true
+            diaryTextView.isEditable = true
+            addOrSubtractContentView.isHidden = false
+        case .editDiary:
+            navigationRightButton.setImage(Image.completeButton, for: .normal)
+            diaryTextView.isSelectable = true
+            diaryTextView.isEditable = true
+            addOrSubtractContentView.isHidden = false
+        case .showDiary:
+            navigationRightButton.setImage(Image.moreButton, for: .normal)
+            diaryTextView.isSelectable = false
+            diaryTextView.isEditable = false
+            addOrSubtractContentView.isHidden = true
+            diaryImageView.image = currentDiaryCard?.diaryImage
+            diaryDateLabel.text = currentDiaryCard?.timeStamp
         }
     }
     
@@ -152,6 +148,9 @@ extension DiaryViewController {
         super.viewDidLoad()
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
         view.addGestureRecognizer(gesture)
+        
+        reload()
+        changeMode(currentMode)
     }
     
     override func viewWillAppear(_ animated: Bool) {

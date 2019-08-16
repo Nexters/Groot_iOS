@@ -37,7 +37,6 @@ class DetailViewController: UIViewController {
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
-        writeDiaryVC.viewDidLoad()
         
         DispatchQueue.main.async { [weak self] in
             
