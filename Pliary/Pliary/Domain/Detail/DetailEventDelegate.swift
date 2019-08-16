@@ -20,6 +20,7 @@ enum DetailPlantEvent {
 }
 
 enum DetailLayoutEvent {
+    case dismiss
     case scrollToNextPage
     case scrollToPreviousPage
     case changeSectionToDiary

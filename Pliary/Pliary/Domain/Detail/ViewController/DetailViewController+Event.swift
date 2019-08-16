@@ -11,6 +11,8 @@ import UIKit
 extension DetailViewController: DetailEventDelegate {
     func detailEvent(event: DetailLayoutEvent) {
         switch event {
+        case .dismiss:
+            dismiss(animated: true, completion: nil)
         case .changeSectionToCalendar:
             currentSection = .calendar
         case .changeSectionToDiary:

@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJE-g4-op9">
-                        <rect key="frame" x="329" y="112" width="24" height="24"/>
+                        <rect key="frame" x="337" y="112" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="kdq-aw-0vJ"/>
                             <constraint firstAttribute="width" constant="24" id="wLC-mU-aXn"/>
@@ -119,21 +119,34 @@
                             <action selector="tapNextPageButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ht6-fa-JKX"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ2-AS-RkX">
+                        <rect key="frame" x="337" y="42" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="P2k-f1-KMg"/>
+                            <constraint firstAttribute="width" constant="24" id="e11-Jm-zQ8"/>
+                        </constraints>
+                        <state key="normal" image="BtnCloseBlack"/>
+                        <connections>
+                            <action selector="tapCloseButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WfL-cj-Pkg"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="zus-a4-Oq7" secondAttribute="trailing" constant="36" id="37s-FB-EzU"/>
                     <constraint firstItem="IWN-ZV-whA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="100" id="6cT-Uc-8c3"/>
                     <constraint firstItem="c5C-Rb-Gb4" firstAttribute="leading" secondItem="GA0-EP-rL2" secondAttribute="trailing" constant="6" id="8IO-aG-teb"/>
+                    <constraint firstItem="cZ2-AS-RkX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="42" id="8no-pS-OF0"/>
                     <constraint firstItem="bwl-hn-6Fg" firstAttribute="leading" secondItem="huv-Ga-LBY" secondAttribute="trailing" constant="9" id="9mc-6o-cVE"/>
                     <constraint firstItem="huv-Ga-LBY" firstAttribute="top" secondItem="IWN-ZV-whA" secondAttribute="bottom" constant="8" id="AzC-xT-TDf"/>
                     <constraint firstItem="1ml-kM-a18" firstAttribute="top" secondItem="ZYn-2j-Tak" secondAttribute="bottom" constant="3" id="ByN-xH-DlN"/>
                     <constraint firstAttribute="bottom" secondItem="1ml-kM-a18" secondAttribute="bottom" constant="10" id="Cnl-vF-Gwc"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="Csu-Yb-Rux"/>
-                    <constraint firstAttribute="trailing" secondItem="RJE-g4-op9" secondAttribute="trailing" constant="38" id="HXT-Qq-bVa"/>
+                    <constraint firstAttribute="trailing" secondItem="RJE-g4-op9" secondAttribute="trailing" constant="30" id="HXT-Qq-bVa"/>
                     <constraint firstAttribute="trailing" secondItem="mpd-Ze-Utk" secondAttribute="trailing" constant="36" id="K8X-bV-vrn"/>
                     <constraint firstItem="IWN-ZV-whA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="PGI-IA-T2Q"/>
                     <constraint firstItem="GA0-EP-rL2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="QHH-hU-fhU"/>
                     <constraint firstItem="w84-eI-BEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RtN-rr-UTa"/>
+                    <constraint firstAttribute="trailing" secondItem="cZ2-AS-RkX" secondAttribute="trailing" constant="30" id="bn7-6c-R8n"/>
                     <constraint firstItem="RJE-g4-op9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="112" id="dHV-5q-4ay"/>
                     <constraint firstAttribute="trailing" secondItem="IWN-ZV-whA" secondAttribute="trailing" constant="36" id="e7f-Ii-fJe"/>
                     <constraint firstAttribute="trailing" secondItem="ZYn-2j-Tak" secondAttribute="trailing" constant="36" id="exI-e7-Qzi"/>
@@ -167,6 +180,7 @@
     <resources>
         <image name="AddWater" width="72" height="72"/>
         <image name="BottomArrow" width="24" height="24"/>
+        <image name="BtnCloseBlack" width="24" height="24"/>
         <image name="BtnMore" width="24" height="24"/>
         <image name="WaterBlack" width="26" height="26"/>
     </resources>

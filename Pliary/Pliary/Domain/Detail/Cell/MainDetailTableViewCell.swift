@@ -28,6 +28,10 @@ class MainDetailTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
+    @IBAction func tapCloseButton(_ sender: Any) {
+        delegate?.detailEvent(event: .dismiss)
+    }
+    
     @IBAction func tapMoreButton(_ sender: Any) {
         guard let plant = plant else {
             return
