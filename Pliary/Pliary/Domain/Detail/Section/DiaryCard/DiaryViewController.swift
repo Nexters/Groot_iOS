@@ -25,9 +25,12 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var navigationRightButton: UIButton!
+    @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     
     var currentMode: DiaryViewMode = .writeNewDiary
     var currentDiaryCard: DiaryCard?
+    var keyboardHeight: CGFloat = 0
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -74,7 +77,7 @@ class DiaryViewController: UIViewController {
     private func showModifyDeleteAlert() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let modifyAction = UIAlertAction(title: "수정", style: .default, handler: { _ in
-            self.currentMode = .editDiary
+            self.changeMode(.editDiary)
         })
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
             self.dismiss(animated: true, completion: nil)
@@ -99,7 +102,7 @@ class DiaryViewController: UIViewController {
         case .changed:
             Hero.shared.update(translation.x / view.bounds.width)
         default:
-            if ((translation.x + velocity.x) / view.bounds.width) > 0.5 {
+            if ((translation.x + velocity.x) / view.bounds.width) > 0.65 {
                 Hero.shared.finish()
             } else {
                 Hero.shared.cancel()
@@ -130,15 +133,28 @@ class DiaryViewController: UIViewController {
         }
     }
     
+    private func setTextView() {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        let atributes = [NSAttributedString.Key.paragraphStyle: style ]
+        diaryTextView.attributedText = NSAttributedString(string: diaryTextView.text, attributes: atributes)
+        diaryTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15)
+        diaryTextView.textColor = Color.gray3
+        
+        textViewHeightConstraint.constant = diaryTextView.contentSize.height
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            
+            keyboardHeight = keyboardSize.height
+            textViewBottomConstraint.constant += keyboardHeight
+            scrollView.contentOffset.y += keyboardHeight
         }
     }
+    
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
+        textViewBottomConstraint.constant -= keyboardHeight
+        scrollView.contentOffset.y -= keyboardHeight
     }
 }
 
@@ -151,6 +167,8 @@ extension DiaryViewController {
         
         reload()
         changeMode(currentMode)
+        setTextView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -177,11 +195,13 @@ extension DiaryViewController: UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            print("Expected a dictionary containing an image, but was provided the following: \(info)")
             return
         }
         
-        //        userProfileImageView.image = selectedImage.resize(withSize: CGSize(width: 151.0, height: 151.0), contentMode: .contentAspectFill)
+        currentDiaryCard?.diaryImage = selectedImage
+        reload()
+        changeMode(.editDiary)
+        
         dismiss(animated: true, completion: nil)
     }
     

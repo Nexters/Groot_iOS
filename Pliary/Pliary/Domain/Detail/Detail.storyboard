@@ -264,7 +264,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7P-Mr-Dum">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="653"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="255" translatesAutoresizingMaskIntoConstraints="NO" id="NGu-cF-vOc">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
@@ -301,6 +301,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="ZWd-fU-DbN"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -310,7 +311,7 @@
                                             <constraint firstItem="F39-CZ-vZe" firstAttribute="top" secondItem="SOR-pB-T1S" secondAttribute="bottom" constant="14" id="A52-hL-z2P"/>
                                             <constraint firstItem="SOR-pB-T1S" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="LaL-3I-sG9"/>
                                             <constraint firstItem="WIt-l2-5Yk" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="QF1-4T-lon"/>
-                                            <constraint firstAttribute="bottom" secondItem="F39-CZ-vZe" secondAttribute="bottom" constant="200" id="aRU-QQ-ll4"/>
+                                            <constraint firstAttribute="bottom" secondItem="F39-CZ-vZe" secondAttribute="bottom" constant="50" id="aRU-QQ-ll4"/>
                                             <constraint firstItem="WIt-l2-5Yk" firstAttribute="top" secondItem="NGu-cF-vOc" secondAttribute="bottom" constant="36" id="dRi-5q-6Ip"/>
                                             <constraint firstAttribute="trailing" secondItem="SOR-pB-T1S" secondAttribute="trailing" constant="36" id="fqR-FB-AqM"/>
                                             <constraint firstAttribute="trailing" secondItem="Vqn-H5-Z89" secondAttribute="trailing" constant="36" id="hDu-3g-F4T"/>
@@ -385,6 +386,8 @@
                         <outlet property="navigationRightButton" destination="OWQ-vU-IEc" id="rQi-v4-HA0"/>
                         <outlet property="placeholderLabel" destination="Vqn-H5-Z89" id="RJL-hZ-ezd"/>
                         <outlet property="scrollView" destination="wxu-6l-Gr4" id="y5O-wY-w8a"/>
+                        <outlet property="textViewBottomConstraint" destination="aRU-QQ-ll4" id="ymv-AU-vkF"/>
+                        <outlet property="textViewHeightConstraint" destination="ZWd-fU-DbN" id="qIY-8L-MST"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAa-ez-Ica" userLabel="First Responder" sceneMemberID="firstResponder"/>

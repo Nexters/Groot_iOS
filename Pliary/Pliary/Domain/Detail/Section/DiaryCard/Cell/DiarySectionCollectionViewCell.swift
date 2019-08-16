@@ -27,10 +27,11 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     private func setExample() {
         let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
         let diary = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: UIImage(named: "SampleDiary"))
+        let diary2 = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: nil)
         
         diaryCards.append(diary)
         diaryCards.append(diary)
-        diaryCards.append(diary)
+        diaryCards.append(diary2)
         diaryCards.append(diary)
         diaryCards.append(diary)
         diaryCards.append(diary)
