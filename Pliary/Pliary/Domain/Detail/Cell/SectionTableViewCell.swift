@@ -13,6 +13,17 @@ class SectionTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: DetailEventDelegate?
     
+    func changeSection(to section: Section, animated: Bool) {
+        switch section {
+        case .diaryCard:
+            let index = IndexPath(item: 0, section: 0)
+            collectionView.scrollToItem(at: index, at: .left, animated: true)
+        case .calendar:
+            let index = IndexPath(item: 1, section: 0)
+            collectionView.scrollToItem(at: index, at: .left, animated: true)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -61,6 +72,15 @@ extension SectionTableViewCell: UICollectionViewDataSource {
         }
         
         return UICollectionViewCell()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // Perform whichever function you desire for when scrolling has stopped
+        if collectionView.contentOffset.x <= frame.width / 2 {
+            delegate?.detailEvent(event: .changeSectionToDiary)
+        } else {
+            delegate?.detailEvent(event: .changeSectionToCalendar)
+        }
     }
     
 }

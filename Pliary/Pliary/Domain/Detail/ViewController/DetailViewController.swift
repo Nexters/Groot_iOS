@@ -14,10 +14,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var selectedPlant: Plant?
+    var animating: Bool = true
+    var headerView: DetailTableHeaderView?
 
     var currentSection: Section = .diaryCard {
         didSet {
-            
+            headerView?.currentSection = currentSection
+            for cell in tableView.visibleCells {
+                if let sectionCell = cell as? SectionTableViewCell {
+                    sectionCell.changeSection(to: currentSection, animated: true)
+                    return
+                }
+            }
         }
     }
     
@@ -64,8 +72,10 @@ class DetailViewController: UIViewController {
             if let plantCell = cell as? MainDetailTableViewCell {
                 if bool {
                     plantCell.plantView.startAnimatingGif()
+                    animating = true
                 } else {
                     plantCell.plantView.stopAnimatingGif()
+                    animating = false
                 }
                 return
             }

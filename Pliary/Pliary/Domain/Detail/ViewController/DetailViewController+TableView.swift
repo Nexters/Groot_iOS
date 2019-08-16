@@ -11,16 +11,10 @@ import UIKit
 extension DetailViewController {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        animatePlant(false)
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if tableView.isDecelerating == false {
-            // Perform whichever function you desire for when scrolling has stopped
-            animatePlant(true)
+        if animating {
+            animatePlant(false)
         }
     }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         // Perform whichever function you desire for when scrolling has stopped
         animatePlant(true)
@@ -60,6 +54,7 @@ extension DetailViewController: UITableViewDataSource {
         } else {
             let headerView = DetailTableHeaderView.instance(with: currentSection)
             headerView.delegate = self
+            self.headerView = headerView
             
             return headerView
         }
@@ -76,7 +71,6 @@ extension DetailViewController: UITableViewDataSource {
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.reuseIdentifier) as? SectionTableViewCell {
-                
                 cell.delegate = self
                 
                 return cell

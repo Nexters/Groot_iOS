@@ -17,7 +17,7 @@ class DetailTableHeaderView: UIView {
     
     static let height: CGFloat = (92 + UIApplication.shared.statusBarFrame.height / 2)
     weak var delegate: DetailEventDelegate?
-    private var currentSection: Section = .diaryCard {
+    var currentSection: Section = .diaryCard {
         didSet {
             switch currentSection {
             case .diaryCard:
