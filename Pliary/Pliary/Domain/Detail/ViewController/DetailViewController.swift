@@ -37,15 +37,13 @@ class DetailViewController: UIViewController {
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
-        writeDiaryVC.viewDidLoad()
+        
+        if diaryCard != nil {
+            writeDiaryVC.currentMode = .showDiary
+            writeDiaryVC.currentDiaryCard = diaryCard
+        }
         
         DispatchQueue.main.async { [weak self] in
-            
-            if diaryCard != nil {
-                writeDiaryVC.currentMode = .showDiary
-                writeDiaryVC.currentDiaryCard = diaryCard
-            }
-            
             self?.present(writeDiaryVC, animated: true, completion: {
                 writeDiaryVC.hero.modalAnimationType = .pull(direction: .right)
             })
