@@ -24,9 +24,7 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var diaryDateLabel: UILabel!
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var diaryTextView: UITextView!
-    
     @IBOutlet weak var navigationRightButton: UIButton!
-    
     
     var currentMode: DiaryViewMode = .writeNewDiary {
         didSet {
@@ -164,7 +162,6 @@ extension DiaryViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

@@ -65,8 +65,8 @@ extension DetailViewController {
                 guard let modifyVC = storyboard.instantiateViewController(withIdentifier: ModifyPlantViewController.identifier) as? ModifyPlantViewController else {
                     return
                 }
-                DispatchQueue.main.async {
-                    self.present(modifyVC, animated: true, completion: nil)
+                DispatchQueue.main.async { [weak self] in
+                    self?.present(modifyVC, animated: true, completion: nil)
                 }
             case .diaryCard(let card):
                 ()

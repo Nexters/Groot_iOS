@@ -21,8 +21,8 @@ extension HomeViewController: UICollectionViewDelegate {
         settingVC.hero.isEnabled = true
         settingVC.hero.modalAnimationType = .push(direction: .left)
         
-        DispatchQueue.main.async {
-            self.present(settingVC, animated: true, completion: {
+        DispatchQueue.main.async { [weak self] in
+            self?.present(settingVC, animated: true, completion: {
                 settingVC.hero.modalAnimationType = .pull(direction: .right)
             })
         }
@@ -50,8 +50,8 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
         
-        DispatchQueue.main.async {
-            self.present(registerVC, animated: true, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(registerVC, animated: true, completion: nil)
         }
     }
     
@@ -105,8 +105,8 @@ extension HomeViewController: UICollectionViewDelegate {
         
         guard let detailCell = detailVC.tableView.cellForRow(at: index) as? MainDetailTableViewCell else {
             
-            DispatchQueue.main.async {
-                self.present(detailVC, animated: true, completion: nil)
+            DispatchQueue.main.async { [weak self] in
+                self?.present(detailVC, animated: true, completion: nil)
             }
             
             return

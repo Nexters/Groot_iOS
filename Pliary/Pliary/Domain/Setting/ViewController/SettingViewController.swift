@@ -103,8 +103,8 @@ class SettingViewController: UIViewController {
         chanegUserSettingVC.hero.isEnabled = true
         chanegUserSettingVC.hero.modalAnimationType = .push(direction: .left)
         
-        DispatchQueue.main.async {
-            self.present(chanegUserSettingVC, animated: true, completion: {
+        DispatchQueue.main.async { [weak self] in
+            self?.present(chanegUserSettingVC, animated: true, completion: {
                 chanegUserSettingVC.hero.modalAnimationType = .pull(direction: .right)
             })
         }
