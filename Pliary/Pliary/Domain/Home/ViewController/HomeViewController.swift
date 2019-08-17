@@ -102,7 +102,7 @@ class HomeViewController: UIViewController {
                 return
             }
             
-//            present(loginVC, animated: true, completion: nil)
+            present(loginVC, animated: true, completion: nil)
         }
     }
 }

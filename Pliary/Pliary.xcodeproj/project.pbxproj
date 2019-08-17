@@ -20,8 +20,6 @@
 		76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530322FB0C6800F4443E /* CalendarViewController.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
-		CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */; };
-		CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */; };
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
 		CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09477522FDEC8200E7C8A8 /* Setting.storyboard */; };
 		CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */; };
@@ -58,6 +56,7 @@
 		CE885A9A2307D839008DB1FB /* SendCompletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A982307D839008DB1FB /* SendCompletePopupView.swift */; };
 		CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A992307D839008DB1FB /* SendCompletePopupView.xib */; };
 		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
+		CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE885A9E23080A17008DB1FB /* LoginAnimation.gif */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -115,8 +114,6 @@
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
 		CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pliary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordResetPopupView.xib; sourceTree = "<group>"; };
-		CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetPopupView.swift; sourceTree = "<group>"; };
 		CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		CE09477522FDEC8200E7C8A8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +152,7 @@
 		CE885A982307D839008DB1FB /* SendCompletePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCompletePopupView.swift; sourceTree = "<group>"; };
 		CE885A992307D839008DB1FB /* SendCompletePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCompletePopupView.xib; sourceTree = "<group>"; };
 		CE885A9C2307DDD6008DB1FB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CE885A9E23080A17008DB1FB /* LoginAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginAnimation.gif; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -248,8 +246,6 @@
 		CE09476922FC6B4F00E7C8A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */,
-				CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */,
 				CE885A982307D839008DB1FB /* SendCompletePopupView.swift */,
 				CE885A992307D839008DB1FB /* SendCompletePopupView.xib */,
 			);
@@ -468,6 +464,7 @@
 		CE69264122E2EC3C00264114 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
+				CE885A9E23080A17008DB1FB /* LoginAnimation.gif */,
 				CE8C83F3230306830083B3A9 /* plant.gif */,
 				CE5F521522F1F7A500F2E777 /* Sample.xcassets */,
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
@@ -650,7 +647,6 @@
 				CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */,
 				CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */,
 				CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */,
-				CE09476C22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
@@ -661,6 +657,7 @@
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
+				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */,
@@ -750,7 +747,6 @@
 				CE885A9D2307DDD6008DB1FB /* API.swift in Sources */,
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
-				CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */,
 				765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */,
 				CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
