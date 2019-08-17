@@ -10,6 +10,21 @@ import UIKit
 
 class RegisterPlantHeaderView: UIView {
 
+    static let height: CGFloat = 80
+    weak var delegate: RegisterEventDelegate?
     
+    static func instance() -> RegisterPlantHeaderView {
+        let view: RegisterPlantHeaderView = UIView.createViewFromNib(nibName: RegisterPlantHeaderView.identifier)
+        
+        return view
+    }
+    
+    @IBAction func tapPlantNameButton(_ sender: Any) {
+        delegate?.registerEvent(event: .selectPlant)
+    }
+    
+    @IBAction func tapArrowButton(_ sender: Any) {
+        delegate?.registerEvent(event: .selectPlant)
+    }
     
 }

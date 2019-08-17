@@ -61,6 +61,11 @@
 		CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */; };
 		CE885ACB23085DB6008DB1FB /* SelectPlantPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */; };
 		CE885ACD23085DC5008DB1FB /* SelectPlantPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */; };
+		CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */; };
+		CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */; };
+		CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */; };
+		CE885ADA23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */; };
+		CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -161,6 +166,11 @@
 		CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterPlantHeaderView.xib; path = ../../../../../../../Documents/RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
 		CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectPlantPopupView.swift; path = ../../../../../../../Documents/SelectPlantPopupView.swift; sourceTree = "<group>"; };
 		CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SelectPlantPopupView.xib; path = ../../../../../../../Documents/SelectPlantPopupView.xib; sourceTree = "<group>"; };
+		CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEventDelegate.swift; sourceTree = "<group>"; };
+		CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlantTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantLabelTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantLabelTableViewCell.xib; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -485,6 +495,10 @@
 			children = (
 				CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */,
 				CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */,
+				CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */,
+				CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */,
+				CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */,
+				CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -501,10 +515,10 @@
 		CE885AC523085D30008DB1FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */,
-				CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */,
 				CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */,
 				CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */,
+				CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */,
+				CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,6 +561,7 @@
 				CE885A932306DEEE008DB1FB /* ViewController */,
 				CE885AC523085D30008DB1FB /* View */,
 				CE885A8E2306DDDE008DB1FB /* Cell */,
+				CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */,
 				CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */,
 			);
 			path = RegisterPlant;
@@ -672,6 +687,7 @@
 				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
+				CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */,
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
 				CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
@@ -686,6 +702,7 @@
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
 				CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
+				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */,
@@ -777,6 +794,7 @@
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
 				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
 				CE885ACB23085DB6008DB1FB /* SelectPlantPopupView.swift in Sources */,
+				CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */,
@@ -786,6 +804,7 @@
 				CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */,
 				CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */,
 				CE8C84082305B4C60083B3A9 /* DetailEventDelegate.swift in Sources */,
+				CE885ADA23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
@@ -795,6 +814,7 @@
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
+				CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */,
 				CE885A952307C735008DB1FB /* Global.swift in Sources */,
 				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
 				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
