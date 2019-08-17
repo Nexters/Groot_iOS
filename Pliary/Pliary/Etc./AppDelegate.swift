@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        if error != nil {
+        guard error == nil else {
             return
         }
         
@@ -44,15 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         Auth.auth().signIn(with: credential){ (user, error) in
             if let error = error {
                 print(error.localizedDescription)
-            } else {
-                
+                return
             }
         }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         
-        if let error = error {
+        guard error == nil else {
             return
         }
     }
