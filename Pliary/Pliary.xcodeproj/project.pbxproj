@@ -55,6 +55,8 @@
 		CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */; };
 		CE885A952307C735008DB1FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A942307C735008DB1FB /* Global.swift */; };
 		CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE885A962307D595008DB1FB /* GoogleService-Info.plist */; };
+		CE885A9A2307D839008DB1FB /* SendCompletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A982307D839008DB1FB /* SendCompletePopupView.swift */; };
+		CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A992307D839008DB1FB /* SendCompletePopupView.xib */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -149,6 +151,8 @@
 		CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE885A942307C735008DB1FB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CE885A962307D595008DB1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE885A982307D839008DB1FB /* SendCompletePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCompletePopupView.swift; sourceTree = "<group>"; };
+		CE885A992307D839008DB1FB /* SendCompletePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCompletePopupView.xib; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 			children = (
 				CE09476A22FC6B4F00E7C8A8 /* PasswordResetPopupView.xib */,
 				CE09476B22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift */,
+				CE885A982307D839008DB1FB /* SendCompletePopupView.swift */,
+				CE885A992307D839008DB1FB /* SendCompletePopupView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
+				CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE8C83F4230306830083B3A9 /* plant.gif in Resources */,
@@ -776,6 +783,7 @@
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
 				CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */,
 				CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */,
+				CE885A9A2307D839008DB1FB /* SendCompletePopupView.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
 				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
