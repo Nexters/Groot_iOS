@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PasswordResetPopupViewController: UIViewController, UITextFieldDelegate {
+class FindPasswordViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var warningAlertImage: UIImageView!
