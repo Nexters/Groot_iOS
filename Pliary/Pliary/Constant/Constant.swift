@@ -42,4 +42,5 @@ struct Image {
     static let moreButton = UIImage(named: "BtnMore")
     static let plusButton = UIImage(named: "BtnAddBlack")
     static let minusButton = UIImage(named: "BtnSubtract")
+    static let loginImage = try? UIImage(gifName: "LoginAnimation.gif", levelOfIntegrity: 1)
 }

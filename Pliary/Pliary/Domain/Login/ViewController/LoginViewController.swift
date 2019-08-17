@@ -39,12 +39,9 @@ extension LoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            let gif = try UIImage(gifName: "mainPlant.gif", levelOfIntegrity: 0.5)
-            plantView.setGifImage(gif)
+        if let image = Image.loginImage {
+            plantView.setGifImage(image)
             plantView.startAnimatingGif()
-        } catch {
-            print(error)
         }
     }
 }
