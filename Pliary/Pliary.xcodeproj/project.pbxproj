@@ -57,6 +57,10 @@
 		CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A992307D839008DB1FB /* SendCompletePopupView.xib */; };
 		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
 		CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE885A9E23080A17008DB1FB /* LoginAnimation.gif */; };
+		CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */; };
+		CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */; };
+		CE885ACB23085DB6008DB1FB /* SelectPlantPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */; };
+		CE885ACD23085DC5008DB1FB /* SelectPlantPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -153,6 +157,10 @@
 		CE885A992307D839008DB1FB /* SendCompletePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCompletePopupView.xib; sourceTree = "<group>"; };
 		CE885A9C2307DDD6008DB1FB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CE885A9E23080A17008DB1FB /* LoginAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginAnimation.gif; sourceTree = "<group>"; };
+		CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantHeaderView.swift; sourceTree = "<group>"; };
+		CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterPlantHeaderView.xib; path = ../../../../../../../Documents/RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
+		CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectPlantPopupView.swift; path = ../../../../../../../Documents/SelectPlantPopupView.swift; sourceTree = "<group>"; };
+		CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SelectPlantPopupView.xib; path = ../../../../../../../Documents/SelectPlantPopupView.xib; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -490,6 +498,17 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		CE885AC523085D30008DB1FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */,
+				CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */,
+				CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */,
+				CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE8C83F523059CAB0083B3A9 /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				CE885A932306DEEE008DB1FB /* ViewController */,
+				CE885AC523085D30008DB1FB /* View */,
 				CE885A8E2306DDDE008DB1FB /* Cell */,
 				CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */,
 			);
@@ -656,6 +676,7 @@
 				CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
+				CE885ACD23085DC5008DB1FB /* SelectPlantPopupView.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
 				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
@@ -663,6 +684,7 @@
 				CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
+				CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
@@ -754,6 +776,7 @@
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
 				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
+				CE885ACB23085DB6008DB1FB /* SelectPlantPopupView.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */,
@@ -767,6 +790,7 @@
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
 				CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */,
+				CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */,
 				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
