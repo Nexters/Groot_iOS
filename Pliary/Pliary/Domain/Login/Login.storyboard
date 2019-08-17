@@ -13,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="INe-86-tF6">
             <objects>
-                <viewController id="bXf-du-Plo" customClass="SignInViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bXf-du-Plo" customClass="SignInViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wy3-mF-WBO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +76,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Ilp-zw-mmn" kind="presentation" id="189-2h-7hl"/>
+                                    <action selector="tapEmailSignUpButton:" destination="bXf-du-Plo" eventType="touchUpInside" id="DT0-Hu-of1"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="pliary@pliary.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-n3-xJQ">
@@ -175,7 +175,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="n5R-Ck-RS8">
             <objects>
-                <viewController id="Ilp-zw-mmn" customClass="SignUpViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ilp-zw-mmn" customClass="SignUpViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CLi-GO-QVi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,7 +484,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="borderWidth" value="1"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="bXf-du-Plo" kind="presentation" id="1zY-nD-H4Q"/>
+                                    <action selector="tapEmailSignInButton:" destination="1kB-yS-bHj" eventType="touchUpInside" id="hdb-52-cJ5"/>
                                 </connections>
                             </button>
                         </subviews>

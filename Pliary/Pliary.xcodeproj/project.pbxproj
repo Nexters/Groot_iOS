@@ -333,10 +333,10 @@
 		CE5F521022F1F64600F2E777 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */,
 				CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */,
-				76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */,
 				762B4FF122F1B129002C24EF /* SignInViewController.swift */,
+				76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */,
+				765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

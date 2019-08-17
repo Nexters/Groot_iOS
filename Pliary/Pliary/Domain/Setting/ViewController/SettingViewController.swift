@@ -26,6 +26,7 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func tapBackButton(_ sender: Any) {
+        hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
     }
     
@@ -138,7 +139,7 @@ extension SettingViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+        guard (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) != nil else {
             print("Expected a dictionary containing an image, but was provided the following: \(info)")
             return
         }

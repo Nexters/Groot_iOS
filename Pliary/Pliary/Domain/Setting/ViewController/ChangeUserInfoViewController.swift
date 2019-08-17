@@ -22,6 +22,7 @@ class ChangeUserInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var changePWButton: UIButton!
     
     @IBAction func tapBackButton(_ sender: Any) {
+        hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
     }
     

@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBAction func backButton(_ sender: Any) {
+        hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
     }
     @IBAction func emailResetButtonClick(_ sender: UIButton) {
@@ -44,11 +45,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         switch gr.state {
         case .began:
+            hero.modalAnimationType = .pull(direction: .right)
             dismiss(animated: true, completion: nil)
         case .changed:
             Hero.shared.update(translation.x / view.bounds.width)
         default:
-            if ((translation.x + velocity.x) / view.bounds.width) > 0.5 {
+            if ((translation.x + velocity.x) / view.bounds.width) > 0.65 {
                 Hero.shared.finish()
             } else {
                 Hero.shared.cancel()
@@ -228,6 +230,7 @@ extension SignUpViewController {
             // 이미 login 상태
             return
         }
+        
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
         view.addGestureRecognizer(gesture)
     }
