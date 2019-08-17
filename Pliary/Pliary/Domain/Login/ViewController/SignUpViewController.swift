@@ -29,7 +29,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailSuccessAlert: UIImageView!
     @IBOutlet weak var passwordSuccessAlert: UIImageView!
 
-
+    var keyboardHeight: CGFloat = 0
+    
     @IBAction func backButton(_ sender: Any) {
         hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
@@ -59,15 +60,23 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
+    @objc func endEdit(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
+            keyboardHeight = keyboardSize.height
+            
+            if scrollView.frame.height > scrollView.contentSize.height {
+                scrollView.contentSize.height = scrollView.frame.height + keyboardHeight / 2
+            } else {
+                scrollView.contentSize.height = contentView.frame.maxY + keyboardHeight / 2
             }
+            
+            scrollView.contentOffset.y = userProfileView.frame.maxY
         }
     }
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -87,6 +96,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSignUpButtonState()
+        scrollView.contentSize.height = contentView.frame.maxY 
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -233,6 +243,12 @@ extension SignUpViewController {
             // 이미 login 상태
             return
         }
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEdit))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        
+        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
         view.addGestureRecognizer(gesture)
