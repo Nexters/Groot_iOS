@@ -38,8 +38,16 @@ class PasswordResetPopupView: UIView, UITextFieldDelegate {
         emailTextField.setBottomBorder(color: Color.gray7)
     }
     
-    @IBAction func summitButtonClicked(_ sender: Any) {
+    @IBAction func sendButtonClicked(_ sender: Any) {
+        dismissKeyboard()
+        let popup = SendCompletePopupView.instance()
+
+        popup.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+        popup.center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         
+        self.superview?.addSubview(popup);
+        self.removeFromSuperview()
+
     }
     
     @IBAction func PopupViewCloseButtonClick(_ sender: UIButton) {
@@ -58,6 +66,7 @@ class PasswordResetPopupView: UIView, UITextFieldDelegate {
         
         guard let email = emailTextField.text else { return true }
         updateState(isValid: isValidEmailAddress(email: email))
+        dismissKeyboard()
         return true
     }
     
