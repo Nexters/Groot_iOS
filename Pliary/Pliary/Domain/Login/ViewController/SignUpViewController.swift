@@ -30,6 +30,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordSuccessAlert: UIImageView!
 
     var keyboardHeight: CGFloat = 0
+    let prifileImage : UIImage = #imageLiteral(resourceName: "defaultProfie")
     
     @IBAction func backButton(_ sender: Any) {
         hero.modalAnimationType = .pull(direction: .right)
@@ -96,7 +97,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSignUpButtonState()
-        scrollView.contentSize.height = contentView.frame.maxY 
+        scrollView.contentSize.height = contentView.frame.maxY
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -215,11 +216,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func ProfileImageViewLoad(){
         let userProfile = UserProfileView.instance()
-        let image : UIImage = #imageLiteral(resourceName: "DefaultProfileImage")
-        userProfile.profileImageView.image = image.resize(withSize: CGSize(width: 58, height: 68))
-        userProfile.profileImageView.contentMode = .center
+        userProfile.delegate = self
         userProfile.frame = CGRect(x: 0, y: 0, width: userProfileView.bounds.width, height: userProfileView.bounds.height)
-        
+        userProfile.profileImageView.image = prifileImage.resize(withSize: CGSize(width: 67, height: 53))
+        userProfile.setUp(with: prifileImage)
         userProfileView.addSubview(userProfile);
     }
     
@@ -269,29 +269,9 @@ extension SignUpViewController {
         view.endEditing(true)
     }
 }
-//
-//extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//
-//        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-//            print("Expected a dictionary containing an image, but was provided the following: \(info)")
-//            return
-//        }
-//
-//        //        userProfileImageView.image = selectedImage.resize(withSize: CGSize(width: 151.0, height: 151.0), contentMode: .contentAspectFill)
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-//
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.sourceType = .photoLibrary
-//        imagePickerController.delegate = self
-//        present(imagePickerController, animated: true, completion: nil)
-//    }
-//}
+
+extension SignUpViewController: LoginEventDelegate {
+    func loginEvent() {
+        selectImageFromPhotoLibrary()
+    }
+}

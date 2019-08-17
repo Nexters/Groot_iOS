@@ -279,7 +279,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw5-Lf-dO2">
-                                                <rect key="frame" x="110.5" y="36" width="99" height="98.5"/>
+                                                <rect key="frame" x="110.5" y="36" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="uw5-Lf-dO2" secondAttribute="height" multiplier="1:1" id="fap-9A-aef"/>
                                                 </constraints>
@@ -325,7 +325,7 @@
                                             <constraint firstItem="8Bc-O5-LDb" firstAttribute="top" secondItem="c6o-h1-bf3" secondAttribute="bottom" constant="11" id="VQa-au-iFb"/>
                                             <constraint firstItem="rW6-Wn-8ZV" firstAttribute="leading" secondItem="vl7-TU-hUa" secondAttribute="leading" id="Vsx-ra-IUT"/>
                                             <constraint firstItem="99Y-6O-bvs" firstAttribute="top" secondItem="4qi-tx-Def" secondAttribute="bottom" constant="11" id="XE9-vd-tFf"/>
-                                            <constraint firstItem="uw5-Lf-dO2" firstAttribute="width" secondItem="Wpk-3i-2W7" secondAttribute="height" multiplier="145:534" id="XHC-jh-2Zd"/>
+                                            <constraint firstItem="uw5-Lf-dO2" firstAttribute="width" secondItem="Wpk-3i-2W7" secondAttribute="height" multiplier="145:534" constant="1.4325842696629252" id="XHC-jh-2Zd"/>
                                             <constraint firstAttribute="trailing" secondItem="8Bc-O5-LDb" secondAttribute="trailing" constant="36" id="Y7v-u0-sU4"/>
                                             <constraint firstItem="gNG-3B-46F" firstAttribute="leading" secondItem="99Y-6O-bvs" secondAttribute="leading" id="ZbB-Vv-tOb"/>
                                             <constraint firstItem="1m0-mF-OV6" firstAttribute="centerX" secondItem="vl7-TU-hUa" secondAttribute="centerX" id="btj-0r-wua"/>
@@ -334,7 +334,7 @@
                                             <constraint firstItem="cfi-ov-ZOi" firstAttribute="width" secondItem="8Bc-O5-LDb" secondAttribute="width" id="jPq-sL-ftS"/>
                                             <constraint firstItem="gNG-3B-46F" firstAttribute="width" secondItem="99Y-6O-bvs" secondAttribute="width" id="lDf-gU-4D9"/>
                                             <constraint firstItem="99Y-6O-bvs" firstAttribute="centerY" secondItem="Bx9-BO-lvH" secondAttribute="centerY" id="mV6-8z-BiI"/>
-                                            <constraint firstItem="c6o-h1-bf3" firstAttribute="top" secondItem="uw5-Lf-dO2" secondAttribute="bottom" constant="43" id="tys-gs-JKB"/>
+                                            <constraint firstItem="c6o-h1-bf3" firstAttribute="top" secondItem="uw5-Lf-dO2" secondAttribute="bottom" constant="41.5" id="tys-gs-JKB"/>
                                             <constraint firstItem="cfi-ov-ZOi" firstAttribute="leading" secondItem="8Bc-O5-LDb" secondAttribute="leading" id="uur-lF-pQY"/>
                                             <constraint firstItem="1m0-mF-OV6" firstAttribute="centerY" secondItem="vl7-TU-hUa" secondAttribute="centerY" id="wlS-Wk-HPW"/>
                                         </constraints>

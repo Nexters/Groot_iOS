@@ -31,7 +31,7 @@
                     </constraints>
                     <state key="normal" backgroundImage="Camera2"/>
                     <connections>
-                        <action selector="tabCameraButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="xSu-RE-sY9"/>
+                        <action selector="tabCameraButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="hKo-xB-EGx"/>
                     </connections>
                 </button>
             </subviews>

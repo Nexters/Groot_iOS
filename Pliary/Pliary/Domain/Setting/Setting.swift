@@ -24,3 +24,7 @@ enum SettingType {
     case next
     case updateSwitch
 }
+
+protocol SettingEventDelegate: class {
+    func settingEvent()
+}
