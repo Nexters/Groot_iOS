@@ -14,7 +14,12 @@ extension DetailViewController {
         if animating {
             animatePlant(false)
         }
+        
+        if scrollView.contentOffset.y == 0 {
+            animatePlant(true)
+        }
     }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         // Perform whichever function you desire for when scrolling has stopped
         animatePlant(true)

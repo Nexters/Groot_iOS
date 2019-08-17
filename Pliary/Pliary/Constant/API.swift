@@ -9,6 +9,6 @@
 import Foundation
 
 struct API {
-    static let host = URL(string: "http://groot.devdogs.kr")
+    static let host = URL(string: "http://groot.devdogs.kr:8080")
     static let auth = host?.appendingPathComponent("/auth/signin")
 }
