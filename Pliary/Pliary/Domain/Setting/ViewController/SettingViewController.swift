@@ -96,7 +96,7 @@ class SettingViewController: UIViewController {
         present(deleteAccountAlert, animated: false, completion: nil)
     }
     
-    func goChangeUserSettingVC() {
+    func goChangePasswordVC() {
         let storyboard = UIStoryboard.init(name: StoryboardName.setting, bundle: Bundle(for: ChangePasswordViewController.self))
         guard let chanegUserSettingVC = storyboard.instantiateViewController(withIdentifier: ChangePasswordViewController.identifier) as? ChangePasswordViewController else {
             return
@@ -190,7 +190,7 @@ extension SettingViewController: UITableViewDataSource {
         let setting = settings[indexPath.row]
         switch setting.title {
         case .changePassword:
-            goChangeUserSettingVC()
+            goChangePasswordVC()
         case .logout:
             logout()
         case .deleteAccount:
