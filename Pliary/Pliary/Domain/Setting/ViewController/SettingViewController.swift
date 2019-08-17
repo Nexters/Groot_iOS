@@ -35,6 +35,7 @@ class SettingViewController: UIViewController {
         
         switch gr.state {
         case .began:
+            hero.modalAnimationType = .pull(direction: .right)
             dismiss(animated: true, completion: nil)
         case .changed:
             Hero.shared.update(translation.x / view.bounds.width)
@@ -102,12 +103,7 @@ class SettingViewController: UIViewController {
         
         chanegUserSettingVC.hero.isEnabled = true
         chanegUserSettingVC.hero.modalAnimationType = .push(direction: .left)
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.present(chanegUserSettingVC, animated: true, completion: {
-                chanegUserSettingVC.hero.modalAnimationType = .pull(direction: .right)
-            })
-        }
+        present(chanegUserSettingVC, animated: true, completion: nil)
     }
     
 }
