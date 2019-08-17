@@ -142,20 +142,45 @@ class DiaryViewController: UIViewController {
         diaryTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15)
         diaryTextView.textColor = Color.gray3
         
-        textViewHeightConstraint.constant = diaryTextView.contentSize.height
+        textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
+        
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEdit))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
+        
+        diaryTextView.delegate = self
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardHeight = keyboardSize.height
-            textViewBottomConstraint.constant += keyboardHeight
-            scrollView.contentOffset.y += keyboardHeight
+            
+            if scrollView.frame.height > scrollView.contentSize.height {
+                scrollView.contentSize.height = scrollView.frame.height + keyboardHeight
+            } else {
+                scrollView.contentSize.height = diaryTextView.frame.maxY + textViewBottomConstraint.constant + keyboardHeight
+            }
+            
+            self.scrollView.contentOffset.y = self.diaryDateLabel.frame.maxY
+            
+//            DispatchQueue.main.async {
+//                if let selectedRange = self.diaryTextView.selectedTextRange {
+//                    let cursorPosition = self.diaryTextView.offset(from: self.diaryTextView.beginningOfDocument, to: selectedRange.start)
+//
+//                    self.scrollView.contentOffset.y = self.diaryImageView.frame.maxY + CGFloat(cursorPosition)
+//                }
+//            }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        textViewBottomConstraint.constant -= keyboardHeight
-        scrollView.contentOffset.y -= keyboardHeight
+        scrollView.contentSize.height = diaryTextView.frame.maxY + textViewBottomConstraint.constant
+    }
+    
+    @objc func endEdit(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 
@@ -170,16 +195,21 @@ extension DiaryViewController {
         changeMode(currentMode)
         setTextView()
         
+        // check
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -212,5 +242,11 @@ extension DiaryViewController: UIImagePickerControllerDelegate, UINavigationCont
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+    }
+}
+
+extension DiaryViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
     }
 }
