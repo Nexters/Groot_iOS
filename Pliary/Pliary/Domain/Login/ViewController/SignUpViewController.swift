@@ -14,7 +14,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userProfileView: UIView!
     let imagePickerController = UIImagePickerController()
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -226,6 +228,7 @@ extension SignUpViewController {
         emailTextField.setBottomBorder(color: Color.gray7)
         passwordTextField.setBottomBorder(color: Color.gray7)
         
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 620)
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
             return
