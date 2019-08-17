@@ -94,6 +94,15 @@ class HomeViewController: UIViewController {
         plants.append(plant)
     }
     
+    func checkLogin() {
+        if Global.shared.user == nil {
+            let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: Bundle(for: LoginViewController.self))
+            guard let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
+                return
+            }
+            present(loginVC, animated: true, completion: nil)
+        }
+    }
 }
 
 extension HomeViewController {
@@ -114,5 +123,7 @@ extension HomeViewController {
             setFirstCellSize()
             first = false
         }
+        
+        checkLogin()
     }
 }
