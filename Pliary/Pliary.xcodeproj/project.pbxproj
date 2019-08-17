@@ -66,6 +66,14 @@
 		CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */; };
 		CE885ADA23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */; };
 		CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */; };
+		CE885ADE230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885ADC230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift */; };
+		CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885ADD230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib */; };
+		CE885AE2230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE0230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift */; };
+		CE885AE3230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE1230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib */; };
+		CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE42308741F008DB1FB /* RegisterPlantDateTableViewCell.swift */; };
+		CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */; };
+		CE885AEA23087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */; };
+		CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -171,6 +179,14 @@
 		CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlantTableViewCell.xib; sourceTree = "<group>"; };
 		CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantLabelTableViewCell.swift; sourceTree = "<group>"; };
 		CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantLabelTableViewCell.xib; sourceTree = "<group>"; };
+		CE885ADC230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantNameTableViewCell.swift; sourceTree = "<group>"; };
+		CE885ADD230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantNameTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AE0230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantImageTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AE1230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantImageTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AE42308741F008DB1FB /* RegisterPlantDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantDateTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantDateTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantPeriodTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantPeriodTableViewCell.xib; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -499,6 +515,14 @@
 				CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */,
 				CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */,
 				CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */,
+				CE885ADC230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift */,
+				CE885ADD230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib */,
+				CE885AE0230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift */,
+				CE885AE1230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib */,
+				CE885AE42308741F008DB1FB /* RegisterPlantDateTableViewCell.swift */,
+				CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */,
+				CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */,
+				CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -689,6 +713,7 @@
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */,
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
+				CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */,
 				CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
@@ -698,12 +723,15 @@
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */,
+				CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
 				CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */,
+				CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
 				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
+				CE885AE3230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
@@ -786,6 +814,7 @@
 				CE885A9D2307DDD6008DB1FB /* API.swift in Sources */,
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
+				CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */,
 				765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */,
 				CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
@@ -809,6 +838,7 @@
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
 				CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */,
+				CE885ADE230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift in Sources */,
 				CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */,
 				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
@@ -830,6 +860,8 @@
 				CE885A9A2307D839008DB1FB /* SendCompletePopupView.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
+				CE885AEA23087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift in Sources */,
+				CE885AE2230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift in Sources */,
 				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
 				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
