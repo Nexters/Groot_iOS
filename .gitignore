@@ -72,3 +72,4 @@ Pods/
 xcuserdata/
 *.xcworkspace/
 GoogleService-Info.plist
+Pliary/.DS_Store
