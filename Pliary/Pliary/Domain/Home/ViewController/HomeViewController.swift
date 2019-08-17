@@ -88,11 +88,11 @@ class HomeViewController: UIViewController {
         let plant = Plant.init(name: "", species: "", drinkingDay: 0)
         plants.append(plant)
         plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
+//        plants.append(plant)
+//        plants.append(plant)
+//        plants.append(plant)
+//        plants.append(plant)
+//        plants.append(plant)
     }
     
     func checkLogin() {
@@ -102,7 +102,7 @@ class HomeViewController: UIViewController {
                 return
             }
             
-            present(loginVC, animated: true, completion: nil)
+//            present(loginVC, animated: true, completion: nil)
         }
     }
 }
