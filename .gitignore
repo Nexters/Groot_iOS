@@ -67,6 +67,7 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
+Pliary/.DS_Store
 .DS_Store
 Pods/
 xcuserdata/
