@@ -7,6 +7,7 @@
 
 import UIKit
 import Hero
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -101,8 +102,7 @@ class HomeViewController: UIViewController {
                 return
             }
             
-            let topViewController = UIApplication.shared.keyWindow?.rootViewController
-            topViewController?.present(loginVC, animated: true, completion: nil)
+            present(loginVC, animated: true, completion: nil)
         }
     }
 }

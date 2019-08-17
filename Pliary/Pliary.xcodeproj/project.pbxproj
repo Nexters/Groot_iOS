@@ -57,6 +57,7 @@
 		CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE885A962307D595008DB1FB /* GoogleService-Info.plist */; };
 		CE885A9A2307D839008DB1FB /* SendCompletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A982307D839008DB1FB /* SendCompletePopupView.swift */; };
 		CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A992307D839008DB1FB /* SendCompletePopupView.xib */; };
+		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -153,6 +154,7 @@
 		CE885A962307D595008DB1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE885A982307D839008DB1FB /* SendCompletePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCompletePopupView.swift; sourceTree = "<group>"; };
 		CE885A992307D839008DB1FB /* SendCompletePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCompletePopupView.xib; sourceTree = "<group>"; };
+		CE885A9C2307DDD6008DB1FB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5F522922F1FF0100F2E777 /* Constant.swift */,
+				CE885A9C2307DDD6008DB1FB /* API.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */,
+				CE885A9D2307DDD6008DB1FB /* API.swift in Sources */,
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE09476D22FC6B4F00E7C8A8 /* PasswordResetPopupView.swift in Sources */,
