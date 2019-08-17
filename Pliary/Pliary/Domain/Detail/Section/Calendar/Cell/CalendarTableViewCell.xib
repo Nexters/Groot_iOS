@@ -106,6 +106,10 @@
                 <accessibilityTraits key="traits" keyboardKey="YES"/>
             </accessibility>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="calendar" destination="CRJ-FC-GOw" id="JI6-lW-uLZ"/>
+                <outlet property="calendarView" destination="TSL-4z-1zc" id="Tbp-j5-er3"/>
+            </connections>
             <point key="canvasLocation" x="184.78260869565219" y="136.60714285714286"/>
         </tableViewCell>
     </objects>
