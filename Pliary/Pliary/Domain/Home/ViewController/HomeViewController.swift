@@ -96,11 +96,13 @@ class HomeViewController: UIViewController {
     
     func checkLogin() {
         if Global.shared.user == nil {
-            let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: Bundle(for: LoginViewController.self))
+            let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: nil)
             guard let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
                 return
             }
-            present(loginVC, animated: true, completion: nil)
+            
+            let topViewController = UIApplication.shared.keyWindow?.rootViewController
+            topViewController?.present(loginVC, animated: true, completion: nil)
         }
     }
 }
@@ -114,8 +116,15 @@ extension HomeViewController {
         setUpSlideView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        checkLogin()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         configureCollectionViewLayoutItemSize()
         slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
         
@@ -124,6 +133,6 @@ extension HomeViewController {
             first = false
         }
         
-        checkLogin()
+        
     }
 }

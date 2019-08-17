@@ -54,6 +54,7 @@
 		CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */; };
 		CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */; };
 		CE885A952307C735008DB1FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A942307C735008DB1FB /* Global.swift */; };
+		CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE885A962307D595008DB1FB /* GoogleService-Info.plist */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -91,7 +92,6 @@
 		CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E1A922FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib */; };
 		CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E1AC22FB2BE900ED0C31 /* DetailTableHeaderView.swift */; };
 		CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */; };
-		CEE0E1B122FB302D00ED0C31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E1B022FB302D00ED0C31 /* GoogleService-Info.plist */; };
 		CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +148,7 @@
 		CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE885A942307C735008DB1FB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		CE885A962307D595008DB1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -185,7 +186,6 @@
 		CEE0E1A922FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayWithPlantTableViewCell.xib; sourceTree = "<group>"; };
 		CEE0E1AC22FB2BE900ED0C31 /* DetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableHeaderView.swift; sourceTree = "<group>"; };
 		CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableHeaderView.xib; sourceTree = "<group>"; };
-		CEE0E1B022FB302D00ED0C31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -431,7 +431,7 @@
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
 				CE69263722E2EC1000264114 /* Info.plist */,
-				CEE0E1B022FB302D00ED0C31 /* GoogleService-Info.plist */,
+				CE885A962307D595008DB1FB /* GoogleService-Info.plist */,
 				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
 			);
 			path = Pliary;
@@ -654,10 +654,10 @@
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
+				CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
-				CEE0E1B122FB302D00ED0C31 /* GoogleService-Info.plist in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
