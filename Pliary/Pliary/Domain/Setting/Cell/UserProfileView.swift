@@ -11,6 +11,7 @@ import UIKit
 class UserProfileView: UIView {
 
     weak var delegate: LoginEventDelegate?
+    let defaultPrifile : UIImage = #imageLiteral(resourceName: "defaultProfie")
 
     static func instance() -> UserProfileView {
         let view: UserProfileView = UIView.createViewFromNib(nibName: UserProfileView.identifier)
@@ -24,13 +25,15 @@ class UserProfileView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    func setUp(with image : UIImage) {
-        profileImageView.image = image.resize(withSize: CGSize(width: 67, height: 53))
+        profileImageView.image = defaultPrifile.resize(withSize: CGSize(width: 67, height: 53))
         profileImageView.contentMode = .center
         profileImageView.cornerRadius = profileImageView.frame.height / 2.0
         profileImageView.borderWidth = 1
         profileImageView.borderColor = Color.gray6
+    }
+    func setUp(with image : UIImage) {
+        profileImageView.image = image.resize(withSize: CGSize(width: profileImageView.frame.width, height: profileImageView.frame.height))
+        profileImageView.contentMode = .scaleAspectFill
     }
 
 }

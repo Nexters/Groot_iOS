@@ -218,8 +218,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let userProfile = UserProfileView.instance()
         userProfile.delegate = self
         userProfile.frame = CGRect(x: 0, y: 0, width: userProfileView.bounds.width, height: userProfileView.bounds.height)
-        userProfile.profileImageView.image = prifileImage.resize(withSize: CGSize(width: 67, height: 53))
-        userProfile.setUp(with: prifileImage)
         userProfileView.addSubview(userProfile);
     }
     
