@@ -11,6 +11,7 @@ import Hero
 
 class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     

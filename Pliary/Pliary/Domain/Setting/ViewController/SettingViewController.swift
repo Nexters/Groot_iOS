@@ -12,6 +12,7 @@ import Firebase
 
 class SettingViewController: UIViewController {
     
+    
     @IBOutlet weak var profileBackgrondView: UIView!
     @IBOutlet weak var tableView: UITableView!
     

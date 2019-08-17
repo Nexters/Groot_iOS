@@ -23,6 +23,7 @@ class UserProfileView: UIView {
     @IBAction func tabCameraButton(_ sender: Any) {
         delegate?.loginEvent()
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImageView.image = defaultPrifile.resize(withSize: CGSize(width: 67, height: 53))

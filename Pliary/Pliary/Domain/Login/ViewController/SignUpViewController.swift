@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailSuccessAlert: UIImageView!
     @IBOutlet weak var passwordSuccessAlert: UIImageView!
 
+    
     var keyboardHeight: CGFloat = 0
     let prifileImage : UIImage = #imageLiteral(resourceName: "defaultProfie")
     
