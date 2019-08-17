@@ -20,12 +20,7 @@ extension HomeViewController: UICollectionViewDelegate {
         
         settingVC.hero.isEnabled = true
         settingVC.hero.modalAnimationType = .push(direction: .left)
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.present(settingVC, animated: true, completion: {
-                settingVC.hero.modalAnimationType = .pull(direction: .right)
-            })
-        }
+        present(settingVC, animated: true, completion: nil)
     }
     
     func enableHero(view: UIView, id: String) {
@@ -50,9 +45,7 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
         
-        DispatchQueue.main.async { [weak self] in
-            self?.present(registerVC, animated: true, completion: nil)
-        }
+        present(registerVC, animated: true, completion: nil)
     }
     
     func goDetailViewController(with selectedCell: HomeCardCollectionViewCell, item: Int) {
@@ -105,10 +98,7 @@ extension HomeViewController: UICollectionViewDelegate {
         
         guard let detailCell = detailVC.tableView.cellForRow(at: index) as? MainDetailTableViewCell else {
             
-            DispatchQueue.main.async { [weak self] in
-                self?.present(detailVC, animated: true, completion: nil)
-            }
-            
+            present(detailVC, animated: true, completion: nil)
             return
         }
 

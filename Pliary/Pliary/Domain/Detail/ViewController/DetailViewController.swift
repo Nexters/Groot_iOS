@@ -31,6 +31,7 @@ class DetailViewController: UIViewController {
     
     func goDiaryViewController(with diaryCard: DiaryCard?) {
         let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: Bundle(for: DiaryViewController.self))
+        
         guard let writeDiaryVC = storyboard.instantiateViewController(withIdentifier: DiaryViewController.identifier) as? DiaryViewController else {
             return 
         }
@@ -43,11 +44,7 @@ class DetailViewController: UIViewController {
             writeDiaryVC.currentDiaryCard = diaryCard
         }
         
-        DispatchQueue.main.async { [weak self] in
-            self?.present(writeDiaryVC, animated: true, completion: {
-                writeDiaryVC.hero.modalAnimationType = .pull(direction: .right)
-            })
-        }
+        present(writeDiaryVC, animated: true, completion: nil)
     }
     
     func setUpTableView() {

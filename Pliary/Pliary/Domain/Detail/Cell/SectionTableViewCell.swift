@@ -29,6 +29,7 @@ class SectionTableViewCell: UITableViewCell {
         selectionStyle = .none
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.allowsSelection = false
         
         let diaryNib = UINib(nibName: DiarySectionCollectionViewCell.identifier, bundle: nil)
         collectionView.register(diaryNib, forCellWithReuseIdentifier: DiarySectionCollectionViewCell.identifier)
