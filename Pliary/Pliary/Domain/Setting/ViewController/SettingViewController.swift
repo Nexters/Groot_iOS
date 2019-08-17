@@ -97,8 +97,8 @@ class SettingViewController: UIViewController {
     }
     
     func goChangeUserSettingVC() {
-        let storyboard = UIStoryboard.init(name: StoryboardName.setting, bundle: Bundle(for: ChangeUserInfoViewController.self))
-        guard let chanegUserSettingVC = storyboard.instantiateViewController(withIdentifier: ChangeUserInfoViewController.identifier) as? ChangeUserInfoViewController else {
+        let storyboard = UIStoryboard.init(name: StoryboardName.setting, bundle: Bundle(for: ChangePasswordViewController.self))
+        guard let chanegUserSettingVC = storyboard.instantiateViewController(withIdentifier: ChangePasswordViewController.identifier) as? ChangePasswordViewController else {
             return
         }
         
