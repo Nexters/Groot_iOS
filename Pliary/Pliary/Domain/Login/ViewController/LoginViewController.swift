@@ -13,6 +13,7 @@ import GoogleSignIn
 class LoginViewController: UIViewController, GIDSignInUIDelegate{
     
     @IBOutlet weak var GIDSignInButton: UIButton!
+    @IBOutlet weak var plantView: UIImageView!
     
     @IBAction func GIDSignInButtonClicked(_ sender: UIButton) {
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -37,5 +38,13 @@ extension LoginViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            let gif = try UIImage(gifName: "mainPlant.gif", levelOfIntegrity: 0.5)
+            plantView.setGifImage(gif)
+            plantView.startAnimatingGif()
+        } catch {
+            print(error)
+        }
     }
 }

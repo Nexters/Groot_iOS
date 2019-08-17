@@ -15,7 +15,7 @@ class PasswordResetPopupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var successAlertImage: UIImageView!
     @IBOutlet weak var emailGuideLabel: UILabel!
     @IBOutlet weak var emailResetButton: UIButton!
-    @IBOutlet weak var sendNewPasswordButton: UIButton!
+    @IBOutlet weak var submitButton: UIButton!
     @IBAction func emailResetButtonClick(_ sender: UIButton) {
         emailTextField.text = ""
     }
@@ -23,8 +23,8 @@ class PasswordResetPopupViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         emailTextField.delegate = self
-        emailGuideLabel.frame.size = CGSize(width: 0, height: 0)
-        // Do any additional setup after loading the view.
+        emailTextField.setBottomBorder(color: Color.gray7)
+  
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -36,46 +36,54 @@ class PasswordResetPopupViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        updateLoginButtonState()
-    }
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        sendNewPasswordButton.isEnabled = false
+        submitButton.isEnabled = false
         emailResetButton.isHidden = false
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let email = emailTextField.text else { return }
+        updateState(isValid: isValidEmailAddress(email: email))
+    }
     
-    func updateLoginButtonState() {
-        let email : String = emailTextField.text ?? ""
-        
-        if !isValidEmailAddress(email: email) {
-            emailResetButton.isHidden = true
-            warningAlertImage.isHidden = false
-            successAlertImage.isHidden = true
-            emailGuideLabel.text = "이메일 형식에 맞지 않습니다."
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
-        } else {
+    func showEmailAlert(reset : Bool, warning : Bool, succeess : Bool){
+        emailResetButton.isHidden = reset
+        warningAlertImage.isHidden = warning
+        successAlertImage.isHidden = succeess
+    }
+    
+    func updateState(isValid : Bool) {
+        if isValid {
+            showEmailAlert(reset: true, warning: true, succeess: false)
             emailGuideLabel.text = ""
-            emailGuideLabel.frame.size = CGSize(width: 0, height: 0)
-            emailResetButton.isHidden = true
-            warningAlertImage.isHidden = true
-            successAlertImage.isHidden = false
-        }
-        
-        if isValidEmailAddress(email: email) {
-            emailResetButton.isEnabled = true
-            emailResetButton.backgroundColor = Color.green
-            
-            emailResetButton.layer.applySketchShadow(color: Color.buttonShadow, alpha: 0.4, x: 0, y: 10, blur: 14, spread: 0)
-            emailResetButton.setTitleColor(UIColor.white, for: .normal)
+            submitButton.isEnabled = true
+            submitButton.backgroundColor = Color.green
+            submitButton.setTitleColor(UIColor.white, for: .normal)
         } else {
-            emailResetButton.isEnabled = false
-            emailResetButton.setTitleColor(Color.gray5, for: .normal)
-            emailResetButton.backgroundColor = Color.gray7
-            emailResetButton.layer.applySketchShadow(color: UIColor.white, alpha: 0, x: 0, y: 0, blur: 0, spread: 0)
-            
+            showEmailAlert(reset: true, warning: false, succeess: true)
+            emailGuideLabel.text = "이메일 형식에 맞지 않습니다."
+            submitButton.isEnabled = false
+            submitButton.setTitleColor(Color.gray5, for: .normal)
+            submitButton.backgroundColor = Color.gray7
         }
+    }
+    
 
+    @IBAction func sendButtonClicked(_ sender: Any) {
+        
+        // email send
+        completePopupLoad()
+    }
+    func completePopupLoad() {
+        let popup = SendCompletePopupView.instance()
+        popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
+        
+        self.view.addSubview(popup);
+    }
+    
+    @IBAction func PopupViewCloseButtonClick(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     func isValidEmailAddress(email: String) -> Bool {
@@ -84,5 +92,5 @@ class PasswordResetPopupViewController: UIViewController, UITextFieldDelegate {
         
         return predicate.evaluate(with: email)
     }
-
+    
 }
