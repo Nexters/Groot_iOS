@@ -38,16 +38,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func PopupViewLoad(_ sender: UIButton) {
-        
-        let popup = PasswordResetPopupView.instance()
-        
-        popup.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-        popup.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
-        
-        self.view.addSubview(popup);
-    }
-    
     @IBAction func tapEmailSignUpButton(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: SignUpViewController.identifier) as? SignUpViewController else {
