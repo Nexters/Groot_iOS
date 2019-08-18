@@ -1,19 +1,18 @@
 //
-//  DiaryCardWithAllTableViewCell.swift
+//  DiaryCardWithTextTableViewCell.swift
 //  Pliary
 //
-//  Created by jeewoong.han on 01/08/2019.
+//  Created by jeewoong.han on 19/08/2019.
 //  Copyright © 2019 groot.nexters.pliary. All rights reserved.
 //
 
 import UIKit
 
-class DiaryCardWithAllTableViewCell: UITableViewCell {
+class DiaryCardWithTextTableViewCell: UITableViewCell {
 
     weak var delegate: DetailEventDelegate?
     private var diaryCard: DiaryCard?
     
-    @IBOutlet weak var diaryImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var diaryTextLabel: UILabel!
     
@@ -33,7 +32,6 @@ class DiaryCardWithAllTableViewCell: UITableViewCell {
     func setUp(with diaryCard: DiaryCard) {
         self.diaryCard = diaryCard
         
-        diaryImageView.image = diaryCard.diaryImage
         diaryTextLabel.text = diaryCard.diaryText
     }
     

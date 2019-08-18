@@ -27,9 +27,10 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     
     private func setExample() {
         let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
-        let diary = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: UIImage(named: "SampleDiary"))
-        let diary2 = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: nil)
-        let diary3 = DiaryCard(timeStamp: "2019.11.02", diaryText: nil, diaryImage: UIImage(named: "SampleDiary"))
+        let date = String(Date().timeIntervalSince1970)
+        let diary = DiaryCard(timeStamp: date, diaryText: text, diaryImage: UIImage(named: "SampleDiary"))
+        let diary2 = DiaryCard(timeStamp: date, diaryText: text, diaryImage: nil)
+        let diary3 = DiaryCard(timeStamp: date, diaryText: nil, diaryImage: UIImage(named: "SampleDiary"))
         
         diaryCards.append(diary)
         diaryCards.append(diary2)
@@ -53,6 +54,14 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
         let diaryCardWithAllName = DiaryCardWithAllTableViewCell.reuseIdentifier
         let diaryCardWithAllNib = UINib(nibName: diaryCardWithAllName, bundle: nil)
         tableView.register(diaryCardWithAllNib, forCellReuseIdentifier: diaryCardWithAllName)
+        
+        let diaryCardWithImageName = DiaryCardWithImageTableViewCell.reuseIdentifier
+        let diaryCardWithImageNib = UINib(nibName: diaryCardWithImageName, bundle: nil)
+        tableView.register(diaryCardWithImageNib, forCellReuseIdentifier: diaryCardWithImageName)
+        
+        let diaryCardWithTextName = DiaryCardWithTextTableViewCell.reuseIdentifier
+        let diaryCardWithTextNib = UINib(nibName: diaryCardWithTextName, bundle: nil)
+        tableView.register(diaryCardWithTextNib, forCellReuseIdentifier: diaryCardWithTextName)
         
         if diaryCards.isEmpty {
             growthLabel.isHidden = false
@@ -92,7 +101,29 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
         if indexPath.row == 0, let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
             
             return cell
-        } else if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
+        }
+        
+        let diaryCard = diaryCards[indexPath.row - 1]
+        
+        if diaryCard.diaryText == nil , let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithImageTableViewCell.reuseIdentifier) as? DiaryCardWithImageTableViewCell {
+            
+            let diaryCard = diaryCards[indexPath.row - 1]
+            cell.setUp(with: diaryCard)
+            cell.delegate = self
+            
+            return cell
+        }
+            
+        if diaryCard.diaryImage == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
+            
+            let diaryCard = diaryCards[indexPath.row - 1]
+            cell.setUp(with: diaryCard)
+            cell.delegate = self
+            
+            return cell
+        }
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
             
             let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)

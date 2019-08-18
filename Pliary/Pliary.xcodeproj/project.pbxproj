@@ -103,6 +103,10 @@
 		CE90E4032309418A00096731 /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */; };
 		CE90E40523094FAE00096731 /* PlantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E40423094FAE00096731 /* PlantType.swift */; };
 		CE90E407230955FD00096731 /* PlantEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E406230955FD00096731 /* PlantEnum.swift */; };
+		CE90E40F23099E5700096731 /* DiaryCardWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E40D23099E5700096731 /* DiaryCardWithImageTableViewCell.swift */; };
+		CE90E41023099E5700096731 /* DiaryCardWithImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E40E23099E5700096731 /* DiaryCardWithImageTableViewCell.xib */; };
+		CE90E4132309A04B00096731 /* DiaryCardWithTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4112309A04B00096731 /* DiaryCardWithTextTableViewCell.swift */; };
+		CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -220,6 +224,10 @@
 		CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
 		CE90E40423094FAE00096731 /* PlantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantType.swift; sourceTree = "<group>"; };
 		CE90E406230955FD00096731 /* PlantEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEnum.swift; sourceTree = "<group>"; };
+		CE90E40D23099E5700096731 /* DiaryCardWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardWithImageTableViewCell.swift; sourceTree = "<group>"; };
+		CE90E40E23099E5700096731 /* DiaryCardWithImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCardWithImageTableViewCell.xib; sourceTree = "<group>"; };
+		CE90E4112309A04B00096731 /* DiaryCardWithTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardWithTextTableViewCell.swift; sourceTree = "<group>"; };
+		CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCardWithTextTableViewCell.xib; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -635,6 +643,10 @@
 				CEE0E1A922FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib */,
 				CE5F523622F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift */,
 				CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */,
+				CE90E40D23099E5700096731 /* DiaryCardWithImageTableViewCell.swift */,
+				CE90E40E23099E5700096731 /* DiaryCardWithImageTableViewCell.xib */,
+				CE90E4112309A04B00096731 /* DiaryCardWithTextTableViewCell.swift */,
+				CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -715,6 +727,7 @@
 				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
+				CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */,
 				CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */,
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
 				CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */,
@@ -737,6 +750,7 @@
 				CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
+				CE90E41023099E5700096731 /* DiaryCardWithImageTableViewCell.xib in Resources */,
 				CE885AE3230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib in Resources */,
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
@@ -857,11 +871,13 @@
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
 				CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */,
 				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
+				CE90E40F23099E5700096731 /* DiaryCardWithImageTableViewCell.swift in Sources */,
 				CE8C84012305A6190083B3A9 /* WateringDelayPopupSubview.swift in Sources */,
 				CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
 				CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */,
+				CE90E4132309A04B00096731 /* DiaryCardWithTextTableViewCell.swift in Sources */,
 				CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
 				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
