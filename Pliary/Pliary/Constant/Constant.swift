@@ -21,6 +21,8 @@ struct ImageName {
     static let moreButton = "BtnMore"
     static let plusButton = "BtnAddBlack"
     static let minusButton = "BtnSubtract"
+    static let profileCameraButton = "Camera2"
+    static let grayCameraButton = "GrayCamera"
     static let loginImage = "LoginAnimation.gif"
 }
 

@@ -17,7 +17,10 @@ class UserProfileView: UIView {
         return view
     }
     
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
+    
+    var userImage: UIImage?
     
     @IBAction func tabCameraButton(_ sender: Any) {
         delegate?.loginEvent()
@@ -28,13 +31,30 @@ class UserProfileView: UIView {
     }
     
     func setUp(with image : UIImage) {
+        userImage = image
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.borderWidth = 1
         profileImageView.borderColor = Color.gray6
         profileImageView.image = image
     }
+    
     func makeRoundImage() {
         profileImageView.clipsToBounds = true
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2.0
+    }
+    
+    func makeDeleteMode() {
+        makeRoundImage()
+        
+        let cameraImage = UIImage(named: ImageName.grayCameraButton)
+        userImage = profileImageView.image
+        profileImageView.image = profileImageView.image?.convertToGrayScale()
+        cameraButton.setImage(cameraImage, for: .normal)
+    }
+    
+    func clearDeleteMode() {
+        let cameraImage = UIImage(named: ImageName.profileCameraButton)
+        profileImageView.image = userImage
+        cameraButton.setImage(cameraImage, for: .normal)
     }
 }

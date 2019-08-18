@@ -48,6 +48,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="cameraButton" destination="YjV-hf-m04" id="c1s-dy-6jS"/>
                 <outlet property="profileImageView" destination="nwi-CZ-BWB" id="z21-uk-nLu"/>
             </connections>
             <point key="canvasLocation" x="20.289855072463769" y="-83.705357142857139"/>

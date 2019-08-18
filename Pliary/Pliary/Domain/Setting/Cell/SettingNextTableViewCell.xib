@@ -49,6 +49,7 @@
                     <constraint firstAttribute="trailing" secondItem="pML-d3-zAn" secondAttribute="trailing" constant="36" id="h2s-U7-1pC"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellTitleLabel" destination="oFX-6b-BUv" id="SJQ-0k-PQ3"/>
