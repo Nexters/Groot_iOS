@@ -111,17 +111,12 @@ extension HomeViewController: UICollectionViewDelegate {
         enableHero(view: detailCell.customNameLabel, id: customNameID)
         enableHero(view: detailCell.nameSplitLabel, id: splitName)
         
-        
-        do {
-            let gif = try UIImage(gifName: "plant.gif", levelOfIntegrity: 1)
-            detailCell.plantView.setGifImage(gif)
+        // placeholder 넣고, detail view에서 start animate
+        if let image = selectedCell.plantView.gifImage {
+            detailCell.plantView.setGifImage(image)
             present(detailVC, animated: true, completion: {
                 detailCell.plantView.startAnimatingGif()
             })
-            
-            
-        } catch {
-            print(error)
         }
         
     }

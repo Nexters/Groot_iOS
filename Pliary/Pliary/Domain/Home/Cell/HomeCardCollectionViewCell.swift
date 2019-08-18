@@ -25,6 +25,9 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        
+//        let exURL = URL(string: "https://dailyissue.s3.ap-northeast-2.amazonaws.com/img2.gif")!
+        
         do {
             let gif = try UIImage(gifName: "plant.gif", levelOfIntegrity: 0.5)
             plantView.setGifImage(gif)
