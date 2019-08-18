@@ -28,13 +28,13 @@
                         <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-3v-FLU">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-3v-FLU">
                         <rect key="frame" x="36" y="74.5" width="336" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="4Gb-iS-XX2"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PBN-ug-uSn">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PBN-ug-uSn">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -58,7 +58,7 @@
                     <constraint firstItem="GNN-xV-GeR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Jak-gc-Hmu"/>
                     <constraint firstItem="6kS-WR-KLy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="O1J-vf-aB3"/>
                     <constraint firstAttribute="trailing" secondItem="6kS-WR-KLy" secondAttribute="trailing" constant="36" id="Wvm-9x-0vN"/>
-                    <constraint firstAttribute="bottom" secondItem="GNN-xV-GeR" secondAttribute="bottom" constant="108" id="iNF-Ce-Kpn"/>
+                    <constraint firstAttribute="bottom" secondItem="GNN-xV-GeR" secondAttribute="bottom" constant="125" id="iNF-Ce-Kpn"/>
                     <constraint firstItem="6kS-WR-KLy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="kor-65-rH8"/>
                     <constraint firstItem="pTk-3v-FLU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="m4b-x4-eaa"/>
                     <constraint firstAttribute="trailingMargin" secondItem="GNN-xV-GeR" secondAttribute="trailing" id="rQR-Dn-g1N"/>

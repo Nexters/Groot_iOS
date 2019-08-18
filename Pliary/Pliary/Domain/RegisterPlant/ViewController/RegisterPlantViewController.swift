@@ -25,6 +25,18 @@ class RegisterPlantViewController: UIViewController {
         
         let registerLabelNib = UINib(nibName: RegisterPlantLabelTableViewCell.reuseIdentifier, bundle: nil)
         tableView.register(registerLabelNib, forCellReuseIdentifier: RegisterPlantLabelTableViewCell.reuseIdentifier)
+        
+        let registerNameNib = UINib(nibName: RegisterPlantNameTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(registerNameNib, forCellReuseIdentifier: RegisterPlantNameTableViewCell.reuseIdentifier)
+        
+        let registerImageNib = UINib(nibName: RegisterPlantImageTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(registerImageNib, forCellReuseIdentifier: RegisterPlantImageTableViewCell.reuseIdentifier)
+        
+        let registerDateNib = UINib(nibName: RegisterPlantDateTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(registerDateNib, forCellReuseIdentifier: RegisterPlantDateTableViewCell.reuseIdentifier)
+        
+        let registerPeriodNib = UINib(nibName: RegisterPlantPeriodTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(registerPeriodNib, forCellReuseIdentifier: RegisterPlantPeriodTableViewCell.reuseIdentifier)
     }
 
 }
@@ -79,7 +91,10 @@ extension RegisterPlantViewController: UITableViewDataSource {
             return cell
         }
         
-        return UITableViewCell()
+        let identifier = rows[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        
+        return cell ?? UITableViewCell()
     }
     
 }
@@ -90,9 +105,21 @@ extension RegisterPlantViewController: RegisterEventDelegate {
         case .selectPlant:
             let selectPlantPopup = SelectPlantPopupView.instance()
             selectPlantPopup.frame = view.frame
+            selectPlantPopup.delegate = self
             view.addSubview(selectPlantPopup)
         case .selectDate:
             ()
+        case .plantSelected:
+            tableView.contentOffset.y = 0
+            tableView.isScrollEnabled = true
+            
+            rows = []
+            rows.append(RegisterPlantNameTableViewCell.identifier)
+            rows.append(RegisterPlantImageTableViewCell.identifier)
+            rows.append(RegisterPlantDateTableViewCell.identifier)
+            rows.append(RegisterPlantPeriodTableViewCell.identifier)
+            
+            tableView.reloadData()
         }
     }
     
