@@ -23,15 +23,11 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
             return
         }
         
-        let userProfile = UserProfileView.instance()
-        userProfile.profileImageView.image = selectedImage
-        userProfile.profileImageView.contentMode = .scaleAspectFill
-        userProfile.frame = CGRect(x: 0, y: 0, width: userProfileView.bounds.width, height: userProfileView.bounds.height)
-        userProfile.setUp(with: selectedImage)
-        userProfileView.addSubview(userProfile);
+        userProfileView?.setUp(with: selectedImage)
         
         dismiss(animated: true, completion: nil)
     }
+    
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
@@ -46,6 +42,7 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
+    
     func selectImageFromPhotoLibrary() {
         // Hide the keyboard.
         

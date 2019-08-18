@@ -397,7 +397,7 @@
                         <outlet property="passwordWarningAlert" destination="Bx9-BO-lvH" id="b0H-4F-opE"/>
                         <outlet property="scrollView" destination="eYM-bM-PdQ" id="bUR-rt-qq4"/>
                         <outlet property="signUpButton" destination="p9e-Kx-EJy" id="2wJ-6k-kif"/>
-                        <outlet property="userProfileView" destination="uw5-Lf-dO2" id="bw9-eC-Z8u"/>
+                        <outlet property="userProfileBackgroundView" destination="uw5-Lf-dO2" id="bw9-eC-Z8u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JjY-pq-gCi" userLabel="First Responder" sceneMemberID="firstResponder"/>

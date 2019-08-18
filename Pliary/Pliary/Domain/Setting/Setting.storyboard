@@ -81,7 +81,7 @@
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlertSuccess" translatesAutoresizingMaskIntoConstraints="NO" id="Nqa-5m-CzU">
-                                                <rect key="frame" x="260" y="149" width="24" height="24"/>
+                                                <rect key="frame" x="268" y="153" width="16" height="16"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변경 비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-PT-VwU">
                                                 <rect key="frame" x="36" y="208" width="248" height="20"/>
@@ -96,7 +96,7 @@
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlertSuccess" translatesAutoresizingMaskIntoConstraints="NO" id="1jG-hb-7Mk">
-                                                <rect key="frame" x="260" y="241" width="24" height="24"/>
+                                                <rect key="frame" x="268" y="245" width="16" height="16"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41f-vE-vHX">
                                                 <rect key="frame" x="36" y="275" width="248" height="56"/>
@@ -114,7 +114,7 @@
                                                 </connections>
                                             </button>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlertSuccess" translatesAutoresizingMaskIntoConstraints="NO" id="fcY-cJ-1n6">
-                                                <rect key="frame" x="260" y="57" width="24" height="24"/>
+                                                <rect key="frame" x="268" y="61" width="16" height="16"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

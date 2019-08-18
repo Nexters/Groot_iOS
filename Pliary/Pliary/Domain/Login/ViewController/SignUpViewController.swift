@@ -12,11 +12,9 @@ import Hero
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var userProfileView: UIView!
-    let imagePickerController = UIImagePickerController()
+    @IBOutlet weak var userProfileBackgroundView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -29,17 +27,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailSuccessAlert: UIImageView!
     @IBOutlet weak var passwordSuccessAlert: UIImageView!
 
-    
+    var userProfileView: UserProfileView?
+    let imagePickerController = UIImagePickerController()
     var keyboardHeight: CGFloat = 0
-    let prifileImage : UIImage = #imageLiteral(resourceName: "defaultProfie")
     
     @IBAction func backButton(_ sender: Any) {
         hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func emailResetButtonClick(_ sender: UIButton) {
         emailTextField.text = ""
     }
+    
     @IBAction func passwordResetButtonClick(_ sender: UIButton) {
         passwordTextField.text = ""
     }
@@ -62,12 +62,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     @objc func endEdit(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardHeight = keyboardSize.height
@@ -78,14 +81,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 scrollView.contentSize.height = contentView.frame.maxY + keyboardHeight / 2
             }
             
-            scrollView.contentOffset.y = userProfileView.frame.maxY
+            scrollView.contentOffset.y = userProfileBackgroundView.frame.maxY
         }
     }
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if(textField.isEqual(emailTextField)) {
@@ -109,6 +114,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.isHidden = false
         }
     }
+    
     func showEmailAlert(reset : Bool, warning : Bool, succeess : Bool){
         emailResetButton.isHidden = reset
         emailWarningAlert.isHidden = warning
@@ -170,11 +176,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         return predicate.evaluate(with: email)
     }
+    
     func isValidPassword(password: String) -> Bool {
         let passwordRegEx = "\\A(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\\D*\\d)\\S{8,}\\z"
         let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return predicate.evaluate(with: password)
     }
+    
     func isExistsEmail(email: String) -> Bool {
         // email 중복 체크
         return false
@@ -215,11 +223,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func ProfileImageViewLoad(){
+    func profileImageViewLoad(){
+        
         let userProfile = UserProfileView.instance()
         userProfile.delegate = self
-        userProfile.frame = CGRect(x: 0, y: 0, width: userProfileView.bounds.width, height: userProfileView.bounds.height)
-        userProfileView.addSubview(userProfile);
+        userProfile.frame = CGRect(origin: .zero, size: userProfileBackgroundView.frame.size)
+        userProfileBackgroundView.addSubview(userProfile)
+        
+        userProfileView = userProfile
     }
     
 }
@@ -228,7 +239,8 @@ extension SignUpViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ProfileImageViewLoad()
+        
+        profileImageViewLoad()
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -237,7 +249,8 @@ extension SignUpViewController {
         emailTextField.setBottomBorder(color: Color.gray7)
         passwordTextField.setBottomBorder(color: Color.gray7)
         
-        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 620)
+        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 620)
+        
         if let user = Auth.auth().currentUser {
             // 이미 login 상태
             return
@@ -247,10 +260,10 @@ extension SignUpViewController {
         singleTapGestureRecognizer.isEnabled = true
         singleTapGestureRecognizer.cancelsTouchesInView = false
         
-        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
+        contentView.addGestureRecognizer(singleTapGestureRecognizer)
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
-        view.addGestureRecognizer(gesture)
+        contentView.addGestureRecognizer(gesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -259,14 +272,18 @@ extension SignUpViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let profileImage : UIImage = #imageLiteral(resourceName: "defaultProfie")
+        userProfileView?.setUp(with: profileImage)
+        userProfileView?.profileImageView.contentMode = .center
+    }
+    
 }
 
 extension SignUpViewController: LoginEventDelegate {
