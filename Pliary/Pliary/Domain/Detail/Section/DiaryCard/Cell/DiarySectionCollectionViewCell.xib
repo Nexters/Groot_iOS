@@ -35,11 +35,19 @@
                             <action selector="tapWriteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="pRP-Tf-cR4"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성장을 기록하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqd-8X-woa">
+                        <rect key="frame" x="146.5" y="180.5" width="134" height="22"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
+                        <color key="textColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Yqd-8X-woa" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4Yt-n4-tEu"/>
                 <constraint firstAttribute="trailing" secondItem="Njc-YU-iQP" secondAttribute="trailing" constant="20" id="Tfv-AK-2W9"/>
+                <constraint firstItem="Yqd-8X-woa" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="VqA-6c-gie"/>
                 <constraint firstAttribute="bottom" secondItem="45l-Iw-iaP" secondAttribute="bottom" id="ayk-Fu-crt"/>
                 <constraint firstItem="45l-Iw-iaP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="d7O-iT-C8a"/>
                 <constraint firstItem="45l-Iw-iaP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="htp-u3-YLK"/>
@@ -49,6 +57,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="427" height="383"/>
             <connections>
+                <outlet property="growthLabel" destination="Yqd-8X-woa" id="bd9-tZ-0WJ"/>
                 <outlet property="tableView" destination="45l-Iw-iaP" id="1XJ-Ht-Mxi"/>
                 <outlet property="writeButton" destination="Njc-YU-iQP" id="exI-Nq-iVA"/>
             </connections>

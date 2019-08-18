@@ -84,8 +84,6 @@
 		CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */; };
 		CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */; };
 		CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */; };
-		CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */; };
-		CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */; };
 		CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841523064DB00083B3A9 /* RecordCard.swift */; };
 		CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */; };
 		CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */; };
@@ -203,8 +201,6 @@
 		CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Event.swift"; sourceTree = "<group>"; };
 		CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
-		CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
-		CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		CE8C841523064DB00083B3A9 /* RecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCard.swift; sourceTree = "<group>"; };
 		CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -430,8 +426,6 @@
 				CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */,
 				CEE0E1AC22FB2BE900ED0C31 /* DetailTableHeaderView.swift */,
 				CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */,
-				CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */,
-				CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */,
 				CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */,
 				CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */,
 			);
@@ -724,7 +718,6 @@
 				CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */,
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
 				CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */,
-				CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */,
 				CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
 				CE90E3F72308FEC600096731 /* Watering.json in Resources */,
@@ -829,7 +822,6 @@
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */,
-				CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,

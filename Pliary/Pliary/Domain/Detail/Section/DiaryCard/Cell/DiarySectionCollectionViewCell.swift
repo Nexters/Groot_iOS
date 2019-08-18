@@ -11,13 +11,14 @@ import UIKit
 class DiarySectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var writeButton: UIButton!
+    @IBOutlet weak var growthLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var diaryCards: [DiaryCard] = []
     weak var delegate: DetailEventDelegate?
     
     private var diaryCardsCount: Int {
-        return diaryCards.count + 2
+        return diaryCards.count + 1
     }
     
     @IBAction func tapWriteButton(_ sender: Any) {
@@ -28,15 +29,17 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
         let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
         let diary = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: UIImage(named: "SampleDiary"))
         let diary2 = DiaryCard(timeStamp: "2019.11.02", diaryText: text, diaryImage: nil)
+        let diary3 = DiaryCard(timeStamp: "2019.11.02", diaryText: nil, diaryImage: UIImage(named: "SampleDiary"))
         
         diaryCards.append(diary)
+        diaryCards.append(diary2)
+        diaryCards.append(diary3)
         diaryCards.append(diary)
         diaryCards.append(diary2)
+        diaryCards.append(diary3)
         diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
-        diaryCards.append(diary)
+        diaryCards.append(diary2)
+        diaryCards.append(diary3)
     }
     
     private func setTableView() {
@@ -51,9 +54,13 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
         let diaryCardWithAllNib = UINib(nibName: diaryCardWithAllName, bundle: nil)
         tableView.register(diaryCardWithAllNib, forCellReuseIdentifier: diaryCardWithAllName)
         
-        let emptyCellName = EmptyTableViewCell.reuseIdentifier
-        let emptyCellNib = UINib(nibName: emptyCellName, bundle: nil)
-        tableView.register(emptyCellNib, forCellReuseIdentifier: emptyCellName)
+        if diaryCards.isEmpty {
+            growthLabel.isHidden = false
+            tableView.isScrollEnabled = false
+        } else {
+            growthLabel.isHidden = true
+            tableView.isScrollEnabled = true
+        }
     }
     
     override func awakeFromNib() {
@@ -68,30 +75,8 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
 extension DiarySectionCollectionViewCell: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
-//            delegate?.detailEvent(event: .scrollToPreviousPage)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.row == 0 {
-            return DayWithPlantTableViewCell.height
-        } else if indexPath.row == diaryCardsCount - 1 {
-            
-            var height = tableView.frame.height
-            
-            height = height - DetailTableHeaderView.height
-            height = height - DayWithPlantTableViewCell.height
-            height = height - (DiaryCardWithAllTableViewCell.height * CGFloat(diaryCards.count))
-            
-            if height > 0 {
-                return height
-            } else {
-                return 0
-            }
-            
-        } else {
-            return DiaryCardWithAllTableViewCell.height
+            scrollView.contentOffset.y = 0
+            delegate?.detailEvent(event: .scrollToPreviousPage)
         }
     }
     
@@ -111,13 +96,6 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0, let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
-            
-            return cell
-        } else if indexPath.row == diaryCardsCount - 1, let cell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.reuseIdentifier) as? EmptyTableViewCell {
-            
-            if diaryCards.isEmpty {
-                cell.growthLabel.isHidden = false
-            }
             
             return cell
         } else if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {

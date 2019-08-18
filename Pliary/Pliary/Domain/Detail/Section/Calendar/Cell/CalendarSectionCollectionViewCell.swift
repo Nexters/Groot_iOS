@@ -16,7 +16,7 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
     weak var delegate: DetailEventDelegate?
     
     private var recordCardsCount: Int {
-        return recordCards.count + 2
+        return recordCards.count + 1
     }
     
     private func setExample() {
@@ -36,9 +36,11 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
         tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
         
-        let emptyCellName = EmptyTableViewCell.reuseIdentifier
-        let emptyCellNib = UINib(nibName: emptyCellName, bundle: nil)
-        tableView.register(emptyCellNib, forCellReuseIdentifier: emptyCellName)
+        if recordCards.isEmpty {
+            tableView.isScrollEnabled = false
+        } else {
+            tableView.isScrollEnabled = true
+        }
     }
     
     override func awakeFromNib() {
@@ -51,25 +53,10 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
 }
 
 extension CalendarSectionCollectionViewCell: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return CalendarTableViewCell.height
-        } else if indexPath.row == recordCardsCount - 1 {
-            
-            var height = tableView.frame.height
-            
-            height = height - DetailTableHeaderView.height
-            height = height - CalendarTableViewCell.height
-            height = height - (WateringInfoTableViewCell.height * CGFloat(recordCards.count))
-            
-            if height > 0 {
-                return height
-            } else {
-                return 0
-            }
-            
-        } else {
-            return WateringInfoTableViewCell.height
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            scrollView.contentOffset.y = 0
+            delegate?.detailEvent(event: .scrollToPreviousPage)
         }
     }
 }
@@ -82,9 +69,6 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell {
-            
-            return cell
-        } else if indexPath.row == recordCardsCount - 1, let cell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.reuseIdentifier) as? EmptyTableViewCell {
             
             return cell
         } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {
