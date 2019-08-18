@@ -53,10 +53,11 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
 }
 
 extension CalendarSectionCollectionViewCell: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 {
-            scrollView.contentOffset.y = 0
-            delegate?.detailEvent(event: .scrollToPreviousPage)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return CalendarTableViewCell.height
+        } else {
+            return WateringInfoTableViewCell.height
         }
     }
 }

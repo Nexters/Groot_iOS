@@ -73,12 +73,6 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
 }
 
 extension DiarySectionCollectionViewCell: UITableViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 {
-            scrollView.contentOffset.y = 0
-            delegate?.detailEvent(event: .scrollToPreviousPage)
-        }
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row != 0  {
