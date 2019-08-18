@@ -109,7 +109,7 @@ extension RegisterPlantViewController: UITableViewDataSource {
             headerView.delegate = self
             
             if let plant = selectedPlant {
-                if plant.englishName == "" {
+                if plant.type == .userPlants {
                     headerView.plantNameLabel.text = "Your plant"
                     headerView.plantNameLabel.textColor = Color.gray1
                 } else {
@@ -170,7 +170,7 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             
             rows = []
             
-            if selectedPlant.englishName == "" {
+            if selectedPlant.type == .userPlants {
                 // Custom plant (영어이름 / 한글이름 설정 추가)
                 rows.append((RegisterPlantNameTableViewCell.identifier, .englishName))
                 rows.append((RegisterPlantNameTableViewCell.identifier, .koreanName))

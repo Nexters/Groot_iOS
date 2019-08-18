@@ -103,7 +103,7 @@
 		CE90E4002309417C00096731 /* SelectPlantPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */; };
 		CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */; };
 		CE90E4032309418A00096731 /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */; };
-		CE90E40523094FAE00096731 /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E40423094FAE00096731 /* PlantList.swift */; };
+		CE90E40523094FAE00096731 /* PlantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E40423094FAE00096731 /* PlantType.swift */; };
 		CE90E407230955FD00096731 /* PlantEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E406230955FD00096731 /* PlantEnum.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
@@ -222,7 +222,7 @@
 		CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlantPopupView.swift; sourceTree = "<group>"; };
 		CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlantPopupView.xib; sourceTree = "<group>"; };
 		CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
-		CE90E40423094FAE00096731 /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantList.swift; sourceTree = "<group>"; };
+		CE90E40423094FAE00096731 /* PlantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantType.swift; sourceTree = "<group>"; };
 		CE90E406230955FD00096731 /* PlantEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEnum.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5F520622F1F45700F2E777 /* Plant.swift */,
-				CE90E40423094FAE00096731 /* PlantList.swift */,
+				CE90E40423094FAE00096731 /* PlantType.swift */,
 				CE5F520722F1F45700F2E777 /* User.swift */,
 				CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */,
 				CE8C841523064DB00083B3A9 /* RecordCard.swift */,
@@ -846,7 +846,7 @@
 				CE8C84082305B4C60083B3A9 /* DetailEventDelegate.swift in Sources */,
 				CE885ADA23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift in Sources */,
 				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
-				CE90E40523094FAE00096731 /* PlantList.swift in Sources */,
+				CE90E40523094FAE00096731 /* PlantType.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
 				CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */,

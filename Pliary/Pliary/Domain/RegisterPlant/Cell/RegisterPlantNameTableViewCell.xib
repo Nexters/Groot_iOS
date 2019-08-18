@@ -29,23 +29,23 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex. " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Kx-q6-JwA">
-                        <rect key="frame" x="36" y="58" width="365" height="24"/>
+                        <rect key="frame" x="36" y="58" width="365" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="24" id="aKl-yg-hbS"/>
+                            <constraint firstAttribute="height" constant="28" id="aKl-yg-hbS"/>
                         </constraints>
                         <color key="textColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="24"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="net-H4-l61">
-                        <rect key="frame" x="36" y="89" width="365" height="1"/>
+                        <rect key="frame" x="36" y="93" width="365" height="1"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Mvi-eB-86k"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영어 최대 15글자까지 입력 가능합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBp-SC-ZIx">
-                        <rect key="frame" x="36" y="95" width="365" height="24"/>
+                        <rect key="frame" x="36" y="99" width="365" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="P9I-P0-A6I"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="sNV-m4-o0S"/>

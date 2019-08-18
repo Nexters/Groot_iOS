@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
     }
     
     func setExample() {
-        let plant = PlantList.stuki.getPlantInstance()
+        let plant = PlantType.stuki.getPlantInstance()
         plants.append(plant)
         plants.append(plant)
 //        plants.append(plant)

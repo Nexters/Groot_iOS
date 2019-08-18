@@ -18,12 +18,15 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
     @IBOutlet weak var textFieldBottomLineView: UIView!
     @IBOutlet weak var helpTextLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func setUp(with plant: Plant, type: RegisterRowType) {
+        if (type != self.type) || (plant != self.plant) {
+            nameTextField.text = nil
+        }
+        
         self.plant = plant
         self.type = type
         
@@ -33,7 +36,7 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
     func handleType(_ type: RegisterRowType) {
         switch type {
         case .englishName:
-            titleLabel.text = "영어명"
+            titleLabel.text = "영어명 (필수, 수정불가)"
             nameTextField.placeholder = "ex. Stuki"
             helpTextLabel.text = "영어 최대 15글자까지 입력 가능합니다."
         case .koreanName:
