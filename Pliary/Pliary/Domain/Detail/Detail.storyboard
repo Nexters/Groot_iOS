@@ -305,12 +305,40 @@
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZC-0k-ayu">
+                                                <rect key="frame" x="147.66666666666666" y="93" width="80" height="80"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BtnAdd" translatesAutoresizingMaskIntoConstraints="NO" id="rTs-ah-CzI">
+                                                        <rect key="frame" x="29" y="29" width="22" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="TUC-2a-cdh"/>
+                                                            <constraint firstAttribute="height" constant="22" id="q3B-8I-fr5"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg5-gQ-ai6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="tapAddOrSubtractButton:" destination="ZHg-Ku-OlY" eventType="touchUpInside" id="pOc-Zj-VSa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="Z1r-PX-j7F"/>
+                                                    <constraint firstAttribute="height" constant="80" id="aM3-2T-5fB"/>
+                                                    <constraint firstItem="rTs-ah-CzI" firstAttribute="centerY" secondItem="HZC-0k-ayu" secondAttribute="centerY" id="yV2-aO-Bgp"/>
+                                                    <constraint firstItem="rTs-ah-CzI" firstAttribute="centerX" secondItem="HZC-0k-ayu" secondAttribute="centerX" id="zJt-oT-0PJ"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="F39-CZ-vZe" firstAttribute="top" secondItem="SOR-pB-T1S" secondAttribute="bottom" constant="14" id="A52-hL-z2P"/>
                                             <constraint firstItem="SOR-pB-T1S" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="LaL-3I-sG9"/>
                                             <constraint firstItem="WIt-l2-5Yk" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="QF1-4T-lon"/>
+                                            <constraint firstItem="HZC-0k-ayu" firstAttribute="top" secondItem="A7P-Mr-Dum" secondAttribute="top" constant="93" id="YCx-SS-EJh"/>
+                                            <constraint firstItem="HZC-0k-ayu" firstAttribute="centerX" secondItem="A7P-Mr-Dum" secondAttribute="centerX" id="aIt-EX-G6P"/>
                                             <constraint firstAttribute="bottom" secondItem="F39-CZ-vZe" secondAttribute="bottom" constant="50" id="aRU-QQ-ll4"/>
                                             <constraint firstItem="WIt-l2-5Yk" firstAttribute="top" secondItem="NGu-cF-vOc" secondAttribute="bottom" constant="36" id="dRi-5q-6Ip"/>
                                             <constraint firstAttribute="trailing" secondItem="SOR-pB-T1S" secondAttribute="trailing" constant="36" id="fqR-FB-AqM"/>
@@ -325,40 +353,9 @@
                                             <constraint firstItem="Vqn-H5-Z89" firstAttribute="top" secondItem="SOR-pB-T1S" secondAttribute="bottom" constant="14" id="xQu-6T-Igj"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZC-0k-ayu">
-                                        <rect key="frame" x="147.66666666666666" y="93" width="80" height="80"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BtnAdd" translatesAutoresizingMaskIntoConstraints="NO" id="rTs-ah-CzI">
-                                                <rect key="frame" x="29" y="29" width="22" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="22" id="TUC-2a-cdh"/>
-                                                    <constraint firstAttribute="height" constant="22" id="q3B-8I-fr5"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg5-gQ-ai6">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                <connections>
-                                                    <action selector="tapAddOrSubtractButton:" destination="ZHg-Ku-OlY" eventType="touchUpInside" id="pOc-Zj-VSa"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="hg5-gQ-ai6" secondAttribute="bottom" id="Axa-8h-KD7"/>
-                                            <constraint firstItem="hg5-gQ-ai6" firstAttribute="top" secondItem="HZC-0k-ayu" secondAttribute="top" id="Dra-4G-5wR"/>
-                                            <constraint firstAttribute="trailing" secondItem="hg5-gQ-ai6" secondAttribute="trailing" id="QBV-qg-4DJ"/>
-                                            <constraint firstAttribute="width" constant="80" id="Z1r-PX-j7F"/>
-                                            <constraint firstAttribute="height" constant="80" id="aM3-2T-5fB"/>
-                                            <constraint firstItem="hg5-gQ-ai6" firstAttribute="leading" secondItem="HZC-0k-ayu" secondAttribute="leading" id="xOb-iw-6zS"/>
-                                            <constraint firstItem="rTs-ah-CzI" firstAttribute="centerY" secondItem="HZC-0k-ayu" secondAttribute="centerY" id="yV2-aO-Bgp"/>
-                                            <constraint firstItem="rTs-ah-CzI" firstAttribute="centerX" secondItem="HZC-0k-ayu" secondAttribute="centerX" id="zJt-oT-0PJ"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="A7P-Mr-Dum" firstAttribute="leading" secondItem="wxu-6l-Gr4" secondAttribute="leading" id="5I6-gg-9Ha"/>
-                                    <constraint firstItem="HZC-0k-ayu" firstAttribute="top" secondItem="wxu-6l-Gr4" secondAttribute="top" constant="93" id="OmW-60-7K0"/>
-                                    <constraint firstItem="HZC-0k-ayu" firstAttribute="centerX" secondItem="wxu-6l-Gr4" secondAttribute="centerX" id="gnN-kU-bC6"/>
                                     <constraint firstAttribute="bottom" secondItem="A7P-Mr-Dum" secondAttribute="bottom" id="l42-rI-Cp4"/>
                                     <constraint firstItem="A7P-Mr-Dum" firstAttribute="top" secondItem="wxu-6l-Gr4" secondAttribute="top" id="qbE-vT-wei"/>
                                     <constraint firstAttribute="trailing" secondItem="A7P-Mr-Dum" secondAttribute="trailing" id="qn4-FX-JIW"/>
@@ -380,11 +377,13 @@
                     <connections>
                         <outlet property="addOrSubtractContentView" destination="HZC-0k-ayu" id="bmI-e0-Mnr"/>
                         <outlet property="addOrSubtractImageView" destination="rTs-ah-CzI" id="nLz-PY-l4k"/>
+                        <outlet property="contentView" destination="A7P-Mr-Dum" id="1PK-mr-PAg"/>
                         <outlet property="diaryDateLabel" destination="WIt-l2-5Yk" id="58F-hv-Upm"/>
                         <outlet property="diaryImageHeightConstraint" destination="CVV-TP-kHH" id="bfc-IW-4y3"/>
                         <outlet property="diaryImageView" destination="NGu-cF-vOc" id="G9T-wl-fqw"/>
                         <outlet property="diaryTextView" destination="F39-CZ-vZe" id="vO6-0Z-135"/>
                         <outlet property="navigationRightButton" destination="OWQ-vU-IEc" id="rQi-v4-HA0"/>
+                        <outlet property="navigationView" destination="wg6-Vd-BRY" id="hmA-DJ-484"/>
                         <outlet property="placeholderLabel" destination="Vqn-H5-Z89" id="RJL-hZ-ezd"/>
                         <outlet property="scrollView" destination="wxu-6l-Gr4" id="y5O-wY-w8a"/>
                         <outlet property="textViewBottomConstraint" destination="aRU-QQ-ll4" id="ymv-AU-vkF"/>

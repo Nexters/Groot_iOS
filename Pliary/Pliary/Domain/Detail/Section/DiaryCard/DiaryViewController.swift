@@ -17,6 +17,8 @@ enum DiaryViewMode {
 
 class DiaryViewController: UIViewController {
     
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var addOrSubtractImageView: UIImageView!
     @IBOutlet weak var addOrSubtractContentView: UIView!
     @IBOutlet weak var diaryImageView: UIImageView!
@@ -91,14 +93,50 @@ class DiaryViewController: UIViewController {
         }
     }
     
+    private func makeDeleteMode() {
+        view.backgroundColor = .black
+        scrollView.backgroundColor = .black
+        navigationView.backgroundColor = .black
+        contentView.backgroundColor = .black
+        diaryImageView.image = diaryImageView.image?.convertToGrayScale()
+    }
+    
+    private func cancelDeleteMode() {
+        view.backgroundColor = .white
+        scrollView.backgroundColor = .white
+        navigationView.backgroundColor = .white
+        contentView.backgroundColor = .white
+        diaryImageView.image = currentDiaryCard?.diaryImage
+    }
+    
+    private func showDeleteCardAlert() {
+        makeDeleteMode()
+        
+        let alert = UIAlertController(title: "카드를 삭제하시겠습니까?", message: "", preferredStyle: .alert)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: { _ in
+            self.cancelDeleteMode()
+        })
+        
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            self.hero.modalAnimationType = .pull(direction: .right)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(cancleAction)
+        alert.addAction(deleteAccountAction)
+        alert.view.tintColor = Color.gray1
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     private func showModifyDeleteAlert() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let modifyAction = UIAlertAction(title: "수정", style: .default, handler: { _ in
             self.changeMode(.editDiary)
         })
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
-            self.hero.modalAnimationType = .pull(direction: .right)
-            self.dismiss(animated: true, completion: nil)
+            self.showDeleteCardAlert()
         })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler : nil )
         
