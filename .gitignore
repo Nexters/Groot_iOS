@@ -75,3 +75,4 @@ xcuserdata/
 *.xcworkspace/
 GoogleService-Info.plist
 Pliary/.DS_Store
+Pliary/Pliary.xcodeproj/project.pbxproj
