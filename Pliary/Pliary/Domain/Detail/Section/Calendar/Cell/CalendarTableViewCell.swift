@@ -16,6 +16,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarView: UIView!
     
+    weak var delegate: CalenderEventDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -42,13 +44,19 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     
     var dates = [Date]()
+    var datesTodo = [Date]()
     
     
     private func loadDates() {
-        let date1 = Date(timeIntervalSince1970: 1564588800)
-        let date2 = Date(timeIntervalSince1970: 1564761600)
-        let date3 = Date(timeIntervalSince1970: 1565020800)
+        let date1 = Date(timeIntervalSince1970: 1564758000)
+        let date2 = Date(timeIntervalSince1970: 1565017200)
+        let date3 = Date(timeIntervalSince1970: 1565794800)
         dates += [date1, date2, date3]
+        
+        let date4 = Date(timeIntervalSince1970: 1566226800)
+        let date5 = Date(timeIntervalSince1970: 1566658800)
+        let date6 = Date(timeIntervalSince1970: 1567090800)
+        datesTodo += [date4, date5, date6]
     }
     
     func setUpCalendar(){
@@ -64,32 +72,41 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         calendar.daysContainer.layer.shadowOffset = CGSize(width: 0.0, height: -1.0)
         calendar.daysContainer.layer.shadowOpacity = 1.0
         calendar.daysContainer.layer.shadowRadius = 0.0
-        
-        calendar.allowsMultipleSelection = true
-        calendar.appearance.selectionColor = #colorLiteral(red: 0.5058823529, green: 0.8, blue: 0.537254902, alpha: 1)
+
         calendar.appearance.headerMinimumDissolvedAlpha = 0.0
+        calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendarView.bounds.maxX, y: calendar.bounds.maxY), view: calendar)
+
     }
     
 //    // MARK:- FSCalendarDataSource
-//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-//
-//        let day: Int! = self.gregorian.component(.day, from: date)
-//        return day % 5 == 0 ? day/5 : 0;
-//    }
+    public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+        if dates.contains(date) {
+            return Color.greenCalendar
+        } else  if datesTodo.contains(date) {
+            return Color.blueCalendar
+        }
+        return nil
+    }
 
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+
         return self.gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
     }
     
-    // MARK:- FSCalendarDelegate
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("calendar did select date \(self.formatter.string(from: date))")
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
+            delegate?.selectDateEvent(date)
         }
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.formatter.string(from: calendar.currentPage))")
+    }
+}
+extension CalendarTableViewCell: CalenderEventDelegate {
+    func selectDateEvent(_ date: Date) {
+        delegate?.selectDateEvent(date)
     }
 }
