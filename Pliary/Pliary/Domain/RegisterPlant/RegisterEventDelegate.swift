@@ -29,6 +29,6 @@ protocol RegisterEventDelegate: class {
 
 enum RegisterEvent {
     case selectPlant
-    case selectDate
+    case selectDate(type: RegisterRowType)
     case plantSelected(plant: Plant)
 }
