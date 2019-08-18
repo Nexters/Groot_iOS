@@ -133,6 +133,5 @@ extension HomeViewController {
             first = false
         }
         
-        
     }
 }

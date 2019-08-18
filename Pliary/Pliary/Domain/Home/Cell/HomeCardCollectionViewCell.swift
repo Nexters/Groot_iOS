@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyGif
+import Lottie
 
 class HomeCardCollectionViewCell: UICollectionViewCell {
     
@@ -16,6 +17,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addWaterButton: UIButton!
     @IBOutlet weak var dayLeftLabel: UILabel!
     @IBOutlet weak var blackWaterImageView: UIImageView!
+    @IBOutlet weak var wateringAnimation: AnimationView!
     
     weak var delegate: HomeEventDelegate?
     var plant: Plant?
@@ -31,6 +33,10 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
             print(error)
         }
         
+        wateringAnimation.center = center
+        wateringAnimation.contentMode = .scaleAspectFill
+        wateringAnimation.isUserInteractionEnabled = false
+        wateringAnimation.isHidden = true
     }
 
     @IBAction func tapAddWaterButton(_ sender: Any) {
@@ -41,8 +47,16 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         delegate?.homeEvent(plant, event: .waterToPlant)
     }
     
+    func waterToPlant() {
+        wateringAnimation.isHidden = false
+        wateringAnimation.play(completion: { _ in
+            self.wateringAnimation.isHidden = true
+        })
+    }
+    
     func setUp(with plant: Plant) {
         self.plant = plant
+        wateringAnimation.isHidden = true
     }
     
 }

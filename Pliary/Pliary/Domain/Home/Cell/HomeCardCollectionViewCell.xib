@@ -49,6 +49,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="cbw-pq-0tM">
                                 <rect key="frame" x="16" y="16" width="222" height="229"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAB-gW-LbQ" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="16" y="16" width="222" height="229"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Watering"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8G-aF-bnu">
                                 <rect key="frame" x="164" y="215" width="60" height="60"/>
                                 <constraints>
@@ -63,7 +70,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="oAB-gW-LbQ" firstAttribute="top" secondItem="Ybe-t0-LG1" secondAttribute="top" constant="16" id="0AP-9C-HP8"/>
                             <constraint firstAttribute="bottom" secondItem="Y56-rp-PYB" secondAttribute="bottom" constant="16" id="2yb-Pr-A0D"/>
+                            <constraint firstItem="yIw-u8-uUj" firstAttribute="top" secondItem="oAB-gW-LbQ" secondAttribute="bottom" constant="16" id="58t-MN-sru"/>
+                            <constraint firstAttribute="trailing" secondItem="oAB-gW-LbQ" secondAttribute="trailing" constant="16" id="60r-ap-0fO"/>
                             <constraint firstItem="Y56-rp-PYB" firstAttribute="top" secondItem="yIw-u8-uUj" secondAttribute="bottom" constant="4" id="IKl-0V-rqe"/>
                             <constraint firstItem="Y56-rp-PYB" firstAttribute="leading" secondItem="Do7-gx-DY5" secondAttribute="trailing" constant="6" id="Jlf-WT-dsl"/>
                             <constraint firstItem="Y56-rp-PYB" firstAttribute="top" secondItem="C8G-aF-bnu" secondAttribute="bottom" constant="6" id="NlF-Yq-gde"/>
@@ -74,6 +84,7 @@
                             <constraint firstItem="Do7-gx-DY5" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="gXe-uu-4ZM"/>
                             <constraint firstItem="yIw-u8-uUj" firstAttribute="top" secondItem="cbw-pq-0tM" secondAttribute="bottom" constant="16" id="jvR-RE-y3J"/>
                             <constraint firstItem="cbw-pq-0tM" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="oOe-ba-OR1"/>
+                            <constraint firstItem="oAB-gW-LbQ" firstAttribute="leading" secondItem="Ybe-t0-LG1" secondAttribute="leading" constant="16" id="uaf-nr-PFQ"/>
                             <constraint firstAttribute="trailing" secondItem="C8G-aF-bnu" secondAttribute="trailing" constant="30" id="yIf-5W-BQs"/>
                         </constraints>
                     </view>
@@ -93,6 +104,7 @@
                 <outlet property="dayLeftLabel" destination="Y56-rp-PYB" id="KlA-kM-obs"/>
                 <outlet property="plantView" destination="cbw-pq-0tM" id="N1E-bB-GyE"/>
                 <outlet property="topLayoutConstraint" destination="xuV-ff-e7j" id="Ea2-hO-GvA"/>
+                <outlet property="wateringAnimation" destination="oAB-gW-LbQ" id="ecu-GW-Y99"/>
             </connections>
             <point key="canvasLocation" x="191.30434782608697" y="258.14732142857144"/>
         </collectionViewCell>

@@ -9,5 +9,6 @@ target 'Pliary' do
   pod 'FSCalendar'
   pod 'SwiftyGif'
   pod 'Hero'
+  pod 'lottie-ios'
   # Pods for Pliary
 end

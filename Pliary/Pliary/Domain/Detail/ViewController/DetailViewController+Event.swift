@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Hero
 
 extension DetailViewController: DetailEventDelegate {
     func detailEvent(event: DetailLayoutEvent) {
         switch event {
         case .dismiss:
+            animatePlant(false)
+            Hero.shared.cancel()
             dismiss(animated: true, completion: nil)
         case .changeSectionToCalendar:
             currentSection = .calendar
