@@ -25,6 +25,7 @@ class RegisterPlantDateTableViewCell: UITableViewCell, RegisterCell {
         delegate?.registerEvent(event: .selectDate(type: type))
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -12,6 +12,8 @@
 		762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B4FF122F1B129002C24EF /* SignInViewController.swift */; };
 		763D972F22F1D58600E50F21 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763D972E22F1D58600E50F21 /* Login.storyboard */; };
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
+		76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7688955F230973BE00CE7F40 /* BasicPopupView.swift */; };
+		76889562230973BE00CE7F40 /* BasicPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76889560230973BE00CE7F40 /* BasicPopupView.xib */; };
 		76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */; };
 		76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */; };
 		76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530322FB0C6800F4443E /* CalendarViewController.swift */; };
@@ -101,8 +103,6 @@
 		CE90E4032309418A00096731 /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */; };
 		CE90E40523094FAE00096731 /* PlantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E40423094FAE00096731 /* PlantType.swift */; };
 		CE90E407230955FD00096731 /* PlantEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E406230955FD00096731 /* PlantEnum.swift */; };
-		CE90E409230977F600096731 /* BasicPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E408230977F600096731 /* BasicPopupView.xib */; };
-		CE90E40B2309780100096731 /* SendCompletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E40A2309780100096731 /* SendCompletePopupView.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -125,6 +125,8 @@
 		762B4FF122F1B129002C24EF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		763D972E22F1D58600E50F21 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		7688955F230973BE00CE7F40 /* BasicPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPopupView.swift; sourceTree = "<group>"; };
+		76889560230973BE00CE7F40 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
 		76C7530322FB0C6800F4443E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -218,8 +220,6 @@
 		CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
 		CE90E40423094FAE00096731 /* PlantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantType.swift; sourceTree = "<group>"; };
 		CE90E406230955FD00096731 /* PlantEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEnum.swift; sourceTree = "<group>"; };
-		CE90E408230977F600096731 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
-		CE90E40A2309780100096731 /* SendCompletePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCompletePopupView.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +247,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76889563230973EB00CE7F40 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				76889560230973BE00CE7F40 /* BasicPopupView.xib */,
+				7688955F230973BE00CE7F40 /* BasicPopupView.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
 		9C092CBD9F305B95F3D12E24 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,7 +276,7 @@
 		CE09476322FC6A7000E7C8A8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CE8C83F523059CAB0083B3A9 /* CommonPopUp */,
+				CE8C83F523059CAB0083B3A9 /* PopUp */,
 				CE09477422FDEC6D00E7C8A8 /* Setting */,
 				CE5F520F22F1F62A00F2E777 /* Login */,
 				CE5F521222F1F68F00F2E777 /* Home */,
@@ -541,13 +550,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CE8C83F523059CAB0083B3A9 /* CommonPopUp */ = {
+		CE8C83F523059CAB0083B3A9 /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
-				CE90E40C2309782100096731 /* UserSetting */,
+				76889563230973EB00CE7F40 /* Basic */,
 				CE8C84042305A63D0083B3A9 /* Watering */,
 			);
-			path = CommonPopUp;
+			path = PopUp;
 			sourceTree = "<group>";
 		};
 		CE8C84042305A63D0083B3A9 /* Watering */ = {
@@ -562,15 +571,6 @@
 				CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */,
 			);
 			path = Watering;
-			sourceTree = "<group>";
-		};
-		CE90E40C2309782100096731 /* UserSetting */ = {
-			isa = PBXGroup;
-			children = (
-				CE90E408230977F600096731 /* BasicPopupView.xib */,
-				CE90E40A2309780100096731 /* SendCompletePopupView.swift */,
-			);
-			path = UserSetting;
 			sourceTree = "<group>";
 		};
 		CEE0E19422F848CB00ED0C31 /* ViewController */ = {
@@ -733,6 +733,7 @@
 				CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */,
 				CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
+				76889562230973BE00CE7F40 /* BasicPopupView.xib in Resources */,
 				CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
@@ -746,7 +747,6 @@
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
 				76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */,
 				CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */,
-				CE90E409230977F600096731 /* BasicPopupView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,7 +816,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE90E40B2309780100096731 /* SendCompletePopupView.swift in Sources */,
 				765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */,
 				CE885A9D2307DDD6008DB1FB /* API.swift in Sources */,
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
@@ -852,6 +851,7 @@
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
 				CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */,
+				76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */,
 				CE885A952307C735008DB1FB /* Global.swift in Sources */,
 				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,

@@ -282,7 +282,7 @@ extension SignUpViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        userProfileView?.makeRoundImage()
+         userProfileView?.makeRoundImage()
     }
     
 }
