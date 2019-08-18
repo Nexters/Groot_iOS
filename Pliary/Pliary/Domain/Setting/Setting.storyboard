@@ -259,7 +259,7 @@
                                     <constraint firstAttribute="height" constant="16" id="Awc-Pd-PEu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                <color key="textColor" red="0.47058823529999999" green="0.68627450980000004" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.41568627450980389" green="0.65490196078431373" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PcG-Xk-fQe">
@@ -306,6 +306,7 @@
                     </view>
                     <connections>
                         <outlet property="footerView" destination="3mM-wP-VjI" id="CCL-1y-RI7"/>
+                        <outlet property="plantNumLabel" destination="T08-It-b3j" id="xjF-yF-ZKu"/>
                         <outlet property="profileBackgrondView" destination="PcG-Xk-fQe" id="xVL-LB-fIW"/>
                         <outlet property="tableView" destination="PvZ-Bw-AT8" id="kxi-5d-D5d"/>
                     </connections>

@@ -13,6 +13,7 @@ import Firebase
 class SettingViewController: UIViewController {
     
     
+    @IBOutlet weak var plantNumLabel: UILabel!
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var profileBackgrondView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -92,12 +93,14 @@ class SettingViewController: UIViewController {
         tableView.backgroundColor = .black
         footerView.backgroundColor = .black
         userProfileView?.makeDeleteMode()
+        plantNumLabel.textColor = Color.gray1
     }
     
     private func clearDeleteMode() {
         tableView.backgroundColor = .white
         footerView.backgroundColor = .white
         userProfileView?.clearDeleteMode()
+        plantNumLabel.textColor = Color.green
     }
     
     private func deleteAccount() {
