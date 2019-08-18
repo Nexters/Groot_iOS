@@ -8,8 +8,11 @@
 
 import UIKit
 
-class RegisterPlantPeriodTableViewCell: UITableViewCell {
-
+class RegisterPlantPeriodTableViewCell: UITableViewCell, RegisterCell {
+    
+    var type: RegisterRowType?
+    var plant: Plant?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -20,6 +23,11 @@ class RegisterPlantPeriodTableViewCell: UITableViewCell {
         
         let numberNib = UINib(nibName: NumberCollectionViewCell.identifier, bundle: nil)
         collectionView.register(numberNib, forCellWithReuseIdentifier: NumberCollectionViewCell.identifier)
+    }
+    
+    func setUp(with plant: Plant, type: RegisterRowType) {
+        self.plant = plant
+        self.type = type
     }
 }
 

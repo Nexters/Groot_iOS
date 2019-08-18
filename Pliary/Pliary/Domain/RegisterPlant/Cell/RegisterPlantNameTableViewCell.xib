@@ -28,7 +28,7 @@
                         <color key="textColor" red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sckandina moss" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Kx-q6-JwA">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex. " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Kx-q6-JwA">
                         <rect key="frame" x="36" y="58" width="365" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="aKl-yg-hbS"/>
@@ -72,6 +72,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="helpTextLabel" destination="KBp-SC-ZIx" id="x3J-rf-Jvi"/>
+                <outlet property="nameTextField" destination="5Kx-q6-JwA" id="opw-aj-FYh"/>
+                <outlet property="textFieldBottomLineView" destination="net-H4-l61" id="2xx-Vh-IEO"/>
+                <outlet property="titleLabel" destination="QB3-bl-gEq" id="L6i-hh-ueG"/>
+            </connections>
             <point key="canvasLocation" x="132.60869565217394" y="62.276785714285708"/>
         </tableViewCell>
     </objects>

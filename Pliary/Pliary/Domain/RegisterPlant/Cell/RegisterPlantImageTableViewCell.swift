@@ -8,10 +8,22 @@
 
 import UIKit
 
-class RegisterPlantImageTableViewCell: UITableViewCell {
+class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
+    
+    var type: RegisterRowType?
+    var plant: Plant?
 
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var helpTextLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    func setUp(with plant: Plant, type: RegisterRowType) {
+        self.plant = plant
+        self.type = type
+        
+        plantImageView.image = UIImage(named: plant.imageName)
+    }
 }
