@@ -10,12 +10,21 @@ import UIKit
 
 class SelectPlantTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var selectedImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        selectionStyle = .none
+        selectedImageView.isHidden = true
     }
     
+    func selected() {
+        backgroundColor = Color.gray7
+        selectedImageView.isHidden = false
+    }
+    
+    func deselected() {
+        backgroundColor = .white
+        selectedImageView.isHidden = true
+    }
 }
