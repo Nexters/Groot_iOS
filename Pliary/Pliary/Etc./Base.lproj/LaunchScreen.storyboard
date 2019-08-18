@@ -18,34 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 손안의 작은 정원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMY-KT-Tqb">
-                                <rect key="frame" x="50" y="378" width="314" height="31"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-SH-rHK">
+                                <rect key="frame" x="138" y="385" width="138" height="126.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="fxj-fh-xZC"/>
+                                    <constraint firstAttribute="width" secondItem="vSd-SH-rHK" secondAttribute="height" multiplier="12:11" id="5ap-PY-DXW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="21"/>
-                                <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pliary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtP-tc-5J1">
-                                <rect key="frame" x="109.5" y="424" width="195" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="195" id="YSF-JF-Q3r"/>
-                                    <constraint firstAttribute="height" constant="78" id="frh-mv-NDf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="68"/>
-                                <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294767618179321" green="0.95292967557907104" blue="0.95294183492660522" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="NtP-tc-5J1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="15" id="2UT-V6-a73"/>
-                            <constraint firstItem="rMY-KT-Tqb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="6P6-ZY-2ZU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rMY-KT-Tqb" secondAttribute="trailing" constant="50" id="cYC-VZ-Xvn"/>
-                            <constraint firstItem="NtP-tc-5J1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dN0-WE-RD7"/>
-                            <constraint firstItem="NtP-tc-5J1" firstAttribute="top" secondItem="rMY-KT-Tqb" secondAttribute="bottom" constant="15" id="oUF-qz-pkP"/>
-                            <constraint firstItem="rMY-KT-Tqb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ueo-yb-eKq"/>
+                            <constraint firstItem="vSd-SH-rHK" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:3" id="Xjg-Ys-7Xz"/>
+                            <constraint firstItem="vSd-SH-rHK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bSB-vv-lRt"/>
+                            <constraint firstItem="vSd-SH-rHK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pLH-0c-zIU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -55,4 +39,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Splash" width="96" height="88"/>
+    </resources>
 </document>

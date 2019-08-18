@@ -35,6 +35,7 @@ class DiaryCardWithAllTableViewCell: UITableViewCell {
         
         diaryImageView.image = diaryCard.diaryImage
         diaryTextLabel.text = diaryCard.diaryText
+        dateLabel.text = diaryCard.timeStamp.getSince1970String()
     }
     
 }

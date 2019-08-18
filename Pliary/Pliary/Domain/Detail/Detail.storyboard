@@ -381,6 +381,7 @@
                         <outlet property="addOrSubtractContentView" destination="HZC-0k-ayu" id="bmI-e0-Mnr"/>
                         <outlet property="addOrSubtractImageView" destination="rTs-ah-CzI" id="nLz-PY-l4k"/>
                         <outlet property="diaryDateLabel" destination="WIt-l2-5Yk" id="58F-hv-Upm"/>
+                        <outlet property="diaryImageHeightConstraint" destination="CVV-TP-kHH" id="bfc-IW-4y3"/>
                         <outlet property="diaryImageView" destination="NGu-cF-vOc" id="G9T-wl-fqw"/>
                         <outlet property="diaryTextView" destination="F39-CZ-vZe" id="vO6-0Z-135"/>
                         <outlet property="navigationRightButton" destination="OWQ-vU-IEc" id="rQi-v4-HA0"/>

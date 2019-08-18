@@ -33,6 +33,7 @@ class DiaryCardWithTextTableViewCell: UITableViewCell {
         self.diaryCard = diaryCard
         
         diaryTextLabel.text = diaryCard.diaryText
+        dateLabel.text = diaryCard.timeStamp.getSince1970String()
     }
     
 }

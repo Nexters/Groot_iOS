@@ -53,7 +53,9 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         switch gr.state {
         case .began:
             hero.modalAnimationType = .pull(direction: .right)
-            dismiss(animated: true, completion: nil)
+            if velocity.x > 0 {
+                dismiss(animated: true, completion: nil)
+            }
         case .changed:
             Hero.shared.update(translation.x / view.bounds.width)
         default:

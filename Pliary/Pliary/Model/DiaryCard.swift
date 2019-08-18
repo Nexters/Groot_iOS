@@ -10,7 +10,7 @@ import UIKit
 
 struct DiaryCard {
     
-    let timeStamp: String
+    let timeStamp: Double
     var diaryText: String?
     var diaryImage: UIImage?
     
