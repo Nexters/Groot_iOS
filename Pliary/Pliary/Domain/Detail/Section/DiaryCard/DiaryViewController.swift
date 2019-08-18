@@ -34,11 +34,18 @@ class DiaryViewController: UIViewController {
     var keyboardHeight: CGFloat = 0
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.navigationBar.tintColor = .black
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
+        if diaryImageView.image == nil {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.navigationBar.tintColor = .black
+            imagePickerController.sourceType = .photoLibrary
+            imagePickerController.delegate = self
+            present(imagePickerController, animated: true, completion: nil)
+        } else {
+            let image = UIImage(named: ImageName.plusButton)
+            diaryImageView.image = nil
+            addOrSubtractContentView.backgroundColor = Color.gray6
+            addOrSubtractImageView.image = image
+        }
     }
     
     @IBAction func tapRightNavigationButton(_ sender: Any) {
@@ -46,6 +53,8 @@ class DiaryViewController: UIViewController {
         case .writeNewDiary:
             changeMode(.showDiary)
         case .editDiary:
+            currentDiaryCard?.diaryImage = diaryImageView.image
+            currentDiaryCard?.diaryText = diaryTextView.text
             changeMode(.showDiary)
         case .showDiary:
             showModifyDeleteAlert()
@@ -67,6 +76,7 @@ class DiaryViewController: UIViewController {
             diaryTextView.isSelectable = true
             diaryTextView.isEditable = true
             addOrSubtractContentView.isHidden = false
+            diaryImageHeightConstraint.constant = 266
         case .showDiary:
             let image = UIImage(named: ImageName.moreButton)
             navigationRightButton.setImage(image, for: .normal)
@@ -75,6 +85,9 @@ class DiaryViewController: UIViewController {
             addOrSubtractContentView.isHidden = true
             diaryImageView.image = currentDiaryCard?.diaryImage
             diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
+            if diaryImageView.image == nil {
+                diaryImageHeightConstraint.constant = 0
+            }
         }
     }
     
@@ -140,7 +153,6 @@ class DiaryViewController: UIViewController {
             diaryImageHeightConstraint.constant = 266
             addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
             diaryImageView.image = currentDiaryCard?.diaryImage
-            addOrSubtractContentView.isHidden = true
             
             let image = UIImage(named: ImageName.minusButton)
             addOrSubtractImageView.image = image
@@ -238,9 +250,10 @@ extension DiaryViewController: UIImagePickerControllerDelegate, UINavigationCont
             return
         }
         
-        currentDiaryCard?.diaryImage = selectedImage
-        reload()
-        changeMode(.editDiary)
+        diaryImageView.image = selectedImage
+        let image = UIImage(named: ImageName.minusButton)
+        addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        addOrSubtractImageView.image = image
         
         dismiss(animated: true, completion: nil)
     }
