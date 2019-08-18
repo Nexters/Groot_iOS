@@ -32,7 +32,20 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func changePWButtonTouched(_ sender: Any) {
+        guard let password = newPWTextField.text else { return }
+        completePopupLoad()
+    }
+    
+    func completePopupLoad() {
+        let popup = BasicPopupView.instance()
+        popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
+        
+        self.view.addSubview(popup);
+    }
+    
     @objc func handlePan(gr: UIPanGestureRecognizer) {
         let translation = gr.translation(in: view)
         let velocity = gr.velocity(in: view)
@@ -107,9 +120,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         return predicate.evaluate(with: password)
     }
     
-    @IBAction func changePWButtonTouched(_ sender: Any) {
-        guard let password = newPWTextField.text else { return }
-    }
+
 
 }
 extension ChangePasswordViewController {
