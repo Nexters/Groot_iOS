@@ -73,7 +73,7 @@ class DiaryViewController: UIViewController {
             diaryTextView.isEditable = false
             addOrSubtractContentView.isHidden = true
             diaryImageView.image = currentDiaryCard?.diaryImage
-            diaryDateLabel.text = currentDiaryCard?.timeStamp
+            diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
         }
     }
     
@@ -116,7 +116,7 @@ class DiaryViewController: UIViewController {
     }
     
     private func reload() {
-        diaryDateLabel.text = currentDiaryCard?.timeStamp
+        diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
         
         if currentDiaryCard?.diaryText == nil {
             placeholderLabel.isHidden = false
