@@ -78,12 +78,10 @@ extension DetailViewController {
             
             switch mode {
             case .plant(let plant):
-                ()
+                self.showDeletePlantAlert()
             case .diaryCard(let card):
                 ()
             }
-            
-            self.dismiss(animated: true, completion: nil)
         })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler : nil )
         
@@ -95,4 +93,18 @@ extension DetailViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    private func showDeletePlantAlert() {
+        let alert = UIAlertController(title: "식물을 삭제하시겠습니까?", message: "", preferredStyle: .alert)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(cancleAction)
+        alert.addAction(deleteAccountAction)
+        alert.view.tintColor = Color.gray1
+        
+        present(alert, animated: true, completion: nil)
+    }
 }

@@ -108,6 +108,7 @@
 		CE90E4132309A04B00096731 /* DiaryCardWithTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4112309A04B00096731 /* DiaryCardWithTextTableViewCell.swift */; };
 		CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */; };
 		CE90E4162309A2D800096731 /* TimeInterval+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */; };
+		CE90E4182309C01300096731 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4172309C01300096731 /* UIImage+Ext.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -230,6 +231,7 @@
 		CE90E4112309A04B00096731 /* DiaryCardWithTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardWithTextTableViewCell.swift; sourceTree = "<group>"; };
 		CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCardWithTextTableViewCell.xib; sourceTree = "<group>"; };
 		CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Ext.swift"; sourceTree = "<group>"; };
+		CE90E4172309C01300096731 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			children = (
 				CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */,
 				765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */,
+				CE90E4172309C01300096731 /* UIImage+Ext.swift */,
 				CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */,
 				CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */,
 				760DB41D22F6DED50035F22E /* UITextField+Ext.swift */,
@@ -880,6 +883,7 @@
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
 				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
 				CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */,
+				CE90E4182309C01300096731 /* UIImage+Ext.swift in Sources */,
 				CE90E4132309A04B00096731 /* DiaryCardWithTextTableViewCell.swift in Sources */,
 				CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
