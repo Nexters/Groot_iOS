@@ -17,7 +17,6 @@ struct StoryboardName {
 }
 
 struct Color {
-    static let cardBackground = UIColor.init(red: 238/255, green: 217/255, blue: 190/255, alpha: 1)
     static let gray1 = UIColor(red: 43.0 / 255.0, green: 45.0 / 255.0, blue: 46.0 / 255.0, alpha: 1.0)
     static let gray2 = UIColor(white: 88.0 / 255.0, alpha: 1.0)
     static let gray3 = UIColor(white: 120.0 / 255.0, alpha: 1.0)
@@ -38,6 +37,7 @@ struct Color {
 
 
 struct Image {
+    // image name으로 바꾸기
     static let completeButton = UIImage(named: "BtnComplete")
     static let moreButton = UIImage(named: "BtnMore")
     static let plusButton = UIImage(named: "BtnAddBlack")
