@@ -35,7 +35,7 @@ class SelectPlantTableViewCell: UITableViewCell {
     func setUp(with plant: Plant, selected: Bool = false) {
         self.plant = plant
         
-        if plant.englishName == "" {
+        if plant.type == .userPlants {
             englishNameLabel.text = "직접 입력"
             englishNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16)
             koreanNameLabel.isHidden = true

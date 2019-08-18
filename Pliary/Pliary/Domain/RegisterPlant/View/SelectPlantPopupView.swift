@@ -14,7 +14,7 @@ class SelectPlantPopupView: UIView {
     @IBOutlet weak var tableView: UITableView!
     
     weak var delegate: RegisterEventDelegate?
-    private var list = PlantList.getAllPlants()
+    private var list = Plant.getAllPlants()
     var currentPlant: Plant?
     
     static func instance() -> SelectPlantPopupView {

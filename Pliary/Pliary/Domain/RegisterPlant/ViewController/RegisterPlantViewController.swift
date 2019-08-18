@@ -9,13 +9,13 @@
 import UIKit
 
 class RegisterPlantViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var completeButton: UIButton!
     
     private var headerView: RegisterPlantHeaderView?
     private var headerOriginY: CGFloat = 0
-    private var rows: [String] = []
+    private var rows: [(String, RegisterRowType)] = []
     private var selectedPlant: Plant?
     
     @IBAction func tabCloseButton(_ sender: Any) {
@@ -109,7 +109,7 @@ extension RegisterPlantViewController: UITableViewDataSource {
             headerView.delegate = self
             
             if let plant = selectedPlant {
-                if plant.englishName == "" {
+                if plant.type == .userPlants {
                     headerView.plantNameLabel.text = "Your plant"
                     headerView.plantNameLabel.textColor = Color.gray1
                 } else {
@@ -130,8 +130,12 @@ extension RegisterPlantViewController: UITableViewDataSource {
             return cell
         }
         
-        let identifier = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        let row = rows[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.0)
+        
+        if let typeCell = cell as? RegisterCell, let plant = selectedPlant {
+            typeCell.setUp(with: plant, type: row.1)
+        }
         
         if let dateCell = cell as? RegisterPlantDateTableViewCell {
             dateCell.delegate = self
@@ -165,10 +169,18 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             tableView.isScrollEnabled = true
             
             rows = []
-            rows.append(RegisterPlantNameTableViewCell.identifier)
-            rows.append(RegisterPlantImageTableViewCell.identifier)
-            rows.append(RegisterPlantDateTableViewCell.identifier)
-            rows.append(RegisterPlantPeriodTableViewCell.identifier)
+            
+            if selectedPlant.type == .userPlants {
+                // Custom plant (영어이름 / 한글이름 설정 추가)
+                rows.append((RegisterPlantNameTableViewCell.identifier, .englishName))
+                rows.append((RegisterPlantNameTableViewCell.identifier, .koreanName))
+            }
+            
+            rows.append((RegisterPlantImageTableViewCell.identifier, .image))
+            rows.append((RegisterPlantNameTableViewCell.identifier, .customName))
+            rows.append((RegisterPlantDateTableViewCell.identifier, .startDate))
+            rows.append((RegisterPlantDateTableViewCell.identifier, .lastWaterDate))
+            rows.append((RegisterPlantPeriodTableViewCell.identifier, .period))
             
             tableView.reloadData()
         }

@@ -75,6 +75,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="plantImageView" destination="N8X-da-A8a" id="05N-ez-g2p"/>
+                <outlet property="referenceTextLabel" destination="87x-la-qou" id="5Nk-40-RX5"/>
+            </connections>
             <point key="canvasLocation" x="72.463768115942031" y="195.53571428571428"/>
         </tableViewCell>
     </objects>

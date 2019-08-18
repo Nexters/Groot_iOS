@@ -8,10 +8,43 @@
 
 import UIKit
 
-class RegisterPlantImageTableViewCell: UITableViewCell {
+class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
+    
+    var type: RegisterRowType?
+    var plant: Plant?
 
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var referenceTextLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    func setUp(with plant: Plant, type: RegisterRowType) {
+        self.plant = plant
+        self.type = type
+        
+        plantImageView.image = UIImage(named: plant.imageName)
+        
+        switch plant.type {
+        case .stuki:
+            referenceTextLabel.text = PlantReference.stuki.rawValue
+        case .eucalyptus:
+            referenceTextLabel.text = PlantReference.eucalyptus.rawValue
+        case .sansevieria:
+            referenceTextLabel.text = PlantReference.sansevieria.rawValue
+        case .monstera:
+            referenceTextLabel.text = PlantReference.monstera.rawValue
+        case .parlourPalm:
+            referenceTextLabel.text = PlantReference.parlourPalm.rawValue
+        case .elastica:
+            referenceTextLabel.text = PlantReference.elastica.rawValue
+        case .travelersPalm:
+            referenceTextLabel.text = PlantReference.travelersPalm.rawValue
+        case .schefflera:
+            referenceTextLabel.text = PlantReference.schefflera.rawValue
+        case .userPlants:
+            referenceTextLabel.text = PlantReference.userPlants.rawValue
+        }
+    }
 }
