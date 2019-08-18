@@ -18,11 +18,7 @@ class RegisterPlantDateTableViewCell: UITableViewCell, RegisterCell {
     @IBOutlet weak var dateButton: UIButton!
     
     @IBAction func tapDateButton(_ sender: Any) {
-        guard let type = type else {
-            return
-        }
-        
-        delegate?.registerEvent(event: .selectDate(type: type))
+        delegate?.registerEvent(event: .selectDate)
     }
     
     override func awakeFromNib() {

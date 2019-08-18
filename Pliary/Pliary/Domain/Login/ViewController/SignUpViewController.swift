@@ -68,7 +68,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func dismissKeyboard() {
-        view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -81,14 +81,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 scrollView.contentSize.height = contentView.frame.maxY + keyboardHeight / 2
             }
             
-            scrollView.contentOffset.y = userProfileBackgroundView.frame.maxY + 15
-            scrollView.isScrollEnabled = false
+            scrollView.contentOffset.y = userProfileBackgroundView.frame.maxY
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentSize.height = contentView.frame.maxY
-        scrollView.isScrollEnabled = true
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -103,6 +103,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSignUpButtonState()
+        scrollView.contentSize.height = contentView.frame.maxY
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -262,11 +263,7 @@ extension SignUpViewController {
         contentView.addGestureRecognizer(singleTapGestureRecognizer)
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
-        view.addGestureRecognizer(gesture)
-        
-        let profileImage : UIImage = #imageLiteral(resourceName: "defaultProfie")
-        userProfileView?.setUp(with: profileImage)
-        userProfileView?.profileImageView.contentMode = .center
+        contentView.addGestureRecognizer(gesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -282,7 +279,9 @@ extension SignUpViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        userProfileView?.makeRoundImage()
+        let profileImage : UIImage = #imageLiteral(resourceName: "defaultProfie")
+        userProfileView?.setUp(with: profileImage)
+        userProfileView?.profileImageView.contentMode = .center
     }
     
 }

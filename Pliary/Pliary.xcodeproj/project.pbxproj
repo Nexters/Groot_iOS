@@ -1,0 +1,1095 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A082DE0FFD946C9B334E27 /* Pods_Pliary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */; };
+		760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB41D22F6DED50035F22E /* UITextField+Ext.swift */; };
+		762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B4FF122F1B129002C24EF /* SignInViewController.swift */; };
+		763D972F22F1D58600E50F21 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763D972E22F1D58600E50F21 /* Login.storyboard */; };
+		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
+		76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7688955F230973BE00CE7F40 /* BasicPopupView.swift */; };
+		76889562230973BE00CE7F40 /* BasicPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76889560230973BE00CE7F40 /* BasicPopupView.xib */; };
+		76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */; };
+		76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */; };
+		76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530322FB0C6800F4443E /* CalendarViewController.swift */; };
+		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
+		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
+		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
+		CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09477522FDEC8200E7C8A8 /* Setting.storyboard */; };
+		CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */; };
+		CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */; };
+		CE09477C22FE6CAF00E7C8A8 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */; };
+		CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */; };
+		CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */; };
+		CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */; };
+		CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */; };
+		CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0947AA23003B9700E7C8A8 /* Setting.swift */; };
+		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
+		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
+		CE5F520922F1F45700F2E777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520722F1F45700F2E777 /* User.swift */; };
+		CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5F521522F1F7A500F2E777 /* Sample.xcassets */; };
+		CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F521722F1F7CF00F2E777 /* Home.storyboard */; };
+		CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522122F1FE1700F2E777 /* HomeCardCollectionViewCell.swift */; };
+		CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */; };
+		CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */; };
+		CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522922F1FF0100F2E777 /* Constant.swift */; };
+		CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */; };
+		CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */; };
+		CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F522F22F2085200F2E777 /* Detail.storyboard */; };
+		CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F523622F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift */; };
+		CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */; };
+		CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */; };
+		CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262B22E2EC0E00264114 /* AppDelegate.swift */; };
+		CE69263322E2EC1000264114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE69263222E2EC1000264114 /* Assets.xcassets */; };
+		CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE69263422E2EC1000264114 /* LaunchScreen.storyboard */; };
+		CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */; };
+		CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */; };
+		CE885A952307C735008DB1FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A942307C735008DB1FB /* Global.swift */; };
+		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
+		CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE885A9E23080A17008DB1FB /* LoginAnimation.gif */; };
+		CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */; };
+		CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */; };
+		CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */; };
+		CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */; };
+		CE885ADA23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */; };
+		CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */; };
+		CE885ADE230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885ADC230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift */; };
+		CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885ADD230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib */; };
+		CE885AE2230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE0230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift */; };
+		CE885AE3230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE1230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib */; };
+		CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE42308741F008DB1FB /* RegisterPlantDateTableViewCell.swift */; };
+		CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */; };
+		CE885AEA23087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */; };
+		CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */; };
+		CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */; };
+		CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */; };
+		CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */; };
+		CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */; };
+		CE885AF52308CF29008DB1FB /* LoginEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */; };
+		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
+		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
+		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
+		CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F823059D590083B3A9 /* WateringPopupView.xib */; };
+		CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */; };
+		CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */; };
+		CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */; };
+		CE8C84012305A6190083B3A9 /* WateringDelayPopupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */; };
+		CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */; };
+		CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */; };
+		CE8C84082305B4C60083B3A9 /* DetailEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84072305B4C60083B3A9 /* DetailEventDelegate.swift */; };
+		CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */; };
+		CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */; };
+		CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */; };
+		CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */; };
+		CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */; };
+		CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */; };
+		CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841523064DB00083B3A9 /* RecordCard.swift */; };
+		CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */; };
+		CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */; };
+		CE8C841D230655B60083B3A9 /* DiarySectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */; };
+		CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */; };
+		CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */; };
+		CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */; };
+		CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */; };
+		CE90E3F72308FEC600096731 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3F62308FEC500096731 /* Watering.json */; };
+		CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3F82309287000096731 /* DatePickerPopupView.swift */; };
+		CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FA2309290600096731 /* DatePickerPopupView.xib */; };
+		CE90E3FD230939F300096731 /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FC230939F300096731 /* Plant.xcassets */; };
+		CE90E4002309417C00096731 /* SelectPlantPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */; };
+		CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */; };
+		CE90E4032309418A00096731 /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */; };
+		CE90E40523094FAE00096731 /* PlantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E40423094FAE00096731 /* PlantType.swift */; };
+		CE90E407230955FD00096731 /* PlantEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E406230955FD00096731 /* PlantEnum.swift */; };
+		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
+		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
+		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
+		CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */; };
+		CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */; };
+		CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */; };
+		CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */; };
+		CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */; };
+		CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E1A822FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift */; };
+		CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E1A922FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib */; };
+		CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E1AC22FB2BE900ED0C31 /* DetailTableHeaderView.swift */; };
+		CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */; };
+		CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		33B6DE139F2B3BBBECBB2112 /* Pods-Pliary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.debug.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.debug.xcconfig"; sourceTree = "<group>"; };
+		760DB41D22F6DED50035F22E /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		760DB41F22F6FB2E0035F22E /* Pliary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pliary.entitlements; sourceTree = "<group>"; };
+		762B4FF122F1B129002C24EF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		763D972E22F1D58600E50F21 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		7688955F230973BE00CE7F40 /* BasicPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPopupView.swift; sourceTree = "<group>"; };
+		76889560230973BE00CE7F40 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
+		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
+		76C7530322FB0C6800F4443E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WateringInfoTableViewCell.swift; sourceTree = "<group>"; };
+		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
+		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
+		CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pliary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		CE09477522FDEC8200E7C8A8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
+		CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNextTableViewCell.swift; sourceTree = "<group>"; };
+		CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNextTableViewCell.xib; sourceTree = "<group>"; };
+		CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		CE0947AA23003B9700E7C8A8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE5F521522F1F7A500F2E777 /* Sample.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sample.xcassets; sourceTree = "<group>"; };
+		CE5F521722F1F7CF00F2E777 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		CE5F522122F1FE1700F2E777 /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
+		CE5F522922F1FF0100F2E777 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE5F522F22F2085200F2E777 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		CE5F523622F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardWithAllTableViewCell.swift; sourceTree = "<group>"; };
+		CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCardWithAllTableViewCell.xib; sourceTree = "<group>"; };
+		CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
+		CE69262822E2EC0E00264114 /* Pliary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pliary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE69262B22E2EC0E00264114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE69263222E2EC1000264114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE69263522E2EC1000264114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE69263722E2EC1000264114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE885A942307C735008DB1FB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		CE885A9C2307DDD6008DB1FB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CE885A9E23080A17008DB1FB /* LoginAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginAnimation.gif; sourceTree = "<group>"; };
+		CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantHeaderView.swift; sourceTree = "<group>"; };
+		CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEventDelegate.swift; sourceTree = "<group>"; };
+		CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlantTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantLabelTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantLabelTableViewCell.xib; sourceTree = "<group>"; };
+		CE885ADC230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantNameTableViewCell.swift; sourceTree = "<group>"; };
+		CE885ADD230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantNameTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AE0230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantImageTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AE1230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantImageTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AE42308741F008DB1FB /* RegisterPlantDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantDateTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantDateTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantPeriodTableViewCell.swift; sourceTree = "<group>"; };
+		CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantPeriodTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImage.swift"; sourceTree = "<group>"; };
+		CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEventDelegate.swift; sourceTree = "<group>"; };
+		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
+		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
+		CE8C83F823059D590083B3A9 /* WateringPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringPopupView.xib; sourceTree = "<group>"; };
+		CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventDelegate.swift; sourceTree = "<group>"; };
+		CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSelectPopupSubview.swift; sourceTree = "<group>"; };
+		CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringSelectPopupSubview.xib; sourceTree = "<group>"; };
+		CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringDelayPopupSubview.swift; sourceTree = "<group>"; };
+		CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringDelayPopupSubview.xib; sourceTree = "<group>"; };
+		CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringEventDelegate.swift; sourceTree = "<group>"; };
+		CE8C84072305B4C60083B3A9 /* DetailEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventDelegate.swift; sourceTree = "<group>"; };
+		CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+TableView.swift"; sourceTree = "<group>"; };
+		CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Event.swift"; sourceTree = "<group>"; };
+		CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
+		CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		CE8C841523064DB00083B3A9 /* RecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCard.swift; sourceTree = "<group>"; };
+		CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
+		CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
+		CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiarySectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarSectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPlantViewController.swift; sourceTree = "<group>"; };
+		CE90E3F62308FEC500096731 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
+		CE90E3F82309287000096731 /* DatePickerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupView.swift; sourceTree = "<group>"; };
+		CE90E3FA2309290600096731 /* DatePickerPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopupView.xib; sourceTree = "<group>"; };
+		CE90E3FC230939F300096731 /* Plant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Plant.xcassets; sourceTree = "<group>"; };
+		CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlantPopupView.swift; sourceTree = "<group>"; };
+		CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlantPopupView.xib; sourceTree = "<group>"; };
+		CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
+		CE90E40423094FAE00096731 /* PlantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantType.swift; sourceTree = "<group>"; };
+		CE90E406230955FD00096731 /* PlantEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEnum.swift; sourceTree = "<group>"; };
+		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
+		CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainDetailTableViewCell.xib; sourceTree = "<group>"; };
+		CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CardScroll.swift"; sourceTree = "<group>"; };
+		CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Segue.swift"; sourceTree = "<group>"; };
+		CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterPlant.storyboard; sourceTree = "<group>"; };
+		CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantViewController.swift; sourceTree = "<group>"; };
+		CEE0E1A822FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWithPlantTableViewCell.swift; sourceTree = "<group>"; };
+		CEE0E1A922FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayWithPlantTableViewCell.xib; sourceTree = "<group>"; };
+		CEE0E1AC22FB2BE900ED0C31 /* DetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableHeaderView.swift; sourceTree = "<group>"; };
+		CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableHeaderView.xib; sourceTree = "<group>"; };
+		CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCard.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE69262522E2EC0E00264114 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A082DE0FFD946C9B334E27 /* Pods_Pliary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76889563230973EB00CE7F40 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				76889560230973BE00CE7F40 /* BasicPopupView.xib */,
+				7688955F230973BE00CE7F40 /* BasicPopupView.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		9C092CBD9F305B95F3D12E24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33B6DE139F2B3BBBECBB2112 /* Pods-Pliary.debug.xcconfig */,
+				C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B19A722CCD556F44B3AE2826 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE09476322FC6A7000E7C8A8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C83F523059CAB0083B3A9 /* PopUp */,
+				CE09477422FDEC6D00E7C8A8 /* Setting */,
+				CE5F520F22F1F62A00F2E777 /* Login */,
+				CE5F521222F1F68F00F2E777 /* Home */,
+				CEE0E19F22FB03F900ED0C31 /* RegisterPlant */,
+				CE5F521D22F1FBE400F2E777 /* Detail */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CE09477322FC6CC500E7C8A8 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E1A422FB26B900ED0C31 /* DiaryCard */,
+				CEE0E1A522FB26C400ED0C31 /* Calendar */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		CE09477422FDEC6D00E7C8A8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477E22FE6D9100E7C8A8 /* ViewController */,
+				CE09477D22FE6D8D00E7C8A8 /* Cell */,
+				CE09477522FDEC8200E7C8A8 /* Setting.storyboard */,
+				CE0947AA23003B9700E7C8A8 /* Setting.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CE09477D22FE6D8D00E7C8A8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */,
+				CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */,
+				CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */,
+				CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */,
+				CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */,
+				CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE09477E22FE6D9100E7C8A8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
+				CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE5F520522F1F45700F2E777 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F520622F1F45700F2E777 /* Plant.swift */,
+				CE90E40423094FAE00096731 /* PlantType.swift */,
+				CE5F520722F1F45700F2E777 /* User.swift */,
+				CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */,
+				CE8C841523064DB00083B3A9 /* RecordCard.swift */,
+				CE885A942307C735008DB1FB /* Global.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE5F520C22F1F48300F2E777 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CE5F520F22F1F62A00F2E777 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F520C22F1F48300F2E777 /* Manager */,
+				CE5F521022F1F64600F2E777 /* ViewController */,
+				CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */,
+				763D972E22F1D58600E50F21 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE5F521022F1F64600F2E777 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */,
+				762B4FF122F1B129002C24EF /* SignInViewController.swift */,
+				76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */,
+				CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */,
+				CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE5F521222F1F68F00F2E777 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F521E22F1FC4C00F2E777 /* Cell */,
+				CE69263F22E2EC2700264114 /* ViewController */,
+				CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */,
+				CE5F521722F1F7CF00F2E777 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE5F521D22F1FBE400F2E777 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477322FC6CC500E7C8A8 /* Section */,
+				CEE0E19422F848CB00ED0C31 /* ViewController */,
+				CE5F523122F2085600F2E777 /* Cell */,
+				CE8C84072305B4C60083B3A9 /* DetailEventDelegate.swift */,
+				CE5F522F22F2085200F2E777 /* Detail.storyboard */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CE5F521E22F1FC4C00F2E777 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F522122F1FE1700F2E777 /* HomeCardCollectionViewCell.swift */,
+				CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */,
+				CE5F522B22F2055300F2E777 /* AddCardCollectionViewCell.swift */,
+				CE5F522C22F2055300F2E777 /* AddCardCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE5F522522F1FECC00F2E777 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */,
+				765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */,
+				CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */,
+				CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */,
+				760DB41D22F6DED50035F22E /* UITextField+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE5F522622F1FED000F2E777 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F522922F1FF0100F2E777 /* Constant.swift */,
+				CE90E406230955FD00096731 /* PlantEnum.swift */,
+				CE885A9C2307DDD6008DB1FB /* API.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		CE5F523122F2085600F2E777 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */,
+				CEE0E19822F9DB3A00ED0C31 /* MainDetailTableViewCell.xib */,
+				CEE0E1AC22FB2BE900ED0C31 /* DetailTableHeaderView.swift */,
+				CEE0E1AE22FB2C0200ED0C31 /* DetailTableHeaderView.xib */,
+				CE8C841123064A330083B3A9 /* EmptyTableViewCell.swift */,
+				CE8C841223064A330083B3A9 /* EmptyTableViewCell.xib */,
+				CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */,
+				CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE69261F22E2EC0E00264114 = {
+			isa = PBXGroup;
+			children = (
+				CE69262A22E2EC0E00264114 /* Pliary */,
+				CE69262922E2EC0E00264114 /* Products */,
+				9C092CBD9F305B95F3D12E24 /* Pods */,
+				B19A722CCD556F44B3AE2826 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE69262922E2EC0E00264114 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE69262822E2EC0E00264114 /* Pliary.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE69262A22E2EC0E00264114 /* Pliary */ = {
+			isa = PBXGroup;
+			children = (
+				CE09476322FC6A7000E7C8A8 /* Domain */,
+				CE5F522622F1FED000F2E777 /* Constant */,
+				CE5F522522F1FECC00F2E777 /* Extension */,
+				CE5F520522F1F45700F2E777 /* Model */,
+				CE69264122E2EC3C00264114 /* Asset */,
+				CE69264022E2EC2C00264114 /* Etc. */,
+				CE69263722E2EC1000264114 /* Info.plist */,
+				CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */,
+				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
+			);
+			path = Pliary;
+			sourceTree = "<group>";
+		};
+		CE69263F22E2EC2700264114 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F520322F1F43500F2E777 /* HomeViewController.swift */,
+				CEE0E19D22FAF0D700ED0C31 /* HomeViewController+Segue.swift */,
+				CEE0E19B22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE69264022E2EC2C00264114 /* Etc. */ = {
+			isa = PBXGroup;
+			children = (
+				CE69263422E2EC1000264114 /* LaunchScreen.storyboard */,
+				CE69262B22E2EC0E00264114 /* AppDelegate.swift */,
+			);
+			path = Etc.;
+			sourceTree = "<group>";
+		};
+		CE69264122E2EC3C00264114 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				CE90E3F62308FEC500096731 /* Watering.json */,
+				CE885A9E23080A17008DB1FB /* LoginAnimation.gif */,
+				CE8C83F3230306830083B3A9 /* plant.gif */,
+				CE5F521522F1F7A500F2E777 /* Sample.xcassets */,
+				CE69263222E2EC1000264114 /* Assets.xcassets */,
+				CE90E3FC230939F300096731 /* Plant.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		CE885A8E2306DDDE008DB1FB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */,
+				CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */,
+				CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */,
+				CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */,
+				CE885AD823086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift */,
+				CE885AD923086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib */,
+				CE885ADC230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift */,
+				CE885ADD230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib */,
+				CE885AE0230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift */,
+				CE885AE1230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib */,
+				CE885AE42308741F008DB1FB /* RegisterPlantDateTableViewCell.swift */,
+				CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */,
+				CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */,
+				CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE885A932306DEEE008DB1FB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E1A222FB044C00ED0C31 /* RegisterPlantViewController.swift */,
+				CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE885AC523085D30008DB1FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */,
+				CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */,
+				CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */,
+				CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */,
+				CE90E3F82309287000096731 /* DatePickerPopupView.swift */,
+				CE90E3FA2309290600096731 /* DatePickerPopupView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE8C83F523059CAB0083B3A9 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				76889563230973EB00CE7F40 /* Basic */,
+				CE8C84042305A63D0083B3A9 /* Watering */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		CE8C84042305A63D0083B3A9 /* Watering */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */,
+				CE8C83F823059D590083B3A9 /* WateringPopupView.xib */,
+				CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */,
+				CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */,
+				CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */,
+				CE8C84022305A6260083B3A9 /* WateringDelayPopupSubview.xib */,
+				CE8C84052305AFAB0083B3A9 /* WateringEventDelegate.swift */,
+			);
+			path = Watering;
+			sourceTree = "<group>";
+		};
+		CEE0E19422F848CB00ED0C31 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */,
+				CE8C84092305BB480083B3A9 /* DetailViewController+TableView.swift */,
+				CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CEE0E19F22FB03F900ED0C31 /* RegisterPlant */ = {
+			isa = PBXGroup;
+			children = (
+				CE885AC523085D30008DB1FB /* View */,
+				CE885A8E2306DDDE008DB1FB /* Cell */,
+				CE885A932306DEEE008DB1FB /* ViewController */,
+				CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */,
+				CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */,
+			);
+			path = RegisterPlant;
+			sourceTree = "<group>";
+		};
+		CEE0E1A422FB26B900ED0C31 /* DiaryCard */ = {
+			isa = PBXGroup;
+			children = (
+				CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */,
+				CEE0E1A722FB26FC00ED0C31 /* Cell */,
+			);
+			path = DiaryCard;
+			sourceTree = "<group>";
+		};
+		CEE0E1A522FB26C400ED0C31 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				76C7530322FB0C6800F4443E /* CalendarViewController.swift */,
+				CEE0E1A622FB26CC00ED0C31 /* Cell */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		CEE0E1A622FB26CC00ED0C31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */,
+				CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */,
+				CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */,
+				CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */,
+				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
+				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CEE0E1A722FB26FC00ED0C31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */,
+				CE8C841C230655B60083B3A9 /* DiarySectionCollectionViewCell.xib */,
+				CEE0E1A822FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift */,
+				CEE0E1A922FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib */,
+				CE5F523622F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift */,
+				CE5F523722F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE69262722E2EC0E00264114 /* Pliary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE69263A22E2EC1000264114 /* Build configuration list for PBXNativeTarget "Pliary" */;
+			buildPhases = (
+				E1E9DA1FEEAAB7276A77964E /* [CP] Check Pods Manifest.lock */,
+				CE69262422E2EC0E00264114 /* Sources */,
+				CE69262522E2EC0E00264114 /* Frameworks */,
+				CE69262622E2EC0E00264114 /* Resources */,
+				48AB865B23899A63137AE69A /* [CP] Embed Pods Frameworks */,
+				24DD8B77268AFF4A02DB3157 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pliary;
+			productName = Pliary;
+			productReference = CE69262822E2EC0E00264114 /* Pliary.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE69262022E2EC0E00264114 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = groot.nexters.pliary;
+				TargetAttributes = {
+					CE69262722E2EC0E00264114 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = CE69262322E2EC0E00264114 /* Build configuration list for PBXProject "Pliary" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE69261F22E2EC0E00264114;
+			productRefGroup = CE69262922E2EC0E00264114 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE69262722E2EC0E00264114 /* Pliary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE69262622E2EC0E00264114 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE09477C22FE6CAF00E7C8A8 /* UserProfileView.xib in Resources */,
+				CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */,
+				CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */,
+				CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */,
+				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
+				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
+				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
+				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
+				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
+				CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */,
+				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
+				CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */,
+				CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */,
+				CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */,
+				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
+				CE90E3F72308FEC600096731 /* Watering.json in Resources */,
+				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
+				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
+				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
+				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
+				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
+				CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */,
+				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
+				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
+				CE90E4032309418A00096731 /* RegisterPlantHeaderView.xib in Resources */,
+				CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */,
+				CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */,
+				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
+				76889562230973BE00CE7F40 /* BasicPopupView.xib in Resources */,
+				CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */,
+				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
+				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
+				CE885AE3230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib in Resources */,
+				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
+				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
+				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
+				CE8C83F4230306830083B3A9 /* plant.gif in Resources */,
+				CE90E3FD230939F300096731 /* Plant.xcassets in Resources */,
+				CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */,
+				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
+				76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */,
+				CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24DD8B77268AFF4A02DB3157 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pliary/Pods-Pliary-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pliary/Pods-Pliary-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pliary/Pods-Pliary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48AB865B23899A63137AE69A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pliary/Pods-Pliary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pliary/Pods-Pliary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pliary/Pods-Pliary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1E9DA1FEEAAB7276A77964E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pliary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE69262422E2EC0E00264114 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */,
+				CE885A9D2307DDD6008DB1FB /* API.swift in Sources */,
+				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
+				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
+				CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */,
+				CE8C841323064A330083B3A9 /* EmptyTableViewCell.swift in Sources */,
+				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
+				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
+				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
+				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
+				CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */,
+				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
+				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
+				CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */,
+				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
+				CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */,
+				CE90E4002309417C00096731 /* SelectPlantPopupView.swift in Sources */,
+				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
+				CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */,
+				CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */,
+				CE8C84082305B4C60083B3A9 /* DetailEventDelegate.swift in Sources */,
+				CE885ADA23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.swift in Sources */,
+				76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */,
+				CE90E40523094FAE00096731 /* PlantType.swift in Sources */,
+				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
+				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
+				CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */,
+				CE885ADE230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift in Sources */,
+				CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */,
+				CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */,
+				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
+				CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */,
+				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
+				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
+				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
+				CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */,
+				76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */,
+				CE885A952307C735008DB1FB /* Global.swift in Sources */,
+				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
+				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
+				CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */,
+				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
+				CE8C84012305A6190083B3A9 /* WateringDelayPopupSubview.swift in Sources */,
+				CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */,
+				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
+				CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */,
+				CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */,
+				CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */,
+				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
+				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
+				CE885AEA23087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift in Sources */,
+				CE885AE2230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift in Sources */,
+				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
+				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
+				CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */,
+				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
+				CE885AF52308CF29008DB1FB /* LoginEventDelegate.swift in Sources */,
+				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
+				CE90E407230955FD00096731 /* PlantEnum.swift in Sources */,
+				CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */,
+				CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */,
+				CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */,
+				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
+				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
+				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
+				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,
+				CE8C841D230655B60083B3A9 /* DiarySectionCollectionViewCell.swift in Sources */,
+				CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE69263422E2EC1000264114 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE69263522E2EC1000264114 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE69263822E2EC1000264114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE69263922E2EC1000264114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE69263B22E2EC1000264114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33B6DE139F2B3BBBECBB2112 /* Pods-Pliary.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				INFOPLIST_FILE = Pliary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = PliaryProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE69263C22E2EC1000264114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = B6ZBD6VFGD;
+				INFOPLIST_FILE = Pliary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = PliaryProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE69262322E2EC0E00264114 /* Build configuration list for PBXProject "Pliary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE69263822E2EC1000264114 /* Debug */,
+				CE69263922E2EC1000264114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE69263A22E2EC1000264114 /* Build configuration list for PBXNativeTarget "Pliary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE69263B22E2EC1000264114 /* Debug */,
+				CE69263C22E2EC1000264114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE69262022E2EC0E00264114 /* Project object */;
+}
