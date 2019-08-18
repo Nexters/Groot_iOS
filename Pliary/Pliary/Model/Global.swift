@@ -39,7 +39,8 @@ class Global: NSObject {
                         print(string)
                     }
                     
-                }).resume()
+                })
+//                    .resume()
                 
             } else {
                 // host error

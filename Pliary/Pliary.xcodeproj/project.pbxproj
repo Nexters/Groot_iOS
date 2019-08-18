@@ -13,8 +13,6 @@
 		763D972F22F1D58600E50F21 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763D972E22F1D58600E50F21 /* Login.storyboard */; };
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
 		765DC25E22F5E8F100F4DBE6 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */; };
-		765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */; };
-		765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */; };
 		76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */; };
 		76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */; };
 		76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530322FB0C6800F4443E /* CalendarViewController.swift */; };
@@ -29,7 +27,6 @@
 		CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */; };
 		CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */; };
 		CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */; };
-		CE0947A622FE888C00E7C8A8 /* ChangeUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0947A222FE888C00E7C8A8 /* ChangeUserInfoViewController.swift */; };
 		CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0947AA23003B9700E7C8A8 /* Setting.swift */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
 		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
@@ -52,7 +49,6 @@
 		CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */; };
 		CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */; };
 		CE885A952307C735008DB1FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A942307C735008DB1FB /* Global.swift */; };
-		CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE885A962307D595008DB1FB /* GoogleService-Info.plist */; };
 		CE885A9A2307D839008DB1FB /* SendCompletePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A982307D839008DB1FB /* SendCompletePopupView.swift */; };
 		CE885A9B2307D839008DB1FB /* SendCompletePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A992307D839008DB1FB /* SendCompletePopupView.xib */; };
 		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
@@ -74,6 +70,11 @@
 		CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */; };
 		CE885AEA23087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */; };
 		CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */; };
+		CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */; };
+		CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */; };
+		CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */; };
+		CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */; };
+		CE885AF52308CF29008DB1FB /* LoginEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
@@ -122,8 +123,6 @@
 		763D972E22F1D58600E50F21 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		765DC25D22F5E8F000F4DBE6 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
-		765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
-		765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordResetPopupViewController.swift; path = ../Extension/PasswordResetPopupViewController.swift; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
 		76C7530322FB0C6800F4443E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +139,6 @@
 		CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNextTableViewCell.xib; sourceTree = "<group>"; };
 		CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
-		CE0947A222FE888C00E7C8A8 /* ChangeUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeUserInfoViewController.swift; sourceTree = "<group>"; };
 		CE0947AA23003B9700E7C8A8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 		CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE885A942307C735008DB1FB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		CE885A962307D595008DB1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE885A982307D839008DB1FB /* SendCompletePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendCompletePopupView.swift; sourceTree = "<group>"; };
 		CE885A992307D839008DB1FB /* SendCompletePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCompletePopupView.xib; sourceTree = "<group>"; };
 		CE885A9C2307DDD6008DB1FB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -187,6 +184,11 @@
 		CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantDateTableViewCell.xib; sourceTree = "<group>"; };
 		CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantPeriodTableViewCell.swift; sourceTree = "<group>"; };
 		CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantPeriodTableViewCell.xib; sourceTree = "<group>"; };
+		CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImage.swift"; sourceTree = "<group>"; };
+		CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEventDelegate.swift; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
@@ -239,14 +241,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		765DC26522F5F68000F4DBE6 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				765DC26622F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		9C092CBD9F305B95F3D12E24 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,7 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
-				CE0947A222FE888C00E7C8A8 /* ChangeUserInfoViewController.swift */,
+				CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -352,9 +346,9 @@
 			isa = PBXGroup;
 			children = (
 				CE09476922FC6B4F00E7C8A8 /* View */,
-				765DC26522F5F68000F4DBE6 /* Extension */,
 				CE5F520C22F1F48300F2E777 /* Manager */,
 				CE5F521022F1F64600F2E777 /* ViewController */,
+				CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */,
 				763D972E22F1D58600E50F21 /* Login.storyboard */,
 			);
 			path = Login;
@@ -366,7 +360,8 @@
 				CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */,
 				762B4FF122F1B129002C24EF /* SignInViewController.swift */,
 				76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */,
-				765DC26822F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift */,
+				CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */,
+				CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -470,7 +465,7 @@
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
 				CE69263722E2EC1000264114 /* Info.plist */,
-				CE885A962307D595008DB1FB /* GoogleService-Info.plist */,
+				CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */,
 				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
 			);
 			path = Pliary;
@@ -722,13 +717,13 @@
 				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
-				CE885A972307D595008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
 				CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */,
 				CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
+				CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
 				CE885AE3230873D1008DB1FB /* RegisterPlantImageTableViewCell.xib in Resources */,
@@ -821,7 +816,6 @@
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
-				765DC26722F5F68000F4DBE6 /* SignUpViewContoller+UIImagePickerControllerDelegate.swift in Sources */,
 				CE885ACB23085DB6008DB1FB /* SelectPlantPopupView.swift in Sources */,
 				CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
@@ -839,6 +833,7 @@
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
 				CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */,
 				CE885ADE230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift in Sources */,
+				CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */,
 				CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */,
 				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
@@ -846,7 +841,6 @@
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
 				CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */,
 				CE885A952307C735008DB1FB /* Global.swift in Sources */,
-				765DC26922F5F6C000F4DBE6 /* PasswordResetPopupViewController.swift in Sources */,
 				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
 				CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */,
@@ -864,11 +858,13 @@
 				CE885AE2230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift in Sources */,
 				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
 				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
+				CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */,
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
-				CE0947A622FE888C00E7C8A8 /* ChangeUserInfoViewController.swift in Sources */,
+				CE885AF52308CF29008DB1FB /* LoginEventDelegate.swift in Sources */,
 				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
 				CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */,
 				CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */,
+				CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
 				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
@@ -1022,7 +1018,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary.Pliary;
+				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1043,7 +1039,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary.Pliary;
+				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
