@@ -11,11 +11,16 @@ import UIKit
 class RegisterPlantHeaderView: UIView {
 
     static let height: CGFloat = 80
+    
+    @IBOutlet weak var plantNameLabel: UILabel!
+    @IBOutlet private weak var headerFixedArrowImage: UIImageView!
+    @IBOutlet private weak var nonHeaderFixedArrowImage: UIImageView!
+    
     weak var delegate: RegisterEventDelegate?
     
     static func instance() -> RegisterPlantHeaderView {
         let view: RegisterPlantHeaderView = UIView.createViewFromNib(nibName: RegisterPlantHeaderView.identifier)
-        
+        view.headerFixed(bool: false)
         return view
     }
     
@@ -23,8 +28,13 @@ class RegisterPlantHeaderView: UIView {
         delegate?.registerEvent(event: .selectPlant)
     }
     
-    @IBAction func tapArrowButton(_ sender: Any) {
-        delegate?.registerEvent(event: .selectPlant)
+    func headerFixed(bool: Bool) {
+        if bool {
+            nonHeaderFixedArrowImage.isHidden = true
+            headerFixedArrowImage.isHidden = false
+        } else {
+            nonHeaderFixedArrowImage.isHidden = false
+            headerFixedArrowImage.isHidden = true
+        }
     }
-    
 }

@@ -14,6 +14,7 @@ class RegisterPlantViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     
     private var headerView: RegisterPlantHeaderView?
+    private var headerOriginY: CGFloat = 0
     private var rows: [String] = []
     
     @IBAction func tabCloseButton(_ sender: Any) {
@@ -69,6 +70,18 @@ extension RegisterPlantViewController: UITableViewDelegate {
             return 0
         } else {
             return RegisterPlantHeaderView.height
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if headerOriginY == 0, let minY = headerView?.frame.minY {
+            headerOriginY = minY
+        }
+        
+        if headerView?.frame.minY != headerOriginY {
+            headerView?.headerFixed(bool: true)
+        } else {
+            headerView?.headerFixed(bool: false)
         }
     }
 }
