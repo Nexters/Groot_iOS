@@ -107,6 +107,17 @@ extension RegisterPlantViewController: UITableViewDataSource {
         } else {
             let headerView = RegisterPlantHeaderView.instance()
             headerView.delegate = self
+            
+            if let plant = selectedPlant {
+                if plant.englishName == "" {
+                    headerView.plantNameLabel.text = "Your plant"
+                    headerView.plantNameLabel.textColor = Color.gray1
+                } else {
+                    headerView.plantNameLabel.text = plant.englishName
+                    headerView.plantNameLabel.textColor = Color.gray1
+                }
+            }
+            
             self.headerView = headerView
             
             return headerView
@@ -140,10 +151,12 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             selectPlantPopup.delegate = self
             selectPlantPopup.currentPlant = selectedPlant
             view.addSubview(selectPlantPopup)
+            
         case .selectDate:
             let datePopup = DatePickerPopupView.instance()
             datePopup.frame = view.frame
             view.addSubview(datePopup)
+            
         case .plantSelected(let selectedPlant):
             self.selectedPlant = selectedPlant
             
