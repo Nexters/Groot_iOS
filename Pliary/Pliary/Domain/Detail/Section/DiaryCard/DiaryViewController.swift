@@ -80,6 +80,7 @@ class DiaryViewController: UIViewController {
             self.changeMode(.editDiary)
         })
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+            self.hero.modalAnimationType = .pull(direction: .right)
             self.dismiss(animated: true, completion: nil)
         })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler : nil )
@@ -210,10 +211,6 @@ extension DiaryViewController {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        view.endEditing(true)
     }
 }
 

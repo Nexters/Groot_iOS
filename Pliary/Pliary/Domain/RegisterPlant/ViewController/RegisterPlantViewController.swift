@@ -11,12 +11,14 @@ import UIKit
 class RegisterPlantViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var completeButton: UIButton!
     
     private var headerView: RegisterPlantHeaderView?
     private var rows: [String] = []
     
     @IBAction func tabCloseButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        view.endEditing(true)
+        dismiss(animated: true, completion: nil)
     }
     
     private func setUpTableView() {
@@ -37,6 +39,16 @@ class RegisterPlantViewController: UIViewController {
         
         let registerPeriodNib = UINib(nibName: RegisterPlantPeriodTableViewCell.reuseIdentifier, bundle: nil)
         tableView.register(registerPeriodNib, forCellReuseIdentifier: RegisterPlantPeriodTableViewCell.reuseIdentifier)
+        
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEdit))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(singleTapGestureRecognizer)
+    }
+    
+    @objc func endEdit(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
 }
@@ -46,6 +58,8 @@ extension RegisterPlantViewController {
         super.viewDidLoad()
         
         setUpTableView()
+        completeButton.clipsToBounds = true
+        completeButton.layer.cornerRadius = 6
     }
 }
 
@@ -94,6 +108,10 @@ extension RegisterPlantViewController: UITableViewDataSource {
         let identifier = rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
         
+        if let dateCell = cell as? RegisterPlantDateTableViewCell {
+            dateCell.delegate = self
+        }
+        
         return cell ?? UITableViewCell()
     }
     
@@ -108,9 +126,12 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             selectPlantPopup.delegate = self
             view.addSubview(selectPlantPopup)
         case .selectDate:
-            ()
+            let datePopup = DatePickerPopupView.instance()
+            datePopup.frame = view.frame
+            view.addSubview(datePopup)
         case .plantSelected:
-            tableView.contentOffset.y = 0
+            let indexPath = IndexPath(row: 0, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             tableView.isScrollEnabled = true
             
             rows = []
@@ -122,6 +143,5 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             tableView.reloadData()
         }
     }
-    
     
 }

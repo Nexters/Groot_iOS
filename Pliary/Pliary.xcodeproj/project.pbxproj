@@ -101,6 +101,8 @@
 		CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */; };
 		CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */; };
 		CE90E3F72308FEC600096731 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3F62308FEC500096731 /* Watering.json */; };
+		CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3F82309287000096731 /* DatePickerPopupView.swift */; };
+		CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FA2309290600096731 /* DatePickerPopupView.xib */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -216,6 +218,8 @@
 		CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPlantViewController.swift; sourceTree = "<group>"; };
 		CE90E3F62308FEC500096731 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
+		CE90E3F82309287000096731 /* DatePickerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupView.swift; sourceTree = "<group>"; };
+		CE90E3FA2309290600096731 /* DatePickerPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopupView.xib; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -541,6 +545,8 @@
 				CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */,
 				CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */,
 				CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */,
+				CE90E3F82309287000096731 /* DatePickerPopupView.swift */,
+				CE90E3FA2309290600096731 /* DatePickerPopupView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,9 +586,9 @@
 		CEE0E19F22FB03F900ED0C31 /* RegisterPlant */ = {
 			isa = PBXGroup;
 			children = (
-				CE885A932306DEEE008DB1FB /* ViewController */,
 				CE885AC523085D30008DB1FB /* View */,
 				CE885A8E2306DDDE008DB1FB /* Cell */,
+				CE885A932306DEEE008DB1FB /* ViewController */,
 				CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */,
 				CEE0E1A022FB041A00ED0C31 /* RegisterPlant.storyboard */,
 			);
@@ -726,6 +732,7 @@
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
 				CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */,
 				CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */,
+				CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
 				CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
@@ -840,6 +847,7 @@
 				CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */,
 				CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */,
 				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
+				CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,

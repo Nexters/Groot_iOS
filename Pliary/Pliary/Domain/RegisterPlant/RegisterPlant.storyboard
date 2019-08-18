@@ -221,6 +221,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="completeButton" destination="sTN-0n-Oxy" id="8WV-OQ-jo4"/>
                         <outlet property="tableView" destination="YIb-XV-AZK" id="WA5-xH-DqC"/>
                     </connections>
                 </viewController>

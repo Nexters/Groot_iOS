@@ -10,6 +10,13 @@ import UIKit
 
 class RegisterPlantDateTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dateButton: UIButton!
+    weak var delegate: RegisterEventDelegate?
+    
+    @IBAction func tapDateButton(_ sender: Any) {
+        delegate?.registerEvent(event: .selectDate)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
