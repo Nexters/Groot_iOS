@@ -54,9 +54,6 @@
 		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
 		CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE885A9E23080A17008DB1FB /* LoginAnimation.gif */; };
 		CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */; };
-		CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */; };
-		CE885ACB23085DB6008DB1FB /* SelectPlantPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */; };
-		CE885ACD23085DC5008DB1FB /* SelectPlantPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */; };
 		CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */; };
 		CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */; };
 		CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */; };
@@ -104,6 +101,9 @@
 		CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3F82309287000096731 /* DatePickerPopupView.swift */; };
 		CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FA2309290600096731 /* DatePickerPopupView.xib */; };
 		CE90E3FD230939F300096731 /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FC230939F300096731 /* Plant.xcassets */; };
+		CE90E4002309417C00096731 /* SelectPlantPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */; };
+		CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */; };
+		CE90E4032309418A00096731 /* RegisterPlantHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -172,9 +172,6 @@
 		CE885A9C2307DDD6008DB1FB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CE885A9E23080A17008DB1FB /* LoginAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginAnimation.gif; sourceTree = "<group>"; };
 		CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantHeaderView.swift; sourceTree = "<group>"; };
-		CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RegisterPlantHeaderView.xib; path = ../../../../../../../Documents/RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
-		CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectPlantPopupView.swift; path = ../../../../../../../Documents/SelectPlantPopupView.swift; sourceTree = "<group>"; };
-		CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SelectPlantPopupView.xib; path = ../../../../../../../Documents/SelectPlantPopupView.xib; sourceTree = "<group>"; };
 		CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEventDelegate.swift; sourceTree = "<group>"; };
 		CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantTableViewCell.swift; sourceTree = "<group>"; };
 		CE885AD523086A31008DB1FB /* SelectPlantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPlantTableViewCell.xib; sourceTree = "<group>"; };
@@ -222,6 +219,9 @@
 		CE90E3F82309287000096731 /* DatePickerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupView.swift; sourceTree = "<group>"; };
 		CE90E3FA2309290600096731 /* DatePickerPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopupView.xib; sourceTree = "<group>"; };
 		CE90E3FC230939F300096731 /* Plant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Plant.xcassets; sourceTree = "<group>"; };
+		CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPlantPopupView.swift; sourceTree = "<group>"; };
+		CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPlantPopupView.xib; sourceTree = "<group>"; };
+		CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPlantHeaderView.xib; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -544,10 +544,10 @@
 		CE885AC523085D30008DB1FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE885ACA23085DB6008DB1FB /* SelectPlantPopupView.swift */,
-				CE885ACC23085DC5008DB1FB /* SelectPlantPopupView.xib */,
+				CE90E3FE2309417C00096731 /* SelectPlantPopupView.swift */,
+				CE90E3FF2309417C00096731 /* SelectPlantPopupView.xib */,
 				CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */,
-				CE885AC823085D82008DB1FB /* RegisterPlantHeaderView.xib */,
+				CE90E4022309418A00096731 /* RegisterPlantHeaderView.xib */,
 				CE90E3F82309287000096731 /* DatePickerPopupView.swift */,
 				CE90E3FA2309290600096731 /* DatePickerPopupView.xib */,
 			);
@@ -722,10 +722,10 @@
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
 				CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */,
 				CE8C841423064A330083B3A9 /* EmptyTableViewCell.xib in Resources */,
+				CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
 				CE90E3F72308FEC600096731 /* Watering.json in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
-				CE885ACD23085DC5008DB1FB /* SelectPlantPopupView.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
 				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
@@ -733,7 +733,7 @@
 				CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */,
 				CE69263322E2EC1000264114 /* Assets.xcassets in Resources */,
 				CE09478622FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib in Resources */,
-				CE885AC923085D82008DB1FB /* RegisterPlantHeaderView.xib in Resources */,
+				CE90E4032309418A00096731 /* RegisterPlantHeaderView.xib in Resources */,
 				CE885ADF230873B3008DB1FB /* RegisterPlantNameTableViewCell.xib in Resources */,
 				CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
@@ -831,13 +831,13 @@
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */,
-				CE885ACB23085DB6008DB1FB /* SelectPlantPopupView.swift in Sources */,
 				CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */,
 				762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */,
 				CEE0E19E22FAF0D700ED0C31 /* HomeViewController+Segue.swift in Sources */,
+				CE90E4002309417C00096731 /* SelectPlantPopupView.swift in Sources */,
 				760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */,
 				CE0947AB23003B9700E7C8A8 /* Setting.swift in Sources */,
 				CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */,
