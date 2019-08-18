@@ -16,6 +16,14 @@ struct StoryboardName {
     static let login = "Login"
 }
 
+struct ImageName {
+    static let completeButton = "BtnComplete"
+    static let moreButton = "BtnMore"
+    static let plusButton = "BtnAddBlack"
+    static let minusButton = "BtnSubtract"
+    static let loginImage = "LoginAnimation.gif"
+}
+
 struct Color {
     static let gray1 = UIColor(red: 43.0 / 255.0, green: 45.0 / 255.0, blue: 46.0 / 255.0, alpha: 1.0)
     static let gray2 = UIColor(white: 88.0 / 255.0, alpha: 1.0)
@@ -33,14 +41,4 @@ struct Color {
     static let greenCalendar = UIColor(red: 174.0 / 255.0, green: 230.0 / 255.0, blue: 180.0 / 255.0, alpha: 1.0)
     static let bG = UIColor(white: 249.0 / 255.0, alpha: 1.0)
     static let buttonShadow = UIColor(red: 105.0/255.0, green: 146.0/255.0, blue: 117.0/255.0, alpha: 0.4)
-}
-
-
-struct Image {
-    // image name으로 바꾸기
-    static let completeButton = UIImage(named: "BtnComplete")
-    static let moreButton = UIImage(named: "BtnMore")
-    static let plusButton = UIImage(named: "BtnAddBlack")
-    static let minusButton = UIImage(named: "BtnSubtract")
-    static let loginImage = try? UIImage(gifName: "LoginAnimation.gif", levelOfIntegrity: 1)
 }

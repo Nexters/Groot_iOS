@@ -55,17 +55,20 @@ class DiaryViewController: UIViewController {
         currentMode = mode
         switch mode {
         case .writeNewDiary:
-            navigationRightButton.setImage(Image.completeButton, for: .normal)
+            let image = UIImage(named: ImageName.completeButton)
+            navigationRightButton.setImage(image, for: .normal)
             diaryTextView.isSelectable = true
             diaryTextView.isEditable = true
             addOrSubtractContentView.isHidden = false
         case .editDiary:
-            navigationRightButton.setImage(Image.completeButton, for: .normal)
+            let image = UIImage(named: ImageName.completeButton)
+            navigationRightButton.setImage(image, for: .normal)
             diaryTextView.isSelectable = true
             diaryTextView.isEditable = true
             addOrSubtractContentView.isHidden = false
         case .showDiary:
-            navigationRightButton.setImage(Image.moreButton, for: .normal)
+            let image = UIImage(named: ImageName.moreButton)
+            navigationRightButton.setImage(image, for: .normal)
             diaryTextView.isSelectable = false
             diaryTextView.isEditable = false
             addOrSubtractContentView.isHidden = true
@@ -126,12 +129,16 @@ class DiaryViewController: UIViewController {
             addOrSubtractContentView.isHidden = false
             diaryImageView.image = nil
             addOrSubtractContentView.backgroundColor = Color.gray6
-            addOrSubtractImageView.image = Image.plusButton
+            
+            let image = UIImage(named: ImageName.plusButton)
+            addOrSubtractImageView.image = image
         } else {
             addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
             diaryImageView.image = currentDiaryCard?.diaryImage
             addOrSubtractContentView.isHidden = true
-            addOrSubtractImageView.image = Image.minusButton
+            
+            let image = UIImage(named: ImageName.minusButton)
+            addOrSubtractImageView.image = image
         }
     }
     
