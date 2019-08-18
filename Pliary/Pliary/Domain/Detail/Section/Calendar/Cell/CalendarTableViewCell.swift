@@ -66,7 +66,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     func setUpCalendar(){
     
-        calendar.today = nil
+        calendar.today = Date()
         calendar.locale = Locale(identifier: "ko_KR")
         
         calendarView.layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
@@ -84,12 +84,14 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     }
     
 //    // MARK:- FSCalendarDataSource
+    
     public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         if dates.contains(date) {
             return Color.greenCalendar
         } else  if datesTodo.contains(date) {
             return Color.blueCalendar
         }
+        
         return nil
     }
 
@@ -108,5 +110,13 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(formatter.string(from: calendar.currentPage))")
+    }
+    
+    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
+        if cell.dateIsToday {
+            cell.titleLabel.font = UIFont(name: "Baskerville-Bold", size: 14)
+        } else {
+            cell.titleLabel.font = UIFont(name: "Baskerville", size: 14)
+        }
     }
 }

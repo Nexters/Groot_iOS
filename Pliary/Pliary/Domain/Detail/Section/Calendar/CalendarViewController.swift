@@ -60,7 +60,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
         calendar.delegate = self
         calendar.dataSource = self
-        calendar.today = nil
+//        calendar.today = nil
         calendar.locale = Locale(identifier: "ko_KR")
         
         calendarView.layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
@@ -73,7 +73,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.daysContainer.layer.shadowOpacity = 1.0
         calendar.daysContainer.layer.shadowRadius = 0.0
         
-        calendar.allowsMultipleSelection = true
         calendar.appearance.selectionColor = #colorLiteral(red: 0.5058823529, green: 0.8, blue: 0.537254902, alpha: 1)
         calendar.appearance.headerMinimumDissolvedAlpha = 0.0
     }
