@@ -111,7 +111,7 @@
                                     <action selector="EmailSIgnInButtonTouched:" destination="bXf-du-Plo" eventType="touchUpInside" id="SmW-c8-yhC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NE-q3-oIZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NE-q3-oIZ">
                                 <rect key="frame" x="36" y="325" width="168" height="29"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
