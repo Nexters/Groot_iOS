@@ -103,6 +103,7 @@
 		CE90E3F72308FEC600096731 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3F62308FEC500096731 /* Watering.json */; };
 		CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3F82309287000096731 /* DatePickerPopupView.swift */; };
 		CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FA2309290600096731 /* DatePickerPopupView.xib */; };
+		CE90E3FD230939F300096731 /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FC230939F300096731 /* Plant.xcassets */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -220,6 +221,7 @@
 		CE90E3F62308FEC500096731 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
 		CE90E3F82309287000096731 /* DatePickerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupView.swift; sourceTree = "<group>"; };
 		CE90E3FA2309290600096731 /* DatePickerPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopupView.xib; sourceTree = "<group>"; };
+		CE90E3FC230939F300096731 /* Plant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Plant.xcassets; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 				CE8C83F3230306830083B3A9 /* plant.gif */,
 				CE5F521522F1F7A500F2E777 /* Sample.xcassets */,
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
+				CE90E3FC230939F300096731 /* Plant.xcassets */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE8C83F4230306830083B3A9 /* plant.gif in Resources */,
+				CE90E3FD230939F300096731 /* Plant.xcassets in Resources */,
 				CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
 				76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */,
