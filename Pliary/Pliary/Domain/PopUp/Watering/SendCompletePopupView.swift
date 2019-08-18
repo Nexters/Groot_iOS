@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SendCompletePopupView: UIView {
+class BasicPopupView: UIView {
 
     class func instance() -> UIView {
-        let view: SendCompletePopupView = UIView.createViewFromNib(nibName: SendCompletePopupView.identifier)
+        let view: BasicPopupView = UIView.createViewFromNib(nibName: BasicPopupView.identifier)
         return view
     }
     
