@@ -38,7 +38,7 @@ class WateringInfoTableViewCell: UITableViewCell {
         })
         alert.addAction(deleteAction)
 
-        alert.view.tintColor = .black
+        alert.view.tintColor = Color.gray1
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
 
         var topVC = UIApplication.shared.keyWindow?.rootViewController

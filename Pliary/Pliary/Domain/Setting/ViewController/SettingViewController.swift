@@ -80,6 +80,8 @@ class SettingViewController: UIViewController {
         
         signOutAlert.addAction(cancleAction)
         signOutAlert.addAction(signOutAction)
+        signOutAlert.view.tintColor = Color.gray1
+        
         present(signOutAlert, animated: false, completion: nil)
     }
     
@@ -94,6 +96,8 @@ class SettingViewController: UIViewController {
         
         deleteAccountAlert.addAction(cancleAction)
         deleteAccountAlert.addAction(deleteAccountAction)
+        deleteAccountAlert.view.tintColor = Color.gray1
+        
         present(deleteAccountAlert, animated: false, completion: nil)
     }
     

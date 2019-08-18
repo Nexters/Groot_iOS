@@ -91,7 +91,7 @@ extension DetailViewController {
         alert.addAction(deleteAction)
         alert.addAction(cancelAction)
         
-        alert.view.tintColor = .black
+        alert.view.tintColor = Color.gray1
         present(alert, animated: true, completion: nil)
     }
     
