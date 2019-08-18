@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
     }
     
     func setExample() {
-        let plant = Plant.init(name: "", species: "", drinkingDay: 0)
+        let plant = Plant.init(mainName: "Stuki", subName: nil, nickName: nil, wateringDay: 0, imageName: nil)
         plants.append(plant)
         plants.append(plant)
 //        plants.append(plant)
