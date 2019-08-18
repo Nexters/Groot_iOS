@@ -21,7 +21,7 @@ class WateringInfoTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         let date = formatterForCell.date(from:dateLabel.text ?? "")
-        self.timestamp = Int(date?.timeIntervalSince1970 ?? 0)
+        timestamp = Int(date?.timeIntervalSince1970 ?? 0)
     }
     
     fileprivate let formatterForCell: DateFormatter = {
@@ -29,18 +29,20 @@ class WateringInfoTableViewCell: UITableViewCell {
         formatter.dateFormat = "yy.MM.dd"
         return formatter
     }()
+    
     @IBAction func moreButtonClicked(_ sender: Any) {
-
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: "기록을 삭제하시겠습니까?", message: "", preferredStyle: .alert)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
             print("\(self.timestamp) 삭제")
             self.removeFromSuperview()
-        })
-        alert.addAction(deleteAction)
-
+        }
+        
+        alert.addAction(cancleAction)
+        alert.addAction(deleteAccountAction)
         alert.view.tintColor = Color.gray1
-        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-
+   
         var topVC = UIApplication.shared.keyWindow?.rootViewController
         while((topVC!.presentedViewController) != nil){
             topVC = topVC!.presentedViewController

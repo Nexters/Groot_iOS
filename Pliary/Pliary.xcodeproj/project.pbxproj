@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26A082DE0FFD946C9B334E27 /* Pods_Pliary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */; };
 		760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB41D22F6DED50035F22E /* UITextField+Ext.swift */; };
+		76199D3A2309AB7500305642 /* SettingViewController+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76199D392309AB7500305642 /* SettingViewController+UIImage.swift */; };
 		762B4FF222F1B129002C24EF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B4FF122F1B129002C24EF /* SignInViewController.swift */; };
 		763D972F22F1D58600E50F21 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763D972E22F1D58600E50F21 /* Login.storyboard */; };
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
@@ -126,6 +127,7 @@
 		33B6DE139F2B3BBBECBB2112 /* Pods-Pliary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.debug.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.debug.xcconfig"; sourceTree = "<group>"; };
 		760DB41D22F6DED50035F22E /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		760DB41F22F6FB2E0035F22E /* Pliary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pliary.entitlements; sourceTree = "<group>"; };
+		76199D392309AB7500305642 /* SettingViewController+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+UIImage.swift"; sourceTree = "<group>"; };
 		762B4FF122F1B129002C24EF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		763D972E22F1D58600E50F21 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			children = (
 				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
 				CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */,
+				76199D392309AB7500305642 /* SettingViewController+UIImage.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -863,6 +866,7 @@
 				CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
+				76199D3A2309AB7500305642 /* SettingViewController+UIImage.swift in Sources */,
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
 				CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */,
 				76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */,

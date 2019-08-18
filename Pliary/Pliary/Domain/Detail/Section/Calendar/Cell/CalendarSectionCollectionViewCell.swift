@@ -19,8 +19,19 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         return recordCards.count + 1
     }
     
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        return formatter
+    }()
+    
     private func setExample() {
         let card = RecordCard(timeStamp: "2019.11.02", dayCompareToSchedule: 0)
+        recordCards.append(card)
+    }
+    
+    private func setUp(_ date : Date) {
+        let card = RecordCard(timeStamp: formatter.string(from: date) , dayCompareToSchedule: 0)
         recordCards.append(card)
     }
     
@@ -31,6 +42,9 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         let calendarName = CalendarTableViewCell.reuseIdentifier
         let calendarNib = UINib(nibName: calendarName, bundle: nil)
         tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
+
+        let CalendarTableView = CalendarTableViewCell.instance()
+        CalendarTableView.delegate = self
         
         let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
         let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
@@ -81,4 +95,10 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
     }
     
     
+}
+
+extension CalendarSectionCollectionViewCell: CalenderEventDelegate {
+    func selectDateEvent(_ date: Date) {
+        setUp(date)
+    }
 }

@@ -18,6 +18,11 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     weak var delegate: CalenderEventDelegate?
     
+    static func instance() -> CalendarTableViewCell {
+        let view: CalendarTableViewCell = UIView.createViewFromNib(nibName: CalendarTableViewCell.identifier)
+        return view
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -94,19 +99,14 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("calendar did select date \(self.formatter.string(from: date))")
+        print("calendar did select date \(formatter.string(from: date))")
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
-            delegate?.selectDateEvent(date)
         }
+        delegate?.selectDateEvent(date)
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        print("\(self.formatter.string(from: calendar.currentPage))")
-    }
-}
-extension CalendarTableViewCell: CalenderEventDelegate {
-    func selectDateEvent(_ date: Date) {
-        delegate?.selectDateEvent(date)
+        print("\(formatter.string(from: calendar.currentPage))")
     }
 }
