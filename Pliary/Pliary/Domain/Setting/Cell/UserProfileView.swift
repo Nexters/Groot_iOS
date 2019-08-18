@@ -28,12 +28,13 @@ class UserProfileView: UIView {
     }
     
     func setUp(with image : UIImage) {
-        profileImageView.clipsToBounds = true
-        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2.0
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.borderWidth = 1
         profileImageView.borderColor = Color.gray6
         profileImageView.image = image
     }
-
+    func makeRoundImage() {
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2.0
+    }
 }
