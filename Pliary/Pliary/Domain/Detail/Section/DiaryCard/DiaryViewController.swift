@@ -27,6 +27,7 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var navigationRightButton: UIButton!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var diaryImageHeightConstraint: NSLayoutConstraint!
     
     var currentMode: DiaryViewMode = .writeNewDiary
     var currentDiaryCard: DiaryCard?
@@ -103,7 +104,9 @@ class DiaryViewController: UIViewController {
         switch gr.state {
         case .began:
             hero.modalAnimationType = .pull(direction: .right)
-            dismiss(animated: true, completion: nil)
+            if velocity.x > 0 {
+                dismiss(animated: true, completion: nil)
+            }
         case .changed:
             Hero.shared.update(translation.x / view.bounds.width)
         default:
@@ -126,6 +129,7 @@ class DiaryViewController: UIViewController {
         }
         
         if currentDiaryCard?.diaryImage == nil {
+            diaryImageHeightConstraint.constant = 0
             addOrSubtractContentView.isHidden = false
             diaryImageView.image = nil
             addOrSubtractContentView.backgroundColor = Color.gray6
@@ -133,6 +137,7 @@ class DiaryViewController: UIViewController {
             let image = UIImage(named: ImageName.plusButton)
             addOrSubtractImageView.image = image
         } else {
+            diaryImageHeightConstraint.constant = 266
             addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
             diaryImageView.image = currentDiaryCard?.diaryImage
             addOrSubtractContentView.isHidden = true
