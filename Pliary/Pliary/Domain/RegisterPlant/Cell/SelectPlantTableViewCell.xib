@@ -64,6 +64,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="englishNameLabel" destination="ZOl-35-mm4" id="v1K-8w-PCG"/>
+                <outlet property="koreanNameLabel" destination="3hq-Ta-PEH" id="yZU-DM-f33"/>
                 <outlet property="selectedImageView" destination="WbC-yk-Ild" id="1v3-ZM-yuY"/>
             </connections>
             <point key="canvasLocation" x="184.78260869565219" y="152.34375"/>

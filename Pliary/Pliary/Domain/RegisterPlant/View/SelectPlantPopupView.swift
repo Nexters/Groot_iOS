@@ -14,6 +14,8 @@ class SelectPlantPopupView: UIView {
     @IBOutlet weak var tableView: UITableView!
     
     weak var delegate: RegisterEventDelegate?
+    private var list = PlantList.getAllPlants()
+    var currentPlant: Plant?
     
     static func instance() -> SelectPlantPopupView {
         let view: SelectPlantPopupView = UIView.createViewFromNib(nibName: SelectPlantPopupView.identifier)
@@ -44,8 +46,12 @@ extension SelectPlantPopupView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? SelectPlantTableViewCell {
+            guard let plant = cell.plant else {
+                return
+            }
+            
             cell.selected()
-            delegate?.registerEvent(event: .plantSelected)
+            delegate?.registerEvent(event: .plantSelected(plant: plant))
             removeFromSuperview()
         }
     }
@@ -59,12 +65,21 @@ extension SelectPlantPopupView: UITableViewDelegate {
 
 extension SelectPlantPopupView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: SelectPlantTableViewCell.identifier) as? SelectPlantTableViewCell {
+            
+            let plant = list[indexPath.row]
+            
+            if currentPlant?.englishName == plant.englishName {
+                cell.setUp(with: plant, selected: true)
+            } else {
+                cell.setUp(with: plant)
+            }
+            
             return cell
         }
         

@@ -16,6 +16,7 @@ class RegisterPlantViewController: UIViewController {
     private var headerView: RegisterPlantHeaderView?
     private var headerOriginY: CGFloat = 0
     private var rows: [String] = []
+    private var selectedPlant: Plant?
     
     @IBAction func tabCloseButton(_ sender: Any) {
         view.endEditing(true)
@@ -137,12 +138,15 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             let selectPlantPopup = SelectPlantPopupView.instance()
             selectPlantPopup.frame = view.frame
             selectPlantPopup.delegate = self
+            selectPlantPopup.currentPlant = selectedPlant
             view.addSubview(selectPlantPopup)
         case .selectDate:
             let datePopup = DatePickerPopupView.instance()
             datePopup.frame = view.frame
             view.addSubview(datePopup)
-        case .plantSelected:
+        case .plantSelected(let selectedPlant):
+            self.selectedPlant = selectedPlant
+            
             let indexPath = IndexPath(row: 0, section: 0)
             tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             tableView.isScrollEnabled = true

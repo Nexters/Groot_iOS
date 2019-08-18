@@ -22,28 +22,6 @@ struct ImageName {
     static let plusButton = "BtnAddBlack"
     static let minusButton = "BtnSubtract"
     static let loginImage = "LoginAnimation.gif"
-    
-    // Plant name
-    static let stuki_normal = "iOS_Posi_Stuki"
-    static let eucalyptus_normal = "iOS_Posi_Eucalyptus"
-    static let sansevieria_normal = "iOS_Posi_Sansevieria"
-    static let monstera_normal = "iOS_Posi_Monstera"
-    static let parlourPalm_normal = "iOS_Posi_Chamaedorea_elegans"
-    static let elastica_normal = "iOS_Posi_gomu"
-    static let travelersPalm_normal = "iOS_Posi_traveler_s palm"
-    static let schefflera_normal = "iOS_Posi_hongkong"
-    static let userPlants_normal = "iOS_Posi_UserMakePlant"
-    
-    // Negative
-    static let stuki_negative = "iOS_Nega_Stuki"
-    static let eucalyptus_negative = "iOS_Nega_Eucalyptus"
-    static let sansevieria_negative = "iOS_Nega_Sansevieria"
-    static let monstera_negative = "iOS_Nega_Monstera"
-    static let parlourPalm_negative = "iOS_Nega_Chamaedorea-elegans"
-    static let elastica_negative = "iOS_Nega_gomu"
-    static let travelersPalm_negative = "iOS_Nega_Traveler’s-palm"
-    static let schefflera_negative = "iOS_Nega_hongkong"
-    static let userPlants_negative = "iOS_Nega_UserMakePlant"
 }
 
 struct Color {
@@ -64,3 +42,4 @@ struct Color {
     static let bG = UIColor(white: 249.0 / 255.0, alpha: 1.0)
     static let buttonShadow = UIColor(red: 105.0/255.0, green: 146.0/255.0, blue: 117.0/255.0, alpha: 0.4)
 }
+

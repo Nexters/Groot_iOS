@@ -10,7 +10,11 @@ import UIKit
 
 class SelectPlantTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var englishNameLabel: UILabel!
+    @IBOutlet weak var koreanNameLabel: UILabel!
     @IBOutlet weak var selectedImageView: UIImageView!
+    
+    var plant: Plant?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +30,24 @@ class SelectPlantTableViewCell: UITableViewCell {
     func deselected() {
         backgroundColor = .white
         selectedImageView.isHidden = true
+    }
+    
+    func setUp(with plant: Plant, selected: Bool = false) {
+        self.plant = plant
+        
+        if plant.englishName == "" {
+            englishNameLabel.text = "직접 입력"
+            englishNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16)
+            koreanNameLabel.isHidden = true
+        } else {
+            englishNameLabel.text = plant.englishName
+            englishNameLabel.font = UIFont(name: "Baskerville-Bold", size: 18)
+            koreanNameLabel.text = plant.koreanName
+            koreanNameLabel.isHidden = false
+        }
+        
+        if selected {
+            self.selected()
+        }
     }
 }
