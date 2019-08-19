@@ -45,7 +45,6 @@ PODS:
   - Hero (1.4.0)
   - Kingfisher (5.7.0)
   - lottie-ios (3.1.2)
-  - SwiftyGif (5.1.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -54,7 +53,6 @@ DEPENDENCIES:
   - Hero
   - Kingfisher
   - lottie-ios
-  - SwiftyGif
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -70,7 +68,6 @@ SPEC REPOS:
     - Hero
     - Kingfisher
     - lottie-ios
-    - SwiftyGif
 
 SPEC CHECKSUMS:
   Firebase: dedc9e48ea3f3649ad5f6b982f8a0c73508a14b5
@@ -85,8 +82,7 @@ SPEC CHECKSUMS:
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
   lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
-  SwiftyGif: f7702483db93586a41f04f4927cd682852a2fa10
 
-PODFILE CHECKSUM: cda965afa4bd55aae336984a9a21b63245e44811
+PODFILE CHECKSUM: bef7c6026983c59c489620c6dff40796b59e2b8f
 
 COCOAPODS: 1.7.4

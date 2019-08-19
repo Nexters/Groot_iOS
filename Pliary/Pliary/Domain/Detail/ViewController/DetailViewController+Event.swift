@@ -22,11 +22,9 @@ extension DetailViewController: DetailEventDelegate {
         case .scrollToNextPage:
             let indexPath = IndexPath(row: 0, section: 1)
             tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-            animatePlant(false)
         case .scrollToPreviousPage:
             let indexPath = IndexPath(row: 0, section: 0)
             tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-            animatePlant(true)
         case .goDiaryViewController(let card):
             goDiaryViewController(with: card)
         }

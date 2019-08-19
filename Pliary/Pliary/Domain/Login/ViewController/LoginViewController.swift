@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import Kingfisher
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate{
     
     
     @IBOutlet weak var GIDSignInButton: UIButton!
-    @IBOutlet weak var plantView: UIImageView!
+    @IBOutlet weak var plantView: AnimatedImageView!
     
     @IBAction func GIDSignInButtonClicked(_ sender: UIButton) {
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -40,12 +41,15 @@ extension LoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            let image = try UIImage(gifName: ImageName.loginImage, levelOfIntegrity: 1)
-            plantView.setGifImage(image)
-            plantView.startAnimatingGif()
-        } catch {
-            print(error.localizedDescription)
+        let image = UIImage(named: ImageName.loginImage + ".gif")
+        
+        if let path = Bundle.main.path(forResource: ImageName.loginImage, ofType: "gif") {
+            let url = URL(fileURLWithPath: path) 
+            let provider = LocalFileImageDataProvider(fileURL: url)
+            plantView.kf.setImage(with: provider, placeholder: image, options: nil, progressBlock: nil, completionHandler: { _ in })
+        } else {
+            plantView.image = image
         }
+        
     }
 }

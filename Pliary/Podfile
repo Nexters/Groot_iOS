@@ -8,7 +8,6 @@ target 'Pliary' do
   pod 'Firebase/Auth'
   pod 'FSCalendar'
   pod 'Kingfisher'
-  pod 'SwiftyGif'
   pod 'Hero'
   pod 'lottie-ios'
   # Pods for Pliary

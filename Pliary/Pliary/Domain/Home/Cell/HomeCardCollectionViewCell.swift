@@ -7,34 +7,29 @@
 //
 
 import UIKit
-import SwiftyGif
+import Kingfisher
 import Lottie
 
 class HomeCardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var plantView: UIImageView!
+    @IBOutlet weak var plantView: AnimatedImageView!
     @IBOutlet weak var addWaterButton: UIButton!
     @IBOutlet weak var dayLeftLabel: UILabel!
     @IBOutlet weak var blackWaterImageView: UIImageView!
     @IBOutlet weak var wateringAnimation: AnimationView!
     
     weak var delegate: HomeEventDelegate?
-    var plant: Plant?
+    var plant: Plant? {
+        didSet {
+            if oldValue != plant {
+                animateImage()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-//        let exURL = URL(string: "https://dailyissue.s3.ap-northeast-2.amazonaws.com/img2.gif")!
-        
-        do {
-            let gif = try UIImage(gifName: "plant.gif", levelOfIntegrity: 0.5)
-            plantView.setGifImage(gif)
-            plantView.startAnimatingGif()
-        } catch {
-            print(error)
-        }
         
         wateringAnimation.center = center
         wateringAnimation.contentMode = .scaleAspectFill
@@ -60,6 +55,31 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     func setUp(with plant: Plant) {
         self.plant = plant
         wateringAnimation.isHidden = true
+    }
+    
+    func animateImage() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let appendPath = "/" + imageName.replacingOccurrences(of: "iOS", with: "And") + ".gif"
+        let host = API.gifHost?.appendingPathComponent(appendPath)
+        let placeHolder = UIImage(named: imageName)
+        
+        plantView.kf.setImage(with: host, placeholder: placeHolder, options: nil, progressBlock: nil, completionHandler: { _ in
+            
+        })
+    }
+    
+    func stopImage() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let placeHolder = UIImage(named: imageName)
+        plantView.image = placeHolder
     }
     
 }

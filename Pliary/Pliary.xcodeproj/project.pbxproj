@@ -72,7 +72,6 @@
 		CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */; };
 		CE885AF52308CF29008DB1FB /* LoginEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
-		CE8C83F4230306830083B3A9 /* plant.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F3230306830083B3A9 /* plant.gif */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
 		CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F823059D590083B3A9 /* WateringPopupView.xib */; };
 		CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */; };
@@ -195,7 +194,6 @@
 		CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEventDelegate.swift; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		CE8C83F3230306830083B3A9 /* plant.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plant.gif; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
 		CE8C83F823059D590083B3A9 /* WateringPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringPopupView.xib; sourceTree = "<group>"; };
 		CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventDelegate.swift; sourceTree = "<group>"; };
@@ -513,7 +511,6 @@
 			children = (
 				CE90E3F62308FEC500096731 /* Watering.json */,
 				CE885A9E23080A17008DB1FB /* LoginAnimation.gif */,
-				CE8C83F3230306830083B3A9 /* plant.gif */,
 				CE5F521522F1F7A500F2E777 /* Sample.xcassets */,
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
 				CE90E3FC230939F300096731 /* Plant.xcassets */,
@@ -761,7 +758,6 @@
 				CEE0E1AF22FB2C0200ED0C31 /* DetailTableHeaderView.xib in Resources */,
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
-				CE8C83F4230306830083B3A9 /* plant.gif in Resources */,
 				CE90E3FD230939F300096731 /* Plant.xcassets in Resources */,
 				CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,

@@ -63,21 +63,6 @@ class DetailViewController: UIViewController {
         tableView.addGestureRecognizer(gesture)
         gesture.delegate = self
     }
-    
-    func animatePlant(_ bool: Bool) {
-        for cell in tableView.visibleCells {
-            if let plantCell = cell as? MainDetailTableViewCell {
-                if bool {
-                    plantCell.plantView.startAnimatingGif()
-                    animating = true
-                } else {
-                    plantCell.plantView.stopAnimatingGif()
-                    animating = false
-                }
-                return
-            }
-        }
-    }
 }
 
 extension DetailViewController {

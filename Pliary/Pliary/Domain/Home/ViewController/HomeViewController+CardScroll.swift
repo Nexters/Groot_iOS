@@ -29,6 +29,7 @@ extension HomeViewController {
             let topConstraint = difference * 20
 
             if let cell = $0 as? HomeCardCollectionViewCell {
+                cell.stopImage()
                 cell.topLayoutConstraint.constant = topConstraint
             } else if let cell = $0 as? AddCardCollectionViewCell {
                 cell.topLayoutConstraint.constant = topConstraint
@@ -38,6 +39,28 @@ extension HomeViewController {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         indexOfCellBeforeDragging = indexOfMajorCell()
+    }
+    
+    func animateCell() {
+        // For CPU 
+        let inset: CGFloat = 40
+        let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
+        let currentIndex = Int(collectionView.contentOffset.x / unitScrollSize)
+        let indexPath = IndexPath(item: currentIndex, section: 0)
+        
+        collectionView.visibleCells.forEach {
+            if let cell = $0 as? HomeCardCollectionViewCell {
+                cell.stopImage()
+            }
+        }
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
+            cell.animateImage()
+        }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        animateCell()
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -61,6 +84,7 @@ extension HomeViewController {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
                 scrollView.contentOffset = CGPoint(x: toValue, y: 0)
                 scrollView.layoutIfNeeded()
+                self.animateCell()
             }, completion: nil)
             
             slideViewLeadingConstraint.constant = CGFloat(snapToIndex) * slideViewWidthConstraint.constant

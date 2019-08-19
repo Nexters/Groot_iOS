@@ -24,7 +24,8 @@ class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
         self.plant = plant
         self.type = type
         
-        plantImageView.image = plant.getPositiveImage()
+        let imageName = plant.getPositiveImageName()
+        plantImageView.image = UIImage(named: imageName)
         
         switch plant.type {
         case .stuki:

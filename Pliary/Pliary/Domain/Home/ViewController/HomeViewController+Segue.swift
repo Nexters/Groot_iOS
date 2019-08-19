@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyGif
 
 // MARK: - Delegate UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
@@ -111,14 +110,10 @@ extension HomeViewController: UICollectionViewDelegate {
         enableHero(view: detailCell.customNameLabel, id: customNameID)
         enableHero(view: detailCell.nameSplitLabel, id: splitName)
         
-        // placeholder 넣고, detail view에서 start animate
-        if let image = selectedCell.plantView.gifImage {
-            detailCell.plantView.setGifImage(image)
-            present(detailVC, animated: true, completion: {
-                detailCell.plantView.startAnimatingGif()
-            })
+        if let image = selectedCell.plantView.image {
+            detailCell.plantView.image = image
+            present(detailVC, animated: true, completion: nil)
         }
-        
     }
 }
 

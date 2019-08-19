@@ -23,49 +23,49 @@ struct Plant: Equatable {
         self.wateringDay = wateringDay
     }
     
-    func getPositiveImage() -> UIImage? {
+    func getPositiveImageName() -> String {
         switch type {
         case .stuki:
-            return UIImage(named: PlantPositiveImageName.stuki.rawValue)
+            return PlantPositiveImageName.stuki.rawValue
         case .eucalyptus:
-            return UIImage(named: PlantPositiveImageName.eucalyptus.rawValue)
+            return PlantPositiveImageName.eucalyptus.rawValue
         case .sansevieria:
-            return UIImage(named: PlantPositiveImageName.sansevieria.rawValue)
+            return PlantPositiveImageName.sansevieria.rawValue
         case .monstera:
-            return UIImage(named: PlantPositiveImageName.monstera.rawValue)
+            return PlantPositiveImageName.monstera.rawValue
         case .parlourPalm:
-            return UIImage(named: PlantPositiveImageName.parlourPalm.rawValue)
+            return PlantPositiveImageName.parlourPalm.rawValue
         case .elastica:
-            return UIImage(named: PlantPositiveImageName.elastica.rawValue)
+            return PlantPositiveImageName.elastica.rawValue
         case .travelersPalm:
-            return UIImage(named: PlantPositiveImageName.travelersPalm.rawValue)
+            return PlantPositiveImageName.travelersPalm.rawValue
         case .schefflera:
-            return UIImage(named: PlantPositiveImageName.schefflera.rawValue)
+            return PlantPositiveImageName.schefflera.rawValue
         case .userPlants:
-            return UIImage(named: PlantPositiveImageName.userPlants.rawValue)
+            return PlantPositiveImageName.userPlants.rawValue
         }
     }
     
-    func getNegativeImage() -> UIImage? {
+    func getNegativeImageName() -> String {
         switch type {
         case .stuki:
-            return UIImage(named: PlantNegativeImageName.stuki.rawValue)
+            return PlantNegativeImageName.stuki.rawValue
         case .eucalyptus:
-            return UIImage(named: PlantNegativeImageName.eucalyptus.rawValue)
+            return PlantNegativeImageName.eucalyptus.rawValue
         case .sansevieria:
-            return UIImage(named: PlantNegativeImageName.sansevieria.rawValue)
+            return PlantNegativeImageName.sansevieria.rawValue
         case .monstera:
-            return UIImage(named: PlantNegativeImageName.monstera.rawValue)
+            return PlantNegativeImageName.monstera.rawValue
         case .parlourPalm:
-            return UIImage(named: PlantNegativeImageName.parlourPalm.rawValue)
+            return PlantNegativeImageName.parlourPalm.rawValue
         case .elastica:
-            return UIImage(named: PlantNegativeImageName.elastica.rawValue)
+            return PlantNegativeImageName.elastica.rawValue
         case .travelersPalm:
-            return UIImage(named: PlantNegativeImageName.travelersPalm.rawValue)
+            return PlantNegativeImageName.travelersPalm.rawValue
         case .schefflera:
-            return UIImage(named: PlantNegativeImageName.schefflera.rawValue)
+            return PlantNegativeImageName.schefflera.rawValue
         case .userPlants:
-            return UIImage(named: PlantNegativeImageName.userPlants.rawValue)
+            return PlantNegativeImageName.userPlants.rawValue
         }
     }
     
