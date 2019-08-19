@@ -20,6 +20,7 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        nameTextField.delegate = self
     }
     
     func setUp(with plant: Plant, type: RegisterRowType) {
@@ -51,4 +52,33 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
             ()
         }
     }
+}
+extension RegisterPlantNameTableViewCell: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        let type : RegisterRowType = self.type!
+        switch type {
+        case .englishName:
+            return updatedText.count < 16
+        case .koreanName:
+            return updatedText.count < 11
+        case .customName:
+            return updatedText.count < 6
+        default:
+            return updatedText.count < 11
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.endEditing(true)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.endEditing(true)
+    }
+
 }
