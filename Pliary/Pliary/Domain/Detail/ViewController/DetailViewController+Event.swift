@@ -83,11 +83,32 @@ extension DetailViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    private func makeDeleteMode() {
+        for cell in tableView.visibleCells {
+            if let plantCell = cell as? MainDetailTableViewCell {
+                plantCell.makeDeleteMode()
+                return
+            }
+        }
+    }
+    
+    private func clearDeleteMode() {
+        for cell in tableView.visibleCells {
+            if let plantCell = cell as? MainDetailTableViewCell {
+                plantCell.clearDeleteMode()
+                return
+            }
+        }
+    }
+    
     private func showDeletePlantAlert() {
+        makeDeleteMode()
         let alert = UIAlertController(title: "식물을 삭제하시겠습니까?", message: "", preferredStyle: .alert)
         
-        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
-        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: { _ in
+            self.clearDeleteMode()
+        })
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
             self.dismiss(animated: true, completion: nil)
         }
         

@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="21" id="iz3-SN-GtC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-FH-vbx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-FH-vbx">
                                 <rect key="frame" x="36" y="127" width="342" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jpK-P0-Hib"/>
@@ -155,7 +155,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="91" height="21"/>
-        <image name="defaultProfie" width="153" height="153"/>
+        <image name="defaultProfie" width="151" height="151"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

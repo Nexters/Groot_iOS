@@ -77,6 +77,10 @@ class HomeViewController: UIViewController {
         
         if let cell = firstCell as? HomeCardCollectionViewCell {
             cell.topLayoutConstraint.constant = 0
+            englishNameLabel.text = cell.plant?.englishName
+            koreanNameLabel.text = cell.plant?.koreanName
+            customNameLabel.text = cell.plant?.nickName
+            nameSplitLabel.isHidden = false
         } else if let cell = firstCell as? AddCardCollectionViewCell {
             cell.topLayoutConstraint.constant = 0
         }

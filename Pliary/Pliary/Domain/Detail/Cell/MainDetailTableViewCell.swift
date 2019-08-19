@@ -19,6 +19,7 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var koreanNameLabel: UILabel!
     @IBOutlet weak var nameSplitLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel!
     
     weak var delegate: DetailEventDelegate?
     private var plant: Plant?
@@ -54,6 +55,10 @@ class MainDetailTableViewCell: UITableViewCell {
     
     func setUp(with plant: Plant?) {
         self.plant = plant
+        englishNameLabel.text = plant?.englishName
+        koreanNameLabel.text = plant?.koreanName
+        customNameLabel.text = plant?.nickName
+        tipLabel.text = plant?.getTip()
     }
     
     func animateImage() {
@@ -79,5 +84,25 @@ class MainDetailTableViewCell: UITableViewCell {
         let imageName = plant.getPositiveImageName()
         let placeHolder = UIImage(named: imageName)
         plantView.image = placeHolder
+    }
+    
+    func makeDeleteMode() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let placeHolder = UIImage(named: imageName)?.convertToGrayScale()
+        plantView.image = placeHolder
+        
+        let blackImage = UIImage(named: ImageName.addWaterGrayButton)
+        addWaterButton.setImage(blackImage, for: .normal)
+    }
+    
+    func clearDeleteMode() {
+        animateImage()
+        
+        let image = UIImage(named: ImageName.addWaterButton)
+        addWaterButton.setImage(image, for: .normal)
     }
 }
