@@ -18,16 +18,16 @@ extension HomeViewController {
         return safeIndex
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func adjustInset() {
         let inset: CGFloat = 40
         let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
-        let currentIndex = scrollView.contentOffset.x / unitScrollSize
-
+        let currentIndex = collectionView.contentOffset.x / unitScrollSize
+        
         collectionView.visibleCells.forEach {
             let index = Int($0.center.x / unitScrollSize)
             let difference = abs(CGFloat(index) - currentIndex)
             let topConstraint = difference * 20
-
+            
             if let cell = $0 as? HomeCardCollectionViewCell {
                 cell.stopImage()
                 cell.topLayoutConstraint.constant = topConstraint
@@ -35,6 +35,10 @@ extension HomeViewController {
                 cell.topLayoutConstraint.constant = topConstraint
             }
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        adjustInset()
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -51,14 +55,10 @@ extension HomeViewController {
         // For CPU 
         let inset: CGFloat = 40
         let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
-        let currentIndex = Int(collectionView.contentOffset.x / unitScrollSize)
-        let indexPath = IndexPath(item: currentIndex, section: 0)
+        let currentIndex = collectionView.contentOffset.x / unitScrollSize
+        let indexPath = IndexPath(item: Int(currentIndex), section: 0)
         
-        collectionView.visibleCells.forEach {
-            if let cell = $0 as? HomeCardCollectionViewCell {
-                cell.stopImage()
-            }
-        }
+        adjustInset()
         
         if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
             englishNameLabel.text = cell.plant?.englishName
@@ -98,8 +98,10 @@ extension HomeViewController {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
                 scrollView.contentOffset = CGPoint(x: toValue, y: 0)
                 scrollView.layoutIfNeeded()
+                self.adjustInset()
+            }, completion: { _ in
                 self.animateCell()
-            }, completion: nil)
+            })
             
             slideViewLeadingConstraint.constant = CGFloat(snapToIndex) * slideViewWidthConstraint.constant
         } else {
