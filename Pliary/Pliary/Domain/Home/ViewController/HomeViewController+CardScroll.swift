@@ -61,7 +61,15 @@ extension HomeViewController {
         }
         
         if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
+            englishNameLabel.text = cell.plant?.englishName
+            koreanNameLabel.text = cell.plant?.koreanName
+            customNameLabel.text = cell.plant?.nickName
+            nameSplitLabel.isHidden = false
             cell.animateImage()
+        } else {
+            englishNameLabel.text = "Add Plant"
+            koreanNameLabel.text = "식물을 추가해주세요."
+            nameSplitLabel.isHidden = true
         }
     }
     

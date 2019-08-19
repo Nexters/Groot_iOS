@@ -23,6 +23,29 @@ struct Plant: Equatable {
         self.wateringDay = wateringDay
     }
     
+    func getTip() -> String {
+        switch type {
+        case .stuki:
+            return PlantTip.stuki.rawValue
+        case .eucalyptus:
+            return PlantTip.eucalyptus.rawValue
+        case .sansevieria:
+            return PlantTip.sansevieria.rawValue
+        case .monstera:
+            return PlantTip.monstera.rawValue
+        case .parlourPalm:
+            return PlantTip.parlourPalm.rawValue
+        case .elastica:
+            return PlantTip.elastica.rawValue
+        case .travelersPalm:
+            return PlantTip.travelersPalm.rawValue
+        case .schefflera:
+            return PlantTip.schefflera.rawValue
+        case .userPlants:
+            return PlantTip.userPlants.rawValue
+        }
+    }
+    
     func getPositiveImageName() -> String {
         switch type {
         case .stuki:

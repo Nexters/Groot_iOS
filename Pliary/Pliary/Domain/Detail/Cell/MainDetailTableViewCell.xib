@@ -173,6 +173,7 @@
                 <outlet property="koreanNameLabel" destination="huv-Ga-LBY" id="dUg-XC-6Sy"/>
                 <outlet property="nameSplitLabel" destination="bwl-hn-6Fg" id="jTh-1R-NSR"/>
                 <outlet property="plantView" destination="w84-eI-BEg" id="Vpg-mW-vAK"/>
+                <outlet property="tipLabel" destination="ZYn-2j-Tak" id="0fF-vf-QlF"/>
             </connections>
             <point key="canvasLocation" x="180.43478260869566" y="168.41517857142856"/>
         </tableViewCell>

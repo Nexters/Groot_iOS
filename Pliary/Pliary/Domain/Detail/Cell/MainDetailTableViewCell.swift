@@ -19,6 +19,7 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var koreanNameLabel: UILabel!
     @IBOutlet weak var nameSplitLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel!
     
     weak var delegate: DetailEventDelegate?
     private var plant: Plant?
@@ -54,6 +55,10 @@ class MainDetailTableViewCell: UITableViewCell {
     
     func setUp(with plant: Plant?) {
         self.plant = plant
+        englishNameLabel.text = plant?.englishName
+        koreanNameLabel.text = plant?.koreanName
+        customNameLabel.text = plant?.nickName
+        tipLabel.text = plant?.getTip()
     }
     
     func animateImage() {

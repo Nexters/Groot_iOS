@@ -86,7 +86,6 @@ extension DetailViewController {
         
         setUpTableView()
         setUpGesture()
-        
     }
     
     override func viewDidLayoutSubviews() {
