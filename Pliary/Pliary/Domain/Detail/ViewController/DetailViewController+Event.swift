@@ -35,7 +35,7 @@ extension DetailViewController: DetailEventDelegate {
     func detailEvent(_ plant: Plant, event: DetailPlantEvent) {
         switch event {
         case .modifyOrDeletePlant:
-            showModifyDeleteAlert(mode: .plant(plant))
+            showModifyDeleteAlert()
         case .waterToPlant:
             let waterPopup = WateringPopupView.instance(with: plant)
             waterPopup.frame = view.frame
@@ -47,7 +47,7 @@ extension DetailViewController: DetailEventDelegate {
     func detailEvent(_ diaryCard: DiaryCard, event: DetailDiaryCardEvent) {
         switch event {
         case .modifyOrDeleteDiaryCard:
-            showModifyDeleteAlert(mode: .diaryCard(diaryCard))
+            showDeleteCardAlert(diaryCard)
         }
     }
     
@@ -60,28 +60,18 @@ extension DetailViewController {
         case diaryCard(DiaryCard)
     }
     
-    private func showModifyDeleteAlert(mode: AlertMode) {
+    private func showModifyDeleteAlert() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let modifyAction = UIAlertAction(title: "수정", style: .default, handler: { _ in
-            switch mode {
-            case .plant(let plant):
-                let storyboard = UIStoryboard.init(name: StoryboardName.regiserPlant, bundle: Bundle(for: ModifyPlantViewController.self))
-                guard let modifyVC = storyboard.instantiateViewController(withIdentifier: ModifyPlantViewController.identifier) as? ModifyPlantViewController else {
-                    return
-                }
-                self.present(modifyVC, animated: true, completion: nil)
-            case .diaryCard(let card):
-                ()
+            let storyboard = UIStoryboard.init(name: StoryboardName.regiserPlant, bundle: Bundle(for: ModifyPlantViewController.self))
+            guard let modifyVC = storyboard.instantiateViewController(withIdentifier: ModifyPlantViewController.identifier) as? ModifyPlantViewController else {
+                return
             }
+            self.present(modifyVC, animated: true, completion: nil)
         })
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
             
-            switch mode {
-            case .plant(let plant):
-                self.showDeletePlantAlert()
-            case .diaryCard(let card):
-                ()
-            }
+            self.showDeletePlantAlert()
         })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler : nil )
         
@@ -99,6 +89,20 @@ extension DetailViewController {
         let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
         let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
             self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(cancleAction)
+        alert.addAction(deleteAccountAction)
+        alert.view.tintColor = Color.gray1
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showDeleteCardAlert(_ diaryCard: DiaryCard) {
+        let alert = UIAlertController(title: "카드를 삭제하시겠습니까?", message: "", preferredStyle: .alert)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
         }
         
         alert.addAction(cancleAction)

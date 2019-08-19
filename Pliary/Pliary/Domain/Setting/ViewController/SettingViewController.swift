@@ -156,6 +156,7 @@ extension SettingViewController {
         super.viewDidLayoutSubviews()
         
         userProfileView?.frame = CGRect(origin: .zero, size: profileBackgrondView.frame.size)
+        userProfileView?.makeRoundImage()
     }
 }
 
@@ -172,7 +173,6 @@ extension SettingViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         
-//        userProfileImageView.image = selectedImage.resize(withSize: CGSize(width: 151.0, height: 151.0), contentMode: .contentAspectFill)
         dismiss(animated: true, completion: nil)
     }
     

@@ -100,7 +100,7 @@
                                     <constraint firstAttribute="height" constant="36" id="5fG-ko-a7R"/>
                                     <constraint firstAttribute="width" constant="36" id="eHQ-2M-JPP"/>
                                 </constraints>
-                                <state key="normal" image="Profile"/>
+                                <state key="normal" image="defaultProfie"/>
                                 <connections>
                                     <action selector="tabProfileImageButton:" destination="bM5-VK-brj" eventType="touchUpInside" id="zSk-dr-HDF"/>
                                 </connections>
@@ -155,7 +155,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="91" height="21"/>
-        <image name="Profile" width="36" height="36"/>
+        <image name="defaultProfie" width="153" height="153"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

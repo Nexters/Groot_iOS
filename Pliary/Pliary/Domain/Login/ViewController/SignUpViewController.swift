@@ -265,10 +265,6 @@ extension SignUpViewController {
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
         view.addGestureRecognizer(gesture)
-        
-        let profileImage : UIImage = #imageLiteral(resourceName: "defaultProfie")
-        userProfileView?.setUp(with: profileImage)
-        userProfileView?.profileImageView.contentMode = .center
     }
     
     override func viewWillAppear(_ animated: Bool) {

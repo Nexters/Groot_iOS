@@ -268,6 +268,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PcG-Xk-fQe" secondAttribute="height" multiplier="1:1" id="yjV-9J-TSj"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mM-wP-VjI">
                                 <rect key="frame" x="0.0" y="778" width="375" height="34"/>

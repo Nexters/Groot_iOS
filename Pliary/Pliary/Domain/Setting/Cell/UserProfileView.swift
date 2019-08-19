@@ -28,13 +28,14 @@ class UserProfileView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        profileImageView.borderWidth = 1
+        profileImageView.borderColor = Color.gray6
     }
     
     func setUp(with image : UIImage) {
         userImage = image
         profileImageView.contentMode = .scaleAspectFill
-        profileImageView.borderWidth = 1
-        profileImageView.borderColor = Color.gray6
         profileImageView.image = image
     }
     
