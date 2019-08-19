@@ -7,6 +7,7 @@ target 'Pliary' do
   pod 'GoogleSignIn'
   pod 'Firebase/Auth'
   pod 'FSCalendar'
+  pod 'Kingfisher'
   pod 'SwiftyGif'
   pod 'Hero'
   pod 'lottie-ios'
