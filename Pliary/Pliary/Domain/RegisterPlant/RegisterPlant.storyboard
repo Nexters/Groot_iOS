@@ -168,6 +168,7 @@
                         <outlet property="completeButton" destination="pMO-mE-Dtx" id="xfn-rp-Fh5"/>
                         <outlet property="maskView" destination="fsR-zK-YBE" id="Pce-R4-B53"/>
                         <outlet property="nicknameTextField" destination="Hf7-ni-qXn" id="A6z-P7-xQa"/>
+                        <outlet property="textFieldBottomLineView" destination="VCR-jU-eJH" id="ubP-sc-7t1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTp-XT-9rs" userLabel="First Responder" sceneMemberID="firstResponder"/>
