@@ -37,6 +37,7 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
     func handleType(_ type: RegisterRowType) {
         switch type {
         case .englishName:
+            nameTextField.keyboardType = .asciiCapable
             titleLabel.text = "영어명 (필수, 수정불가)"
             nameTextField.placeholder = "ex. Stuki"
             helpTextLabel.text = "영어 최대 15글자까지 입력 가능합니다."
