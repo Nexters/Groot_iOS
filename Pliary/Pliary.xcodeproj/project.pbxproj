@@ -16,7 +16,6 @@
 		76889562230973BE00CE7F40 /* BasicPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76889560230973BE00CE7F40 /* BasicPopupView.xib */; };
 		76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */; };
 		76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */; };
-		76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530322FB0C6800F4443E /* CalendarViewController.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
@@ -70,7 +69,6 @@
 		CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */; };
 		CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */; };
 		CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */; };
-		CE885AF52308CF29008DB1FB /* LoginEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */; };
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
 		CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F823059D590083B3A9 /* WateringPopupView.xib */; };
@@ -108,6 +106,8 @@
 		CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */; };
 		CE90E4162309A2D800096731 /* TimeInterval+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */; };
 		CE90E4182309C01300096731 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4172309C01300096731 /* UIImage+Ext.swift */; };
+		CE90E43A230AF5BB00096731 /* SettingViewController+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */; };
+		CE90E43C230AF5E200096731 /* CameraEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -134,7 +134,6 @@
 		76889560230973BE00CE7F40 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
-		76C7530322FB0C6800F4443E /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WateringInfoTableViewCell.swift; sourceTree = "<group>"; };
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
 		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,7 +191,6 @@
 		CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImage.swift"; sourceTree = "<group>"; };
 		CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEventDelegate.swift; sourceTree = "<group>"; };
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
 		CE8C83F823059D590083B3A9 /* WateringPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringPopupView.xib; sourceTree = "<group>"; };
@@ -230,6 +228,8 @@
 		CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCardWithTextTableViewCell.xib; sourceTree = "<group>"; };
 		CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Ext.swift"; sourceTree = "<group>"; };
 		CE90E4172309C01300096731 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingViewController+UIImage.swift"; sourceTree = "<group>"; };
+		CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraEventDelegate.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -333,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
+				CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */,
 				CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */,
 			);
 			path = ViewController;
@@ -364,8 +365,8 @@
 			children = (
 				CE5F520C22F1F48300F2E777 /* Manager */,
 				CE5F521022F1F64600F2E777 /* ViewController */,
-				CE885AF42308CF29008DB1FB /* LoginEventDelegate.swift */,
 				763D972E22F1D58600E50F21 /* Login.storyboard */,
+				CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -618,7 +619,6 @@
 		CEE0E1A522FB26C400ED0C31 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				76C7530322FB0C6800F4443E /* CalendarViewController.swift */,
 				CEE0E1A622FB26CC00ED0C31 /* Cell */,
 			);
 			path = Calendar;
@@ -865,6 +865,7 @@
 				CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
+				CE90E43A230AF5BB00096731 /* SettingViewController+UIImage.swift in Sources */,
 				CE09478122FE6EA600E7C8A8 /* SettingNextTableViewCell.swift in Sources */,
 				CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */,
 				76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */,
@@ -883,15 +884,14 @@
 				CE90E4132309A04B00096731 /* DiaryCardWithTextTableViewCell.swift in Sources */,
 				CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */,
 				CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */,
-				76C7530522FB0C6900F4443E /* CalendarViewController.swift in Sources */,
 				CE885AEA23087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift in Sources */,
 				CE885AE2230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift in Sources */,
+				CE90E43C230AF5E200096731 /* CameraEventDelegate.swift in Sources */,
 				CE90E4162309A2D800096731 /* TimeInterval+Ext.swift in Sources */,
 				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
 				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
 				CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */,
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
-				CE885AF52308CF29008DB1FB /* LoginEventDelegate.swift in Sources */,
 				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
 				CE90E407230955FD00096731 /* PlantEnum.swift in Sources */,
 				CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */,
