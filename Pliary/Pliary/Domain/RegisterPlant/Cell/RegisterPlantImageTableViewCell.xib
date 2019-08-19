@@ -28,7 +28,7 @@
                         <color key="textColor" red="0.41568627450000001" green="0.65490196079999996" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant.gif" translatesAutoresizingMaskIntoConstraints="NO" id="N8X-da-A8a">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOS_Posi_gomu" translatesAutoresizingMaskIntoConstraints="NO" id="N8X-da-A8a">
                         <rect key="frame" x="36" y="14" width="282" height="338.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="N8X-da-A8a" secondAttribute="height" multiplier="5:6" id="Bg6-b3-960"/>
@@ -83,6 +83,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="plant.gif" width="502" height="600"/>
+        <image name="iOS_Posi_gomu" width="502" height="600"/>
     </resources>
 </document>

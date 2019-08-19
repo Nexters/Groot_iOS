@@ -41,6 +41,12 @@ extension HomeViewController {
         indexOfCellBeforeDragging = indexOfMajorCell()
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            animateCell()
+        }
+    }
+    
     func animateCell() {
         // For CPU 
         let inset: CGFloat = 40
