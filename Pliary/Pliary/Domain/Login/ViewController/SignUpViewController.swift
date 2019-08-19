@@ -285,8 +285,8 @@ extension SignUpViewController {
     
 }
 
-extension SignUpViewController: LoginEventDelegate {
-    func loginEvent() {
+extension SignUpViewController: CameraEventDelegate {
+    func cameraEvent() {
         selectImageFromPhotoLibrary()
     }
 }

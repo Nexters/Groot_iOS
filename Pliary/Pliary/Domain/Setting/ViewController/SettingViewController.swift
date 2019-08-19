@@ -149,6 +149,7 @@ extension SettingViewController {
         
         let profileView = UserProfileView.instance()
         userProfileView = profileView
+        userProfileView?.delegate = self
         profileBackgrondView.addSubview(profileView)
     }
     
@@ -157,31 +158,6 @@ extension SettingViewController {
         
         userProfileView?.frame = CGRect(origin: .zero, size: profileBackgrondView.frame.size)
         userProfileView?.makeRoundImage()
-    }
-}
-
-extension SettingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        guard (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) != nil else {
-            print("Expected a dictionary containing an image, but was provided the following: \(info)")
-            return
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
     }
 }
 
@@ -228,4 +204,10 @@ extension SettingViewController: UITableViewDataSource {
         }
     }
     
+}
+
+extension SettingViewController: CameraEventDelegate {
+    func cameraEvent() {
+        selectImageFromPhotoLibrary()
+    }
 }

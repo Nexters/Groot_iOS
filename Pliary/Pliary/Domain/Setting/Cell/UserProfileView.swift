@@ -10,7 +10,7 @@ import UIKit
 
 class UserProfileView: UIView {
 
-    weak var delegate: LoginEventDelegate?
+    weak var delegate: CameraEventDelegate?
 
     static func instance() -> UserProfileView {
         let view: UserProfileView = UIView.createViewFromNib(nibName: UserProfileView.identifier)
@@ -23,7 +23,7 @@ class UserProfileView: UIView {
     var userImage: UIImage?
     
     @IBAction func tabCameraButton(_ sender: Any) {
-        delegate?.loginEvent()
+        delegate?.cameraEvent()
     }
     
     override func awakeFromNib() {
