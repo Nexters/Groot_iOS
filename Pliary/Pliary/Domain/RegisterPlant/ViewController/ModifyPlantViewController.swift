@@ -14,6 +14,8 @@ class ModifyPlantViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var textFieldBottomLineView: UIView!
+
     
     private var gradient: CAGradientLayer?
     
@@ -41,6 +43,8 @@ extension ModifyPlantViewController {
         super.viewDidLoad()
         completeButton.clipsToBounds = true
         completeButton.layer.cornerRadius = 6
+        
+        nicknameTextField.delegate = self
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -94,6 +98,27 @@ extension ModifyPlantViewController: UICollectionViewDataSource {
         }
         
         return UICollectionViewCell()
+    }
+    
+}
+
+extension ModifyPlantViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+            return updatedText.count < 6
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textFieldBottomLineView.backgroundColor = Color.green
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        view.endEditing(true)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

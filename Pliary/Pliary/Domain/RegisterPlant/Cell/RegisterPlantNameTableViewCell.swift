@@ -73,7 +73,9 @@ extension RegisterPlantNameTableViewCell: UITextFieldDelegate {
             return updatedText.count < 11
         }
     }
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textFieldBottomLineView.backgroundColor = Color.green
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.endEditing(true)
     }
