@@ -24,9 +24,20 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newPWSuccessAlert: UIImageView!
     @IBOutlet weak var checkPWSuccessAlert: UIImageView!
     
+    @IBOutlet weak var newPWWarningAlert: UIImageView!
+    @IBOutlet weak var checkPWWarningAlert: UIImageView!
+    
     @IBOutlet weak var changePWButton: UIButton!
     
+    
+    @IBOutlet weak var newPWGuideLabel: UILabel!
+    @IBOutlet weak var checkPWGuideLabel: UILabel!
+    
     var keyboardHeight: CGFloat = 0
+    
+    var isValidPW : Bool = false
+    var isEqualPW : Bool = false
+    var isNil : Bool = false
     
     @IBAction func tapBackButton(_ sender: Any) {
         hero.modalAnimationType = .pull(direction: .right)
@@ -34,15 +45,32 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func changePWButtonTouched(_ sender: Any) {
-        guard let password = newPWTextField.text else { return }
-        completePopupLoad()
+        guard let password = currentPWTextField.text else { return }
+        guard let newPassword = newPWTextField.text else { return }
+        
+        let isCurrentPW : Bool = true
+        if isCurrentPW {
+            wrongPWPopupLoad()
+        } else {
+            completePopupLoad()
+        }
+    }
+    
+    func wrongPWPopupLoad() {
+        let popup = BasicPopupView.instance()
+        
+        popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
+        popup.setUp(with: "비밀번호를 잘못 입력하셨습니다.")
+        self.view.addSubview(popup);
     }
     
     func completePopupLoad() {
         let popup = BasicPopupView.instance()
+        
         popup.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         popup.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2)
-        
+        popup.setUp(with: "비밀번호가 정상적으로\n변경되었습니다.")
         self.view.addSubview(popup);
     }
     
@@ -68,41 +96,28 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateChangeButtonState()
+        
+        let text = textField.text ?? ""
+        if(textField.isEqual(currentPWTextField)) {
+            isNil = checkNil(text)
+            newPWTextField.becomeFirstResponder()
+        } else if(textField.isEqual(newPWTextField)) {
+            isValidPW = newPW(text)
+            checkPWTextField.becomeFirstResponder()
+        } else if(textField.isEqual(checkPWTextField)) {
+            isEqualPW = checkPW(text)
+            checkPWTextField.resignFirstResponder()
+            updateChangeButtonState(isEnable: isNil && isValidPW && isEqualPW)
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         changePWButton.isEnabled = false
     }
     
-    func updateChangeButtonState() {
-        let currentPW : String = self.currentPWTextField.text ?? ""
-        let newPW : String = self.newPWTextField.text ?? ""
-        let checkPW : String = self.checkPWTextField.text ?? ""
-    
-        // [TODO] currentPW check
-        let isCurrentPW : Bool = true
-        if isCurrentPW {
-            currentPWSuccessAlert.isHidden = false
-        } else {
-            currentPWSuccessAlert.isHidden = true
-        }
+    func updateChangeButtonState(isEnable : Bool) {
         
-        let isValidPW : Bool = isValidPassword(password: newPW)
-        if isValidPW {
-            newPWSuccessAlert.isHidden = false
-        } else {
-            newPWSuccessAlert.isHidden = true
-        }
-        
-        let isEqualPW :Bool = newPW != "" && newPW.elementsEqual(checkPW)
-        if isEqualPW {
-            checkPWSuccessAlert.isHidden = false
-        } else {
-            checkPWSuccessAlert.isHidden = true
-        }
-        
-        if isCurrentPW && isValidPW && isEqualPW {
+        if isEnable {
             changePWButton.isEnabled = true
             changePWButton.setTitleColor(UIColor.white, for: .normal)
             changePWButton.backgroundColor = Color.green
@@ -122,6 +137,63 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         return predicate.evaluate(with: password)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let text = textField.text ?? ""
+        textField.resignFirstResponder()
+        if(textField.isEqual(currentPWTextField)) {
+            isNil = checkNil(text)
+            newPWTextField.becomeFirstResponder()
+        } else if(textField.isEqual(newPWTextField)) {
+            isValidPW = newPW(text)
+            checkPWTextField.becomeFirstResponder()
+        } else if(textField.isEqual(checkPWTextField)) {
+            isEqualPW = checkPW(text)
+            checkPWTextField.resignFirstResponder()
+            updateChangeButtonState(isEnable: isNil && isValidPW && isEqualPW)
+        }
+        
+        return true
+    }
+    
+    func checkNil(_ text : String) -> Bool {
+        let isNil = text != ""
+        if isNil {
+            self.currentPWSuccessAlert.isHidden = false
+        } else {
+            self.currentPWSuccessAlert.isHidden = true
+        }
+        return isNil
+    }
+    
+    func newPW(_ text : String) -> Bool {
+        isValidPW = isValidPassword(password: text)
+        if isValidPW {
+            newPWGuideLabel.text = ""
+            newPWSuccessAlert.isHidden = false
+            newPWWarningAlert.isHidden = true
+        } else {
+            newPWGuideLabel.text = "대문자, 소문자, 숫자 조합 8글자 이상"
+            newPWSuccessAlert.isHidden = true
+            newPWWarningAlert.isHidden = false
+        }
+        return isValidPW
+    }
+    
+    func checkPW(_ text : String) -> Bool {
+        let newPW = newPWTextField.text ?? ""
+        isEqualPW = text != "" && newPW.elementsEqual(text)
+        if isEqualPW {
+            checkPWGuideLabel.text = ""
+            checkPWSuccessAlert.isHidden = false
+            checkPWWarningAlert.isHidden = true
+        } else {
+            checkPWGuideLabel.text = "비밀번호 재확인"
+            checkPWSuccessAlert.isHidden = true
+            checkPWWarningAlert.isHidden = false
+        }
+        return isEqualPW
+    }
 
 
 }
@@ -194,17 +266,4 @@ extension ChangePasswordViewController {
             self.view.frame.origin.y = 0
         }
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        if(textField.isEqual(currentPWTextField)) {
-            newPWTextField.becomeFirstResponder()
-        } else if(textField.isEqual(newPWTextField)) {
-            checkPWTextField.becomeFirstResponder()
-        } else if(textField.isEqual(checkPWTextField)) {
-            checkPWTextField.resignFirstResponder()
-        }
-        return true
-    }
-    
 }

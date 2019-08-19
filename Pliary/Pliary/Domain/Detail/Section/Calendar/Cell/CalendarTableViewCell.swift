@@ -15,9 +15,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarView: UIView!
-    
-    weak var delegate: CalenderEventDelegate?
-    
+        
     static func instance() -> CalendarTableViewCell {
         let view: CalendarTableViewCell = UIView.createViewFromNib(nibName: CalendarTableViewCell.identifier)
         return view
@@ -100,13 +98,12 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         return self.gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
     }
     
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("calendar did select date \(formatter.string(from: date))")
-        if monthPosition == .previous || monthPosition == .next {
-            calendar.setCurrentPage(date, animated: true)
-        }
-        delegate?.selectDateEvent(date)
-    }
+//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+//        print("calendar did select date \(formatter.string(from: date))")
+//        if monthPosition == .previous || monthPosition == .next {
+//            calendar.setCurrentPage(date, animated: true)
+//        }
+//    }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(formatter.string(from: calendar.currentPage))")

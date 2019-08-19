@@ -36,7 +36,3 @@ enum Section: String {
     case diaryCard
     case calendar
 }
-
-protocol CalenderEventDelegate: class {
-    func selectDateEvent(_ date: Date)
-}

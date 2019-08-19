@@ -19,7 +19,8 @@ class WateringInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        
+        self.layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
+
         let date = formatterForCell.date(from:dateLabel.text ?? "")
         timestamp = Int(date?.timeIntervalSince1970 ?? 0)
     }

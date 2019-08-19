@@ -10,6 +10,6 @@
 import Foundation
 
 
-protocol LoginEventDelegate: class {
-    func loginEvent()
+protocol CameraEventDelegate: class {
+    func cameraEvent()
 }

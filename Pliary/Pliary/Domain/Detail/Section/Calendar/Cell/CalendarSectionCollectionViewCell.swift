@@ -42,9 +42,6 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         let calendarName = CalendarTableViewCell.reuseIdentifier
         let calendarNib = UINib(nibName: calendarName, bundle: nil)
         tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
-
-        let CalendarTableView = CalendarTableViewCell.instance()
-        CalendarTableView.delegate = self
         
         let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
         let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
@@ -95,10 +92,4 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
     }
     
     
-}
-
-extension CalendarSectionCollectionViewCell: CalenderEventDelegate {
-    func selectDateEvent(_ date: Date) {
-        setUp(date)
-    }
 }

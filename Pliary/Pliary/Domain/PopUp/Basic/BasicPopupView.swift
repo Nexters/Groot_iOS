@@ -10,7 +10,8 @@ import UIKit
 
 class BasicPopupView: UIView {
 
-    class func instance() -> UIView {
+    @IBOutlet weak var label: UILabel!
+    class func instance() -> BasicPopupView {
         let view: BasicPopupView = UIView.createViewFromNib(nibName: BasicPopupView.identifier)
         return view
     }
@@ -19,4 +20,7 @@ class BasicPopupView: UIView {
         self.removeFromSuperview()
     }
     
+    func setUp(with text : String) {
+        label.text = text
+    }
 }

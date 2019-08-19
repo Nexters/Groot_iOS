@@ -60,6 +60,9 @@
                 <constraint firstItem="G8B-qc-oQD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lGT-D0-Jdd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="label" destination="agt-z5-yIx" id="a6D-Wj-WQx"/>
+            </connections>
         </view>
     </objects>
     <resources>

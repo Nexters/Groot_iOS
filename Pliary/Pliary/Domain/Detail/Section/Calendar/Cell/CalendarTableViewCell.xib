@@ -58,7 +58,7 @@
                                                 <color key="value" red="0.54901960780000003" green="0.56470588239999997" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
-                                                <color key="value" red="0.16862745100000001" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
                                                 <real key="value" value="13"/>
@@ -75,12 +75,14 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterBlue" translatesAutoresizingMaskIntoConstraints="NO" id="GmF-ee-pdo">
-                                        <rect key="frame" x="119" y="346.5" width="13" height="15"/>
+                                        <rect key="frame" x="117" y="346.5" width="15" height="15"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="13" id="7rg-g0-FTo"/>
+                                            <constraint firstAttribute="width" constant="15" id="7rg-g0-FTo"/>
                                             <constraint firstAttribute="height" constant="15" id="8IP-rk-7Nv"/>
                                         </constraints>
                                     </imageView>
