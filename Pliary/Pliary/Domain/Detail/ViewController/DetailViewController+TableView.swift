@@ -9,6 +9,21 @@
 import UIKit
 
 extension DetailViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if animating {
+            animatePlant(false)
+        }
+        
+        if scrollView.contentOffset.y == 0 {
+            animatePlant(true)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // Perform whichever function you desire for when scrolling has stopped
+        animatePlant(true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
             return tableView.frame.height

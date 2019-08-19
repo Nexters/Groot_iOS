@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainDetailTableViewCell: UITableViewCell {
 
@@ -53,5 +54,30 @@ class MainDetailTableViewCell: UITableViewCell {
     
     func setUp(with plant: Plant?) {
         self.plant = plant
+    }
+    
+    func animateImage() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let appendPath = "/" + imageName.replacingOccurrences(of: "iOS", with: "And") + ".gif"
+        let host = API.gifHost?.appendingPathComponent(appendPath)
+        let placeHolder = UIImage(named: imageName)
+        
+        plantView.kf.setImage(with: host, placeholder: placeHolder, options: nil, progressBlock: nil, completionHandler: { _ in
+            
+        })
+    }
+    
+    func stopImage() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let placeHolder = UIImage(named: imageName)
+        plantView.image = placeHolder
     }
 }

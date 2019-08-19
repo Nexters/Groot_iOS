@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 // MARK: - Delegate UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
@@ -112,7 +113,9 @@ extension HomeViewController: UICollectionViewDelegate {
         
         if let image = selectedCell.plantView.image {
             detailCell.plantView.image = image
-            present(detailVC, animated: true, completion: nil)
+            present(detailVC, animated: true, completion: {
+                detailCell.animateImage()
+            })
         }
     }
 }
