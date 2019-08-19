@@ -60,6 +60,7 @@ class FindPasswordViewController: UIViewController, UITextFieldDelegate {
             submitButton.isEnabled = true
             submitButton.backgroundColor = Color.green
             submitButton.setTitleColor(UIColor.white, for: .normal)
+            submitButton.layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
         } else {
             showEmailAlert(reset: true, warning: false, succeess: true)
             emailGuideLabel.text = "이메일 형식에 맞지 않습니다."

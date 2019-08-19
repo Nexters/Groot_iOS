@@ -77,8 +77,6 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         calendar.daysContainer.layer.shadowRadius = 0.0
 
         calendar.appearance.headerMinimumDissolvedAlpha = 0.0
-        calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendarView.bounds.maxX, y: calendar.bounds.maxY), view: calendar)
-
     }
     
 //    // MARK:- FSCalendarDataSource
@@ -89,7 +87,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         } else  if datesTodo.contains(date) {
             return Color.blueCalendar
         }
-        
+        calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendar.frame.maxX, y: calendar.bounds.maxY), view: calendar)
         return nil
     }
 

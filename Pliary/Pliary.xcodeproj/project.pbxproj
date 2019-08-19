@@ -14,6 +14,7 @@
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
 		76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7688955F230973BE00CE7F40 /* BasicPopupView.swift */; };
 		76889562230973BE00CE7F40 /* BasicPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76889560230973BE00CE7F40 /* BasicPopupView.xib */; };
+		76A6FDC5230AF6D600076ABF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76A6FDC4230AF6D500076ABF /* GoogleService-Info.plist */; };
 		76BB50BE22E73D09007EF9D5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */; };
 		76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
@@ -65,7 +66,6 @@
 		CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */; };
 		CE885AEA23087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */; };
 		CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */; };
-		CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */; };
 		CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */; };
 		CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */; };
 		CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */; };
@@ -132,6 +132,7 @@
 		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		7688955F230973BE00CE7F40 /* BasicPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPopupView.swift; sourceTree = "<group>"; };
 		76889560230973BE00CE7F40 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
+		76A6FDC4230AF6D500076ABF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
 		76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WateringInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 		CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantDateTableViewCell.xib; sourceTree = "<group>"; };
 		CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantPeriodTableViewCell.swift; sourceTree = "<group>"; };
 		CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantPeriodTableViewCell.xib; sourceTree = "<group>"; };
-		CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImage.swift"; sourceTree = "<group>"; };
 		CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -482,7 +482,7 @@
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
 				CE69263722E2EC1000264114 /* Info.plist */,
-				CE885AEC2308CE46008DB1FB /* GoogleService-Info.plist */,
+				76A6FDC4230AF6D500076ABF /* GoogleService-Info.plist */,
 				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
 			);
 			path = Pliary;
@@ -731,6 +731,7 @@
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */,
+				76A6FDC5230AF6D600076ABF /* GoogleService-Info.plist in Resources */,
 				CE885AD723086A31008DB1FB /* SelectPlantTableViewCell.xib in Resources */,
 				CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */,
 				CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */,
@@ -750,7 +751,6 @@
 				CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */,
 				CE8C84032305A6260083B3A9 /* WateringDelayPopupSubview.xib in Resources */,
 				76889562230973BE00CE7F40 /* BasicPopupView.xib in Resources */,
-				CE885AED2308CE46008DB1FB /* GoogleService-Info.plist in Resources */,
 				CE885ADB23086CA2008DB1FB /* RegisterPlantLabelTableViewCell.xib in Resources */,
 				CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */,
 				CE90E41023099E5700096731 /* DiaryCardWithImageTableViewCell.xib in Resources */,
