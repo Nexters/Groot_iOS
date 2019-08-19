@@ -22,31 +22,31 @@ enum PlantType {
     func getPlantInstance() -> Plant {
         switch self {
         case .stuki:
-            let plant = Plant(type: .stuki, englishName: PlantEnglishName.stuki.rawValue, koreanName: PlantKoreanName.stuki.rawValue, nickName: nil, wateringDay: 30, imageName: PlantPositiveImageName.stuki.rawValue)
+            let plant = Plant(type: .stuki, englishName: PlantEnglishName.stuki.rawValue, koreanName: PlantKoreanName.stuki.rawValue, nickName: nil, wateringDay: 30)
             return plant
         case .eucalyptus:
-            let plant = Plant(type: .eucalyptus, englishName: PlantEnglishName.eucalyptus.rawValue, koreanName: PlantKoreanName.eucalyptus.rawValue, nickName: nil, wateringDay: 4, imageName: PlantPositiveImageName.stuki.rawValue)
+            let plant = Plant(type: .eucalyptus, englishName: PlantEnglishName.eucalyptus.rawValue, koreanName: PlantKoreanName.eucalyptus.rawValue, nickName: nil, wateringDay: 4)
             return plant
         case .sansevieria:
-            let plant = Plant(type: .sansevieria, englishName: PlantEnglishName.sansevieria.rawValue, koreanName: PlantKoreanName.sansevieria.rawValue, nickName: nil, wateringDay: 30, imageName: PlantPositiveImageName.sansevieria.rawValue)
+            let plant = Plant(type: .sansevieria, englishName: PlantEnglishName.sansevieria.rawValue, koreanName: PlantKoreanName.sansevieria.rawValue, nickName: nil, wateringDay: 30)
             return plant
         case .monstera:
-            let plant = Plant(type: .monstera, englishName: PlantEnglishName.monstera.rawValue, koreanName: PlantKoreanName.monstera.rawValue, nickName: nil, wateringDay: 5, imageName: PlantPositiveImageName.monstera.rawValue)
+            let plant = Plant(type: .monstera, englishName: PlantEnglishName.monstera.rawValue, koreanName: PlantKoreanName.monstera.rawValue, nickName: nil, wateringDay: 5)
             return plant
         case .parlourPalm:
-            let plant = Plant(type: .parlourPalm, englishName: PlantEnglishName.parlourPalm.rawValue, koreanName: PlantKoreanName.parlourPalm.rawValue, nickName: nil, wateringDay: 7, imageName: PlantPositiveImageName.parlourPalm.rawValue)
+            let plant = Plant(type: .parlourPalm, englishName: PlantEnglishName.parlourPalm.rawValue, koreanName: PlantKoreanName.parlourPalm.rawValue, nickName: nil, wateringDay: 7)
             return plant
         case .elastica:
-            let plant = Plant(type: .elastica, englishName: PlantEnglishName.elastica.rawValue, koreanName: PlantKoreanName.elastica.rawValue, nickName: nil, wateringDay: 7, imageName: PlantPositiveImageName.elastica.rawValue)
+            let plant = Plant(type: .elastica, englishName: PlantEnglishName.elastica.rawValue, koreanName: PlantKoreanName.elastica.rawValue, nickName: nil, wateringDay: 7)
             return plant
         case .travelersPalm:
-            let plant = Plant(type: .travelersPalm, englishName: PlantEnglishName.travelersPalm.rawValue, koreanName: PlantKoreanName.travelersPalm.rawValue, nickName: nil, wateringDay: 10, imageName: PlantPositiveImageName.travelersPalm.rawValue)
+            let plant = Plant(type: .travelersPalm, englishName: PlantEnglishName.travelersPalm.rawValue, koreanName: PlantKoreanName.travelersPalm.rawValue, nickName: nil, wateringDay: 10)
             return plant
         case .schefflera:
-            let plant = Plant(type: .schefflera, englishName: PlantEnglishName.schefflera.rawValue, koreanName: PlantKoreanName.schefflera.rawValue, nickName: nil, wateringDay: 5, imageName: PlantPositiveImageName.schefflera.rawValue)
+            let plant = Plant(type: .schefflera, englishName: PlantEnglishName.schefflera.rawValue, koreanName: PlantKoreanName.schefflera.rawValue, nickName: nil, wateringDay: 5)
             return plant
         case .userPlants:
-            let plant = Plant(type: .userPlants, englishName: "", koreanName: nil, nickName: nil, wateringDay: 0, imageName: PlantPositiveImageName.userPlants.rawValue)
+            let plant = Plant(type: .userPlants, englishName: "", koreanName: nil, nickName: nil, wateringDay: 0)
             return plant
         }
     }

@@ -6,7 +6,7 @@
 //  Copyright © 2019년 groot.nexters.pliary. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Plant: Equatable {
     var type: PlantType
@@ -14,15 +14,59 @@ struct Plant: Equatable {
     var koreanName: String?
     var nickName: String?
     var wateringDay: Int
-    var imageName: String
     
-    init(type: PlantType, englishName: String, koreanName: String?, nickName: String?, wateringDay: Int, imageName: String) {
+    init(type: PlantType, englishName: String, koreanName: String?, nickName: String?, wateringDay: Int) {
         self.type = type
         self.englishName = englishName
         self.koreanName = koreanName
         self.nickName = nickName
         self.wateringDay = wateringDay
-        self.imageName = imageName
+    }
+    
+    func getPositiveImage() -> UIImage? {
+        switch type {
+        case .stuki:
+            return UIImage(named: PlantPositiveImageName.stuki.rawValue)
+        case .eucalyptus:
+            return UIImage(named: PlantPositiveImageName.eucalyptus.rawValue)
+        case .sansevieria:
+            return UIImage(named: PlantPositiveImageName.sansevieria.rawValue)
+        case .monstera:
+            return UIImage(named: PlantPositiveImageName.monstera.rawValue)
+        case .parlourPalm:
+            return UIImage(named: PlantPositiveImageName.parlourPalm.rawValue)
+        case .elastica:
+            return UIImage(named: PlantPositiveImageName.elastica.rawValue)
+        case .travelersPalm:
+            return UIImage(named: PlantPositiveImageName.travelersPalm.rawValue)
+        case .schefflera:
+            return UIImage(named: PlantPositiveImageName.schefflera.rawValue)
+        case .userPlants:
+            return UIImage(named: PlantPositiveImageName.userPlants.rawValue)
+        }
+    }
+    
+    func getNegativeImage() -> UIImage? {
+        switch type {
+        case .stuki:
+            return UIImage(named: PlantNegativeImageName.stuki.rawValue)
+        case .eucalyptus:
+            return UIImage(named: PlantNegativeImageName.eucalyptus.rawValue)
+        case .sansevieria:
+            return UIImage(named: PlantNegativeImageName.sansevieria.rawValue)
+        case .monstera:
+            return UIImage(named: PlantNegativeImageName.monstera.rawValue)
+        case .parlourPalm:
+            return UIImage(named: PlantNegativeImageName.parlourPalm.rawValue)
+        case .elastica:
+            return UIImage(named: PlantNegativeImageName.elastica.rawValue)
+        case .travelersPalm:
+            return UIImage(named: PlantNegativeImageName.travelersPalm.rawValue)
+        case .schefflera:
+            return UIImage(named: PlantNegativeImageName.schefflera.rawValue)
+        case .userPlants:
+            return UIImage(named: PlantNegativeImageName.userPlants.rawValue)
+        }
     }
     
     static func getAllPlants() -> [Plant] {
