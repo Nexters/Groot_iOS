@@ -85,4 +85,24 @@ class MainDetailTableViewCell: UITableViewCell {
         let placeHolder = UIImage(named: imageName)
         plantView.image = placeHolder
     }
+    
+    func makeDeleteMode() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let placeHolder = UIImage(named: imageName)?.convertToGrayScale()
+        plantView.image = placeHolder
+        
+        let blackImage = UIImage(named: ImageName.addWaterGrayButton)
+        addWaterButton.setImage(blackImage, for: .normal)
+    }
+    
+    func clearDeleteMode() {
+        animateImage()
+        
+        let image = UIImage(named: ImageName.addWaterButton)
+        addWaterButton.setImage(image, for: .normal)
+    }
 }

@@ -20,6 +20,8 @@ struct ImageName {
     static let completeButton = "BtnComplete"
     static let moreButton = "BtnMore"
     static let plusButton = "BtnAddBlack"
+    static let addWaterButton = "AddWater"
+    static let addWaterGrayButton = "AddWaterGray"
     static let minusButton = "BtnSubtract"
     static let profileCameraButton = "Camera2"
     static let grayCameraButton = "GrayCamera"
