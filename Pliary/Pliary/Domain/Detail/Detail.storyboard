@@ -290,7 +290,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 식물과의 하루는 즐거웠나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqn-H5-Z89">
-                                                <rect key="frame" x="36" y="353" width="303" height="17"/>
+                                                <rect key="frame" x="42" y="361" width="291" height="17"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -315,9 +315,8 @@
                                                             <constraint firstAttribute="height" constant="22" id="q3B-8I-fr5"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg5-gQ-ai6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg5-gQ-ai6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                         <connections>
                                                             <action selector="tapAddOrSubtractButton:" destination="ZHg-Ku-OlY" eventType="touchUpInside" id="pOc-Zj-VSa"/>
                                                         </connections>
@@ -327,6 +326,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="Z1r-PX-j7F"/>
                                                     <constraint firstAttribute="height" constant="80" id="aM3-2T-5fB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hg5-gQ-ai6" secondAttribute="trailing" id="cPQ-WX-vzl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hg5-gQ-ai6" secondAttribute="bottom" id="fch-MZ-hJf"/>
+                                                    <constraint firstItem="hg5-gQ-ai6" firstAttribute="leading" secondItem="HZC-0k-ayu" secondAttribute="leading" id="gAN-gf-abf"/>
+                                                    <constraint firstItem="hg5-gQ-ai6" firstAttribute="top" secondItem="HZC-0k-ayu" secondAttribute="top" id="yQ9-kR-dbe"/>
                                                     <constraint firstItem="rTs-ah-CzI" firstAttribute="centerY" secondItem="HZC-0k-ayu" secondAttribute="centerY" id="yV2-aO-Bgp"/>
                                                     <constraint firstItem="rTs-ah-CzI" firstAttribute="centerX" secondItem="HZC-0k-ayu" secondAttribute="centerX" id="zJt-oT-0PJ"/>
                                                 </constraints>
@@ -342,15 +345,15 @@
                                             <constraint firstAttribute="bottom" secondItem="F39-CZ-vZe" secondAttribute="bottom" constant="50" id="aRU-QQ-ll4"/>
                                             <constraint firstItem="WIt-l2-5Yk" firstAttribute="top" secondItem="NGu-cF-vOc" secondAttribute="bottom" constant="36" id="dRi-5q-6Ip"/>
                                             <constraint firstAttribute="trailing" secondItem="SOR-pB-T1S" secondAttribute="trailing" constant="36" id="fqR-FB-AqM"/>
-                                            <constraint firstAttribute="trailing" secondItem="Vqn-H5-Z89" secondAttribute="trailing" constant="36" id="hDu-3g-F4T"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vqn-H5-Z89" secondAttribute="trailing" constant="42" id="hDu-3g-F4T"/>
                                             <constraint firstItem="NGu-cF-vOc" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" id="hpY-VS-cxi"/>
                                             <constraint firstItem="F39-CZ-vZe" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="kFR-rZ-XZf"/>
                                             <constraint firstAttribute="trailing" secondItem="NGu-cF-vOc" secondAttribute="trailing" id="otI-nD-YxB"/>
                                             <constraint firstItem="NGu-cF-vOc" firstAttribute="top" secondItem="A7P-Mr-Dum" secondAttribute="top" id="qYp-t4-2HK"/>
                                             <constraint firstAttribute="trailing" secondItem="F39-CZ-vZe" secondAttribute="trailing" constant="36" id="sEu-cx-heo"/>
                                             <constraint firstItem="SOR-pB-T1S" firstAttribute="top" secondItem="WIt-l2-5Yk" secondAttribute="bottom" constant="14" id="tRh-ZT-vit"/>
-                                            <constraint firstItem="Vqn-H5-Z89" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="xQn-2O-Hmb"/>
-                                            <constraint firstItem="Vqn-H5-Z89" firstAttribute="top" secondItem="SOR-pB-T1S" secondAttribute="bottom" constant="14" id="xQu-6T-Igj"/>
+                                            <constraint firstItem="Vqn-H5-Z89" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="42" id="xQn-2O-Hmb"/>
+                                            <constraint firstItem="Vqn-H5-Z89" firstAttribute="top" secondItem="SOR-pB-T1S" secondAttribute="bottom" constant="22" id="xQu-6T-Igj"/>
                                         </constraints>
                                     </view>
                                 </subviews>

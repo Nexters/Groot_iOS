@@ -33,7 +33,6 @@ class DiaryViewController: UIViewController {
     
     var currentMode: DiaryViewMode = .writeNewDiary
     var currentDiaryCard: DiaryCard?
-    var keyboardHeight: CGFloat = 0
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
         if diaryImageView.image == nil {
@@ -53,6 +52,8 @@ class DiaryViewController: UIViewController {
     @IBAction func tapRightNavigationButton(_ sender: Any) {
         switch currentMode {
         case .writeNewDiary:
+            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, diaryImage: diaryImageView.image)
+            currentDiaryCard = card
             changeMode(.showDiary)
         case .editDiary:
             currentDiaryCard?.diaryImage = diaryImageView.image
@@ -66,13 +67,7 @@ class DiaryViewController: UIViewController {
     private func changeMode(_ mode: DiaryViewMode) {
         currentMode = mode
         switch mode {
-        case .writeNewDiary:
-            let image = UIImage(named: ImageName.completeButton)
-            navigationRightButton.setImage(image, for: .normal)
-            diaryTextView.isSelectable = true
-            diaryTextView.isEditable = true
-            addOrSubtractContentView.isHidden = false
-        case .editDiary:
+        case .writeNewDiary, .editDiary:
             let image = UIImage(named: ImageName.completeButton)
             navigationRightButton.setImage(image, for: .normal)
             diaryTextView.isSelectable = true
@@ -218,7 +213,7 @@ class DiaryViewController: UIViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            keyboardHeight = keyboardSize.height
+            let keyboardHeight = keyboardSize.height
             
             if scrollView.frame.height > scrollView.contentSize.height {
                 scrollView.contentSize.height = scrollView.frame.height + keyboardHeight
@@ -307,6 +302,11 @@ extension DiaryViewController: UIImagePickerControllerDelegate, UINavigationCont
 
 extension DiaryViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
+        if textView.text == "" {
+            placeholderLabel.isHidden = false
+        } else {
+            placeholderLabel.isHidden = true
+        }
         textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
     }
 }
