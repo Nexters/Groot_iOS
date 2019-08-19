@@ -28,19 +28,6 @@
                         <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-3v-FLU">
-                        <rect key="frame" x="36" y="74.5" width="336" height="30"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="4Gb-iS-XX2"/>
-                        </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PBN-ug-uSn">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                    </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일 마다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNN-xV-GeR">
                         <rect key="frame" x="20" y="105.5" width="368" height="21"/>
                         <constraints>
@@ -50,18 +37,41 @@
                         <color key="textColor" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-Yn-lHQ">
+                        <rect key="frame" x="36" y="74.5" width="336" height="30"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-3v-FLU">
+                                <rect key="frame" x="0.0" y="0.0" width="336" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PBN-ug-uSn">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="1pt-Hn-rtU"/>
+                            <constraint firstAttribute="trailing" secondItem="pTk-3v-FLU" secondAttribute="trailing" id="66I-eq-4ND"/>
+                            <constraint firstItem="pTk-3v-FLU" firstAttribute="top" secondItem="vCN-Yn-lHQ" secondAttribute="top" id="b2n-kS-AgH"/>
+                            <constraint firstAttribute="bottom" secondItem="pTk-3v-FLU" secondAttribute="bottom" id="cwq-ae-xjK"/>
+                            <constraint firstItem="pTk-3v-FLU" firstAttribute="leading" secondItem="vCN-Yn-lHQ" secondAttribute="leading" id="r2m-o5-Ezu"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="GNN-xV-GeR" firstAttribute="top" secondItem="pTk-3v-FLU" secondAttribute="bottom" constant="1" id="3dm-rz-20Z"/>
-                    <constraint firstItem="pTk-3v-FLU" firstAttribute="top" secondItem="6kS-WR-KLy" secondAttribute="bottom" constant="18" id="6me-Y7-3QU"/>
-                    <constraint firstAttribute="trailing" secondItem="pTk-3v-FLU" secondAttribute="trailing" constant="36" id="EyY-bi-7FU"/>
+                    <constraint firstAttribute="trailing" secondItem="vCN-Yn-lHQ" secondAttribute="trailing" constant="36" id="DJQ-5d-cj8"/>
                     <constraint firstItem="GNN-xV-GeR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Jak-gc-Hmu"/>
                     <constraint firstItem="6kS-WR-KLy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="O1J-vf-aB3"/>
+                    <constraint firstItem="vCN-Yn-lHQ" firstAttribute="top" secondItem="6kS-WR-KLy" secondAttribute="bottom" constant="18" id="OfC-UV-ga3"/>
                     <constraint firstAttribute="trailing" secondItem="6kS-WR-KLy" secondAttribute="trailing" constant="36" id="Wvm-9x-0vN"/>
+                    <constraint firstItem="GNN-xV-GeR" firstAttribute="top" secondItem="vCN-Yn-lHQ" secondAttribute="bottom" constant="1" id="eXF-75-iFd"/>
                     <constraint firstAttribute="bottom" secondItem="GNN-xV-GeR" secondAttribute="bottom" constant="125" id="iNF-Ce-Kpn"/>
                     <constraint firstItem="6kS-WR-KLy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="kor-65-rH8"/>
-                    <constraint firstItem="pTk-3v-FLU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="m4b-x4-eaa"/>
                     <constraint firstAttribute="trailingMargin" secondItem="GNN-xV-GeR" secondAttribute="trailing" id="rQR-Dn-g1N"/>
+                    <constraint firstItem="vCN-Yn-lHQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="tX7-Rz-rCA"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

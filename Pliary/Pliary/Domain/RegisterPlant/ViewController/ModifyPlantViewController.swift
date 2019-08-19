@@ -10,9 +10,12 @@ import UIKit
 
 class ModifyPlantViewController: UIViewController {
     
+    @IBOutlet weak var maskView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var completeButton: UIButton!
+    
+    private var gradient: CAGradientLayer?
     
     @IBAction func tabCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -22,6 +25,15 @@ class ModifyPlantViewController: UIViewController {
         
     }
     
+    func setGradientScript() {
+        gradient = CAGradientLayer()
+        gradient?.startPoint = CGPoint(x: 0, y: 0.5)
+        gradient?.endPoint = CGPoint(x:1.0, y:0.5)
+        gradient?.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+        gradient?.locations = [0, 0.45, 0.55, 1]
+        gradient?.frame = maskView.bounds
+        maskView.layer.mask = gradient
+    }
 }
 
 extension ModifyPlantViewController {
@@ -35,6 +47,11 @@ extension ModifyPlantViewController {
         
         let numberNib = UINib(nibName: NumberCollectionViewCell.identifier, bundle: nil)
         collectionView.register(numberNib, forCellWithReuseIdentifier: NumberCollectionViewCell.identifier)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setGradientScript()
     }
 }
 
@@ -50,22 +67,33 @@ extension ModifyPlantViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let itemCellSize: CGSize = CGSize(width: collectionView.frame.width / 5, height: 30)
+        let pageWidth = (itemCellSize.width)
+        let itemIndex = (targetContentOffset.pointee.x) / pageWidth
+        targetContentOffset.pointee.x = round(itemIndex) * pageWidth
+    }
 }
 
 extension ModifyPlantViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 60
+        return 64
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NumberCollectionViewCell.identifier, for: indexPath) as? NumberCollectionViewCell {
-            cell.numberLabel.text = (indexPath.item + 1).description
+            if indexPath.item == 0 || indexPath.item == 1 || indexPath.item == 62 || indexPath.item == 63 {
+                cell.numberLabel.isHidden = true
+            } else {
+                cell.numberLabel.isHidden = false
+                cell.numberLabel.text = (indexPath.item - 1).description
+            }
             return cell
         }
         
         return UICollectionViewCell()
     }
-    
     
 }

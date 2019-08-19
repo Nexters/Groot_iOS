@@ -14,7 +14,6 @@ class WateringDelayPopupSubview: UIView {
     @IBOutlet weak var completeButton: UIButton!
     
     weak var delegate: WateringEventDelegate?
-    private let values: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     private var currentValue: Int = 1
     
     static func instance() -> WateringDelayPopupSubview {
@@ -33,12 +32,12 @@ class WateringDelayPopupSubview: UIView {
 
 extension WateringDelayPopupSubview: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return values[row].description
+        return (row + 1).description
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        currentValue = values[row]
+        currentValue = row + 1
     }
 }
 
@@ -48,6 +47,6 @@ extension WateringDelayPopupSubview: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return values.count
+        return 60
     }
 }
