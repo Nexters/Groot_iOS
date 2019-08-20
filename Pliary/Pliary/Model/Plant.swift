@@ -9,15 +9,17 @@
 import UIKit
 
 struct Plant: Equatable {
+    let id: String
     var type: PlantType
     var englishName: String
     var koreanName: String?
-    var nickName: String?
+    var nickName: String
     var wateringInterval: Int
     var firstDate: TimeInterval
     var lastWaterDate: TimeInterval
     
-    init(type: PlantType, englishName: String, koreanName: String?, nickName: String?, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval) {
+    init(type: PlantType, englishName: String, koreanName: String?, nickName: String, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval) {
+        id = UUID().uuidString
         self.type = type
         self.englishName = englishName
         self.koreanName = koreanName

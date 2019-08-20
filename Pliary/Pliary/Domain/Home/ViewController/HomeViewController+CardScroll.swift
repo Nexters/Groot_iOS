@@ -70,6 +70,7 @@ extension HomeViewController {
             englishNameLabel.text = "Add Plant"
             koreanNameLabel.text = "식물을 추가해주세요."
             nameSplitLabel.isHidden = true
+            customNameLabel.text = nil
         }
     }
     

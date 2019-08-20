@@ -22,6 +22,7 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         nameTextField.delegate = self
+        nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     }
     
     func setUp(with plant: Plant, type: RegisterRowType) {
@@ -41,16 +42,19 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
             nameTextField.keyboardType = .alphabet
             titleLabel.text = "영어명 (필수, 수정불가)"
             nameTextField.placeholder = "ex. Stuki"
+            nameTextField.text = plant?.englishName
             helpTextLabel.text = "영어 최대 15글자까지 입력 가능합니다."
         case .koreanName:
             nameTextField.keyboardType = .default
             titleLabel.text = "한글명 (선택)"
+            nameTextField.text = plant?.koreanName
             nameTextField.placeholder = "ex. 스투키"
             helpTextLabel.text = "한글 최대 10글자까지 입력 가능합니다."
         case .customName:
             nameTextField.keyboardType = .default
             titleLabel.text = "식물 애칭"
             nameTextField.placeholder = "ex. 멋쟁이투투"
+            nameTextField.text = plant?.nickName
             helpTextLabel.text = "애칭은 영어, 한글 최대 5글자까지 가능합니다."
         default:
             ()
@@ -71,30 +75,46 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
         // add check logic
         delegate?.registerEvent(event: .setNickName(name: name))
     }
+    
 }
 extension RegisterPlantNameTableViewCell: UITextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentText = textField.text ?? ""
-        guard let stringRange = Range(range, in: currentText) else { return false }
-        guard let type = self.type else { return false }
-        
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let type = self.type else { return }
         
         switch type {
         case .englishName:
-            checkEnglishName(updatedText)
-            return updatedText.count < 16
+            checkEnglishName(textField.text ?? "")
         case .koreanName:
-            checkKoreanName(updatedText)
-            return updatedText.count < 11
+            checkKoreanName(textField.text ?? "")
         case .customName:
-            checkCustomName(updatedText)
-            return updatedText.count < 6
+            checkCustomName(textField.text ?? "")
         default:
-            return updatedText.count < 11
+            ()
         }
     }
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        let currentText = textField.text ?? ""
+//        guard let stringRange = Range(range, in: currentText) else { return false }
+//        guard let type = self.type else { return false }
+//
+//        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+//
+//        switch type {
+//        case .englishName:
+//            checkEnglishName(updatedText)
+//            return updatedText.count < 16
+//        case .koreanName:
+//            checkKoreanName(updatedText)
+//            return updatedText.count < 11
+//        case .customName:
+//            checkCustomName(updatedText)
+//            return updatedText.count < 6
+//        default:
+//            return false
+//        }
+//    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textFieldBottomLineView.backgroundColor = Color.green

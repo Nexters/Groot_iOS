@@ -23,6 +23,16 @@ class RegisterPlantViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func tabCompleteButton(_ sender: Any) {
+        guard let plant = selectedPlant else {
+            return
+        }
+        
+        Global.shared.plants.append(plant)
+        view.endEditing(true)
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -62,6 +72,7 @@ extension RegisterPlantViewController {
         setUpTableView()
         completeButton.clipsToBounds = true
         completeButton.layer.cornerRadius = 6
+        completeButton.isEnabled = false
     }
 }
 
@@ -220,6 +231,40 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             tableView.layoutIfNeeded()
             tableView.setContentOffset(offset, animated: false)
         }
+        
+        if checkPlantComplete() {
+            completeButton.isEnabled = true
+            completeButton.backgroundColor = Color.green
+            completeButton.setTitleColor(.white, for: .normal)
+        } else {
+            completeButton.isEnabled = false
+            completeButton.backgroundColor = Color.gray5
+            completeButton.setTitleColor(.white, for: .normal)
+        }
     }
     
+    func checkPlantComplete() -> Bool {
+        guard let plant = selectedPlant else {
+            return false
+        }
+        
+        guard plant.englishName != "" else {
+            return false
+        }
+        
+        guard plant.nickName != "" else {
+            return false
+        }
+        
+        guard plant.firstDate != 0 else {
+            return false
+        }
+        
+        guard plant.lastWaterDate != 0 else {
+            return false
+        }
+        
+        return true
+    }
 }
+

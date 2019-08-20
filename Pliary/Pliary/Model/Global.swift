@@ -13,6 +13,7 @@ class Global: NSObject {
     static let shared: Global = Global()
     
     var user: User?
+    var plants: [Plant] = []
     
     func getAccessToken() {
         if let email = Auth.auth().currentUser?.email {

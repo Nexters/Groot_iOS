@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
     
     var plants: [Plant] = [] {
         didSet {
+            collectionView.reloadData()
             slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
         }
     }
@@ -88,27 +89,6 @@ class HomeViewController: UIViewController {
         collectionView.layoutIfNeeded()
     }
     
-    func setExample() {
-        let plant = PlantType.elastica.getPlantInstance()
-        let plant2 = PlantType.stuki.getPlantInstance()
-        let plant3 = PlantType.eucalyptus.getPlantInstance()
-        let plant4 = PlantType.monstera.getPlantInstance()
-        let plant5 = PlantType.parlourPalm.getPlantInstance()
-        let plant6 = PlantType.userPlants.getPlantInstance()
-        let plant7 = PlantType.schefflera.getPlantInstance()
-        let plant8 = PlantType.travelersPalm.getPlantInstance()
-        let plant9 = PlantType.sansevieria.getPlantInstance()
-        plants.append(plant)
-        plants.append(plant2)
-        plants.append(plant3)
-        plants.append(plant4)
-        plants.append(plant5)
-        plants.append(plant6)
-        plants.append(plant7)
-        plants.append(plant8)
-        plants.append(plant9)
-    }
-    
     func checkLogin() {
         if Global.shared.user == nil {
             let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: nil)
@@ -125,7 +105,6 @@ extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setExample()
         setUpCollectionView()
         setUpSlideView()
     }
@@ -136,7 +115,14 @@ extension HomeViewController {
         checkLogin()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        plants = Global.shared.plants
+    }
+    
     override func viewDidLayoutSubviews() {
+        animateCell()
         super.viewDidLayoutSubviews()
         
         configureCollectionViewLayoutItemSize()
