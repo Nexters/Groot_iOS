@@ -111,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7P-Mr-Dum">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="255" translatesAutoresizingMaskIntoConstraints="NO" id="NGu-cF-vOc">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
@@ -189,10 +189,10 @@
                                             <constraint firstItem="WIt-l2-5Yk" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="QF1-4T-lon"/>
                                             <constraint firstItem="HZC-0k-ayu" firstAttribute="top" secondItem="A7P-Mr-Dum" secondAttribute="top" constant="93" id="YCx-SS-EJh"/>
                                             <constraint firstItem="HZC-0k-ayu" firstAttribute="centerX" secondItem="A7P-Mr-Dum" secondAttribute="centerX" id="aIt-EX-G6P"/>
-                                            <constraint firstAttribute="bottom" secondItem="F39-CZ-vZe" secondAttribute="bottom" constant="50" id="aRU-QQ-ll4"/>
                                             <constraint firstItem="WIt-l2-5Yk" firstAttribute="top" secondItem="NGu-cF-vOc" secondAttribute="bottom" constant="36" id="dRi-5q-6Ip"/>
                                             <constraint firstAttribute="trailing" secondItem="SOR-pB-T1S" secondAttribute="trailing" constant="36" id="fqR-FB-AqM"/>
                                             <constraint firstAttribute="trailing" secondItem="Vqn-H5-Z89" secondAttribute="trailing" constant="42" id="hDu-3g-F4T"/>
+                                            <constraint firstAttribute="height" constant="600" id="hl8-e4-2nX"/>
                                             <constraint firstItem="NGu-cF-vOc" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" id="hpY-VS-cxi"/>
                                             <constraint firstItem="F39-CZ-vZe" firstAttribute="leading" secondItem="A7P-Mr-Dum" secondAttribute="leading" constant="36" id="kFR-rZ-XZf"/>
                                             <constraint firstAttribute="trailing" secondItem="NGu-cF-vOc" secondAttribute="trailing" id="otI-nD-YxB"/>
@@ -227,6 +227,7 @@
                     <connections>
                         <outlet property="addOrSubtractContentView" destination="HZC-0k-ayu" id="bmI-e0-Mnr"/>
                         <outlet property="addOrSubtractImageView" destination="rTs-ah-CzI" id="nLz-PY-l4k"/>
+                        <outlet property="contentHeightConstraint" destination="hl8-e4-2nX" id="EZI-fT-tMr"/>
                         <outlet property="contentView" destination="A7P-Mr-Dum" id="1PK-mr-PAg"/>
                         <outlet property="diaryDateLabel" destination="WIt-l2-5Yk" id="58F-hv-Upm"/>
                         <outlet property="diaryImageHeightConstraint" destination="CVV-TP-kHH" id="bfc-IW-4y3"/>
@@ -236,7 +237,6 @@
                         <outlet property="navigationView" destination="wg6-Vd-BRY" id="hmA-DJ-484"/>
                         <outlet property="placeholderLabel" destination="Vqn-H5-Z89" id="RJL-hZ-ezd"/>
                         <outlet property="scrollView" destination="wxu-6l-Gr4" id="y5O-wY-w8a"/>
-                        <outlet property="textViewBottomConstraint" destination="aRU-QQ-ll4" id="ymv-AU-vkF"/>
                         <outlet property="textViewHeightConstraint" destination="ZWd-fU-DbN" id="qIY-8L-MST"/>
                     </connections>
                 </viewController>

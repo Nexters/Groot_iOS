@@ -36,24 +36,6 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
         delegate?.detailEvent(event: .goDiaryViewController(with: nil))
     }
     
-    private func setExample() {
-        let text = "너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해너에게해충이찾아왔다다지켜주지못해 미안해다음부턴잘할게다못난날용서해잘할게다못난날용서해날용서해용서해"
-        let date = Date().timeIntervalSince1970
-        let diary = DiaryCard(timeStamp: date, diaryText: text, diaryImage: UIImage(named: "SampleDiary"))
-        let diary2 = DiaryCard(timeStamp: date, diaryText: text, diaryImage: nil)
-        let diary3 = DiaryCard(timeStamp: date, diaryText: nil, diaryImage: UIImage(named: "SampleDiary"))
-        
-        diaryCards.append(diary)
-        diaryCards.append(diary2)
-        diaryCards.append(diary3)
-        diaryCards.append(diary)
-        diaryCards.append(diary2)
-        diaryCards.append(diary3)
-        diaryCards.append(diary)
-        diaryCards.append(diary2)
-        diaryCards.append(diary3)
-    }
-    
     private func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -85,8 +67,6 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        setExample()
         setTableView()
     }
     

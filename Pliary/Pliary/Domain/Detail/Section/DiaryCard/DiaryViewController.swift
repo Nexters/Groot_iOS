@@ -17,6 +17,7 @@ enum DiaryViewMode {
 
 class DiaryViewController: UIViewController {
     
+    @IBOutlet weak var contentHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var addOrSubtractImageView: UIImageView!
@@ -28,7 +29,6 @@ class DiaryViewController: UIViewController {
     @IBOutlet weak var diaryTextView: UITextView!
     @IBOutlet weak var navigationRightButton: UIButton!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var diaryImageHeightConstraint: NSLayoutConstraint!
     
     var currentMode: DiaryViewMode = .writeNewDiary
@@ -99,6 +99,7 @@ class DiaryViewController: UIViewController {
             diaryTextView.isEditable = true
             addOrSubtractContentView.isHidden = false
             diaryImageHeightConstraint.constant = 266
+            setScrollViewHeight()
         case .showDiary:
             let image = UIImage(named: ImageName.moreButton)
             navigationRightButton.setImage(image, for: .normal)
@@ -109,6 +110,7 @@ class DiaryViewController: UIViewController {
             diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
             if diaryImageView.image == nil {
                 diaryImageHeightConstraint.constant = 0
+                setScrollViewHeight()
             }
         }
     }
@@ -186,6 +188,7 @@ class DiaryViewController: UIViewController {
         
         if currentDiaryCard?.diaryImage == nil {
             diaryImageHeightConstraint.constant = 0
+            setScrollViewHeight()
             addOrSubtractContentView.isHidden = false
             diaryImageView.image = nil
             addOrSubtractContentView.backgroundColor = Color.gray6
@@ -194,6 +197,7 @@ class DiaryViewController: UIViewController {
             addOrSubtractImageView.image = image
         } else {
             diaryImageHeightConstraint.constant = 266
+            setScrollViewHeight()
             addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
             diaryImageView.image = currentDiaryCard?.diaryImage
             
@@ -210,8 +214,6 @@ class DiaryViewController: UIViewController {
         diaryTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15)
         diaryTextView.textColor = Color.gray3
         
-        textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
-        
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEdit))
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.isEnabled = true
@@ -225,30 +227,25 @@ class DiaryViewController: UIViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
             
-            if scrollView.frame.height > scrollView.contentSize.height {
-                scrollView.contentSize.height = scrollView.frame.height + keyboardHeight
-            } else {
-                scrollView.contentSize.height = diaryTextView.frame.maxY + textViewBottomConstraint.constant + keyboardHeight
-            }
+            contentHeightConstraint.constant = view.frame.height + keyboardHeight
+            textViewHeightConstraint.constant = scrollView.frame.height - keyboardHeight - 25
             
-            self.scrollView.contentOffset.y = self.diaryDateLabel.frame.maxY
-            
-//            DispatchQueue.main.async {
-//                if let selectedRange = self.diaryTextView.selectedTextRange {
-//                    let cursorPosition = self.diaryTextView.offset(from: self.diaryTextView.beginningOfDocument, to: selectedRange.start)
-//
-//                    self.scrollView.contentOffset.y = self.diaryImageView.frame.maxY + CGFloat(cursorPosition)
-//                }
-//            }
+            scrollView.contentOffset.y = 350
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentSize.height = diaryTextView.frame.maxY + textViewBottomConstraint.constant
+        scrollView.contentOffset.y = 0
+        textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
+        setScrollViewHeight()
     }
     
     @objc func endEdit(sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    private func setScrollViewHeight() {
+        contentHeightConstraint.constant = diaryImageHeightConstraint.constant + 87 + textViewHeightConstraint.constant + 50
     }
 }
 
@@ -262,6 +259,13 @@ extension DiaryViewController {
         reload()
         changeMode(currentMode)
         setTextView()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
+        setScrollViewHeight()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -315,6 +319,5 @@ extension DiaryViewController: UITextViewDelegate {
         } else {
             placeholderLabel.isHidden = true
         }
-        textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
     }
 }
