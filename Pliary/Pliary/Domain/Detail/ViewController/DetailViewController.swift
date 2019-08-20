@@ -21,6 +21,10 @@ class DetailViewController: UIViewController {
     
     var currentSection: Section = .diaryCard {
         didSet {
+            guard oldValue != currentSection else {
+                return
+            }
+            
             headerView?.currentSection = currentSection
             for cell in tableView.visibleCells {
                 if let sectionCell = cell as? SectionTableViewCell {

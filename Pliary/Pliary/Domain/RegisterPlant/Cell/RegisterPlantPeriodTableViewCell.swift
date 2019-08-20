@@ -29,10 +29,15 @@ class RegisterPlantPeriodTableViewCell: UITableViewCell, RegisterCell {
     func setUp(with plant: Plant, type: RegisterRowType) {
         self.plant = plant
         self.type = type
+        
         setGradientScript()
     }
     
     func setGradientScript() {
+        if gradient != nil {
+            return
+        }
+        
         gradient = CAGradientLayer()
         gradient?.startPoint = CGPoint(x: 0, y: 0.5)
         gradient?.endPoint = CGPoint(x:1.0, y:0.5)
