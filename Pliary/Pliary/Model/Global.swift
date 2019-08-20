@@ -13,7 +13,7 @@ class Global: NSObject {
     static let shared: Global = Global()
     
     var user: User?
-    var plants: [Plant] = [PlantType.eucalyptus.getPlantInstance()]
+    var plants: [Plant] = [PlantType.eucalyptus.getPlantInstance(), PlantType.elastica.getPlantInstance(), PlantType.sansevieria.getPlantInstance()]
     var selectedPlant: Plant?
     
     var diaryDict: [String: [DiaryCard]] = [:]

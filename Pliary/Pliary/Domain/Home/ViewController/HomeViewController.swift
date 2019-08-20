@@ -30,8 +30,10 @@ class HomeViewController: UIViewController {
     
     var plants: [Plant] = [] {
         didSet {
-            collectionView.reloadData()
-            slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
+            if oldValue != plants {
+                collectionView.reloadData()
+                slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
+            }
         }
     }
     var plantsCount: Int {
@@ -122,7 +124,10 @@ extension HomeViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        animateCell()
+        if !first {
+            animateCell()
+        }
+        
         super.viewDidLayoutSubviews()
         
         configureCollectionViewLayoutItemSize()
