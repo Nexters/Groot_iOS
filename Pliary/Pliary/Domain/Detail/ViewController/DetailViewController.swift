@@ -16,8 +16,7 @@ class DetailViewController: UIViewController {
     var selectedPlant: Plant?
     var animating: Bool = true
     var headerView: DetailTableHeaderView?
-    
-    private var pg: UIPanGestureRecognizer?
+    var first = true
     
     var currentSection: Section = .diaryCard {
         didSet {
@@ -65,20 +64,6 @@ class DetailViewController: UIViewController {
         tableView.register(sectionNib, forCellReuseIdentifier: SectionTableViewCell.reuseIdentifier)
     }
     
-    func setUpGesture() {
-        if pg == nil {
-            let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
-            
-            tableView.visibleCells.forEach {
-                if let cell = $0 as? MainDetailTableViewCell {
-                    cell.contentView.addGestureRecognizer(gesture)
-                    gesture.delegate = self
-                    pg = gesture
-                }
-            }
-        }
-    }
-    
     func animatePlant(_ bool: Bool) {
         for cell in tableView.visibleCells {
             if let plantCell = cell as? MainDetailTableViewCell {
@@ -111,40 +96,8 @@ extension DetailViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        setUpGesture()
-    }
-}
-
-extension DetailViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
-        -> Bool {
-            return true
-    }
-    
-    @objc func handlePan(gr: UIPanGestureRecognizer) {
-        guard tableView.contentOffset.y <= 20 else {
-            Hero.shared.cancel()
-            return
-        }
-        
-        let translation = gr.translation(in: view)
-        let velocity = gr.velocity(in: view)
-        
-        switch gr.state {
-        case .began:
-            if velocity.y > 0 {
-                dismiss(animated: true, completion: nil)
-            }
-        case .changed:
-            Hero.shared.update(translation.y / view.bounds.height)
-        default:
-            if ((translation.y + velocity.y) / view.bounds.height) > 0.5 {
-                Hero.shared.finish()
-            } else {
-                Hero.shared.cancel()
-            }
+        if first {
+            first = false
         }
     }
-    
 }

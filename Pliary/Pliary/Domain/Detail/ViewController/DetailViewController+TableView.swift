@@ -10,12 +10,15 @@ import UIKit
 
 extension DetailViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if animating {
+        
+        if scrollView.contentOffset.y <= 20 {
+            animatePlant(true)
+        } else if animating {
             animatePlant(false)
         }
         
-        if scrollView.contentOffset.y == 0 {
-            animatePlant(true)
+        if scrollView.contentOffset.y < -10 && !first {
+            dismiss(animated: true, completion: nil)
         }
     }
     
