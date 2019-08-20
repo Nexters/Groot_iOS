@@ -18,4 +18,14 @@ extension Double {
         
         return dateString
     }
+    
+    func getSince1970LongString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        
+        let date = Date.init(timeIntervalSince1970: self)
+        let dateString = dateFormatter.string(from: date)
+        
+        return dateString
+    }
 }

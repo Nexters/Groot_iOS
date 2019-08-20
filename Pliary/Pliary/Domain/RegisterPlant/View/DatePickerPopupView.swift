@@ -11,10 +11,13 @@ import UIKit
 class DatePickerPopupView: UIView {
 
     @IBOutlet weak var datePicker: UIDatePicker!
+    weak var delegate: RegisterEventDelegate?
+    var type: RegisterRowType?
     
-    static func instance() -> DatePickerPopupView {
+    static func instance(type: RegisterRowType) -> DatePickerPopupView {
         let view: DatePickerPopupView = UIView.createViewFromNib(nibName: DatePickerPopupView.identifier)
-        
+        view.type = type
+        view.datePicker.maximumDate = Date()
         return view
     }
     
@@ -23,6 +26,12 @@ class DatePickerPopupView: UIView {
     }
     
     @IBAction func tapCompleteButton(_ sender: Any) {
+        guard let type = type else {
+            removeFromSuperview()
+            return
+        }
+        
+        delegate?.registerEvent(event: .dateSelected(type: type, date: datePicker.date.timeIntervalSince1970))
         removeFromSuperview()
     }
 }

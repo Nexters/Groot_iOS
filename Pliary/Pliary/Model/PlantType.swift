@@ -22,31 +22,31 @@ enum PlantType {
     func getPlantInstance() -> Plant {
         switch self {
         case .stuki:
-            let plant = Plant(type: .stuki, englishName: PlantEnglishName.stuki.rawValue, koreanName: PlantKoreanName.stuki.rawValue, nickName: nil, wateringInterval: 30)
+            let plant = Plant(type: .stuki, englishName: PlantEnglishName.stuki.rawValue, koreanName: PlantKoreanName.stuki.rawValue, nickName: nil, wateringInterval: 30, firstDate: 0, lastWaterDate: 0)
             return plant
         case .eucalyptus:
-            let plant = Plant(type: .eucalyptus, englishName: PlantEnglishName.eucalyptus.rawValue, koreanName: PlantKoreanName.eucalyptus.rawValue, nickName: nil, wateringInterval: 4)
+            let plant = Plant(type: .eucalyptus, englishName: PlantEnglishName.eucalyptus.rawValue, koreanName: PlantKoreanName.eucalyptus.rawValue, nickName: nil, wateringInterval: 4, firstDate: 0, lastWaterDate: 0)
             return plant
         case .sansevieria:
-            let plant = Plant(type: .sansevieria, englishName: PlantEnglishName.sansevieria.rawValue, koreanName: PlantKoreanName.sansevieria.rawValue, nickName: nil, wateringInterval: 30)
+            let plant = Plant(type: .sansevieria, englishName: PlantEnglishName.sansevieria.rawValue, koreanName: PlantKoreanName.sansevieria.rawValue, nickName: nil, wateringInterval: 30, firstDate: 0, lastWaterDate: 0)
             return plant
         case .monstera:
-            let plant = Plant(type: .monstera, englishName: PlantEnglishName.monstera.rawValue, koreanName: PlantKoreanName.monstera.rawValue, nickName: nil, wateringInterval: 5)
+            let plant = Plant(type: .monstera, englishName: PlantEnglishName.monstera.rawValue, koreanName: PlantKoreanName.monstera.rawValue, nickName: nil, wateringInterval: 5, firstDate: 0, lastWaterDate: 0)
             return plant
         case .parlourPalm:
-            let plant = Plant(type: .parlourPalm, englishName: PlantEnglishName.parlourPalm.rawValue, koreanName: PlantKoreanName.parlourPalm.rawValue, nickName: nil, wateringInterval: 7)
+            let plant = Plant(type: .parlourPalm, englishName: PlantEnglishName.parlourPalm.rawValue, koreanName: PlantKoreanName.parlourPalm.rawValue, nickName: nil, wateringInterval: 7, firstDate: 0, lastWaterDate: 0)
             return plant
         case .elastica:
-            let plant = Plant(type: .elastica, englishName: PlantEnglishName.elastica.rawValue, koreanName: PlantKoreanName.elastica.rawValue, nickName: nil, wateringInterval: 7)
+            let plant = Plant(type: .elastica, englishName: PlantEnglishName.elastica.rawValue, koreanName: PlantKoreanName.elastica.rawValue, nickName: nil, wateringInterval: 7, firstDate: 0, lastWaterDate: 0)
             return plant
         case .travelersPalm:
-            let plant = Plant(type: .travelersPalm, englishName: PlantEnglishName.travelersPalm.rawValue, koreanName: PlantKoreanName.travelersPalm.rawValue, nickName: nil, wateringInterval: 10)
+            let plant = Plant(type: .travelersPalm, englishName: PlantEnglishName.travelersPalm.rawValue, koreanName: PlantKoreanName.travelersPalm.rawValue, nickName: nil, wateringInterval: 10, firstDate: 0, lastWaterDate: 0)
             return plant
         case .schefflera:
-            let plant = Plant(type: .schefflera, englishName: PlantEnglishName.schefflera.rawValue, koreanName: PlantKoreanName.schefflera.rawValue, nickName: nil, wateringInterval: 5)
+            let plant = Plant(type: .schefflera, englishName: PlantEnglishName.schefflera.rawValue, koreanName: PlantKoreanName.schefflera.rawValue, nickName: nil, wateringInterval: 5, firstDate: 0, lastWaterDate: 0)
             return plant
         case .userPlants:
-            let plant = Plant(type: .userPlants, englishName: "", koreanName: nil, nickName: nil, wateringInterval: 3)
+            let plant = Plant(type: .userPlants, englishName: "", koreanName: nil, nickName: nil, wateringInterval: 3, firstDate: 0, lastWaterDate: 0)
             return plant
         }
     }

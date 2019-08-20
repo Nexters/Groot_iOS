@@ -13,7 +13,7 @@ enum RegisterRowType {
     case koreanName
     case customName
     case image
-    case startDate
+    case firstDate
     case lastWaterDate
     case period
 }
@@ -30,6 +30,7 @@ enum RegisterEvent {
     case selectPlant
     case selectDate(type: RegisterRowType)
     case plantSelected(plant: Plant)
+    case dateSelected(type: RegisterRowType, date: TimeInterval)
     case setEnglishName(name: String)
     case setKoreanName(name: String?)
     case setNickName(name: String?)

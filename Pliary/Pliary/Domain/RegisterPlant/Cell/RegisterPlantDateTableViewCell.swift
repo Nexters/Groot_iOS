@@ -39,10 +39,24 @@ class RegisterPlantDateTableViewCell: UITableViewCell, RegisterCell {
     
     func handleType(_ type: RegisterRowType) {
         switch type {
-        case .startDate:
+        case .firstDate:
             titleLabel.text = "식물 입양한 날"
+            if let date = plant?.firstDate, date != 0 {
+                dateButton.setTitle(date.getSince1970LongString(), for: .normal)
+                dateButton.setTitleColor(Color.gray1, for: .normal)
+            } else {
+                dateButton.setTitle(Date().timeIntervalSince1970.getSince1970LongString(), for: .normal)
+                dateButton.setTitleColor(Color.gray6, for: .normal)
+            }
         case .lastWaterDate:
             titleLabel.text = "마지막으로 물준 날"
+            if let date = plant?.lastWaterDate, date != 0 {
+                dateButton.setTitle(date.getSince1970LongString(), for: .normal)
+                dateButton.setTitleColor(Color.gray1, for: .normal)
+            } else {
+                dateButton.setTitle(Date().timeIntervalSince1970.getSince1970LongString(), for: .normal)
+                dateButton.setTitleColor(Color.gray6, for: .normal)
+            }
         default:
             ()
         }

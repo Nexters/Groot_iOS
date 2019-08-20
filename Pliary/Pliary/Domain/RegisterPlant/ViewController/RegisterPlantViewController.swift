@@ -141,6 +141,14 @@ extension RegisterPlantViewController: UITableViewDataSource {
             dateCell.delegate = self
         }
         
+        if let nameCell = cell as? RegisterPlantNameTableViewCell {
+            nameCell.delegate = self
+        }
+        
+        if let periodCell = cell as? RegisterPlantPeriodTableViewCell {
+            periodCell.delegate = self
+        }
+        
         return cell ?? UITableViewCell()
     }
     
@@ -156,9 +164,10 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             selectPlantPopup.currentPlant = selectedPlant
             view.addSubview(selectPlantPopup)
             
-        case .selectDate:
-            let datePopup = DatePickerPopupView.instance()
+        case .selectDate(let type):
+            let datePopup = DatePickerPopupView.instance(type: type)
             datePopup.frame = view.frame
+            datePopup.delegate = self
             view.addSubview(datePopup)
             
         case .plantSelected(let selectedPlant):
@@ -178,7 +187,7 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             
             rows.append((RegisterPlantImageTableViewCell.identifier, .image))
             rows.append((RegisterPlantNameTableViewCell.identifier, .customName))
-            rows.append((RegisterPlantDateTableViewCell.identifier, .startDate))
+            rows.append((RegisterPlantDateTableViewCell.identifier, .firstDate))
             rows.append((RegisterPlantDateTableViewCell.identifier, .lastWaterDate))
             rows.append((RegisterPlantPeriodTableViewCell.identifier, .period))
             
@@ -195,6 +204,21 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             
         case .setPeriod(let interval):
             selectedPlant?.wateringInterval = interval
+            
+        case .dateSelected(let type, let date):
+            switch type {
+            case .firstDate:
+                selectedPlant?.firstDate = date
+            case .lastWaterDate:
+                selectedPlant?.lastWaterDate = date
+            default:
+                ()
+            }
+            
+            let offset = tableView.contentOffset
+            tableView.reloadData()
+            tableView.layoutIfNeeded()
+            tableView.setContentOffset(offset, animated: false)
         }
     }
     

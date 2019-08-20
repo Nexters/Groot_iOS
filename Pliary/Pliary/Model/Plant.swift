@@ -14,13 +14,17 @@ struct Plant: Equatable {
     var koreanName: String?
     var nickName: String?
     var wateringInterval: Int
+    var firstDate: TimeInterval
+    var lastWaterDate: TimeInterval
     
-    init(type: PlantType, englishName: String, koreanName: String?, nickName: String?, wateringInterval: Int) {
+    init(type: PlantType, englishName: String, koreanName: String?, nickName: String?, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval) {
         self.type = type
         self.englishName = englishName
         self.koreanName = koreanName
         self.nickName = nickName
         self.wateringInterval = wateringInterval
+        self.firstDate = firstDate
+        self.lastWaterDate = lastWaterDate
     }
     
     func getTip() -> String {
