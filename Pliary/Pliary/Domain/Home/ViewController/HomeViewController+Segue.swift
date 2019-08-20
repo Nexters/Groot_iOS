@@ -32,7 +32,7 @@ extension HomeViewController: UICollectionViewDelegate {
         let selectedCell = collectionView.cellForItem(at: indexPath)
         
         if let cell = selectedCell as? HomeCardCollectionViewCell {
-            goDetailViewController(with: cell, item: indexPath.item)
+            goDetailViewController(with: cell)
         } else if (selectedCell as? AddCardCollectionViewCell) != nil {
             goRegisterViewController()
         }
@@ -48,17 +48,21 @@ extension HomeViewController: UICollectionViewDelegate {
         present(registerVC, animated: true, completion: nil)
     }
     
-    func goDetailViewController(with selectedCell: HomeCardCollectionViewCell, item: Int) {
+    func goDetailViewController(with selectedCell: HomeCardCollectionViewCell) {
+        guard let plant = selectedCell.plant else {
+            return
+        }
+        
         let englishNameID = "englishName"
         let koreanNameID = "koreanName"
         let customNameID = "customName"
         let splitName = "splitName"
         
-        let cellID = "plantCell\(item)"
-        let plantID = "plantImage\(item)"
-        let addWaterID = "addWater\(item)"
-        let blackWaterID = "blackWater\(item)"
-        let dayLeftID = "dayLeft\(item)"
+        let cellID = "plantCell\(plant.id)"
+        let plantID = "plantImage\(plant.id)"
+        let addWaterID = "addWater\(plant.id)"
+        let blackWaterID = "blackWater\(plant.id)"
+        let dayLeftID = "dayLeft\(plant.id)"
         
         view.bringSubviewToFront(englishNameLabel)
         view.bringSubviewToFront(koreanNameLabel)
