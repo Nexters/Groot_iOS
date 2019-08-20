@@ -233,6 +233,9 @@
                                             <constraint firstAttribute="height" constant="24" id="ymj-G7-Gs9"/>
                                         </constraints>
                                         <state key="normal" image="BtnAllowLeft"/>
+                                        <connections>
+                                            <action selector="tapBackButton:" destination="ZHg-Ku-OlY" eventType="touchUpInside" id="ds1-Ug-TTV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWQ-vU-IEc">
                                         <rect key="frame" x="314" y="16" width="31" height="24"/>

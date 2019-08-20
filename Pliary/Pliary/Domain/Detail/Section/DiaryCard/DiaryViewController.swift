@@ -34,6 +34,11 @@ class DiaryViewController: UIViewController {
     var currentMode: DiaryViewMode = .writeNewDiary
     var currentDiaryCard: DiaryCard?
     
+    @IBAction func tapBackButton(_ sender: Any) {
+        hero.modalAnimationType = .pull(direction: .right)
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
         if diaryImageView.image == nil {
             let imagePickerController = UIImagePickerController()

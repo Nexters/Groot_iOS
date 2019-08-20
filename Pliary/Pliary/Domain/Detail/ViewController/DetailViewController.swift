@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     var animating: Bool = true
     var headerView: DetailTableHeaderView?
     
+    private var pg: UIPanGestureRecognizer?
+    
     var currentSection: Section = .diaryCard {
         didSet {
             headerView?.currentSection = currentSection
@@ -35,12 +37,6 @@ class DetailViewController: UIViewController {
         guard let writeDiaryVC = storyboard.instantiateViewController(withIdentifier: DiaryViewController.identifier) as? DiaryViewController else {
             return 
         }
-        
-        if let p = pg {
-            pg?.delegate = nil
-            view.removeGestureRecognizer(p)
-        }
-        
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
@@ -64,12 +60,18 @@ class DetailViewController: UIViewController {
         tableView.register(sectionNib, forCellReuseIdentifier: SectionTableViewCell.reuseIdentifier)
     }
     
-    var pg: UIPanGestureRecognizer?
     func setUpGesture() {
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
-        view.addGestureRecognizer(gesture)
-        gesture.delegate = self
-        pg = gesture
+        if pg == nil {
+            let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
+            
+            tableView.visibleCells.forEach {
+                if let cell = $0 as? MainDetailTableViewCell {
+                    cell.contentView.addGestureRecognizer(gesture)
+                    gesture.delegate = self
+                    pg = gesture
+                }
+            }
+        }
     }
     
     func animatePlant(_ bool: Bool) {
@@ -93,12 +95,18 @@ extension DetailViewController {
         super.viewDidLoad()
         
         setUpTableView()
-//        setUpGesture()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         tableView.contentInset.top = -UIApplication.shared.statusBarFrame.size.height
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        setUpGesture()
     }
 }
 
