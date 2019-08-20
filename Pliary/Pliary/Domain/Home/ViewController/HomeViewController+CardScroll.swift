@@ -130,6 +130,8 @@ extension HomeViewController: UICollectionViewDataSource {
             let plant = plants[indexPath.item]
             cell.setUp(with: plant)
             cell.delegate = self
+            cell.hero.isEnabled = false
+            
             return cell
         }
     }
