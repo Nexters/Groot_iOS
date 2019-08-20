@@ -14,8 +14,19 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var growthLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var diaryCards: [DiaryCard] = []
     weak var delegate: DetailEventDelegate?
+    
+    var diaryCards: [DiaryCard] = [] {
+        didSet {
+            if diaryCards.isEmpty {
+                growthLabel.isHidden = false
+                tableView.isScrollEnabled = false
+            } else {
+                growthLabel.isHidden = true
+                tableView.isScrollEnabled = true
+            }
+        }
+    }
     
     private var diaryCardsCount: Int {
         return diaryCards.count + 1
@@ -75,8 +86,14 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setExample()
+//        setExample()
         setTableView()
+    }
+    
+    func setUp(with plant: Plant?) {
+        if let id = plant?.id {
+            diaryCards = Global.shared.diaryDict[id] ?? []
+        }
     }
 
 }

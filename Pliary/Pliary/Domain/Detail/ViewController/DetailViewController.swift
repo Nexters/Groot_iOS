@@ -44,6 +44,7 @@ class DetailViewController: UIViewController {
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
+        writeDiaryVC.plant = selectedPlant
         
         if diaryCard != nil {
             writeDiaryVC.currentMode = .showDiary

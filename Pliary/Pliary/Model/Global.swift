@@ -13,7 +13,9 @@ class Global: NSObject {
     static let shared: Global = Global()
     
     var user: User?
-    var plants: [Plant] = []
+    var plants: [Plant] = [PlantType.eucalyptus.getPlantInstance()]
+    var diaryDict: [String: [DiaryCard]] = [:]
+    var recordDict: [String: [RecordCard]] = [:]
     
     func getAccessToken() {
         if let email = Auth.auth().currentUser?.email {

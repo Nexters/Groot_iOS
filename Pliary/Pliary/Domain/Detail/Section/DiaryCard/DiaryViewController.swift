@@ -33,6 +33,7 @@ class DiaryViewController: UIViewController {
     
     var currentMode: DiaryViewMode = .writeNewDiary
     var currentDiaryCard: DiaryCard?
+    var plant: Plant?
     
     @IBAction func tapBackButton(_ sender: Any) {
         hero.modalAnimationType = .pull(direction: .right)
@@ -60,12 +61,31 @@ class DiaryViewController: UIViewController {
             let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, diaryImage: diaryImageView.image)
             currentDiaryCard = card
             changeMode(.showDiary)
+            saveCurrentCard()
         case .editDiary:
             currentDiaryCard?.diaryImage = diaryImageView.image
             currentDiaryCard?.diaryText = diaryTextView.text
             changeMode(.showDiary)
+            editCard()
         case .showDiary:
             showModifyDeleteAlert()
+        }
+    }
+    
+    private func saveCurrentCard() {
+        if let id = plant?.id, let card = currentDiaryCard {
+            if var array = Global.shared.diaryDict[id] {
+                array.append(card)
+                Global.shared.diaryDict[id] = array
+            } else {
+                Global.shared.diaryDict[id] = [card]
+            }
+        }
+    }
+    
+    private func editCard() {
+        if let id = plant?.id, let card = currentDiaryCard {
+            
         }
     }
     
@@ -150,7 +170,12 @@ class DiaryViewController: UIViewController {
     }
     
     private func reload() {
-        diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
+        
+        if currentMode == .writeNewDiary {
+            diaryDateLabel.text = Date().timeIntervalSince1970.getSince1970String()
+        } else {
+            diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
+        }
         
         if currentDiaryCard?.diaryText == nil {
             placeholderLabel.isHidden = false
