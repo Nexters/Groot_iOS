@@ -17,7 +17,7 @@ extension DetailViewController: UITableViewDelegate {
             animatePlant(false)
         }
         
-        if scrollView.contentOffset.y < -10 && !first {
+        if scrollView.contentOffset.y < -3 && !first {
             dismiss(animated: true, completion: nil)
         }
     }
@@ -78,6 +78,7 @@ extension DetailViewController: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.reuseIdentifier) as? SectionTableViewCell {
                 cell.delegate = self
                 cell.plant = selectedPlant
+                cell.setUp()
                 return cell
             }
         }

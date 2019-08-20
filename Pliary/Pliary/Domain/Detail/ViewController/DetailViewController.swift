@@ -100,4 +100,12 @@ extension DetailViewController {
             first = false
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if !first {
+            tableView.reloadData()
+        }
+    }
 }

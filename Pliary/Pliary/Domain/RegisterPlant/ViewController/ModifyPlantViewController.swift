@@ -18,13 +18,14 @@ class ModifyPlantViewController: UIViewController {
 
     
     private var gradient: CAGradientLayer?
+    var plant: Plant?
     
     @IBAction func tabCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapCompleteButton(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     func setGradientScript() {
@@ -51,6 +52,8 @@ extension ModifyPlantViewController {
         
         let numberNib = UINib(nibName: NumberCollectionViewCell.identifier, bundle: nil)
         collectionView.register(numberNib, forCellWithReuseIdentifier: NumberCollectionViewCell.identifier)
+        
+        nicknameTextField.text = plant?.nickName
     }
     
     override func viewDidLayoutSubviews() {

@@ -14,6 +14,8 @@ class Global: NSObject {
     
     var user: User?
     var plants: [Plant] = [PlantType.eucalyptus.getPlantInstance()]
+    var selectedPlant: Plant?
+    
     var diaryDict: [String: [DiaryCard]] = [:]
     var recordDict: [String: [RecordCard]] = [:]
     
