@@ -98,8 +98,8 @@ extension HomeViewController {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
                 scrollView.contentOffset = CGPoint(x: toValue, y: 0)
                 scrollView.layoutIfNeeded()
-                self.adjustInset()
             }, completion: { _ in
+                self.adjustInset()
                 self.animateCell()
             })
             
