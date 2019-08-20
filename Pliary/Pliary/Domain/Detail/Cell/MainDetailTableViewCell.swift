@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var plantView: UIView!
+    @IBOutlet weak var plantView: UIImageView!
     @IBOutlet weak var blackWaterImageView: UIImageView!
     @IBOutlet weak var addWaterButton: UIButton!
     @IBOutlet weak var dayLeftLabel: UILabel!
@@ -18,17 +19,90 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var koreanNameLabel: UILabel!
     @IBOutlet weak var nameSplitLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel!
+    
+    weak var delegate: DetailEventDelegate?
+    private var plant: Plant?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    @IBAction func tapCloseButton(_ sender: Any) {
+        delegate?.detailEvent(event: .dismiss)
+    }
+    
+    @IBAction func tapMoreButton(_ sender: Any) {
+        guard let plant = plant else {
+            return
+        }
+        
+        delegate?.detailEvent(plant, event: .modifyOrDeletePlant)
+    }
+    
+    @IBAction func tapAddWaterButton(_ sender: Any) {
+        guard let plant = plant else {
+            return
+        }
+        
+        delegate?.detailEvent(plant, event: .waterToPlant)
     }
     
     @IBAction func tapNextPageButton(_ sender: Any) {
+        delegate?.detailEvent(event: .scrollToNextPage)
+    }
+    
+    func setUp(with plant: Plant?) {
+        self.plant = plant
+        englishNameLabel.text = plant?.englishName
+        koreanNameLabel.text = plant?.koreanName
+        customNameLabel.text = plant?.nickName
+        tipLabel.text = plant?.getTip()
+    }
+    
+    func animateImage() {
+        guard let plant = plant else {
+            return
+        }
         
+        let imageName = plant.getPositiveImageName()
+        let appendPath = "/" + imageName.replacingOccurrences(of: "iOS", with: "And") + ".gif"
+        let host = API.gifHost?.appendingPathComponent(appendPath)
+        let placeHolder = UIImage(named: imageName)
+        
+        plantView.kf.setImage(with: host, placeholder: placeHolder, options: nil, progressBlock: nil, completionHandler: { _ in
+            
+        })
+    }
+    
+    func stopImage() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let placeHolder = UIImage(named: imageName)
+        plantView.image = placeHolder
+    }
+    
+    func makeDeleteMode() {
+        guard let plant = plant else {
+            return
+        }
+        
+        let imageName = plant.getPositiveImageName()
+        let placeHolder = UIImage(named: imageName)?.convertToGrayScale()
+        plantView.image = placeHolder
+        
+        let blackImage = UIImage(named: ImageName.addWaterGrayButton)
+        addWaterButton.setImage(blackImage, for: .normal)
+    }
+    
+    func clearDeleteMode() {
+        animateImage()
+        
+        let image = UIImage(named: ImageName.addWaterButton)
+        addWaterButton.setImage(image, for: .normal)
     }
 }

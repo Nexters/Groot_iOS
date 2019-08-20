@@ -7,6 +7,7 @@
 
 import UIKit
 import Hero
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -29,6 +30,7 @@ class HomeViewController: UIViewController {
     
     var plants: [Plant] = [] {
         didSet {
+            collectionView.reloadData()
             slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
         }
     }
@@ -76,6 +78,10 @@ class HomeViewController: UIViewController {
         
         if let cell = firstCell as? HomeCardCollectionViewCell {
             cell.topLayoutConstraint.constant = 0
+            englishNameLabel.text = cell.plant?.englishName
+            koreanNameLabel.text = cell.plant?.koreanName
+            customNameLabel.text = cell.plant?.nickName
+            nameSplitLabel.isHidden = false
         } else if let cell = firstCell as? AddCardCollectionViewCell {
             cell.topLayoutConstraint.constant = 0
         }
@@ -83,30 +89,42 @@ class HomeViewController: UIViewController {
         collectionView.layoutIfNeeded()
     }
     
-    func setExample() {
-        let plant = Plant.init(name: "", species: "", drinkingDay: 0)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
-        plants.append(plant)
+    func checkLogin() {
+        if Global.shared.user == nil {
+            let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: nil)
+            guard let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
+                return
+            }
+            
+            //present(loginVC, animated: true, completion: nil)
+        }
     }
-    
 }
 
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setExample()
         setUpCollectionView()
         setUpSlideView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        checkLogin()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        plants = Global.shared.plants
+    }
+    
     override func viewDidLayoutSubviews() {
+        animateCell()
         super.viewDidLayoutSubviews()
+        
         configureCollectionViewLayoutItemSize()
         slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
         
@@ -114,5 +132,6 @@ extension HomeViewController {
             setFirstCellSize()
             first = false
         }
+        
     }
 }

@@ -18,12 +18,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="614.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0py-sq-4wQ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w84-eI-BEg" customClass="AnimatedImageView" customModule="Kingfisher">
                         <rect key="frame" x="0.0" y="0.0" width="391" height="438.5"/>
-                        <color key="backgroundColor" red="0.93333333330000001" green="0.85098039219999999" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="멋쟁이 투투" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zus-a4-Oq7">
-                        <rect key="frame" x="106" y="148" width="249" height="20"/>
+                        <rect key="frame" x="106" y="161" width="249" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="rXd-NX-Dah"/>
                         </constraints>
@@ -31,10 +30,9 @@
                         <color key="textColor" red="0.16862745100000001" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWN-ZV-whA">
-                        <rect key="frame" x="36" y="100" width="319" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="IWN-ZV-whA">
+                        <rect key="frame" x="36" y="113" width="319" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Wa2-fv-u9c"/>
                             <constraint firstAttribute="height" constant="40" id="d3K-pd-2MB"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="36"/>
@@ -42,15 +40,18 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJE-g4-op9">
-                        <rect key="frame" x="329" y="112" width="24" height="24"/>
+                        <rect key="frame" x="337" y="125" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="kdq-aw-0vJ"/>
                             <constraint firstAttribute="width" constant="24" id="wLC-mU-aXn"/>
                         </constraints>
                         <state key="normal" image="BtnMore"/>
+                        <connections>
+                            <action selector="tapMoreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="94R-M8-r3i"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스투키" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huv-Ga-LBY">
-                        <rect key="frame" x="36" y="148" width="47" height="20"/>
+                        <rect key="frame" x="36" y="161" width="47" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="56Y-OH-ayL"/>
                         </constraints>
@@ -59,7 +60,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwl-hn-6Fg">
-                        <rect key="frame" x="92" y="148" width="5" height="20"/>
+                        <rect key="frame" x="92" y="161" width="5" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="2rS-HK-fvn"/>
                             <constraint firstAttribute="height" constant="20" id="nqg-wj-pyi"/>
@@ -92,6 +93,9 @@
                             <constraint firstAttribute="height" constant="60" id="lpg-F9-mgS"/>
                         </constraints>
                         <state key="normal" image="AddWater"/>
+                        <connections>
+                            <action selector="tapAddWaterButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XQU-ed-37N"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYn-2j-Tak">
                         <rect key="frame" x="36" y="507.5" width="319" height="72"/>
@@ -114,36 +118,49 @@
                             <action selector="tapNextPageButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ht6-fa-JKX"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ2-AS-RkX">
+                        <rect key="frame" x="337" y="50" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="P2k-f1-KMg"/>
+                            <constraint firstAttribute="width" constant="24" id="e11-Jm-zQ8"/>
+                        </constraints>
+                        <state key="normal" image="BtnCloseBlack"/>
+                        <connections>
+                            <action selector="tapCloseButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WfL-cj-Pkg"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="zus-a4-Oq7" secondAttribute="trailing" constant="36" id="37s-FB-EzU"/>
-                    <constraint firstItem="IWN-ZV-whA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="100" id="6cT-Uc-8c3"/>
-                    <constraint firstAttribute="trailing" secondItem="0py-sq-4wQ" secondAttribute="trailing" id="8E9-uA-xhd"/>
-                    <constraint firstItem="0py-sq-4wQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8FN-rd-V9a"/>
+                    <constraint firstItem="IWN-ZV-whA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="113" id="6cT-Uc-8c3"/>
                     <constraint firstItem="c5C-Rb-Gb4" firstAttribute="leading" secondItem="GA0-EP-rL2" secondAttribute="trailing" constant="6" id="8IO-aG-teb"/>
+                    <constraint firstItem="cZ2-AS-RkX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="8no-pS-OF0"/>
                     <constraint firstItem="bwl-hn-6Fg" firstAttribute="leading" secondItem="huv-Ga-LBY" secondAttribute="trailing" constant="9" id="9mc-6o-cVE"/>
-                    <constraint firstItem="c5C-Rb-Gb4" firstAttribute="top" secondItem="0py-sq-4wQ" secondAttribute="bottom" constant="26" id="APx-Hb-e86"/>
                     <constraint firstItem="huv-Ga-LBY" firstAttribute="top" secondItem="IWN-ZV-whA" secondAttribute="bottom" constant="8" id="AzC-xT-TDf"/>
+                    <constraint firstItem="1ml-kM-a18" firstAttribute="top" secondItem="ZYn-2j-Tak" secondAttribute="bottom" constant="3" id="ByN-xH-DlN"/>
                     <constraint firstAttribute="bottom" secondItem="1ml-kM-a18" secondAttribute="bottom" constant="10" id="Cnl-vF-Gwc"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="Csu-Yb-Rux"/>
-                    <constraint firstAttribute="trailing" secondItem="RJE-g4-op9" secondAttribute="trailing" constant="38" id="HXT-Qq-bVa"/>
+                    <constraint firstAttribute="trailing" secondItem="RJE-g4-op9" secondAttribute="trailing" constant="30" id="HXT-Qq-bVa"/>
                     <constraint firstAttribute="trailing" secondItem="mpd-Ze-Utk" secondAttribute="trailing" constant="36" id="K8X-bV-vrn"/>
                     <constraint firstItem="IWN-ZV-whA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="PGI-IA-T2Q"/>
                     <constraint firstItem="GA0-EP-rL2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="QHH-hU-fhU"/>
-                    <constraint firstItem="0py-sq-4wQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qx1-Wq-Z27"/>
-                    <constraint firstItem="RJE-g4-op9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="112" id="dHV-5q-4ay"/>
+                    <constraint firstItem="w84-eI-BEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RtN-rr-UTa"/>
+                    <constraint firstAttribute="trailing" secondItem="cZ2-AS-RkX" secondAttribute="trailing" constant="30" id="bn7-6c-R8n"/>
+                    <constraint firstItem="RJE-g4-op9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="125" id="dHV-5q-4ay"/>
                     <constraint firstAttribute="trailing" secondItem="IWN-ZV-whA" secondAttribute="trailing" constant="36" id="e7f-Ii-fJe"/>
                     <constraint firstAttribute="trailing" secondItem="ZYn-2j-Tak" secondAttribute="trailing" constant="36" id="exI-e7-Qzi"/>
                     <constraint firstItem="huv-Ga-LBY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="g0J-n8-QIG"/>
-                    <constraint firstAttribute="bottom" secondItem="0py-sq-4wQ" secondAttribute="bottom" constant="176" id="gwa-oS-dGm"/>
                     <constraint firstItem="zus-a4-Oq7" firstAttribute="leading" secondItem="bwl-hn-6Fg" secondAttribute="trailing" constant="9" id="isZ-OV-RR9"/>
-                    <constraint firstItem="GA0-EP-rL2" firstAttribute="top" secondItem="0py-sq-4wQ" secondAttribute="bottom" constant="28" id="joy-VE-nrZ"/>
+                    <constraint firstItem="GA0-EP-rL2" firstAttribute="top" secondItem="w84-eI-BEg" secondAttribute="bottom" constant="28" id="iw2-nW-x68"/>
+                    <constraint firstAttribute="bottom" secondItem="w84-eI-BEg" secondAttribute="bottom" constant="176" id="l45-wL-VGy"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="top" secondItem="c5C-Rb-Gb4" secondAttribute="bottom" constant="15" id="mOT-8A-gJ0"/>
                     <constraint firstItem="1ml-kM-a18" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ojn-wT-Iem"/>
                     <constraint firstItem="bwl-hn-6Fg" firstAttribute="top" secondItem="IWN-ZV-whA" secondAttribute="bottom" constant="8" id="oqN-aN-NRl"/>
                     <constraint firstAttribute="trailing" secondItem="1ml-kM-a18" secondAttribute="trailing" id="qOP-Uu-NYy"/>
                     <constraint firstItem="zus-a4-Oq7" firstAttribute="top" secondItem="IWN-ZV-whA" secondAttribute="bottom" constant="8" id="s9l-I5-q39"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="top" secondItem="mpd-Ze-Utk" secondAttribute="bottom" constant="38" id="tMp-sX-WYs"/>
+                    <constraint firstAttribute="trailing" secondItem="w84-eI-BEg" secondAttribute="trailing" id="tzL-Sh-w9g"/>
+                    <constraint firstItem="w84-eI-BEg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zIf-bO-qnz"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -154,14 +171,16 @@
                 <outlet property="englishNameLabel" destination="IWN-ZV-whA" id="NX7-gG-RQj"/>
                 <outlet property="koreanNameLabel" destination="huv-Ga-LBY" id="dUg-XC-6Sy"/>
                 <outlet property="nameSplitLabel" destination="bwl-hn-6Fg" id="jTh-1R-NSR"/>
-                <outlet property="plantView" destination="0py-sq-4wQ" id="ArG-2m-khA"/>
+                <outlet property="plantView" destination="w84-eI-BEg" id="Vpg-mW-vAK"/>
+                <outlet property="tipLabel" destination="ZYn-2j-Tak" id="0fF-vf-QlF"/>
             </connections>
             <point key="canvasLocation" x="180.43478260869566" y="168.41517857142856"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="AddWater" width="50" height="50"/>
+        <image name="AddWater" width="72" height="72"/>
         <image name="BottomArrow" width="24" height="24"/>
+        <image name="BtnCloseBlack" width="24" height="24"/>
         <image name="BtnMore" width="24" height="24"/>
         <image name="WaterBlack" width="26" height="26"/>
     </resources>

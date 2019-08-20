@@ -67,8 +67,12 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
+Pliary/.DS_Store
+Pliary/Pliary/.DS_Store
 .DS_Store
 Pods/
 xcuserdata/
 *.xcworkspace/
 GoogleService-Info.plist
+Pliary/.DS_Store
+Pliary/Pliary.xcodeproj/project.pbxproj

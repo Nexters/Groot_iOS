@@ -8,68 +8,91 @@
 
 import UIKit
 import Firebase
+import Hero
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-    let imagePickerController = UIImagePickerController()
-
+    @IBOutlet weak var userProfileBackgroundView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var emailResetButton: UIButton!
     @IBOutlet weak var passwordResetButton: UIButton!
-    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var passwordGuideLabel: UILabel!
     @IBOutlet weak var emailGuideLabel: UILabel!
     @IBOutlet weak var emailWarningAlert: UIImageView!
     @IBOutlet weak var passwordWarningAlert: UIImageView!
     @IBOutlet weak var emailSuccessAlert: UIImageView!
     @IBOutlet weak var passwordSuccessAlert: UIImageView!
-    @IBOutlet weak var userProfileImageView: UIImageView!
 
-
+    var userProfileView: UserProfileView?
+    let imagePickerController = UIImagePickerController()
+    var keyboardHeight: CGFloat = 0
+    
     @IBAction func backButton(_ sender: Any) {
+        hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func emailResetButtonClick(_ sender: UIButton) {
         emailTextField.text = ""
     }
+    
     @IBAction func passwordResetButtonClick(_ sender: UIButton) {
         passwordTextField.text = ""
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        passwordTextField.isSecureTextEntry = true
-        emailGuideLabel.frame.size = CGSize(width: 0, height: 0)
-        emailTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
-        passwordTextField.setBottomBorder(color: UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0))
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
-        if let user = Auth.auth().currentUser {
-            // 이미 login 상태
-            return
-        }
-    }
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
+    @objc func handlePan(gr: UIPanGestureRecognizer) {
+        let translation = gr.translation(in: view)
+        let velocity = gr.velocity(in: view)
+        
+        switch gr.state {
+        case .began:
+            hero.modalAnimationType = .pull(direction: .right)
+            if velocity.x > 0 {
+                dismiss(animated: true, completion: nil)
+            }
+        case .changed:
+            Hero.shared.update(translation.x / view.bounds.width)
+        default:
+            if ((translation.x + velocity.x) / view.bounds.width) > 0.65 {
+                Hero.shared.finish()
+            } else {
+                Hero.shared.cancel()
             }
         }
     }
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+    
+    @objc func endEdit(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            keyboardHeight = keyboardSize.height
+            
+            if scrollView.frame.height > scrollView.contentSize.height {
+                scrollView.contentSize.height = scrollView.frame.height + keyboardHeight / 2
+            } else {
+                scrollView.contentSize.height = contentView.frame.maxY + keyboardHeight / 2
+            }
+            
+            scrollView.contentOffset.y = userProfileBackgroundView.frame.maxY + 15
+            scrollView.isScrollEnabled = false
         }
     }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentSize.height = contentView.frame.maxY
+        scrollView.isScrollEnabled = true
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if(textField.isEqual(emailTextField)) {
@@ -81,67 +104,68 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateLoginButtonState()
+        updateSignUpButtonState()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         signUpButton.isEnabled = false
-        emailResetButton.isHidden = false
-        passwordResetButton.isHidden = false
+        if(textField.isEqual(emailTextField)) {
+            emailResetButton.isHidden = false
+        } else if(textField.isEqual(passwordTextField)) {
+            passwordTextField.isHidden = false
+        }
+    }
+    
+    func showEmailAlert(reset : Bool, warning : Bool, succeess : Bool){
+        emailResetButton.isHidden = reset
+        emailWarningAlert.isHidden = warning
+        emailSuccessAlert.isHidden = succeess
+    }
+    
+    func showPasswordAlert(reset : Bool, warning : Bool, succeess : Bool){
+        passwordResetButton.isHidden = reset
+        passwordWarningAlert.isHidden = warning
+        passwordSuccessAlert.isHidden = succeess
     }
 
-    func updateLoginButtonState() {
+    func updateSignUpButtonState() {
         let email : String = emailTextField.text ?? ""
         let password : String = passwordTextField.text ?? ""
         
         if !isValidEmailAddress(email: email) {
-            emailResetButton.isHidden = true
-            emailWarningAlert.isHidden = false
-            emailSuccessAlert.isHidden = true
-//            emailGuideLabel.isHidden = false
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
+            showEmailAlert(reset: true, warning: false, succeess: true)
             emailGuideLabel.text = "이메일 형식에 맞지 않습니다."
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
+            emailTextField.setBottomBorder(color: Color.gray7)
         } else if isExistsEmail(email: email) {
-            emailResetButton.isHidden = true
-            emailWarningAlert.isHidden = false
-            emailSuccessAlert.isHidden = true
-//            emailGuideLabel.isHidden = false
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 16)
+            showEmailAlert(reset: true, warning: false, succeess: true)
             emailGuideLabel.text = "이미 사용중인 이메일입니다."
+            emailTextField.setBottomBorder(color: Color.gray7)
         } else {
             emailGuideLabel.text = ""
-            emailGuideLabel.frame.size = CGSize(width: 303, height: 0)
-//            emailGuideLabel.isHidden = true
-            emailResetButton.isHidden = true
-            emailWarningAlert.isHidden = true
-            emailSuccessAlert.isHidden = false
+            showEmailAlert(reset: true, warning: true, succeess: false)
+            emailTextField.setBottomBorder(color: Color.green)
         }
         
         if isValidPassword(password: password) {
-            passwordGuideLabel.frame.size = CGSize(width: 303, height: 0)
             passwordGuideLabel.text = ""
-            passwordWarningAlert.isHidden = true
-            passwordResetButton.isHidden = true
-            passwordSuccessAlert.isHidden = false
+            showPasswordAlert(reset: true, warning: true, succeess: false)
+            passwordTextField.setBottomBorder(color: Color.green)
         } else {
-            passwordGuideLabel.frame.size = CGSize(width: 303, height: 16)
             passwordGuideLabel.text = "대문자, 소문자, 숫자 조합 8글자 이상"
-            passwordWarningAlert.isHidden = false
-            passwordResetButton.isHidden = true
-            passwordSuccessAlert.isHidden = true
+            showPasswordAlert(reset: true, warning: false, succeess: true)
+            passwordTextField.setBottomBorder(color: Color.gray7)
         }
         
         if isValidEmailAddress(email: email) && isValidPassword(password: password) {
             signUpButton.isEnabled = true
-            signUpButton.backgroundColor = UIColor(red: 106.0/255.0, green: 167.0/255.0, blue: 111.0/255.0, alpha: 1.0)
+            signUpButton.backgroundColor = Color.green
             
-            signUpButton.layer.applySketchShadow(color: UIColor(red: 105.0/255.0, green: 146.0/255.0, blue: 117.0/255.0, alpha: 0.4), alpha: 0.4, x: 0, y: 10, blur: 14, spread: 0)
+            signUpButton.layer.applySketchShadow(color: Color.buttonShadow, alpha: 0.4, x: 0, y: 10, blur: 14, spread: 0)
             signUpButton.setTitleColor(UIColor.white, for: .normal)
         } else {
             signUpButton.isEnabled = false
-            signUpButton.setTitleColor(UIColor(red: 205.0/255.0, green: 205.0/255.0, blue: 205.0/255.0, alpha: 1.0), for: .normal)
-            signUpButton.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
+            signUpButton.setTitleColor(Color.gray5, for: .normal)
+            signUpButton.backgroundColor = Color.gray7
             signUpButton.layer.applySketchShadow(color: UIColor.white, alpha: 0, x: 0, y: 0, blur: 0, spread: 0)
         }
         
@@ -153,11 +177,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         return predicate.evaluate(with: email)
     }
+    
     func isValidPassword(password: String) -> Bool {
         let passwordRegEx = "\\A(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\\D*\\d)\\S{8,}\\z"
         let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return predicate.evaluate(with: password)
     }
+    
     func isExistsEmail(email: String) -> Bool {
         // email 중복 체크
         return false
@@ -196,12 +222,71 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let manager :FirebaseAuthenticationManager = FirebaseAuthenticationManager.shared
             manager.firebaseErrorHandle(code: error)
         }
-    
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
+    func profileImageViewLoad(){
+        
+        let userProfile = UserProfileView.instance()
+        userProfile.delegate = self
+        userProfile.frame = CGRect(origin: .zero, size: userProfileBackgroundView.frame.size)
+        userProfileBackgroundView.addSubview(userProfile)
+        
+        userProfileView = userProfile
     }
     
 }
 
+extension SignUpViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        profileImageViewLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        passwordTextField.isSecureTextEntry = true
+        
+        emailTextField.setBottomBorder(color: Color.gray7)
+        passwordTextField.setBottomBorder(color: Color.gray7)
+        
+        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 620)
+        
+        if let user = Auth.auth().currentUser {
+            // 이미 login 상태
+            return
+        }
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEdit))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        
+        contentView.addGestureRecognizer(singleTapGestureRecognizer)
+        
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        view.endEditing(true)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+         userProfileView?.makeRoundImage()
+    }
+    
+}
+
+extension SignUpViewController: CameraEventDelegate {
+    func cameraEvent() {
+        selectImageFromPhotoLibrary()
+    }
+}

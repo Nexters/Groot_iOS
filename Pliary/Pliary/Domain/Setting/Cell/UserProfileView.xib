@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="nwi-CZ-BWB">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfie" translatesAutoresizingMaskIntoConstraints="NO" id="nwi-CZ-BWB">
                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -31,7 +31,7 @@
                     </constraints>
                     <state key="normal" backgroundImage="Camera2"/>
                     <connections>
-                        <action selector="tabCameraButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="xSu-RE-sY9"/>
+                        <action selector="tabCameraButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="hKo-xB-EGx"/>
                     </connections>
                 </button>
             </subviews>
@@ -48,6 +48,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="cameraButton" destination="YjV-hf-m04" id="c1s-dy-6jS"/>
                 <outlet property="profileImageView" destination="nwi-CZ-BWB" id="z21-uk-nLu"/>
             </connections>
             <point key="canvasLocation" x="20.289855072463769" y="-83.705357142857139"/>
@@ -55,6 +56,6 @@
     </objects>
     <resources>
         <image name="Camera2" width="26" height="26"/>
-        <image name="Profile" width="36" height="36"/>
+        <image name="defaultProfie" width="153" height="153"/>
     </resources>
 </document>

@@ -9,16 +9,39 @@
 import UIKit
 
 class UserProfileView: UIView {
-    
+
+    weak var delegate: CameraEventDelegate?
+
     static func instance() -> UserProfileView {
-        let view: UserProfileView = UIView.createViewFromNib(nibName: "UserProfileView")
+        let view: UserProfileView = UIView.createViewFromNib(nibName: UserProfileView.identifier)
         return view
     }
     
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    var userImage: UIImage?
+    
     @IBAction func tabCameraButton(_ sender: Any) {
+        delegate?.cameraEvent()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
+        profileImageView.borderWidth = 1
+        profileImageView.borderColor = Color.gray6
+    }
+    
+    func setUp(with image : UIImage) {
+        userImage = image
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.image = image
+    }
+    
+    func makeRoundImage() {
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2.0
     }
     
 }

@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="멋쟁이투투와 10000일을 함께 했어요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yN1-kG-57h">
-                                <rect key="frame" x="14" y="38" width="346" height="17"/>
+                                <rect key="frame" x="14" y="38" width="346" height="15.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                 <color key="textColor" red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -51,6 +51,7 @@
                             <constraint firstItem="axk-gM-06A" firstAttribute="leading" secondItem="ALy-wA-ZbB" secondAttribute="leading" constant="14" id="aBJ-RO-ajy"/>
                             <constraint firstItem="xP2-hO-Fh9" firstAttribute="leading" secondItem="axk-gM-06A" secondAttribute="trailing" constant="8" id="ckV-fJ-7aW"/>
                             <constraint firstItem="yN1-kG-57h" firstAttribute="top" secondItem="axk-gM-06A" secondAttribute="bottom" constant="8" id="pbo-Ev-dzV"/>
+                            <constraint firstAttribute="bottom" secondItem="yN1-kG-57h" secondAttribute="bottom" constant="14" id="saU-F4-MJC"/>
                             <constraint firstItem="axk-gM-06A" firstAttribute="top" secondItem="ALy-wA-ZbB" secondAttribute="top" constant="14" id="uhO-Ag-q9i"/>
                             <constraint firstItem="xP2-hO-Fh9" firstAttribute="top" secondItem="ALy-wA-ZbB" secondAttribute="top" constant="15" id="yC3-Ws-t5t"/>
                         </constraints>

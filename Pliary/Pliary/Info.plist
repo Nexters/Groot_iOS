@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.951088601036-nqu80q8stt2mvb3vrmkqo3peii4c0e1s</string>
+				<string>com.googleusercontent.apps.951088601036-vee01t90qqqag3oqs9k6k03b685csp4e</string>
 			</array>
 		</dict>
 	</array>
@@ -31,6 +31,11 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>앨범사용을 허가합니다.</string>
 	<key>UILaunchStoryboardName</key>

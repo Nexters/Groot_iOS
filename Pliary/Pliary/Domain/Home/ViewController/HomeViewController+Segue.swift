@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 // MARK: - Delegate UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
@@ -19,12 +20,7 @@ extension HomeViewController: UICollectionViewDelegate {
         
         settingVC.hero.isEnabled = true
         settingVC.hero.modalAnimationType = .push(direction: .left)
-        
-        DispatchQueue.main.async {
-            self.present(settingVC, animated: true, completion: {
-                settingVC.hero.modalAnimationType = .pull(direction: .right)
-            })
-        }
+        present(settingVC, animated: true, completion: nil)
     }
     
     func enableHero(view: UIView, id: String) {
@@ -36,7 +32,7 @@ extension HomeViewController: UICollectionViewDelegate {
         let selectedCell = collectionView.cellForItem(at: indexPath)
         
         if let cell = selectedCell as? HomeCardCollectionViewCell {
-            goDetailViewController(with: cell, item: indexPath.item)
+            goDetailViewController(with: cell)
         } else if (selectedCell as? AddCardCollectionViewCell) != nil {
             goRegisterViewController()
         }
@@ -49,22 +45,24 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
         
-        DispatchQueue.main.async {
-            self.present(registerVC, animated: true, completion: nil)
-        }
+        present(registerVC, animated: true, completion: nil)
     }
     
-    func goDetailViewController(with selectedCell: HomeCardCollectionViewCell, item: Int) {
+    func goDetailViewController(with selectedCell: HomeCardCollectionViewCell) {
+        guard let plant = selectedCell.plant else {
+            return
+        }
+        
         let englishNameID = "englishName"
         let koreanNameID = "koreanName"
         let customNameID = "customName"
         let splitName = "splitName"
         
-        let cellID = "plantCell\(item)"
-        let plantID = "plantImage\(item)"
-        let addWaterID = "addWater\(item)"
-        let blackWaterID = "blackWater\(item)"
-        let dayLeftID = "dayLeft\(item)"
+        let cellID = "plantCell\(plant.id)"
+        let plantID = "plantImage\(plant.id)"
+        let addWaterID = "addWater\(plant.id)"
+        let blackWaterID = "blackWater\(plant.id)"
+        let dayLeftID = "dayLeft\(plant.id)"
         
         view.bringSubviewToFront(englishNameLabel)
         view.bringSubviewToFront(koreanNameLabel)
@@ -92,10 +90,10 @@ extension HomeViewController: UICollectionViewDelegate {
         
         detailVC.hero.isEnabled = true
         detailVC.hero.modalAnimationType = .none
+        detailVC.selectedPlant = selectedCell.plant
         detailVC.view.hero.modifiers = [.cascade]
         
         enableHero(view: detailVC.view, id: cellID)
-        
         
         let index = IndexPath.init(row: 0, section: 0)
         detailVC.setUpTableView()
@@ -104,10 +102,7 @@ extension HomeViewController: UICollectionViewDelegate {
         
         guard let detailCell = detailVC.tableView.cellForRow(at: index) as? MainDetailTableViewCell else {
             
-            DispatchQueue.main.async {
-                self.present(detailVC, animated: true, completion: nil)
-            }
-            
+            present(detailVC, animated: true, completion: nil)
             return
         }
 
@@ -120,8 +115,23 @@ extension HomeViewController: UICollectionViewDelegate {
         enableHero(view: detailCell.customNameLabel, id: customNameID)
         enableHero(view: detailCell.nameSplitLabel, id: splitName)
         
-        DispatchQueue.main.async {
-            self.present(detailVC, animated: true, completion: nil)
+        if let image = selectedCell.plantView.image {
+            detailCell.plantView.image = image
+            present(detailVC, animated: true, completion: {
+                detailCell.animateImage()
+            })
+        }
+    }
+}
+
+extension HomeViewController: HomeEventDelegate {
+    func homeEvent(_ plant: Plant, event: HomeEvent) {
+        switch event {
+        case .waterToPlant:
+            let waterPopup = WateringPopupView.instance(with: plant)
+            waterPopup.frame = view.frame
+            waterPopup.setSelectView()
+            view.addSubview(waterPopup)
         }
     }
 }

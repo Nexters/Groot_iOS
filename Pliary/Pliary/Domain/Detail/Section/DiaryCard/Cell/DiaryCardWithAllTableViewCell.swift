@@ -10,15 +10,32 @@ import UIKit
 
 class DiaryCardWithAllTableViewCell: UITableViewCell {
 
-    static let height: CGFloat = 300
+    weak var delegate: DetailEventDelegate?
+    private var diaryCard: DiaryCard?
+    
+    @IBOutlet weak var diaryImageView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var diaryTextLabel: UILabel!
+    
+    @IBAction func tapMoreButton(_ sender: Any) {
+        guard let card = diaryCard else {
+            return
+        }
+        
+        delegate?.detailEvent(card, event: .modifyOrDeleteDiaryCard)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    func setUp(with diaryCard: DiaryCard) {
+        self.diaryCard = diaryCard
+        
+        diaryImageView.image = diaryCard.diaryImage
+        diaryTextLabel.text = diaryCard.diaryText
+        dateLabel.text = diaryCard.timeStamp.getSince1970String()
     }
     
 }

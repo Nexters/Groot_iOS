@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegisterPlantPeriodTableViewCell" rowHeight="200" id="KGk-i7-Jjw" customClass="RegisterPlantPeriodTableViewCell" customModule="Pliary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="408" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물주기 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-WR-KLy">
+                        <rect key="frame" x="36" y="32.5" width="336" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="J6x-np-zor"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
+                        <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일 마다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNN-xV-GeR">
+                        <rect key="frame" x="20" y="105.5" width="368" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="J2O-z1-g7h"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
+                        <color key="textColor" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCN-Yn-lHQ">
+                        <rect key="frame" x="36" y="74.5" width="336" height="30"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-3v-FLU">
+                                <rect key="frame" x="0.0" y="0.0" width="336" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PBN-ug-uSn">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="1pt-Hn-rtU"/>
+                            <constraint firstAttribute="trailing" secondItem="pTk-3v-FLU" secondAttribute="trailing" id="66I-eq-4ND"/>
+                            <constraint firstItem="pTk-3v-FLU" firstAttribute="top" secondItem="vCN-Yn-lHQ" secondAttribute="top" id="b2n-kS-AgH"/>
+                            <constraint firstAttribute="bottom" secondItem="pTk-3v-FLU" secondAttribute="bottom" id="cwq-ae-xjK"/>
+                            <constraint firstItem="pTk-3v-FLU" firstAttribute="leading" secondItem="vCN-Yn-lHQ" secondAttribute="leading" id="r2m-o5-Ezu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vCN-Yn-lHQ" secondAttribute="trailing" constant="36" id="DJQ-5d-cj8"/>
+                    <constraint firstItem="GNN-xV-GeR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Jak-gc-Hmu"/>
+                    <constraint firstItem="6kS-WR-KLy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="O1J-vf-aB3"/>
+                    <constraint firstItem="vCN-Yn-lHQ" firstAttribute="top" secondItem="6kS-WR-KLy" secondAttribute="bottom" constant="18" id="OfC-UV-ga3"/>
+                    <constraint firstAttribute="trailing" secondItem="6kS-WR-KLy" secondAttribute="trailing" constant="36" id="Wvm-9x-0vN"/>
+                    <constraint firstItem="GNN-xV-GeR" firstAttribute="top" secondItem="vCN-Yn-lHQ" secondAttribute="bottom" constant="1" id="eXF-75-iFd"/>
+                    <constraint firstAttribute="bottom" secondItem="GNN-xV-GeR" secondAttribute="bottom" constant="125" id="iNF-Ce-Kpn"/>
+                    <constraint firstItem="6kS-WR-KLy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="kor-65-rH8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GNN-xV-GeR" secondAttribute="trailing" id="rQR-Dn-g1N"/>
+                    <constraint firstItem="vCN-Yn-lHQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="tX7-Rz-rCA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="pTk-3v-FLU" id="kRv-7Q-D0w"/>
+            </connections>
+            <point key="canvasLocation" x="111.59420289855073" y="87.053571428571431"/>
+        </tableViewCell>
+    </objects>
+</document>

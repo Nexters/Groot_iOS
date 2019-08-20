@@ -18,10 +18,10 @@ extension HomeViewController {
         return safeIndex
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func adjustInset() {
         let inset: CGFloat = 40
         let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
-        let currentIndex = scrollView.contentOffset.x / unitScrollSize
+        let currentIndex = collectionView.contentOffset.x / unitScrollSize
         
         collectionView.visibleCells.forEach {
             let index = Int($0.center.x / unitScrollSize)
@@ -29,6 +29,7 @@ extension HomeViewController {
             let topConstraint = difference * 20
             
             if let cell = $0 as? HomeCardCollectionViewCell {
+                cell.stopImage()
                 cell.topLayoutConstraint.constant = topConstraint
             } else if let cell = $0 as? AddCardCollectionViewCell {
                 cell.topLayoutConstraint.constant = topConstraint
@@ -36,8 +37,45 @@ extension HomeViewController {
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        adjustInset()
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         indexOfCellBeforeDragging = indexOfMajorCell()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            animateCell()
+        }
+    }
+    
+    func animateCell() {
+        // For CPU 
+        let inset: CGFloat = 40
+        let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
+        let currentIndex = collectionView.contentOffset.x / unitScrollSize
+        let indexPath = IndexPath(item: Int(currentIndex), section: 0)
+        
+        adjustInset()
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? HomeCardCollectionViewCell {
+            englishNameLabel.text = cell.plant?.englishName
+            koreanNameLabel.text = cell.plant?.koreanName
+            customNameLabel.text = cell.plant?.nickName
+            nameSplitLabel.isHidden = false
+            cell.animateImage()
+        } else {
+            englishNameLabel.text = "Add Plant"
+            koreanNameLabel.text = "식물을 추가해주세요."
+            nameSplitLabel.isHidden = true
+            customNameLabel.text = nil
+        }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        animateCell()
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -61,7 +99,10 @@ extension HomeViewController {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
                 scrollView.contentOffset = CGPoint(x: toValue, y: 0)
                 scrollView.layoutIfNeeded()
-            }, completion: nil)
+            }, completion: { _ in
+                self.adjustInset()
+                self.animateCell()
+            })
             
             slideViewLeadingConstraint.constant = CGFloat(snapToIndex) * slideViewWidthConstraint.constant
         } else {
@@ -88,9 +129,8 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCardCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeCardCollectionViewCell ?? HomeCardCollectionViewCell()
             let plant = plants[indexPath.item]
             cell.setUp(with: plant)
-            
+            cell.delegate = self
             return cell
         }
     }
 }
-

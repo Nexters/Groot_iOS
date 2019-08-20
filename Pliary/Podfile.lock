@@ -43,6 +43,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.2)
   - Hero (1.4.0)
+  - Kingfisher (5.7.0)
   - lottie-ios (3.1.2)
 
 DEPENDENCIES:
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - FSCalendar
   - GoogleSignIn
   - Hero
+  - Kingfisher
   - lottie-ios
 
 SPEC REPOS:
@@ -64,6 +66,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - Hero
+    - Kingfisher
     - lottie-ios
 
 SPEC CHECKSUMS:
@@ -77,8 +80,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
   lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
 
-PODFILE CHECKSUM: 8b69768214cccbb834c20b5ba3fe7a483065766b
+PODFILE CHECKSUM: bef7c6026983c59c489620c6dff40796b59e2b8f
 
 COCOAPODS: 1.7.4

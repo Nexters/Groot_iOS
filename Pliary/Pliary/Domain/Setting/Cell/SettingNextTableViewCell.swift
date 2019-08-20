@@ -10,6 +10,8 @@ import UIKit
 
 class SettingNextTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cellTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WateringPopupView" customModule="Pliary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBx-iX-0OB">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOY-Em-PsF">
+                            <rect key="frame" x="32" y="238" width="311" height="336"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WaterToPlant" translatesAutoresizingMaskIntoConstraints="NO" id="qOx-td-gYm">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="126"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="126" id="4nx-bQ-avt"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRK-4m-FDG">
+                                    <rect key="frame" x="272" y="15" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="LtG-I1-Jfl"/>
+                                        <constraint firstAttribute="height" constant="24" id="Py3-9d-vNY"/>
+                                    </constraints>
+                                    <state key="normal" image="BtnClose"/>
+                                    <connections>
+                                        <action selector="tapCloseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="m3m-Fk-5ry"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aui-cC-A6e">
+                                    <rect key="frame" x="0.0" y="126" width="311" height="210"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="qOx-td-gYm" firstAttribute="leading" secondItem="IOY-Em-PsF" secondAttribute="leading" id="B34-ux-fzg"/>
+                                <constraint firstAttribute="trailing" secondItem="PRK-4m-FDG" secondAttribute="trailing" constant="15" id="CnI-Fa-EWr"/>
+                                <constraint firstAttribute="trailing" secondItem="Aui-cC-A6e" secondAttribute="trailing" id="IWw-5D-nYm"/>
+                                <constraint firstAttribute="trailing" secondItem="qOx-td-gYm" secondAttribute="trailing" id="X7O-0P-usJ"/>
+                                <constraint firstAttribute="height" constant="336" id="YKB-2Q-5IG"/>
+                                <constraint firstAttribute="bottom" secondItem="Aui-cC-A6e" secondAttribute="bottom" id="aCB-Dt-oFO"/>
+                                <constraint firstItem="Aui-cC-A6e" firstAttribute="top" secondItem="qOx-td-gYm" secondAttribute="bottom" id="bUq-f1-J0D"/>
+                                <constraint firstItem="qOx-td-gYm" firstAttribute="top" secondItem="IOY-Em-PsF" secondAttribute="top" id="chT-1l-AUy"/>
+                                <constraint firstItem="Aui-cC-A6e" firstAttribute="leading" secondItem="IOY-Em-PsF" secondAttribute="leading" id="hHv-ec-yw7"/>
+                                <constraint firstItem="PRK-4m-FDG" firstAttribute="top" secondItem="IOY-Em-PsF" secondAttribute="top" constant="15" id="ru1-oi-v3c"/>
+                                <constraint firstAttribute="width" constant="311" id="thG-30-6yJ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.29999999999999999" alpha="0.46000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="IOY-Em-PsF" firstAttribute="centerY" secondItem="bBx-iX-0OB" secondAttribute="centerY" id="UW7-MD-9lt"/>
+                        <constraint firstItem="IOY-Em-PsF" firstAttribute="centerX" secondItem="bBx-iX-0OB" secondAttribute="centerX" id="hxg-bu-ArT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bBx-iX-0OB" secondAttribute="trailing" id="4Cw-QQ-2tW"/>
+                <constraint firstItem="bBx-iX-0OB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="62E-6U-XGW"/>
+                <constraint firstAttribute="bottom" secondItem="bBx-iX-0OB" secondAttribute="bottom" id="LbV-xD-pv3"/>
+                <constraint firstItem="bBx-iX-0OB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RLz-BA-IYU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backgroundView" destination="IOY-Em-PsF" id="dJN-cM-3lC"/>
+                <outlet property="customView" destination="Aui-cC-A6e" id="0ZX-NV-cDn"/>
+            </connections>
+            <point key="canvasLocation" x="136.23188405797103" y="6.6964285714285712"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BtnClose" width="24" height="24"/>
+        <image name="WaterToPlant" width="311" height="126"/>
+    </resources>
+</document>

@@ -11,62 +11,72 @@ import Hero
 
 class DetailViewController: UIViewController {
 
-    enum Section: String {
-        case diaryCard
-        case calendar
-    }
-    
-    @IBOutlet weak var writeDiaryButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    var diaryCards: [DiaryCard] = []
-    var diaryCardsCount: Int {
-        return 10
-//        return diaryCards.count + 2
-    }
-    var currentSection: Section = .diaryCard
+    var selectedPlant: Plant?
+    var animating: Bool = true
+    var headerView: DetailTableHeaderView?
+    var first = true
     
-    @IBAction func tapWriteDiaryButton(_ sender: Any) {
-        goDiaryViewController(with: nil)
+    var currentSection: Section = .diaryCard {
+        didSet {
+            guard oldValue != currentSection else {
+                return
+            }
+            
+            headerView?.currentSection = currentSection
+            for cell in tableView.visibleCells {
+                if let sectionCell = cell as? SectionTableViewCell {
+                    sectionCell.changeSection(to: currentSection, animated: true)
+                    return
+                }
+            }
+        }
     }
     
     func goDiaryViewController(with diaryCard: DiaryCard?) {
-        let storyboard = UIStoryboard.init(name: StoryboardName.diary, bundle: Bundle(for: DiaryViewController.self))
+        let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: nil)
+        
         guard let writeDiaryVC = storyboard.instantiateViewController(withIdentifier: DiaryViewController.identifier) as? DiaryViewController else {
-            return
+            return 
         }
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
+        writeDiaryVC.plant = selectedPlant
         
-        DispatchQueue.main.async {
-            self.present(writeDiaryVC, animated: true, completion: {
-                writeDiaryVC.hero.modalAnimationType = .pull(direction: .right)
-            })
+        if diaryCard != nil {
+            writeDiaryVC.currentMode = .showDiary
+            writeDiaryVC.currentDiaryCard = diaryCard
         }
+        
+        present(writeDiaryVC, animated: true, completion: nil)
     }
     
     func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let mainDetailName = MainDetailTableViewCell.reuseIdentifier
-        let mainDetailNib = UINib(nibName: mainDetailName, bundle: nil)
-        tableView.register(mainDetailNib, forCellReuseIdentifier: mainDetailName)
+        let mainDetailNib = UINib(nibName: MainDetailTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(mainDetailNib, forCellReuseIdentifier: MainDetailTableViewCell.reuseIdentifier)
         
-        let dayWithPlantName = DayWithPlantTableViewCell.reuseIdentifier
-        let dayWithPlantNib = UINib(nibName: dayWithPlantName, bundle: nil)
-        tableView.register(dayWithPlantNib, forCellReuseIdentifier: dayWithPlantName)
-        
-        let diaryCardWithAllName = DiaryCardWithAllTableViewCell.reuseIdentifier
-        let diaryCardWithAllNib = UINib(nibName: diaryCardWithAllName, bundle: nil)
-        tableView.register(diaryCardWithAllNib, forCellReuseIdentifier: diaryCardWithAllName)
+        let sectionNib = UINib(nibName: SectionTableViewCell.reuseIdentifier, bundle: nil)
+        tableView.register(sectionNib, forCellReuseIdentifier: SectionTableViewCell.reuseIdentifier)
     }
     
-    func setUpGesture() {
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
-        tableView.addGestureRecognizer(gesture)
-        gesture.delegate = self
+    func animatePlant(_ bool: Bool) {
+        for cell in tableView.visibleCells {
+            if let plantCell = cell as? MainDetailTableViewCell {
+                if bool {
+                    plantCell.animateImage()
+                    animating = true
+                } else {
+                    plantCell.stopImage()
+                    animating = false
+                }
+                return
+            }
+        }
     }
 }
 
@@ -75,128 +85,27 @@ extension DetailViewController {
         super.viewDidLoad()
         
         setUpTableView()
-        setUpGesture()
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         tableView.contentInset.top = -UIApplication.shared.statusBarFrame.size.height
     }
-}
-
-extension DetailViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
-        -> Bool {
-            return true
-    }
     
-    @objc func handlePan(gr: UIPanGestureRecognizer) {
-        guard tableView.contentOffset.y <= 20 else {
-            Hero.shared.cancel()
-            return
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
-        let translation = gr.translation(in: view)
-        let velocity = gr.velocity(in: view)
+        if first {
+            first = false
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
-        switch gr.state {
-        case .began:
-            dismiss(animated: true, completion: nil)
-        case .changed:
-            Hero.shared.update(translation.y / view.bounds.height)
-        default:
-            if ((translation.y + velocity.y) / view.bounds.height) > 0.5 {
-                Hero.shared.finish()
-            } else {
-                Hero.shared.cancel()
-            }
+        if !first {
+            tableView.reloadData()
         }
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < tableView.frame.height {
-            tableView.isPagingEnabled = true
-            tableView.bounces = false
-            writeDiaryButton.isHidden = true
-        } else if scrollView.contentOffset.y == tableView.frame.height {
-            tableView.isPagingEnabled = true
-            tableView.bounces = false
-            writeDiaryButton.isHidden = false
-        } else {
-            tableView.isPagingEnabled = false
-            tableView.bounces = true
-            writeDiaryButton.isHidden = false
-        }
-    }
-}
-
-extension DetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            return tableView.frame.height
-        } else if currentSection == .diaryCard, indexPath.row == 0 {
-            return DayWithPlantTableViewCell.height
-        } else {
-            return DiaryCardWithAllTableViewCell.height
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 0
-        } else {
-            return DetailTableHeaderView.height
-        }
-    }
-}
-
-extension DetailViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return diaryCardsCount
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            return nil
-        } else {
-            let headerView = DetailTableHeaderView.instance()
-            return headerView
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
-                return cell
-            }
-        } else if indexPath.row == 0 {
-            if currentSection == .diaryCard, let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
-                return cell
-            }
-        } else {
-            if currentSection == .diaryCard, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
-                return cell
-            }
-        }
-        
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            // resume animation
-        } else if currentSection == .diaryCard, indexPath.row != 0  {
-//            let diaryCard = DiaryCard[indexPath.row]
-            goDiaryViewController(with: nil)
-        }
-    }
-    
 }
