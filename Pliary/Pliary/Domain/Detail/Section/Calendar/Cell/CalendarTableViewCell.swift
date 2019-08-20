@@ -15,7 +15,13 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarView: UIView!
-        
+    
+    let plant = PlantType.monstera.getPlantInstance()
+    
+    var dates = [Date]()
+    var datesTodo = [Date]()
+    var dateList = [Int]()
+
     static func instance() -> CalendarTableViewCell {
         let view: CalendarTableViewCell = UIView.createViewFromNib(nibName: CalendarTableViewCell.identifier)
         return view
@@ -30,6 +36,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         
         setUpCalendar()
         loadDates()
+        loadDatesTodo()
     }
     
     fileprivate let gregorian = Calendar(identifier: .gregorian)
@@ -39,27 +46,27 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         formatter.dateFormat = "yyyy/MM/dd"
         return formatter
     }()
-    fileprivate let formatterForCell: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yy.MM.dd"
-        return formatter
-    }()
-    
-    
-    var dates = [Date]()
-    var datesTodo = [Date]()
-    
     
     private func loadDates() {
-        let date1 = Date(timeIntervalSince1970: 1564758000)
-        let date2 = Date(timeIntervalSince1970: 1565017200)
-        let date3 = Date(timeIntervalSince1970: 1565794800)
-        dates += [date1, date2, date3]
         
-        let date4 = Date(timeIntervalSince1970: 1566226800)
-        let date5 = Date(timeIntervalSince1970: 1566658800)
-        let date6 = Date(timeIntervalSince1970: 1567090800)
-        datesTodo += [date4, date5, date6]
+        dateList = [1564758000, 1565017200, 1565794800]
+        
+        for timestamp in dateList {
+            let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+            dates.append(date)
+        }
+    }
+    
+    private func loadDatesTodo() {
+        let interval = plant.wateringInterval * 86400 // 60 * 60 * 24
+        let lastDay : Int = dateList.last ?? 0 
+        var wateringDay : Int = lastDay
+        let twoMonthDay = lastDay + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
+        while wateringDay < twoMonthDay {
+            wateringDay += interval
+            let date = Date(timeIntervalSince1970: TimeInterval(wateringDay))
+            datesTodo.append(date)
+        }
     }
     
     func setUpCalendar(){
@@ -95,13 +102,6 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
 
         return self.gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
     }
-    
-//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        print("calendar did select date \(formatter.string(from: date))")
-//        if monthPosition == .previous || monthPosition == .next {
-//            calendar.setCurrentPage(date, animated: true)
-//        }
-//    }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(formatter.string(from: calendar.currentPage))")
