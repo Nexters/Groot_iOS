@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     var selectedPlant: Plant?
     var animating: Bool = true
     var headerView: DetailTableHeaderView?
-
+    
     var currentSection: Section = .diaryCard {
         didSet {
             headerView?.currentSection = currentSection
@@ -30,11 +30,17 @@ class DetailViewController: UIViewController {
     }
     
     func goDiaryViewController(with diaryCard: DiaryCard?) {
-        let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: Bundle(for: DiaryViewController.self))
+        let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: nil)
         
         guard let writeDiaryVC = storyboard.instantiateViewController(withIdentifier: DiaryViewController.identifier) as? DiaryViewController else {
             return 
         }
+        
+        if let p = pg {
+            pg?.delegate = nil
+            view.removeGestureRecognizer(p)
+        }
+        
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
@@ -58,10 +64,12 @@ class DetailViewController: UIViewController {
         tableView.register(sectionNib, forCellReuseIdentifier: SectionTableViewCell.reuseIdentifier)
     }
     
+    var pg: UIPanGestureRecognizer?
     func setUpGesture() {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gr:)))
-        tableView.addGestureRecognizer(gesture)
+        view.addGestureRecognizer(gesture)
         gesture.delegate = self
+        pg = gesture
     }
     
     func animatePlant(_ bool: Bool) {
@@ -85,7 +93,7 @@ extension DetailViewController {
         super.viewDidLoad()
         
         setUpTableView()
-        setUpGesture()
+//        setUpGesture()
     }
     
     override func viewDidLayoutSubviews() {

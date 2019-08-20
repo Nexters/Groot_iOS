@@ -88,30 +88,10 @@ class DiaryViewController: UIViewController {
         }
     }
     
-    private func makeDeleteMode() {
-        view.backgroundColor = .black
-        scrollView.backgroundColor = .black
-        navigationView.backgroundColor = .black
-        contentView.backgroundColor = .black
-        diaryImageView.image = diaryImageView.image?.convertToGrayScale()
-    }
-    
-    private func cancelDeleteMode() {
-        view.backgroundColor = .white
-        scrollView.backgroundColor = .white
-        navigationView.backgroundColor = .white
-        contentView.backgroundColor = .white
-        diaryImageView.image = currentDiaryCard?.diaryImage
-    }
-    
     private func showDeleteCardAlert() {
-        makeDeleteMode()
-        
         let alert = UIAlertController(title: "카드를 삭제하시겠습니까?", message: "", preferredStyle: .alert)
         
-        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: { _ in
-            self.cancelDeleteMode()
-        })
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
             self.hero.modalAnimationType = .pull(direction: .right)
@@ -252,8 +232,6 @@ extension DiaryViewController {
         reload()
         changeMode(currentMode)
         setTextView()
-        
-        // check
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -44,18 +44,4 @@ class UserProfileView: UIView {
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2.0
     }
     
-    func makeDeleteMode() {
-        makeRoundImage()
-        
-        let cameraImage = UIImage(named: ImageName.grayCameraButton)
-        userImage = profileImageView.image
-        profileImageView.image = profileImageView.image?.convertToGrayScale()
-        cameraButton.setImage(cameraImage, for: .normal)
-    }
-    
-    func clearDeleteMode() {
-        let cameraImage = UIImage(named: ImageName.profileCameraButton)
-        profileImageView.image = userImage
-        cameraButton.setImage(cameraImage, for: .normal)
-    }
 }

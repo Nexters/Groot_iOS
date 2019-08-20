@@ -89,27 +89,10 @@ class SettingViewController: UIViewController {
         present(signOutAlert, animated: true, completion: nil)
     }
     
-    private func makeDeleteMode() {
-        tableView.backgroundColor = .black
-        footerView.backgroundColor = .black
-        userProfileView?.makeDeleteMode()
-        plantNumLabel.textColor = Color.gray1
-    }
-    
-    private func clearDeleteMode() {
-        tableView.backgroundColor = .white
-        footerView.backgroundColor = .white
-        userProfileView?.clearDeleteMode()
-        plantNumLabel.textColor = Color.green
-    }
-    
     private func deleteAccount() {
-        makeDeleteMode()
         let deleteAccountAlert = UIAlertController(title: "탈퇴하시겠습니까?", message: "\n탈퇴 시 회원님의 계정에 저장된 모든 정보가 영구적으로 삭제되며, 다시는 복구할 수 없습니다.", preferredStyle: .alert)
         
-        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: { _ in
-            self.clearDeleteMode()
-        })
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         let deleteAccountAction = UIAlertAction(title: "탈퇴", style: .destructive) { _ in
             self.hero.modalAnimationType = .pull(direction: .right)
             self.dismiss(animated: true, completion: nil)
@@ -119,9 +102,7 @@ class SettingViewController: UIViewController {
         deleteAccountAlert.addAction(deleteAccountAction)
         deleteAccountAlert.view.tintColor = Color.gray1
         
-        present(deleteAccountAlert, animated: true, completion: {
-//            self.
-        })
+        present(deleteAccountAlert, animated: true, completion: nil)
     }
     
     func goChangePasswordVC() {
