@@ -183,6 +183,18 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             rows.append((RegisterPlantPeriodTableViewCell.identifier, .period))
             
             tableView.reloadData()
+            
+        case .setEnglishName(let name):
+            selectedPlant?.englishName = name
+            
+        case .setKoreanName(let name):
+            selectedPlant?.koreanName = name
+            
+        case .setNickName(let name):
+            selectedPlant?.nickName = name
+            
+        case .setPeriod(let interval):
+            selectedPlant?.wateringInterval = interval
         }
     }
     

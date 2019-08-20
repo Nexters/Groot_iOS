@@ -18,7 +18,6 @@ enum RegisterRowType {
     case period
 }
 
-
 protocol RegisterCell: class {
     func setUp(with plant: Plant, type: RegisterRowType)
 }
@@ -31,4 +30,8 @@ enum RegisterEvent {
     case selectPlant
     case selectDate(type: RegisterRowType)
     case plantSelected(plant: Plant)
+    case setEnglishName(name: String)
+    case setKoreanName(name: String?)
+    case setNickName(name: String?)
+    case setPeriod(interval: Int)
 }

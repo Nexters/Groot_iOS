@@ -11,7 +11,24 @@ import UIKit
 class RegisterPlantPeriodTableViewCell: UITableViewCell, RegisterCell {
     
     var type: RegisterRowType?
-    var plant: Plant?
+    var plant: Plant? {
+        didSet {
+            guard let plant = plant else {
+                return
+            }
+            
+            guard oldValue != plant else {
+                return
+            }
+            
+            if collectionView.contentSize.width != 0 {
+                let width = collectionView.frame.width / 5
+                collectionView.contentOffset.x = CGFloat(plant.wateringInterval - 1) * width
+            }
+        }
+    }
+    
+    weak var delegate: RegisterEventDelegate?
     private var gradient: CAGradientLayer?
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,6 +48,10 @@ class RegisterPlantPeriodTableViewCell: UITableViewCell, RegisterCell {
         self.type = type
         
         setGradientScript()
+        if collectionView.contentOffset.x == 0 {
+            let width = collectionView.frame.width / 5
+            collectionView.contentOffset.x = CGFloat(plant.wateringInterval - 1) * width
+        }
     }
     
     func setGradientScript() {
@@ -67,6 +88,9 @@ extension RegisterPlantPeriodTableViewCell: UICollectionViewDelegate, UICollecti
         let pageWidth = (itemCellSize.width)
         let itemIndex = (targetContentOffset.pointee.x) / pageWidth
         targetContentOffset.pointee.x = round(itemIndex) * pageWidth
+        
+        let interval = Int(round(itemIndex) + 1)
+        delegate?.registerEvent(event: .setPeriod(interval: interval))
     }
 }
 
