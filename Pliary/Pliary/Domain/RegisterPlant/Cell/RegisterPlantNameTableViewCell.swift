@@ -56,21 +56,40 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
             ()
         }
     }
+    
+    func checkEnglishName(_ name: String) {
+        // add check logic
+        delegate?.registerEvent(event: .setEnglishName(name: name))
+    }
+    
+    func checkKoreanName(_ name: String) {
+        // add check logic
+        delegate?.registerEvent(event: .setKoreanName(name: name))
+    }
+    
+    func checkCustomName(_ name: String) {
+        // add check logic
+        delegate?.registerEvent(event: .setNickName(name: name))
+    }
 }
 extension RegisterPlantNameTableViewCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
+        guard let type = self.type else { return false }
+        
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         
-        let type : RegisterRowType = self.type!
         switch type {
         case .englishName:
+            checkEnglishName(updatedText)
             return updatedText.count < 16
         case .koreanName:
+            checkKoreanName(updatedText)
             return updatedText.count < 11
         case .customName:
+            checkCustomName(updatedText)
             return updatedText.count < 6
         default:
             return updatedText.count < 11
