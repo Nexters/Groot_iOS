@@ -107,6 +107,7 @@ extension HomeViewController {
                 scrollView.layoutIfNeeded()
                 
                 self.animateCell(for: snapToIndex)
+                self.currentIndex = snapToIndex
             })
             
             slideViewLeadingConstraint.constant = CGFloat(snapToIndex) * slideViewWidthConstraint.constant
@@ -114,6 +115,7 @@ extension HomeViewController {
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             
+            currentIndex = indexOfMajorCell
             slideViewLeadingConstraint.constant = CGFloat(indexOfMajorCell) * slideViewWidthConstraint.constant
         }
     }

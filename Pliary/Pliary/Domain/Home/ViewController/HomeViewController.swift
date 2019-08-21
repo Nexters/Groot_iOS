@@ -26,6 +26,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     
     var indexOfCellBeforeDragging = 0
+    var currentIndex = 0
+    
     private var first: Bool = true
     private var toastView: BasicToastView?
     
@@ -34,6 +36,13 @@ class HomeViewController: UIViewController {
             if oldValue != plants {
                 collectionView.reloadData()
                 slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
+                slideViewLeadingConstraint.constant = CGFloat(currentIndex) * slideViewWidthConstraint.constant
+                
+                if oldValue.count < plants.count {
+                    loadToastView()
+                    collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+                    slideViewLeadingConstraint.constant = 0
+                }
             }
         }
     }
@@ -105,7 +114,7 @@ class HomeViewController: UIViewController {
     
     func loadToastView() {
         toastView?.alpha = 1.0
-        UIView.animate(withDuration: 3.0, delay: 0.01, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.01, options: .curveEaseOut, animations: {
             self.toastView?.alpha = 0.0
         })
     }
@@ -128,8 +137,6 @@ extension HomeViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        plants = Global.shared.plants
     }
     
     override func viewDidLayoutSubviews() {
@@ -138,6 +145,8 @@ extension HomeViewController {
         }
         
         super.viewDidLayoutSubviews()
+        
+        plants = Global.shared.plants
         
         configureCollectionViewLayoutItemSize()
         slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
@@ -150,6 +159,8 @@ extension HomeViewController {
             toastView.frame = CGRect(x: (view.bounds.width - toastView.bounds.width) / 2, y: view.bounds.height - 50, width: toastView.bounds.width, height: toastView.bounds.height)
             toastView.setUp(with: "식물이 성공적으로 등록되었습니다.")
             view.addSubview(toastView)
+            
+            toastView.alpha = 0.0
             self.toastView = toastView
         }
         
