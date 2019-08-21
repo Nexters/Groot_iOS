@@ -18,7 +18,8 @@
 		76BB50C022E74689007EF9D5 /* FirebaseAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
-		76D6FD07230C10F70012158A /* CalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D6FD06230C10F70012158A /* CalendarDelegate.swift */; };
+		76E45E5C230D5BD800C0045A /* BasicToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E5B230D5BD800C0045A /* BasicToastView.swift */; };
+		76E45E5E230D5BF100C0045A /* BasicToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E45E5D230D5BF100C0045A /* BasicToastView.xib */; };
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
 		CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09477522FDEC8200E7C8A8 /* Setting.storyboard */; };
 		CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */; };
@@ -137,7 +138,8 @@
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
 		76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WateringInfoTableViewCell.swift; sourceTree = "<group>"; };
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
-		76D6FD06230C10F70012158A /* CalendarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDelegate.swift; sourceTree = "<group>"; };
+		76E45E5B230D5BD800C0045A /* BasicToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicToastView.swift; sourceTree = "<group>"; };
+		76E45E5D230D5BF100C0045A /* BasicToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicToastView.xib; sourceTree = "<group>"; };
 		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
 		CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pliary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,8 @@
 			children = (
 				76889560230973BE00CE7F40 /* BasicPopupView.xib */,
 				7688955F230973BE00CE7F40 /* BasicPopupView.swift */,
+				76E45E5B230D5BD800C0045A /* BasicToastView.swift */,
+				76E45E5D230D5BF100C0045A /* BasicToastView.xib */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -635,7 +639,6 @@
 				CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */,
 				76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */,
 				76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */,
-				76D6FD06230C10F70012158A /* CalendarDelegate.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				CEE0E1A122FB041A00ED0C31 /* RegisterPlant.storyboard in Resources */,
 				763D972F22F1D58600E50F21 /* Login.storyboard in Resources */,
 				CE90E3FD230939F300096731 /* Plant.xcassets in Resources */,
+				76E45E5E230D5BF100C0045A /* BasicToastView.xib in Resources */,
 				CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */,
 				CE5F521622F1F7A500F2E777 /* Sample.xcassets in Resources */,
 				76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */,
@@ -874,6 +878,7 @@
 				76889561230973BE00CE7F40 /* BasicPopupView.swift in Sources */,
 				CE885A952307C735008DB1FB /* Global.swift in Sources */,
 				CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */,
+				76E45E5C230D5BD800C0045A /* BasicToastView.swift in Sources */,
 				CE5F522A22F1FF0100F2E777 /* Constant.swift in Sources */,
 				CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */,
 				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
@@ -897,7 +902,6 @@
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
 				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
 				CE90E407230955FD00096731 /* PlantEnum.swift in Sources */,
-				76D6FD07230C10F70012158A /* CalendarDelegate.swift in Sources */,
 				CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */,
 				CE8C83FB2305A1BA0083B3A9 /* PlantEventDelegate.swift in Sources */,
 				CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */,

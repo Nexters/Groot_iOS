@@ -101,6 +101,18 @@ class HomeViewController: UIViewController {
             //present(loginVC, animated: true, completion: nil)
         }
     }
+    
+    func loadToastView() {
+        let toastView = BasicToastView.instance()
+        toastView.frame = CGRect(x: (self.view.bounds.width - toastView.bounds.width) / 2, y: self.view.bounds.height - 50, width: toastView.bounds.width, height: toastView.bounds.height)
+        toastView.setUp(with: "식물이 성공적으로 등록되었습니다.")
+        view.addSubview(toastView)
+        UIView.animate(withDuration: 3.0, delay: 0.01, options: .curveEaseOut, animations: {
+            toastView.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastView.removeFromSuperview()
+        })
+    }
 }
 
 extension HomeViewController {
@@ -109,6 +121,7 @@ extension HomeViewController {
         
         setUpCollectionView()
         setUpSlideView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
