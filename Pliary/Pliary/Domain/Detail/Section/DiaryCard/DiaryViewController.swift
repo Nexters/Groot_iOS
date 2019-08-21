@@ -83,8 +83,17 @@ class DiaryViewController: UIViewController {
     }
     
     private func editCard() {
-        if let id = Global.shared.selectedPlant?.id, let card = currentDiaryCard {
-            
+        if let id = Global.shared.selectedPlant?.id, let currentCard = currentDiaryCard {
+            let array = Global.shared.diaryDict[id] ?? []
+            var newArray: [DiaryCard] = []
+            for card in array {
+                if card.timeStamp == currentCard.timeStamp {
+                    newArray.append(currentCard)
+                } else {
+                    newArray.append(card)
+                }
+            }
+            Global.shared.diaryDict[id] = newArray
         }
     }
     
@@ -263,6 +272,7 @@ extension DiaryViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         textViewHeightConstraint.constant = diaryTextView.contentSize.height + 10
         setScrollViewHeight()
     }
