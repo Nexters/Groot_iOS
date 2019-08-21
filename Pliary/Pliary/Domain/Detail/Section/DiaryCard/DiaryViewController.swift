@@ -33,7 +33,6 @@ class DiaryViewController: UIViewController {
     
     var currentMode: DiaryViewMode = .writeNewDiary
     var currentDiaryCard: DiaryCard?
-    var plant: Plant?
     
     @IBAction func tapBackButton(_ sender: Any) {
         hero.modalAnimationType = .pull(direction: .right)
@@ -73,7 +72,7 @@ class DiaryViewController: UIViewController {
     }
     
     private func saveCurrentCard() {
-        if let id = plant?.id, let card = currentDiaryCard {
+        if let id = Global.shared.selectedPlant?.id, let card = currentDiaryCard {
             if var array = Global.shared.diaryDict[id] {
                 array.append(card)
                 Global.shared.diaryDict[id] = array
@@ -84,7 +83,7 @@ class DiaryViewController: UIViewController {
     }
     
     private func editCard() {
-        if let id = plant?.id, let card = currentDiaryCard {
+        if let id = Global.shared.selectedPlant?.id, let card = currentDiaryCard {
             
         }
     }

@@ -12,7 +12,6 @@ class SectionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: DetailEventDelegate?
-    var plant: Plant?
     
     func changeSection(to section: Section, animated: Bool) {
         switch section {
@@ -69,7 +68,7 @@ extension SectionTableViewCell: UICollectionViewDataSource {
         
         if indexPath.item == 0, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiarySectionCollectionViewCell.identifier, for: indexPath) as? DiarySectionCollectionViewCell {
             
-            cell.setUp(with: plant)
+            cell.setUp()
             cell.tableView.reloadData()
             cell.delegate = self
             return cell

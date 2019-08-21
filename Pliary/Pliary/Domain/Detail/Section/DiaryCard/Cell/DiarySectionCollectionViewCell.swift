@@ -70,8 +70,8 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
         setTableView()
     }
     
-    func setUp(with plant: Plant?) {
-        if let id = plant?.id {
+    func setUp() {
+        if let id = Global.shared.selectedPlant?.id {
             diaryCards = Global.shared.diaryDict[id] ?? []
         }
     }

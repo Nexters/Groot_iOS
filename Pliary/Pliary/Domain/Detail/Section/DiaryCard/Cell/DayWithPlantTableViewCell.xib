@@ -66,6 +66,10 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="dayWithLabel" destination="axk-gM-06A" id="IyT-Iv-ByP"/>
+                <outlet property="dayWithPlantLabel" destination="yN1-kG-57h" id="h8P-Sx-Jb0"/>
+            </connections>
             <point key="canvasLocation" x="60.869565217391312" y="56.919642857142854"/>
         </tableViewCell>
     </objects>
