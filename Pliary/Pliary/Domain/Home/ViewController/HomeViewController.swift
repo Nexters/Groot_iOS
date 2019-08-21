@@ -122,7 +122,6 @@ extension HomeViewController {
         setUpCollectionView()
         setUpSlideView()
         
-        loadToastView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
