@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import Photos
 
 enum DiaryViewMode {
     case showDiary
@@ -41,11 +42,12 @@ class DiaryViewController: UIViewController {
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
         if diaryImageView.image == nil {
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.navigationBar.tintColor = .black
-            imagePickerController.sourceType = .photoLibrary
-            imagePickerController.delegate = self
-            present(imagePickerController, animated: true, completion: nil)
+            let storyboard = UIStoryboard.init(name: StoryboardName.selectPhoto, bundle: nil)
+            guard let photoVC = storyboard.instantiateViewController(withIdentifier: SelectPhotoViewController.identifier) as? SelectPhotoViewController else {
+                return
+            }
+            photoVC.delegate = self
+            present(photoVC, animated: true, completion: nil)
         } else {
             let image = UIImage(named: ImageName.plusButton)
             diaryImageView.image = nil
@@ -306,32 +308,12 @@ extension DiaryViewController {
     }
 }
 
-extension DiaryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            return
-        }
-        
-        diaryImageView.image = selectedImage
+extension DiaryViewController: SelectPhotoDelegate {
+    func photoSelected(_ photoAsset: PHAsset) {
+        diaryImageView.fetchImage(asset: photoAsset)
         let image = UIImage(named: ImageName.minusButton)
         addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         addOrSubtractImageView.image = image
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
     }
 }
 

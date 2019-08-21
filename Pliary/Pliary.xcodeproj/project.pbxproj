@@ -48,6 +48,13 @@
 		CE69262C22E2EC0E00264114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69262B22E2EC0E00264114 /* AppDelegate.swift */; };
 		CE69263322E2EC1000264114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE69263222E2EC1000264114 /* Assets.xcassets */; };
 		CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE69263422E2EC1000264114 /* LaunchScreen.storyboard */; };
+		CE8384BB230DA49C005B44E1 /* AsssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8384BA230DA49C005B44E1 /* AsssetManager.swift */; };
+		CE8384BD230DA4FB005B44E1 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8384BC230DA4FB005B44E1 /* UIImageView+Ext.swift */; };
+		CE8384BF230DA54D005B44E1 /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8384BE230DA54D005B44E1 /* SelectPhotoViewController.swift */; };
+		CE8384C1230DA56A005B44E1 /* SelectPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8384C0230DA56A005B44E1 /* SelectPhoto.storyboard */; };
+		CE8384C9230DA864005B44E1 /* SelectPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8384C7230DA864005B44E1 /* SelectPhotoCollectionViewCell.swift */; };
+		CE8384CA230DA864005B44E1 /* SelectPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8384C8230DA864005B44E1 /* SelectPhotoCollectionViewCell.xib */; };
+		CE8384CC230DB300005B44E1 /* SelectPhotoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8384CB230DB300005B44E1 /* SelectPhotoDelegate.swift */; };
 		CE885A912306DDF4008DB1FB /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */; };
 		CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */; };
 		CE885A952307C735008DB1FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A942307C735008DB1FB /* Global.swift */; };
@@ -172,6 +179,13 @@
 		CE69263222E2EC1000264114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE69263522E2EC1000264114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE69263722E2EC1000264114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8384BA230DA49C005B44E1 /* AsssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsssetManager.swift; sourceTree = "<group>"; };
+		CE8384BC230DA4FB005B44E1 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		CE8384BE230DA54D005B44E1 /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
+		CE8384C0230DA56A005B44E1 /* SelectPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPhoto.storyboard; sourceTree = "<group>"; };
+		CE8384C7230DA864005B44E1 /* SelectPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE8384C8230DA864005B44E1 /* SelectPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE8384CB230DB300005B44E1 /* SelectPhotoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoDelegate.swift; sourceTree = "<group>"; };
 		CE885A8F2306DDF4008DB1FB /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE885A942307C735008DB1FB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -292,6 +306,7 @@
 		CE09476322FC6A7000E7C8A8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CE8384B8230DA46B005B44E1 /* SelectPhoto */,
 				CE8C83F523059CAB0083B3A9 /* PopUp */,
 				CE09477422FDEC6D00E7C8A8 /* Setting */,
 				CE5F520F22F1F62A00F2E777 /* Login */,
@@ -358,18 +373,9 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CE5F520C22F1F48300F2E777 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		CE5F520F22F1F62A00F2E777 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CE5F520C22F1F48300F2E777 /* Manager */,
 				CE5F521022F1F64600F2E777 /* ViewController */,
 				763D972E22F1D58600E50F21 /* Login.storyboard */,
 				CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */,
@@ -429,6 +435,7 @@
 				CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */,
 				765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */,
 				CE90E4172309C01300096731 /* UIImage+Ext.swift */,
+				CE8384BC230DA4FB005B44E1 /* UIImageView+Ext.swift */,
 				CE5F522722F1FEF000F2E777 /* UICollectionViewCell+Ext.swift */,
 				CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */,
 				760DB41D22F6DED50035F22E /* UITextField+Ext.swift */,
@@ -481,6 +488,7 @@
 		CE69262A22E2EC0E00264114 /* Pliary */ = {
 			isa = PBXGroup;
 			children = (
+				CE8384B9230DA485005B44E1 /* Manager */,
 				CE09476322FC6A7000E7C8A8 /* Domain */,
 				CE5F522622F1FED000F2E777 /* Constant */,
 				CE5F522522F1FECC00F2E777 /* Extension */,
@@ -523,6 +531,35 @@
 				CE90E3FC230939F300096731 /* Plant.xcassets */,
 			);
 			path = Asset;
+			sourceTree = "<group>";
+		};
+		CE8384B8230DA46B005B44E1 /* SelectPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				CE8384C2230DA756005B44E1 /* Cell */,
+				CE8384C0230DA56A005B44E1 /* SelectPhoto.storyboard */,
+				CE8384BE230DA54D005B44E1 /* SelectPhotoViewController.swift */,
+				CE8384CB230DB300005B44E1 /* SelectPhotoDelegate.swift */,
+			);
+			path = SelectPhoto;
+			sourceTree = "<group>";
+		};
+		CE8384B9230DA485005B44E1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */,
+				CE8384BA230DA49C005B44E1 /* AsssetManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CE8384C2230DA756005B44E1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE8384C7230DA864005B44E1 /* SelectPhotoCollectionViewCell.swift */,
+				CE8384C8230DA864005B44E1 /* SelectPhotoCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CE885A8E2306DDDE008DB1FB /* Cell */ = {
@@ -731,9 +768,11 @@
 				CE09478222FE6EA600E7C8A8 /* SettingNextTableViewCell.xib in Resources */,
 				CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */,
 				CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */,
+				CE8384CA230DA864005B44E1 /* SelectPhotoCollectionViewCell.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
+				CE8384C1230DA56A005B44E1 /* SelectPhoto.storyboard in Resources */,
 				CE90E440230D84BC00096731 /* Watering.json in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
@@ -841,6 +880,7 @@
 			files = (
 				765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */,
 				CE885A9D2307DDD6008DB1FB /* API.swift in Sources */,
+				CE8384BD230DA4FB005B44E1 /* UIImageView+Ext.swift in Sources */,
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */,
@@ -869,6 +909,7 @@
 				CE885AEF2308CED7008DB1FB /* FindPasswordViewController.swift in Sources */,
 				CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */,
 				CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */,
+				CE8384BB230DA49C005B44E1 /* AsssetManager.swift in Sources */,
 				CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */,
 				76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */,
 				CE5F523B22F20AFF00F2E777 /* UITableViewCell+Ext.swift in Sources */,
@@ -883,6 +924,7 @@
 				CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */,
 				CE09478522FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift in Sources */,
 				CE90E40F23099E5700096731 /* DiaryCardWithImageTableViewCell.swift in Sources */,
+				CE8384CC230DB300005B44E1 /* SelectPhotoDelegate.swift in Sources */,
 				CE8C84012305A6190083B3A9 /* WateringDelayPopupSubview.swift in Sources */,
 				CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */,
 				CE09477822FDEC9E00E7C8A8 /* SettingViewController.swift in Sources */,
@@ -896,6 +938,7 @@
 				CE885AE2230873D1008DB1FB /* RegisterPlantImageTableViewCell.swift in Sources */,
 				CE90E43C230AF5E200096731 /* CameraEventDelegate.swift in Sources */,
 				CE90E4162309A2D800096731 /* TimeInterval+Ext.swift in Sources */,
+				CE8384BF230DA54D005B44E1 /* SelectPhotoViewController.swift in Sources */,
 				CE09477A22FE6C9300E7C8A8 /* UserProfileView.swift in Sources */,
 				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
 				CE885AF12308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift in Sources */,
@@ -907,6 +950,7 @@
 				CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,
+				CE8384C9230DA864005B44E1 /* SelectPhotoCollectionViewCell.swift in Sources */,
 				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,
 				CE8C841D230655B60083B3A9 /* DiarySectionCollectionViewCell.swift in Sources */,

@@ -18,6 +18,7 @@ struct StoryboardName {
     static let detail = "Detail"
     static let regiserPlant = "RegisterPlant"
     static let login = "Login"
+    static let selectPhoto = "SelectPhoto"
 }
 
 struct ImageName {
