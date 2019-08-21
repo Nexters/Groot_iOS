@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct DiaryCard {
+struct DiaryCard: Equatable {
     
     let timeStamp: Double
     var diaryText: String?

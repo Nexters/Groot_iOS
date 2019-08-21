@@ -38,10 +38,6 @@ class SectionTableViewCell: UITableViewCell {
         collectionView.register(calendarNib, forCellWithReuseIdentifier: CalendarSectionCollectionViewCell.identifier)
     }
     
-    func setUp() {
-        collectionView.reloadData()
-    }
-    
 }
 
 extension SectionTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -69,7 +65,6 @@ extension SectionTableViewCell: UICollectionViewDataSource {
         if indexPath.item == 0, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiarySectionCollectionViewCell.identifier, for: indexPath) as? DiarySectionCollectionViewCell {
             
             cell.setUp()
-            cell.tableView.reloadData()
             cell.delegate = self
             return cell
         } else if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarSectionCollectionViewCell.identifier, for: indexPath) as? CalendarSectionCollectionViewCell {

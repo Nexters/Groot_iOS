@@ -68,12 +68,22 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NotificationName.reloadDiaryCard, object: nil)
     }
     
     func setUp() {
         if let id = Global.shared.selectedPlant?.id {
             diaryCards = Global.shared.diaryDict[id] ?? []
         }
+    }
+    
+    @objc func reloadData() {
+        setUp()
+        tableView.reloadData()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NotificationName.reloadDiaryCard, object: nil)
     }
 
 }

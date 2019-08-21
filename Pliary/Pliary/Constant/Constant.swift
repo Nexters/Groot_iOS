@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct NotificationName {
+    static let reloadDiaryCard = Notification.Name.init("reloadDiaryCard")
+}
+
 struct StoryboardName {
     static let home = "Home"
     static let setting = "Setting"

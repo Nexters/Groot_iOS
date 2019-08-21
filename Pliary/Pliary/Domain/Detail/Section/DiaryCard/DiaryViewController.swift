@@ -97,6 +97,19 @@ class DiaryViewController: UIViewController {
         }
     }
     
+    private func deleteCard() {
+        if let id = Global.shared.selectedPlant?.id, let currentCard = currentDiaryCard {
+            let array = Global.shared.diaryDict[id] ?? []
+            var newArray: [DiaryCard] = []
+            for card in array {
+                if card.timeStamp != currentCard.timeStamp {
+                    newArray.append(card)
+                }
+            }
+            Global.shared.diaryDict[id] = newArray
+        }
+    }
+    
     private func changeMode(_ mode: DiaryViewMode) {
         currentMode = mode
         switch mode {
@@ -129,6 +142,7 @@ class DiaryViewController: UIViewController {
         let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            self.deleteCard()
             self.hero.modalAnimationType = .pull(direction: .right)
             self.dismiss(animated: true, completion: nil)
         }

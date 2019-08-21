@@ -16,7 +16,14 @@ class Global: NSObject {
     var plants: [Plant] = [PlantType.eucalyptus.getPlantInstance(), PlantType.elastica.getPlantInstance(), PlantType.sansevieria.getPlantInstance()]
     var selectedPlant: Plant?
     
-    var diaryDict: [String: [DiaryCard]] = [:]
+    var diaryDict: [String: [DiaryCard]] = [:] {
+        didSet {
+            if oldValue != diaryDict {
+                NotificationCenter.default.post(name: NotificationName.reloadDiaryCard, object: nil)
+            }
+        }
+    }
+    
     var recordDict: [String: [RecordCard]] = [:]
     
     func getAccessToken() {

@@ -148,11 +148,22 @@ extension DetailViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
     private func showDeleteCardAlert(_ diaryCard: DiaryCard) {
         let alert = UIAlertController(title: "카드를 삭제하시겠습니까?", message: "", preferredStyle: .alert)
         
         let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
-        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            if let id = Global.shared.selectedPlant?.id {
+                let array = Global.shared.diaryDict[id] ?? []
+                var newArray: [DiaryCard] = []
+                for card in array {
+                    if card.timeStamp != diaryCard.timeStamp {
+                        newArray.append(card)
+                    }
+                }
+                Global.shared.diaryDict[id] = newArray
+            }
         }
         
         alert.addAction(cancleAction)
