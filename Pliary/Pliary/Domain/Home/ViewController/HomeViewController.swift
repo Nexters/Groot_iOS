@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     
     var indexOfCellBeforeDragging = 0
     private var first: Bool = true
+    private var toastView: BasicToastView?
     
     var plants: [Plant] = [] {
         didSet {
@@ -103,14 +104,9 @@ class HomeViewController: UIViewController {
     }
     
     func loadToastView() {
-        let toastView = BasicToastView.instance()
-        toastView.frame = CGRect(x: (self.view.bounds.width - toastView.bounds.width) / 2, y: self.view.bounds.height - 50, width: toastView.bounds.width, height: toastView.bounds.height)
-        toastView.setUp(with: "식물이 성공적으로 등록되었습니다.")
-        view.addSubview(toastView)
+        toastView?.alpha = 1.0
         UIView.animate(withDuration: 3.0, delay: 0.01, options: .curveEaseOut, animations: {
-            toastView.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastView.removeFromSuperview()
+            self.toastView?.alpha = 0.0
         })
     }
 }
@@ -149,6 +145,12 @@ extension HomeViewController {
         if first {
             setFirstCellSize()
             first = false
+            
+            let toastView = BasicToastView.instance()
+            toastView.frame = CGRect(x: (view.bounds.width - toastView.bounds.width) / 2, y: view.bounds.height - 50, width: toastView.bounds.width, height: toastView.bounds.height)
+            toastView.setUp(with: "식물이 성공적으로 등록되었습니다.")
+            view.addSubview(toastView)
+            self.toastView = toastView
         }
         
     }

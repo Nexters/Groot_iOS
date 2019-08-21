@@ -264,8 +264,8 @@
 		76889563230973EB00CE7F40 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				76889560230973BE00CE7F40 /* BasicPopupView.xib */,
 				7688955F230973BE00CE7F40 /* BasicPopupView.swift */,
+				76889560230973BE00CE7F40 /* BasicPopupView.xib */,
 				76E45E5B230D5BD800C0045A /* BasicToastView.swift */,
 				76E45E5D230D5BF100C0045A /* BasicToastView.xib */,
 			);
