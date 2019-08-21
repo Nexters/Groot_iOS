@@ -15,9 +15,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarView: UIView!
-    
-    let plant = PlantType.monstera.getPlantInstance()
-    
+    var plant : Plant? = nil
+
     var dates = [Date]()
     var datesTodo = [Date]()
     var dateList = [Int]()
@@ -30,10 +29,9 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        
+
         calendar.delegate = self
         calendar.dataSource = self
-        
         setUpCalendar()
         loadDates()
         loadDatesTodo()
@@ -58,7 +56,9 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     }
     
     private func loadDatesTodo() {
-        let interval = plant.wateringInterval * 86400 // 60 * 60 * 24
+        
+        var plant = Global.shared.selectedPlant
+        let interval = plant!.wateringInterval * 86400 // 60 * 60 * 24
         let lastDay : Int = dateList.last ?? 0 
         var wateringDay : Int = lastDay
         let twoMonthDay = lastDay + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
