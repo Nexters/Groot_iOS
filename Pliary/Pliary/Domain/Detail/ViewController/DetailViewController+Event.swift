@@ -67,7 +67,6 @@ extension DetailViewController {
             guard let modifyVC = storyboard.instantiateViewController(withIdentifier: ModifyPlantViewController.identifier) as? ModifyPlantViewController else {
                 return
             }
-            modifyVC.plant = self.selectedPlant
             self.present(modifyVC, animated: true, completion: nil)
         })
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in

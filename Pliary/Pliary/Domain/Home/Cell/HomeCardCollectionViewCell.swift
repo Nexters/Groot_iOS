@@ -63,7 +63,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         }
         
         let imageName = plant.getPositiveImageName()
-        let appendPath = "/" + imageName.replacingOccurrences(of: "iOS", with: "And") + ".gif"
+        let appendPath = imageName + ".gif"
         let host = API.gifHost?.appendingPathComponent(appendPath)
         let placeHolder = UIImage(named: imageName)
         

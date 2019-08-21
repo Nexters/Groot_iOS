@@ -16,16 +16,30 @@ class ModifyPlantViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var textFieldBottomLineView: UIView!
 
-    
     private var gradient: CAGradientLayer?
-    var plant: Plant?
+    private var currentInterval: Int = Global.shared.selectedPlant?.wateringInterval ?? 1
     
     @IBAction func tabCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapCompleteButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        if let nickName = nicknameTextField.text, nickName.count <= 5, nickName.count > 0 {
+            Global.shared.selectedPlant?.nickName = nickName
+            Global.shared.selectedPlant?.wateringInterval = currentInterval
+            
+            var plants: [Plant] = []
+            for plant in Global.shared.plants {
+                if let selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
+                    plants.append(selectedPlant)
+                } else {
+                    plants.append(plant)
+                }
+            }
+            Global.shared.plants = plants
+            
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     func setGradientScript() {
@@ -53,7 +67,7 @@ extension ModifyPlantViewController {
         let numberNib = UINib(nibName: NumberCollectionViewCell.identifier, bundle: nil)
         collectionView.register(numberNib, forCellWithReuseIdentifier: NumberCollectionViewCell.identifier)
         
-        nicknameTextField.text = plant?.nickName
+        nicknameTextField.text = Global.shared.selectedPlant?.nickName
     }
     
     override func viewDidLayoutSubviews() {
@@ -80,6 +94,8 @@ extension ModifyPlantViewController: UICollectionViewDelegate, UICollectionViewD
         let pageWidth = (itemCellSize.width)
         let itemIndex = (targetContentOffset.pointee.x) / pageWidth
         targetContentOffset.pointee.x = round(itemIndex) * pageWidth
+        
+        currentInterval = Int(round(itemIndex) + 1)
     }
 }
 

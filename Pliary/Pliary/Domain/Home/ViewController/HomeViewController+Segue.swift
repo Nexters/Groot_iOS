@@ -90,8 +90,9 @@ extension HomeViewController: UICollectionViewDelegate {
         
         detailVC.hero.isEnabled = true
         detailVC.hero.modalAnimationType = .none
-        detailVC.selectedPlant = selectedCell.plant
         detailVC.view.hero.modifiers = [.cascade]
+        
+        Global.shared.selectedPlant = selectedCell.plant
         
         enableHero(view: detailVC.view, id: cellID)
         

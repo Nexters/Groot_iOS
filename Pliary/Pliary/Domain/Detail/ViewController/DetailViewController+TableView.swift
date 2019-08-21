@@ -68,16 +68,13 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 && indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: MainDetailTableViewCell.reuseIdentifier) as? MainDetailTableViewCell {
-                
-                cell.setUp(with: selectedPlant)
                 cell.delegate = self
-                
+                cell.setUp()
                 return cell
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.reuseIdentifier) as? SectionTableViewCell {
                 cell.delegate = self
-                cell.plant = selectedPlant
                 cell.setUp()
                 return cell
             }

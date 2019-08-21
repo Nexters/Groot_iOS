@@ -22,7 +22,6 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var tipLabel: UILabel!
     
     weak var delegate: DetailEventDelegate?
-    private var plant: Plant?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,7 +33,7 @@ class MainDetailTableViewCell: UITableViewCell {
     }
     
     @IBAction func tapMoreButton(_ sender: Any) {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
         
@@ -42,7 +41,7 @@ class MainDetailTableViewCell: UITableViewCell {
     }
     
     @IBAction func tapAddWaterButton(_ sender: Any) {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
         
@@ -53,21 +52,20 @@ class MainDetailTableViewCell: UITableViewCell {
         delegate?.detailEvent(event: .scrollToNextPage)
     }
     
-    func setUp(with plant: Plant?) {
-        self.plant = plant
-        englishNameLabel.text = plant?.englishName
-        koreanNameLabel.text = plant?.koreanName
-        customNameLabel.text = plant?.nickName
-        tipLabel.text = plant?.getTip()
+    func setUp() {
+        englishNameLabel.text = Global.shared.selectedPlant?.englishName
+        koreanNameLabel.text = Global.shared.selectedPlant?.koreanName
+        customNameLabel.text = Global.shared.selectedPlant?.nickName
+        tipLabel.text = Global.shared.selectedPlant?.getTip()
     }
     
     func animateImage() {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
         
         let imageName = plant.getPositiveImageName()
-        let appendPath = "/" + imageName.replacingOccurrences(of: "iOS", with: "And") + ".gif"
+        let appendPath = imageName + ".gif"
         let host = API.gifHost?.appendingPathComponent(appendPath)
         let placeHolder = UIImage(named: imageName)
         
@@ -77,7 +75,7 @@ class MainDetailTableViewCell: UITableViewCell {
     }
     
     func stopImage() {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
         
@@ -87,7 +85,7 @@ class MainDetailTableViewCell: UITableViewCell {
     }
     
     func makeDeleteMode() {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
         
