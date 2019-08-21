@@ -8,10 +8,12 @@
 
 import Foundation
 
-protocol HomeEventDelegate: class {
-    func homeEvent(_ plant: Plant, event: HomeEvent)
+protocol PlantEventDelegate: class {
+    func plantEvent(_ plant: Plant, event: PlantEvent)
 }
 
-enum HomeEvent {
+enum PlantEvent {
     case waterToPlant
+    case completeToWater
+    case modifyOrDeletePlant
 }

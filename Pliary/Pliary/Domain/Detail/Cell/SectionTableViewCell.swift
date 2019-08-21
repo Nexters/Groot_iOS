@@ -97,7 +97,7 @@ extension SectionTableViewCell: DetailEventDelegate {
         delegate?.detailEvent(event: event)
     }
     
-    func detailEvent(_ plant: Plant, event: DetailPlantEvent) {
+    func detailEvent(_ plant: Plant, event: PlantEvent) {
         delegate?.detailEvent(plant, event: event)
     }
     

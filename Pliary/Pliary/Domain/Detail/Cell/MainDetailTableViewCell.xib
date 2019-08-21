@@ -21,6 +21,13 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w84-eI-BEg" customClass="AnimatedImageView" customModule="Kingfisher">
                         <rect key="frame" x="0.0" y="0.0" width="391" height="438.5"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyE-ca-CWg" customClass="AnimationView" customModule="Lottie">
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="436.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Watering"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="멋쟁이 투투" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zus-a4-Oq7">
                         <rect key="frame" x="106" y="161" width="249" height="20"/>
                         <constraints>
@@ -133,6 +140,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="zus-a4-Oq7" secondAttribute="trailing" constant="36" id="37s-FB-EzU"/>
                     <constraint firstItem="IWN-ZV-whA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="113" id="6cT-Uc-8c3"/>
+                    <constraint firstItem="vyE-ca-CWg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6q4-En-g3X"/>
                     <constraint firstItem="c5C-Rb-Gb4" firstAttribute="leading" secondItem="GA0-EP-rL2" secondAttribute="trailing" constant="6" id="8IO-aG-teb"/>
                     <constraint firstItem="cZ2-AS-RkX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="8no-pS-OF0"/>
                     <constraint firstItem="bwl-hn-6Fg" firstAttribute="leading" secondItem="huv-Ga-LBY" secondAttribute="trailing" constant="9" id="9mc-6o-cVE"/>
@@ -142,8 +150,10 @@
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="Csu-Yb-Rux"/>
                     <constraint firstAttribute="trailing" secondItem="RJE-g4-op9" secondAttribute="trailing" constant="30" id="HXT-Qq-bVa"/>
                     <constraint firstAttribute="trailing" secondItem="mpd-Ze-Utk" secondAttribute="trailing" constant="36" id="K8X-bV-vrn"/>
+                    <constraint firstAttribute="bottom" secondItem="vyE-ca-CWg" secondAttribute="bottom" constant="178" id="MZB-k2-Bgv"/>
                     <constraint firstItem="IWN-ZV-whA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="PGI-IA-T2Q"/>
                     <constraint firstItem="GA0-EP-rL2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="QHH-hU-fhU"/>
+                    <constraint firstItem="vyE-ca-CWg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="R3M-qj-cRy"/>
                     <constraint firstItem="w84-eI-BEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RtN-rr-UTa"/>
                     <constraint firstAttribute="trailing" secondItem="cZ2-AS-RkX" secondAttribute="trailing" constant="30" id="bn7-6c-R8n"/>
                     <constraint firstItem="RJE-g4-op9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="125" id="dHV-5q-4ay"/>
@@ -152,6 +162,7 @@
                     <constraint firstItem="huv-Ga-LBY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="g0J-n8-QIG"/>
                     <constraint firstItem="zus-a4-Oq7" firstAttribute="leading" secondItem="bwl-hn-6Fg" secondAttribute="trailing" constant="9" id="isZ-OV-RR9"/>
                     <constraint firstItem="GA0-EP-rL2" firstAttribute="top" secondItem="w84-eI-BEg" secondAttribute="bottom" constant="28" id="iw2-nW-x68"/>
+                    <constraint firstAttribute="trailing" secondItem="vyE-ca-CWg" secondAttribute="trailing" id="k1y-lU-uIg"/>
                     <constraint firstAttribute="bottom" secondItem="w84-eI-BEg" secondAttribute="bottom" constant="176" id="l45-wL-VGy"/>
                     <constraint firstItem="ZYn-2j-Tak" firstAttribute="top" secondItem="c5C-Rb-Gb4" secondAttribute="bottom" constant="15" id="mOT-8A-gJ0"/>
                     <constraint firstItem="1ml-kM-a18" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ojn-wT-Iem"/>
@@ -173,6 +184,7 @@
                 <outlet property="nameSplitLabel" destination="bwl-hn-6Fg" id="jTh-1R-NSR"/>
                 <outlet property="plantView" destination="w84-eI-BEg" id="Vpg-mW-vAK"/>
                 <outlet property="tipLabel" destination="ZYn-2j-Tak" id="0fF-vf-QlF"/>
+                <outlet property="wateringAnimation" destination="vyE-ca-CWg" id="YeM-rq-pp8"/>
             </connections>
             <point key="canvasLocation" x="180.43478260869566" y="168.41517857142856"/>
         </tableViewCell>

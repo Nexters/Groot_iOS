@@ -19,7 +19,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var blackWaterImageView: UIImageView!
     @IBOutlet weak var wateringAnimation: AnimationView!
     
-    weak var delegate: HomeEventDelegate?
+    weak var delegate: PlantEventDelegate?
     var plant: Plant? {
         didSet {
             if oldValue != plant {
@@ -41,8 +41,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         guard let plant = plant else {
             return 
         }
-        
-        delegate?.homeEvent(plant, event: .waterToPlant)
+        delegate?.plantEvent(plant, event: .waterToPlant)
     }
     
     func waterToPlant() {

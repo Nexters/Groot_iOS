@@ -72,7 +72,7 @@
 		CE8C83EC2301954E0083B3A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */; };
 		CE8C83F723059D4E0083B3A9 /* WateringPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */; };
 		CE8C83F923059D590083B3A9 /* WateringPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83F823059D590083B3A9 /* WateringPopupView.xib */; };
-		CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */; };
+		CE8C83FB2305A1BA0083B3A9 /* PlantEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FA2305A1BA0083B3A9 /* PlantEventDelegate.swift */; };
 		CE8C83FD2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */; };
 		CE8C83FF2305A5E70083B3A9 /* WateringSelectPopupSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */; };
 		CE8C84012305A6190083B3A9 /* WateringDelayPopupSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */; };
@@ -91,7 +91,6 @@
 		CE8C84212306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */; };
 		CE8C84222306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */; };
 		CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */; };
-		CE90E3F72308FEC600096731 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3F62308FEC500096731 /* Watering.json */; };
 		CE90E3F92309287000096731 /* DatePickerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E3F82309287000096731 /* DatePickerPopupView.swift */; };
 		CE90E3FB2309290600096731 /* DatePickerPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FA2309290600096731 /* DatePickerPopupView.xib */; };
 		CE90E3FD230939F300096731 /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE90E3FC230939F300096731 /* Plant.xcassets */; };
@@ -109,6 +108,7 @@
 		CE90E43A230AF5BB00096731 /* SettingViewController+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */; };
 		CE90E43C230AF5E200096731 /* CameraEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */; };
 		CE90E43E230B013200096731 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE90E43D230B013200096731 /* GoogleService-Info.plist */; };
+		CE90E440230D84BC00096731 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90E43F230D84BC00096731 /* Watering.json */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -195,7 +195,7 @@
 		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
 		CE8C83F823059D590083B3A9 /* WateringPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringPopupView.xib; sourceTree = "<group>"; };
-		CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventDelegate.swift; sourceTree = "<group>"; };
+		CE8C83FA2305A1BA0083B3A9 /* PlantEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEventDelegate.swift; sourceTree = "<group>"; };
 		CE8C83FC2305A5DA0083B3A9 /* WateringSelectPopupSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSelectPopupSubview.swift; sourceTree = "<group>"; };
 		CE8C83FE2305A5E70083B3A9 /* WateringSelectPopupSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringSelectPopupSubview.xib; sourceTree = "<group>"; };
 		CE8C84002305A6190083B3A9 /* WateringDelayPopupSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringDelayPopupSubview.swift; sourceTree = "<group>"; };
@@ -214,7 +214,6 @@
 		CE8C841F2306998C0083B3A9 /* CalendarSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE8C84202306998C0083B3A9 /* CalendarSectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarSectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE8C84232306D3EA0083B3A9 /* ModifyPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyPlantViewController.swift; sourceTree = "<group>"; };
-		CE90E3F62308FEC500096731 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
 		CE90E3F82309287000096731 /* DatePickerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupView.swift; sourceTree = "<group>"; };
 		CE90E3FA2309290600096731 /* DatePickerPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopupView.xib; sourceTree = "<group>"; };
 		CE90E3FC230939F300096731 /* Plant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Plant.xcassets; sourceTree = "<group>"; };
@@ -232,6 +231,7 @@
 		CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingViewController+UIImage.swift"; sourceTree = "<group>"; };
 		CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraEventDelegate.swift; sourceTree = "<group>"; };
 		CE90E43D230B013200096731 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE90E43F230D84BC00096731 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 			children = (
 				CE5F521E22F1FC4C00F2E777 /* Cell */,
 				CE69263F22E2EC2700264114 /* ViewController */,
-				CE8C83FA2305A1BA0083B3A9 /* HomeEventDelegate.swift */,
+				CE8C83FA2305A1BA0083B3A9 /* PlantEventDelegate.swift */,
 				CE5F521722F1F7CF00F2E777 /* Home.storyboard */,
 			);
 			path = Home;
@@ -512,7 +512,7 @@
 		CE69264122E2EC3C00264114 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				CE90E3F62308FEC500096731 /* Watering.json */,
+				CE90E43F230D84BC00096731 /* Watering.json */,
 				CE885A9E23080A17008DB1FB /* LoginAnimation.gif */,
 				CE5F521522F1F7A500F2E777 /* Sample.xcassets */,
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
@@ -731,6 +731,7 @@
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
+				CE90E440230D84BC00096731 /* Watering.json in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */,
@@ -739,7 +740,6 @@
 				CE885AEB23087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib in Resources */,
 				CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */,
 				CE09477622FDEC8200E7C8A8 /* Setting.storyboard in Resources */,
-				CE90E3F72308FEC600096731 /* Watering.json in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
 				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
@@ -899,7 +899,7 @@
 				CE90E407230955FD00096731 /* PlantEnum.swift in Sources */,
 				76D6FD07230C10F70012158A /* CalendarDelegate.swift in Sources */,
 				CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */,
-				CE8C83FB2305A1BA0083B3A9 /* HomeEventDelegate.swift in Sources */,
+				CE8C83FB2305A1BA0083B3A9 /* PlantEventDelegate.swift in Sources */,
 				CE885AF32308CF0D008DB1FB /* ChangePasswordViewController.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
 				CE5F520922F1F45700F2E777 /* User.swift in Sources */,

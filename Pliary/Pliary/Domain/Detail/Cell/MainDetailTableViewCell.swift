@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Lottie
 
 class MainDetailTableViewCell: UITableViewCell {
 
@@ -20,12 +21,18 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nameSplitLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var wateringAnimation: AnimationView!
     
     weak var delegate: DetailEventDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        
+        wateringAnimation.center = center
+        wateringAnimation.contentMode = .scaleAspectFill
+        wateringAnimation.isUserInteractionEnabled = false
+        wateringAnimation.isHidden = true
     }
     
     @IBAction func tapCloseButton(_ sender: Any) {
@@ -57,6 +64,8 @@ class MainDetailTableViewCell: UITableViewCell {
         koreanNameLabel.text = Global.shared.selectedPlant?.koreanName
         customNameLabel.text = Global.shared.selectedPlant?.nickName
         tipLabel.text = Global.shared.selectedPlant?.getTip()
+        
+        wateringAnimation.isHidden = true
     }
     
     func animateImage() {
@@ -82,6 +91,13 @@ class MainDetailTableViewCell: UITableViewCell {
         let imageName = plant.getPositiveImageName()
         let placeHolder = UIImage(named: imageName)
         plantView.image = placeHolder
+    }
+    
+    func waterToPlant() {
+        wateringAnimation.isHidden = false
+        wateringAnimation.play(completion: { _ in
+            self.wateringAnimation.isHidden = true
+        })
     }
     
     func makeDeleteMode() {

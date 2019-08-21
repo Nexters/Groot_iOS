@@ -32,7 +32,7 @@ extension DetailViewController: DetailEventDelegate {
         }
     }
     
-    func detailEvent(_ plant: Plant, event: DetailPlantEvent) {
+    func detailEvent(_ plant: Plant, event: PlantEvent) {
         switch event {
         case .modifyOrDeletePlant:
             showModifyDeleteAlert()
@@ -40,7 +40,10 @@ extension DetailViewController: DetailEventDelegate {
             let waterPopup = WateringPopupView.instance(with: plant)
             waterPopup.frame = view.frame
             waterPopup.setSelectView()
+            waterPopup.delegate = self
             view.addSubview(waterPopup)
+        default:
+            ()
         }
     }
     
@@ -48,6 +51,23 @@ extension DetailViewController: DetailEventDelegate {
         switch event {
         case .modifyOrDeleteDiaryCard:
             showDeleteCardAlert(diaryCard)
+        }
+    }
+    
+}
+
+extension DetailViewController: PlantEventDelegate {
+    func plantEvent(_ plant: Plant, event: PlantEvent) {
+        switch event {
+        case .completeToWater:
+            tableView.visibleCells.forEach {
+                if let cell = $0 as? MainDetailTableViewCell {
+                    cell.waterToPlant()
+                    return
+                }
+            }
+        default:
+            ()
         }
     }
     

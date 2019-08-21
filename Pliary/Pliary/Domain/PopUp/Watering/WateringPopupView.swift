@@ -13,7 +13,7 @@ class WateringPopupView: UIView {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var customView: UIView!
     
-    weak var delegate: HomeEventDelegate?
+    weak var delegate: PlantEventDelegate?
     var plant: Plant?
     
     static func instance(with plant: Plant) -> WateringPopupView {
@@ -57,8 +57,13 @@ class WateringPopupView: UIView {
 
 extension WateringPopupView: WateringEventDelegate {
     func wateringEvent(event: WateringEvent) {
+        guard let plant = plant else {
+            return
+        }
+        
         switch event {
         case .waterThePlant:
+            delegate?.plantEvent(plant, event: .completeToWater)
             removeFromSuperview()
         case .convertViewToDelay:
             setDelayView()

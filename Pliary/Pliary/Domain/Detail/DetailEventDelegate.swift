@@ -10,13 +10,8 @@ import Foundation
 
 protocol DetailEventDelegate: class {
     func detailEvent(event: DetailLayoutEvent)
-    func detailEvent(_ plant: Plant, event: DetailPlantEvent)
+    func detailEvent(_ plant: Plant, event: PlantEvent)
     func detailEvent(_ diaryCard: DiaryCard, event: DetailDiaryCardEvent)
-}
-
-enum DetailPlantEvent {
-    case modifyOrDeletePlant
-    case waterToPlant
 }
 
 enum DetailLayoutEvent {

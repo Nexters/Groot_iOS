@@ -125,14 +125,26 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-extension HomeViewController: HomeEventDelegate {
-    func homeEvent(_ plant: Plant, event: HomeEvent) {
+extension HomeViewController: PlantEventDelegate {
+    func plantEvent(_ plant: Plant, event: PlantEvent) {
         switch event {
         case .waterToPlant:
             let waterPopup = WateringPopupView.instance(with: plant)
             waterPopup.frame = view.frame
             waterPopup.setSelectView()
+            waterPopup.delegate = self
             view.addSubview(waterPopup)
+            
+        case .completeToWater:
+            collectionView.visibleCells.forEach {
+                if let cell = $0 as? HomeCardCollectionViewCell, cell.plant?.id == plant.id {
+                    cell.waterToPlant()
+                    return
+                }
+            }
+        
+        default:
+            ()
         }
     }
 }
