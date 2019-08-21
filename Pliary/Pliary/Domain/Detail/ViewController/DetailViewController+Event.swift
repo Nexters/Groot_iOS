@@ -109,17 +109,16 @@ extension DetailViewController {
             self.clearDeleteMode()
         })
         let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
-            self.dismiss(animated: true, completion: {
-                var plants: [Plant] = []
-                for plant in Global.shared.plants {
-                    if let selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
-                        Global.shared.selectedPlant = nil
-                    } else {
-                        plants.append(plant)
-                    }
+            var plants: [Plant] = []
+            for plant in Global.shared.plants {
+                if let selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
+                    Global.shared.selectedPlant = nil
+                } else {
+                    plants.append(plant)
                 }
-                Global.shared.plants = plants
-            })
+            }
+            Global.shared.plants = plants
+            self.dismiss(animated: true, completion: nil)
         }
         
         alert.addAction(cancleAction)
