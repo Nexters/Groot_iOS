@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="sFL-Ir-VQY">
             <objects>
-                <viewController id="bM5-VK-brj" customClass="HomeViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="bM5-VK-brj" customClass="HomeViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EIS-zC-1kl"/>
                         <viewControllerLayoutGuide type="bottom" id="vvj-HE-ME1"/>

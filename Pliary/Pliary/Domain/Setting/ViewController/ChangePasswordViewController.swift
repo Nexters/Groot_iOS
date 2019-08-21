@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import Firebase
 
 class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
@@ -48,11 +49,21 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         guard let password = currentPWTextField.text else { return }
         guard let newPassword = newPWTextField.text else { return }
         
-        let isCurrentPW : Bool = true
-        if isCurrentPW {
-            wrongPWPopupLoad()
-        } else {
-            completePopupLoad()
+        if let email = Auth.auth().currentUser?.email {
+            
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                guard let error = AuthErrorCode(rawValue: (error?._code)!) else {
+                    // Successfully login!
+                    Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+                        self.completePopupLoad()
+                        return
+                    }
+                }
+                // Error!
+                let manager :FirebaseAuthenticationManager = FirebaseAuthenticationManager.shared
+                manager.firebaseErrorHandle(code: error)
+                self.wrongPWPopupLoad()
+            }
         }
     }
     

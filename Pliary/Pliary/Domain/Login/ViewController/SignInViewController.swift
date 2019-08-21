@@ -26,10 +26,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        
+        do {
+            try Auth.auth().useUserAccessGroup("groot.nexters.pliary.Pliary")
+        } catch let error as NSError {
+            print("Error changing user access group: %@", error)
+        }
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             guard let error = AuthErrorCode(rawValue: (error?._code)!) else {
                 // Successfully login!
+                Global.shared.user?.email = Auth.auth().currentUser?.email ?? ""
+                
+                let storyboard = UIStoryboard.init(name: StoryboardName.home, bundle: nil)
+                guard storyboard.instantiateViewController(withIdentifier: HomeViewController.identifier) is HomeViewController else {
+                    return
+                }
                 return
             }
             // Error!
@@ -93,7 +103,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func updateLoginButtonState() {
         let email : String = emailTextField.text ?? ""
         let password : String = passwordTextField.text ?? ""
-        
+        loginButton.setTitleColor(UIColor.white, for: .normal)
+        loginButton.backgroundColor = Color.green
+        loginButton.layer.applySketchShadow(color: UIColor(red: 105.0/255.0, green: 146.0/255.0, blue: 117.0/255.0, alpha: 0.4), alpha: 0.4, x: 0, y: 10, blur: 14, spread: 0)
+        loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.isEnabled = true
     }
     
