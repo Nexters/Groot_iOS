@@ -58,6 +58,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
                         self.completePopupLoad()
                         return
                     }
+                    return
                 }
                 // Error!
                 let manager :FirebaseAuthenticationManager = FirebaseAuthenticationManager.shared
