@@ -64,6 +64,15 @@ extension WateringPopupView: WateringEventDelegate {
         switch event {
         case .waterThePlant:
             delegate?.plantEvent(plant, event: .completeToWater)
+            for var wateringPlant in Global.shared.plants {
+                var plants: [Plant] = []
+                if wateringPlant.id == plant.id {
+                    wateringPlant.water()
+                    plants.append(wateringPlant)
+                } else {
+                    plants.append(wateringPlant)
+                }
+            }
             removeFromSuperview()
         case .convertViewToDelay:
             setDelayView()
@@ -76,6 +85,7 @@ extension WateringPopupView: WateringEventDelegate {
                 } else {
                     plants.append(delayingPlant)
                 }
+                
             }
             removeFromSuperview()
         }
