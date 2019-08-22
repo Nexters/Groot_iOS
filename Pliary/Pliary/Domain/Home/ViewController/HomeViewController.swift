@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
                 
                 if oldValue.count < plants.count {
                     loadToastView()
+                    collectionView.scrollToItem(at: IndexPath(item: plants.count, section: 0), at: .centeredHorizontally, animated: false)
                     collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
                     slideViewLeadingConstraint.constant = 0
                 }
@@ -101,16 +102,16 @@ class HomeViewController: UIViewController {
         collectionView.layoutIfNeeded()
     }
     
-    func checkLogin() {
-        if Global.shared.user == nil {
-            let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: nil)
-            guard let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
-                return
-            }
-            
-            //present(loginVC, animated: true, completion: nil)
-        }
-    }
+//    func checkLogin() {
+//        if Global.shared.user == nil {
+//            let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: nil)
+//            guard let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
+//                return
+//            }
+//
+//            //present(loginVC, animated: true, completion: nil)
+//        }
+//    }
     
     func loadToastView() {
         toastView?.alpha = 1.0
@@ -126,13 +127,8 @@ extension HomeViewController {
         
         setUpCollectionView()
         setUpSlideView()
+        profileImageButton.isHidden = true
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        checkLogin()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,6 +158,8 @@ extension HomeViewController {
             
             toastView.alpha = 0.0
             self.toastView = toastView
+            
+            animateCell()
         }
         
     }

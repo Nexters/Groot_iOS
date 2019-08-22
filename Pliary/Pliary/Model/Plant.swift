@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Plant: Equatable {
+struct Plant: Equatable, Codable {
     let id: String
     var type: PlantType
     var englishName: String
@@ -17,6 +17,17 @@ struct Plant: Equatable {
     var wateringInterval: Int
     var firstDate: TimeInterval
     var lastWaterDate: TimeInterval
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case type
+        case englishName
+        case koreanName
+        case nickName
+        case wateringInterval
+        case firstDate
+        case lastWaterDate
+    }
     
     init(type: PlantType, englishName: String, koreanName: String?, nickName: String, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval) {
         id = UUID().uuidString
@@ -27,6 +38,30 @@ struct Plant: Equatable {
         self.wateringInterval = wateringInterval
         self.firstDate = firstDate
         self.lastWaterDate = lastWaterDate
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(String.self, forKey: .id)
+        type = try values.decode(PlantType.self, forKey: .type)
+        englishName = try values.decode(String.self, forKey: .englishName)
+        koreanName = try values.decodeIfPresent(String.self, forKey: .koreanName)
+        nickName = try values.decode(String.self, forKey: .nickName)
+        wateringInterval = try values.decode(Int.self, forKey: .wateringInterval)
+        firstDate = try values.decode(TimeInterval.self, forKey: .firstDate)
+        lastWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(type, forKey: .type)
+        try container.encode(englishName, forKey: .englishName)
+        try container.encodeIfPresent(koreanName, forKey: .koreanName)
+        try container.encode(nickName, forKey: .nickName)
+        try container.encode(wateringInterval, forKey: .wateringInterval)
+        try container.encode(firstDate, forKey: .firstDate)
+        try container.encode(lastWaterDate, forKey: .lastWaterDate)
     }
     
     func getTip() -> String {
