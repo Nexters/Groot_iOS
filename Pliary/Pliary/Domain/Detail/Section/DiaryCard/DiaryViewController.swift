@@ -62,22 +62,20 @@ class DiaryViewController: UIViewController {
     @IBAction func tapRightNavigationButton(_ sender: Any) {
         switch currentMode {
         case .writeNewDiary:
-            var imageURL: String? = nil
-            if let image = diaryImageView.image, let identifier = selectedImage?.localIdentifier {
-                let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
-                imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+            if diaryTextView.text == "" && diaryImageView.image == nil {
+                showEmptyCardAlert()
+                return
             }
-            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, imageURL: imageURL)
+            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, imageURL: getCurrentImageURL())
             currentDiaryCard = card
             changeMode(.showDiary)
             saveCurrentCard()
         case .editDiary:
-            var imageURL: String? = nil
-            if let image = diaryImageView.image, let identifier = selectedImage?.localIdentifier {
-                let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
-                imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+            if diaryTextView.text == "" && diaryImageView.image == nil {
+                showEmptyCardAlert()
+                return
             }
-            currentDiaryCard?.imageURL = imageURL
+            currentDiaryCard?.imageURL = getCurrentImageURL()
             currentDiaryCard?.diaryText = diaryTextView.text
             changeMode(.showDiary)
             editCard()
@@ -86,10 +84,30 @@ class DiaryViewController: UIViewController {
         }
     }
     
+    private func showEmptyCardAlert() {
+        let alert = UIAlertController(title: "카드의 내용을 채워주세요!", message: "", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        alert.view.tintColor = Color.gray1
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func getCurrentImageURL() -> String? {
+        var imageURL: String? = nil
+        if let image = diaryImageView.image, let identifier = selectedImage?.localIdentifier {
+            let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
+            imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+        }
+        return imageURL
+    }
+    
     private func saveCurrentCard() {
         if let id = Global.shared.selectedPlant?.id, let card = currentDiaryCard {
             if var array = Global.shared.diaryDict[id] {
-                array.append(card)
+                array.insert(card, at: 0)
                 Global.shared.diaryDict[id] = array
             } else {
                 Global.shared.diaryDict[id] = [card]
