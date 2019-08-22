@@ -12,6 +12,7 @@ import Lottie
 
 class HomeCardCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var plantView: AnimatedImageView!
     @IBOutlet weak var addWaterButton: UIButton!
@@ -54,6 +55,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     func setUp(with plant: Plant) {
         self.plant = plant
         wateringAnimation.isHidden = true
+        nicknameLabel.text = plant.nickName + "에게 물주기"
     }
     
     func animateImage() {

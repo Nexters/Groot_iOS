@@ -102,6 +102,7 @@
                 <outlet property="addWaterButton" destination="C8G-aF-bnu" id="nEp-Ho-eNh"/>
                 <outlet property="blackWaterImageView" destination="Do7-gx-DY5" id="CsE-bV-Exk"/>
                 <outlet property="dayLeftLabel" destination="Y56-rp-PYB" id="KlA-kM-obs"/>
+                <outlet property="nicknameLabel" destination="yIw-u8-uUj" id="wIX-Q4-OGo"/>
                 <outlet property="plantView" destination="cbw-pq-0tM" id="N1E-bB-GyE"/>
                 <outlet property="topLayoutConstraint" destination="xuV-ff-e7j" id="Ea2-hO-GvA"/>
                 <outlet property="wateringAnimation" destination="oAB-gW-LbQ" id="ecu-GW-Y99"/>

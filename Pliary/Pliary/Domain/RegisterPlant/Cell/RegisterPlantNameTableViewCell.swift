@@ -94,28 +94,6 @@ extension RegisterPlantNameTableViewCell: UITextFieldDelegate {
         }
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        let currentText = textField.text ?? ""
-//        guard let stringRange = Range(range, in: currentText) else { return false }
-//        guard let type = self.type else { return false }
-//
-//        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-//
-//        switch type {
-//        case .englishName:
-//            checkEnglishName(updatedText)
-//            return updatedText.count < 16
-//        case .koreanName:
-//            checkKoreanName(updatedText)
-//            return updatedText.count < 11
-//        case .customName:
-//            checkCustomName(updatedText)
-//            return updatedText.count < 6
-//        default:
-//            return false
-//        }
-//    }
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textFieldBottomLineView.backgroundColor = Color.green
     }

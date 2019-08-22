@@ -25,10 +25,10 @@ enum PlantType: String, Codable {
             let plant = Plant(type: .stuki, englishName: PlantEnglishName.stuki.rawValue, koreanName: PlantKoreanName.stuki.rawValue, nickName: "", wateringInterval: 30, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
             return plant
         case .eucalyptus:
-            let plant = Plant(type: .eucalyptus, englishName: PlantEnglishName.eucalyptus.rawValue, koreanName: PlantKoreanName.eucalyptus.rawValue, nickName: "투투", wateringInterval: 4, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
+            let plant = Plant(type: .eucalyptus, englishName: PlantEnglishName.eucalyptus.rawValue, koreanName: PlantKoreanName.eucalyptus.rawValue, nickName: "", wateringInterval: 4, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
             return plant
         case .sansevieria:
-            let plant = Plant(type: .sansevieria, englishName: PlantEnglishName.sansevieria.rawValue, koreanName: PlantKoreanName.sansevieria.rawValue, nickName: "베리", wateringInterval: 30, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
+            let plant = Plant(type: .sansevieria, englishName: PlantEnglishName.sansevieria.rawValue, koreanName: PlantKoreanName.sansevieria.rawValue, nickName: "", wateringInterval: 30, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
             return plant
         case .monstera:
             let plant = Plant(type: .monstera, englishName: PlantEnglishName.monstera.rawValue, koreanName: PlantKoreanName.monstera.rawValue, nickName: "", wateringInterval: 5, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
@@ -37,7 +37,7 @@ enum PlantType: String, Codable {
             let plant = Plant(type: .parlourPalm, englishName: PlantEnglishName.parlourPalm.rawValue, koreanName: PlantKoreanName.parlourPalm.rawValue, nickName: "", wateringInterval: 7, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
             return plant
         case .elastica:
-            let plant = Plant(type: .elastica, englishName: PlantEnglishName.elastica.rawValue, koreanName: PlantKoreanName.elastica.rawValue, nickName: "티카", wateringInterval: 7, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
+            let plant = Plant(type: .elastica, englishName: PlantEnglishName.elastica.rawValue, koreanName: PlantKoreanName.elastica.rawValue, nickName: "", wateringInterval: 7, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
             return plant
         case .travelersPalm:
             let plant = Plant(type: .travelersPalm, englishName: PlantEnglishName.travelersPalm.rawValue, koreanName: PlantKoreanName.travelersPalm.rawValue, nickName: "", wateringInterval: 10, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)

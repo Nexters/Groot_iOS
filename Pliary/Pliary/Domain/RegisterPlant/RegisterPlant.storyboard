@@ -166,6 +166,7 @@
                     <connections>
                         <outlet property="collectionView" destination="vWc-Iq-p8L" id="9yT-Lj-sMj"/>
                         <outlet property="completeButton" destination="pMO-mE-Dtx" id="xfn-rp-Fh5"/>
+                        <outlet property="helpLabel" destination="hyX-DS-0i3" id="UTX-Er-TUj"/>
                         <outlet property="maskView" destination="fsR-zK-YBE" id="Pce-R4-B53"/>
                         <outlet property="nicknameTextField" destination="Hf7-ni-qXn" id="A6z-P7-xQa"/>
                         <outlet property="textFieldBottomLineView" destination="VCR-jU-eJH" id="ubP-sc-7t1"/>

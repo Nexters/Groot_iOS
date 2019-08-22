@@ -10,6 +10,7 @@ import UIKit
 
 class ModifyPlantViewController: UIViewController {
     
+    @IBOutlet weak var helpLabel: UILabel!
     @IBOutlet weak var maskView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nicknameTextField: UITextField!
@@ -60,6 +61,7 @@ extension ModifyPlantViewController {
         completeButton.layer.cornerRadius = 6
         
         nicknameTextField.delegate = self
+        nicknameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -72,7 +74,10 @@ extension ModifyPlantViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         setGradientScript()
+        let width = collectionView.frame.width / 5
+        collectionView.contentOffset.x = CGFloat(currentInterval - 1) * width
     }
 }
 
@@ -123,15 +128,33 @@ extension ModifyPlantViewController: UICollectionViewDataSource {
 
 extension ModifyPlantViewController: UITextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentText = textField.text ?? ""
-        guard let stringRange = Range(range, in: currentText) else { return false }
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            return updatedText.count < 6
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let textCount = textField.text?.count else {
+            helpLabel.textColor = Color.pink
+            
+            return
+        }
+        if textCount > 0 && textCount < 6 {
+            helpLabel.textColor = Color.gray4
+            completeButton.isEnabled = true
+            completeButton.backgroundColor = Color.green
+            completeButton.setTitleColor(.white, for: .normal)
+        } else {
+            helpLabel.textColor = Color.pink
+            completeButton.isEnabled = false
+            completeButton.backgroundColor = Color.gray7
+            completeButton.setTitleColor(Color.gray5, for: .normal)
+        }
     }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textFieldBottomLineView.backgroundColor = Color.green
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textFieldBottomLineView.backgroundColor = Color.gray7
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
     }
