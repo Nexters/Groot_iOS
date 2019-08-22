@@ -25,6 +25,7 @@ class Global: NSObject {
     var diaryDict: [String: [DiaryCard]] = [:] {
         didSet {
             if oldValue != diaryDict {
+                saveDiaryCards()
                 NotificationCenter.default.post(name: NotificationName.reloadDiaryCard, object: nil)
             }
         }
@@ -40,9 +41,20 @@ class Global: NSObject {
                 continue
             }
             dict[plant.id] = data
-            print(dict.values.count)
         }
         AssetManager.save(data: dict, for: AssetKey.plants.rawValue)
+    }
+    
+    func saveDiaryCards() {
+        let encoder = JSONEncoder()
+        var dict: [String: Any] = [:]
+        for key in diaryDict.keys {
+            guard let data = try? encoder.encode(diaryDict[key]) else {
+                continue
+            }
+            dict[key] = data
+        }
+        AssetManager.save(data: dict, for: AssetKey.diaryCard.rawValue)
     }
     
     func loadCurrentPlants() {
@@ -58,8 +70,22 @@ class Global: NSObject {
         plants = plantArray
     }
     
+    func loadDiaryCards() {
+        let decoder = JSONDecoder()
+        let dict = AssetManager.getDictData(for: AssetKey.diaryCard.rawValue)
+        var newDict: [String: [DiaryCard]] = [:]
+        for key in dict.keys {
+            let value = dict[key]
+            if let data = value as? Data, let card = try? decoder.decode([DiaryCard].self, from: data) {
+                newDict[key] = card
+            }
+        }
+        diaryDict = newDict
+    }
+    
     override init() {
         super.init()
         loadCurrentPlants()
+        loadDiaryCards()
     }
 }

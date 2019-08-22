@@ -9,7 +9,7 @@
 import Foundation
 import Photos
 
-struct DiaryCard: Equatable {
+struct DiaryCard: Equatable, Codable {
     
     let timeStamp: Double
     var diaryText: String?
