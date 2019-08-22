@@ -90,9 +90,9 @@
 		CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */; };
 		CE90E4162309A2D800096731 /* TimeInterval+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */; };
 		CE90E4182309C01300096731 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90E4172309C01300096731 /* UIImage+Ext.swift */; };
-		CE90E440230D84BC00096731 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90E43F230D84BC00096731 /* Watering.json */; };
 		CEA3D196230F0560004AB7F6 /* BasicToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E45E5D230D5BF100C0045A /* BasicToastView.xib */; };
 		CEA3D197230F0563004AB7F6 /* BasicToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E5B230D5BD800C0045A /* BasicToastView.swift */; };
+		CEA3D19A230F170B004AB7F6 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D199230F170B004AB7F6 /* Watering.json */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -221,7 +221,7 @@
 		CE90E4172309C01300096731 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingViewController+UIImage.swift"; sourceTree = "<group>"; };
 		CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraEventDelegate.swift; sourceTree = "<group>"; };
-		CE90E43F230D84BC00096731 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
+		CEA3D199230F170B004AB7F6 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -493,7 +493,7 @@
 		CE69264122E2EC3C00264114 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				CE90E43F230D84BC00096731 /* Watering.json */,
+				CEA3D199230F170B004AB7F6 /* Watering.json */,
 				CE885A9E23080A17008DB1FB /* LoginAnimation.gif */,
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
 				CE90E3FC230939F300096731 /* Plant.xcassets */,
@@ -755,10 +755,10 @@
 				CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */,
 				CE8384CA230DA864005B44E1 /* SelectPhotoCollectionViewCell.xib in Resources */,
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
+				CEA3D19A230F170B004AB7F6 /* Watering.json in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
 				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
 				CE8384C1230DA56A005B44E1 /* SelectPhoto.storyboard in Resources */,
-				CE90E440230D84BC00096731 /* Watering.json in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
 				CE5F523022F2085200F2E777 /* Detail.storyboard in Resources */,
 				CE90E4142309A04B00096731 /* DiaryCardWithTextTableViewCell.xib in Resources */,
