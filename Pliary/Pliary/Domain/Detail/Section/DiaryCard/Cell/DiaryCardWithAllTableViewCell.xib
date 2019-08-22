@@ -38,6 +38,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SampleDiary" translatesAutoresizingMaskIntoConstraints="NO" id="9QG-32-kuZ">
                                 <rect key="frame" x="14" y="14" width="386" height="189"/>
+                                <color key="backgroundColor" red="0.97255557780000002" green="0.97253733870000003" blue="0.97254973649999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="189" id="YUI-SN-ysK"/>
                                 </constraints>

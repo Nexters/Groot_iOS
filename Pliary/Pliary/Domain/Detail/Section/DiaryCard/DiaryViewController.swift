@@ -34,6 +34,7 @@ class DiaryViewController: UIViewController {
     
     var currentMode: DiaryViewMode = .writeNewDiary
     var currentDiaryCard: DiaryCard?
+    var selectedImage: PHAsset?
     
     @IBAction func tapBackButton(_ sender: Any) {
         hero.modalAnimationType = .pull(direction: .right)
@@ -51,6 +52,7 @@ class DiaryViewController: UIViewController {
         } else {
             let image = UIImage(named: ImageName.plusButton)
             diaryImageView.image = nil
+            selectedImage = nil
             addOrSubtractContentView.backgroundColor = Color.gray6
             addOrSubtractImageView.image = image
         }
@@ -59,12 +61,12 @@ class DiaryViewController: UIViewController {
     @IBAction func tapRightNavigationButton(_ sender: Any) {
         switch currentMode {
         case .writeNewDiary:
-            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, diaryImage: diaryImageView.image)
+            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, diaryImageIdentifier: selectedImage?.localIdentifier)
             currentDiaryCard = card
             changeMode(.showDiary)
             saveCurrentCard()
         case .editDiary:
-            currentDiaryCard?.diaryImage = diaryImageView.image
+            currentDiaryCard?.diaryImageIdentifier = selectedImage?.localIdentifier
             currentDiaryCard?.diaryText = diaryTextView.text
             changeMode(.showDiary)
             editCard()
@@ -129,7 +131,15 @@ class DiaryViewController: UIViewController {
             diaryTextView.isSelectable = false
             diaryTextView.isEditable = false
             addOrSubtractContentView.isHidden = true
-            diaryImageView.image = currentDiaryCard?.diaryImage
+            
+            if let identifier = currentDiaryCard?.diaryImageIdentifier {
+                if let asset = AssetManager.fetchImages(by: [identifier]).first {
+                    diaryImageView.fetchHighQualityImage(asset: asset)
+                } else {
+                    diaryImageView.image = nil
+                }
+            }
+            
             diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
             if diaryImageView.image == nil {
                 diaryImageHeightConstraint.constant = 0
@@ -210,7 +220,20 @@ class DiaryViewController: UIViewController {
             diaryTextView.text = currentDiaryCard?.diaryText
         }
         
-        if currentDiaryCard?.diaryImage == nil {
+        if let identifier = currentDiaryCard?.diaryImageIdentifier {
+            diaryImageHeightConstraint.constant = 266
+            setScrollViewHeight()
+            addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            
+            if let asset = AssetManager.fetchImages(by: [identifier]).first {
+                diaryImageView.fetchHighQualityImage(asset: asset)
+            } else {
+                diaryImageView.image = nil
+            }
+            
+            let image = UIImage(named: ImageName.minusButton)
+            addOrSubtractImageView.image = image
+        } else {
             diaryImageHeightConstraint.constant = 0
             setScrollViewHeight()
             addOrSubtractContentView.isHidden = false
@@ -218,14 +241,6 @@ class DiaryViewController: UIViewController {
             addOrSubtractContentView.backgroundColor = Color.gray6
             
             let image = UIImage(named: ImageName.plusButton)
-            addOrSubtractImageView.image = image
-        } else {
-            diaryImageHeightConstraint.constant = 266
-            setScrollViewHeight()
-            addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-            diaryImageView.image = currentDiaryCard?.diaryImage
-            
-            let image = UIImage(named: ImageName.minusButton)
             addOrSubtractImageView.image = image
         }
     }
@@ -310,7 +325,8 @@ extension DiaryViewController {
 
 extension DiaryViewController: SelectPhotoDelegate {
     func photoSelected(_ photoAsset: PHAsset) {
-        diaryImageView.fetchImage(asset: photoAsset)
+        selectedImage = photoAsset
+        diaryImageView.fetchHighQualityImage(asset: photoAsset)
         let image = UIImage(named: ImageName.minusButton)
         addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         addOrSubtractImageView.image = image

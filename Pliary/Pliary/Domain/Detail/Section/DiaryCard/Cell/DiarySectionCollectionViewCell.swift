@@ -79,7 +79,9 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     
     @objc func reloadData() {
         setUp()
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     deinit {
@@ -121,7 +123,7 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
             return cell
         }
             
-        if diaryCard.diaryImage == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
+        if diaryCard.diaryImageIdentifier == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
             
             let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)
