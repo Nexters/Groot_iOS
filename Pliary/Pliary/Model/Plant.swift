@@ -55,6 +55,7 @@ struct Plant: Equatable, Codable {
         wateringInterval = try values.decode(Int.self, forKey: .wateringInterval)
         firstDate = try values.decode(TimeInterval.self, forKey: .firstDate)
         lastWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
+        nextWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -67,6 +68,7 @@ struct Plant: Equatable, Codable {
         try container.encode(wateringInterval, forKey: .wateringInterval)
         try container.encode(firstDate, forKey: .firstDate)
         try container.encode(lastWaterDate, forKey: .lastWaterDate)
+        try container.encode(nextWaterDate, forKey: .nextWaterDate)
     }
 
     func getTip() -> String {
