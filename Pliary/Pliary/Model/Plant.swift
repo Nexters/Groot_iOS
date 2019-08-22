@@ -155,7 +155,11 @@ struct Plant: Equatable, Codable {
 
     mutating func water() {
         let now = Date()
-        lastWaterDate = now.timeIntervalSince1970
+        self.lastWaterDate = now.timeIntervalSince1970
+    }
+
+    mutating func delay(day : Int) {
+        self.nextWaterDate = getNextWaterDate() + Double(day * 60 * 60 * 24)
     }
 
     func getNextWaterDate() -> TimeInterval {
@@ -177,10 +181,6 @@ struct Plant: Equatable, Codable {
         } else {
             return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
         }
-    }
-
-    mutating func delay(day : Int) {
-        nextWaterDate += Double(day * 60 * 60 * 24)
     }
 
 }
