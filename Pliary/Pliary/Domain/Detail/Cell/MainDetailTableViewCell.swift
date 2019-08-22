@@ -115,7 +115,10 @@ class MainDetailTableViewCell: UITableViewCell {
     func waterToPlant() {
         wateringAnimation.isHidden = false
         if !wateringAnimation.isAnimationPlaying {
-            wateringAnimation.play()
+            wateringAnimation.play(completion: { _ in
+                self.currentStatus = .positive
+                self.animateImage()
+            })
         }
     }
     

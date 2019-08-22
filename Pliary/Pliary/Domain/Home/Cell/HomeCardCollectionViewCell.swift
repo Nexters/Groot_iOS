@@ -51,7 +51,10 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     func waterToPlant() {
         wateringAnimation.isHidden = false
         if !wateringAnimation.isAnimationPlaying {
-            wateringAnimation.play()
+            wateringAnimation.play(completion: { _ in
+                self.currentStatus = .positive
+                self.animateImage()
+            })
         }
     }
     
@@ -61,6 +64,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         nicknameLabel.text = plant.nickName + "에게 물주기"
         
         // negative or postive 계산 (d-day)
+        currentStatus = .negative
     }
     
     func animateImage() {
@@ -73,7 +77,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
             case .positive:
                 return plant.getPositiveImageName()
             case .negative:
-                return plant.getPositiveImageName()
+                return plant.getNegativeImageName()
             }
         }
         
@@ -96,7 +100,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
             case .positive:
                 return plant.getPositiveImageName()
             case .negative:
-                return plant.getPositiveImageName()
+                return plant.getNegativeImageName()
             }
         }
         
