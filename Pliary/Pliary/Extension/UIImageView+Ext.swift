@@ -10,15 +10,38 @@ import UIKit
 import Photos
 
 extension UIImageView {
-    func fetchImage(asset: PHAsset) {
+    func fetchHighQualityImage(asset: PHAsset) {
         let options = PHImageRequestOptions()
         options.version = .current
         options.deliveryMode = .highQualityFormat
         options.isSynchronous = true
+        options.isNetworkAccessAllowed = true
         
         let imageManager = PHCachingImageManager()
         imageManager.requestImage(for: asset, targetSize: frame.size, contentMode: .aspectFill, options: options, resultHandler: { [weak self] (image : UIImage?, _) in
-            guard let image = image else { return }
+            guard let image = image else {
+                self?.image = UIImage()
+                return
+            }
+            
+            self?.contentMode = .scaleAspectFill
+            self?.image = image
+        })
+    }
+    
+    func fetchOpportunisticImage(asset: PHAsset) {
+        let options = PHImageRequestOptions()
+        options.version = .current
+//        options.deliveryMode = .opportunistic
+        options.isSynchronous = false
+        options.isNetworkAccessAllowed = true
+        
+        let imageManager = PHCachingImageManager()
+        imageManager.requestImage(for: asset, targetSize: frame.size, contentMode: .aspectFill, options: options, resultHandler: { [weak self] (image : UIImage?, _) in
+            guard let image = image else {
+                self?.image = UIImage()
+                return
+            }
             
             self?.contentMode = .scaleAspectFill
             self?.image = image
@@ -30,11 +53,16 @@ extension UIImageView {
         options.version = .current
         options.deliveryMode = .opportunistic
         options.isSynchronous = false
+        options.isNetworkAccessAllowed = true
         
+        image = UIImage()
         let imageManager = PHCachingImageManager()
         imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options, resultHandler: { [weak self] (image : UIImage?, _) in
             completion(image)
-            guard let image = image else { return }
+            guard let image = image else {
+                self?.image = UIImage()
+                return
+            }
             
             switch contentMode {
             case .aspectFill:

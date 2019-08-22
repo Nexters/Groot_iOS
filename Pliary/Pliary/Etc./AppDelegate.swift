@@ -52,8 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if error != nil {
                 return
             }
-            
-            Global.shared.getAccessToken()
         }
         
     }

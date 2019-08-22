@@ -6,12 +6,13 @@
 //  Copyright © 2019 groot.nexters.pliary. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import Photos
 
-struct DiaryCard: Equatable {
+struct DiaryCard: Equatable, Codable {
     
     let timeStamp: Double
     var diaryText: String?
-    var diaryImage: UIImage?
+    var diaryImageIdentifier: String?
     
 }

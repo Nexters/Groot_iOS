@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PlantType {
+enum PlantType: String, Codable {
     case stuki
     case eucalyptus
     case sansevieria

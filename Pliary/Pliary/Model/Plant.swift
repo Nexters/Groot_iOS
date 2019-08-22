@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-struct Plant: Equatable {
+struct Plant: Equatable, Codable {
     let id: String
     var type: PlantType
     var englishName: String
@@ -19,7 +19,20 @@ struct Plant: Equatable {
     var firstDate: TimeInterval
     var lastWaterDate: TimeInterval
     var nextWaterDate: TimeInterval
-    
+
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case type
+        case englishName
+        case koreanName
+        case nickName
+        case wateringInterval
+        case firstDate
+        case lastWaterDate
+        case nextWaterDate
+    }
+
     init(type: PlantType, englishName: String, koreanName: String?, nickName: String, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval, nextWaterDate: TimeInterval) {
         id = UUID().uuidString
         self.type = type
@@ -31,7 +44,31 @@ struct Plant: Equatable {
         self.lastWaterDate = lastWaterDate
         self.nextWaterDate = nextWaterDate
     }
-    
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(String.self, forKey: .id)
+        type = try values.decode(PlantType.self, forKey: .type)
+        englishName = try values.decode(String.self, forKey: .englishName)
+        koreanName = try values.decodeIfPresent(String.self, forKey: .koreanName)
+        nickName = try values.decode(String.self, forKey: .nickName)
+        wateringInterval = try values.decode(Int.self, forKey: .wateringInterval)
+        firstDate = try values.decode(TimeInterval.self, forKey: .firstDate)
+        lastWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(type, forKey: .type)
+        try container.encode(englishName, forKey: .englishName)
+        try container.encodeIfPresent(koreanName, forKey: .koreanName)
+        try container.encode(nickName, forKey: .nickName)
+        try container.encode(wateringInterval, forKey: .wateringInterval)
+        try container.encode(firstDate, forKey: .firstDate)
+        try container.encode(lastWaterDate, forKey: .lastWaterDate)
+    }
+
     func getTip() -> String {
         switch type {
         case .stuki:
@@ -54,7 +91,7 @@ struct Plant: Equatable {
             return PlantTip.userPlants.rawValue
         }
     }
-    
+
     func getPositiveImageName() -> String {
         switch type {
         case .stuki:
@@ -77,7 +114,7 @@ struct Plant: Equatable {
             return PlantPositiveImageName.userPlants.rawValue
         }
     }
-    
+
     func getNegativeImageName() -> String {
         switch type {
         case .stuki:
@@ -100,7 +137,7 @@ struct Plant: Equatable {
             return PlantNegativeImageName.userPlants.rawValue
         }
     }
-    
+
     static func getAllPlants() -> [Plant] {
         let stuki = PlantType.stuki.getPlantInstance()
         let eucalyptus = PlantType.eucalyptus.getPlantInstance()
@@ -111,17 +148,17 @@ struct Plant: Equatable {
         let travelersPalm = PlantType.travelersPalm.getPlantInstance()
         let schefflera = PlantType.schefflera.getPlantInstance()
         let userPlants = PlantType.userPlants.getPlantInstance()
-        
+
         return [stuki, eucalyptus, sansevieria, monstera, parlourPalm, elastica, travelersPalm, schefflera, userPlants]
     }
-    
+
     mutating func water() {
         let now = Date()
         lastWaterDate = now.timeIntervalSince1970
     }
-    
+
     func getNextWaterDate() -> TimeInterval {
-       
+
         if(nextWaterDate != 0) {
             return nextWaterDate
         }
@@ -129,20 +166,20 @@ struct Plant: Equatable {
             let now = Date()
             let dateString:String = now.timeIntervalSince1970.getSince1970String() + " 08:00:00"
             let dateFormatter = DateFormatter()
-            
+
             dateFormatter.dateFormat = "yy/MM/dd HH:mm:ss"
             dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
-            
+
             let date: Date = dateFormatter.date(from: dateString)!
-            
+
             return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
         } else {
             return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
         }
     }
-    
+
     mutating func delay(day : Int) {
         nextWaterDate += Double(day * 60 * 60 * 24)
     }
-    
+
 }
