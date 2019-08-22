@@ -51,3 +51,8 @@ enum PlantType: String, Codable {
         }
     }
 }
+
+enum PlantStatus {
+    case positive
+    case negative
+}

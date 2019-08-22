@@ -21,6 +21,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var wateringAnimation: AnimationView!
     
     weak var delegate: PlantEventDelegate?
+    var currentStatus: PlantStatus = .negative
     var plant: Plant? {
         didSet {
             if oldValue != plant {
@@ -58,6 +59,8 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         self.plant = plant
         wateringAnimation.isHidden = true
         nicknameLabel.text = plant.nickName + "에게 물주기"
+        
+        // negative or postive 계산 (d-day)
     }
     
     func animateImage() {
@@ -65,7 +68,15 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        let imageName = plant.getPositiveImageName()
+        var imageName: String {
+            switch currentStatus {
+            case .positive:
+                return plant.getPositiveImageName()
+            case .negative:
+                return plant.getPositiveImageName()
+            }
+        }
+        
         let appendPath = imageName + ".gif"
         let host = API.gifHost?.appendingPathComponent(appendPath)
         let placeHolder = UIImage(named: imageName)
@@ -80,7 +91,15 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        let imageName = plant.getPositiveImageName()
+        var imageName: String {
+            switch currentStatus {
+            case .positive:
+                return plant.getPositiveImageName()
+            case .negative:
+                return plant.getPositiveImageName()
+            }
+        }
+        
         let placeHolder = UIImage(named: imageName)
         plantView.image = placeHolder
     }

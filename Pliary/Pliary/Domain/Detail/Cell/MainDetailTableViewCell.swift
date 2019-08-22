@@ -24,6 +24,7 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var wateringAnimation: AnimationView!
     
     weak var delegate: DetailEventDelegate?
+    var currentStatus: PlantStatus = .negative
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,6 +67,8 @@ class MainDetailTableViewCell: UITableViewCell {
         tipLabel.text = Global.shared.selectedPlant?.getTip()
         
         wateringAnimation.isHidden = true
+        
+        // negative or postive 계산 (d-day)
     }
     
     func animateImage() {
@@ -73,7 +76,15 @@ class MainDetailTableViewCell: UITableViewCell {
             return
         }
         
-        let imageName = plant.getPositiveImageName()
+        var imageName: String {
+            switch currentStatus {
+            case .positive:
+                return plant.getPositiveImageName()
+            case .negative:
+                return plant.getNegativeImageName()
+            }
+        }
+        
         let appendPath = imageName + ".gif"
         let host = API.gifHost?.appendingPathComponent(appendPath)
         let placeHolder = UIImage(named: imageName)
@@ -88,7 +99,15 @@ class MainDetailTableViewCell: UITableViewCell {
             return
         }
         
-        let imageName = plant.getPositiveImageName()
+        var imageName: String {
+            switch currentStatus {
+            case .positive:
+                return plant.getPositiveImageName()
+            case .negative:
+                return plant.getNegativeImageName()
+            }
+        }
+        
         let placeHolder = UIImage(named: imageName)
         plantView.image = placeHolder
     }
