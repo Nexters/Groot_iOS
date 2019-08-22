@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import FirebaseAuth
+//import FirebaseAuth
 
 class Global: NSObject {
     static let shared: Global = Global()
