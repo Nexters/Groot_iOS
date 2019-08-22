@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UserNotifications
 
 struct User {
 
@@ -27,49 +26,5 @@ struct User {
         self.familyName = familyName
         self.email = email
         self.photo = photo
-    }
-
-    func registerNotification(){
-
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-
-        var dates : Dictionary = [Int : String]()
-
-        let plants = Global.shared.plants
-
-        for plant in plants {
-            let wateringInterval = plant.wateringInterval * 43200 // 60 * 60 * 12
-            var wateringDay =  Int(plant.getNextWaterDate())
-
-            var str = dates[wateringDay] ?? ""
-            if(str == ""){
-                str = plant.nickName
-            } else {
-                str += ", "
-                str += plant.nickName
-            }
-            dates.updateValue(str, forKey: Int(wateringDay))
-
-        }
-
-        for (wateringDay, plantstr)  in dates {
-            let content = UNMutableNotificationContent()
-
-            content.title = "식물 물주기 알람"
-            content.body = "오늘은 \(plantstr) 물 먹는 날!"
-            content.sound = UNNotificationSound.default
-            content.categoryIdentifier = "watering"
-
-            let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: Date.init(timeIntervalSince1970: TimeInterval(wateringDay)))
-
-            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-            let request = UNNotificationRequest(identifier: String(wateringDay), content: content, trigger: trigger)
-
-            UNUserNotificationCenter.current().add(request){ (error) in
-                if let error = error {
-                    print("Error:\(error.localizedDescription)")
-                }
-            }
-        }
     }
 }

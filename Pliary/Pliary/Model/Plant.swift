@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UserNotifications
 
 struct Plant: Equatable, Codable {
     let id: String
