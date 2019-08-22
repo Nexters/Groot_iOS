@@ -12,8 +12,14 @@ import FirebaseAuth
 class Global: NSObject {
     static let shared: Global = Global()
     
-    var user: User?
-    var plants: [Plant] = [PlantType.eucalyptus.getPlantInstance(), PlantType.elastica.getPlantInstance(), PlantType.sansevieria.getPlantInstance()]
+    var plants: [Plant] = [] {
+        didSet {
+            if oldValue != plants {
+                saveCurrentPlants()
+            }
+        }
+    }
+    
     var selectedPlant: Plant?
     
     var diaryDict: [String: [DiaryCard]] = [:] {
@@ -26,44 +32,34 @@ class Global: NSObject {
     
     var recordDict: [String: [RecordCard]] = [:]
     
-    func getAccessToken() {
-        if let email = Auth.auth().currentUser?.email {
-            if let authHost = API.auth {
-                
-                let json: [String: String] = ["email": email]
-                let jsonData = try? JSONSerialization.data(withJSONObject: json)
-                
-                var urlRequest = URLRequest(url: authHost)
-                urlRequest.httpMethod = "POST"
-                urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                urlRequest.httpBody = jsonData
-                
-                URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
-                    
-                    print(error?.localizedDescription)
-                    
-                    if let res = response as? HTTPURLResponse {
-                        print(res.allHeaderFields)
-                        print(res.statusCode)
-                    }
-                    
-                    if let d = data, let string = String(data: d, encoding: .utf8) {
-                        print(string)
-                    }
-                    
-                })
-//                    .resume()
-                
-            } else {
-                // host error
+    func saveCurrentPlants() {
+        let encoder = JSONEncoder()
+        var dict: [String: Any] = [:]
+        for plant in plants {
+            guard let data = try? encoder.encode(plant) else {
+                continue
             }
-        } else {
-            user = nil
+            dict[plant.id] = data
+            print(dict.values.count)
         }
+        AssetManager.save(data: dict, for: AssetKey.plants.rawValue)
+    }
+    
+    func loadCurrentPlants() {
+        let decoder = JSONDecoder()
+        let dict = AssetManager.getDictData(for: AssetKey.plants.rawValue)
+        var plantArray: [Plant] = []
+        for key in dict.keys {
+            let value = dict[key]
+            if let data = value as? Data, let plant = try? decoder.decode(Plant.self, from: data) {
+                plantArray.append(plant)
+            }
+        }
+        plants = plantArray
     }
     
     override init() {
         super.init()
-        getAccessToken()
+        loadCurrentPlants()
     }
 }

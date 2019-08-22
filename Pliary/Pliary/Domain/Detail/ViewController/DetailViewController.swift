@@ -82,7 +82,7 @@ extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpTableView()
+//        setUpTableView()
     }
     
     override func viewDidLayoutSubviews() {

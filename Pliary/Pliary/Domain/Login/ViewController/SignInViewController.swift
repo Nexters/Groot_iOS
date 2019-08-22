@@ -34,7 +34,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             guard let error = AuthErrorCode(rawValue: (error?._code)!) else {
                 // Successfully login!
-                Global.shared.user?.email = Auth.auth().currentUser?.email ?? ""
+//                Global.shared.user?.email = Auth.auth().currentUser?.email ?? ""
                 
                 let storyboard = UIStoryboard.init(name: StoryboardName.home, bundle: nil)
                 guard storyboard.instantiateViewController(withIdentifier: HomeViewController.identifier) is HomeViewController else {

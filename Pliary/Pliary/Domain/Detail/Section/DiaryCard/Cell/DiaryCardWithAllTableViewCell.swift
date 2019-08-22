@@ -33,9 +33,16 @@ class DiaryCardWithAllTableViewCell: UITableViewCell {
     func setUp(with diaryCard: DiaryCard) {
         self.diaryCard = diaryCard
         
-        diaryImageView.image = diaryCard.diaryImage
         diaryTextLabel.text = diaryCard.diaryText
         dateLabel.text = diaryCard.timeStamp.getSince1970String()
+        
+        if let identifier = diaryCard.diaryImageIdentifier {
+            if let asset = AssetManager.fetchImages(by: [identifier]).first {
+                diaryImageView.fetchOpportunisticImage(asset: asset)
+            } else {
+                diaryImageView.image = nil
+            }
+        }
     }
     
 }

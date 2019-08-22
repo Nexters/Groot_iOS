@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum AssetKey: String {
+    case plants
+    case diaryCard
+}
+
 struct NotificationName {
     static let reloadDiaryCard = Notification.Name.init("reloadDiaryCard")
 }
