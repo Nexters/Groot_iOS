@@ -8,6 +8,7 @@
 import UIKit
 import Hero
 import FirebaseAuth
+import UserNotifications
 
 class HomeViewController: UIViewController {
     
@@ -126,7 +127,7 @@ extension HomeViewController {
         
         setUpCollectionView()
         setUpSlideView()
-        
+        setPush()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -164,5 +165,10 @@ extension HomeViewController {
             self.toastView = toastView
         }
         
+    }
+    
+    func setPush() {
+        let user = Global.shared.user
+        user?.registerNotification()        
     }
 }

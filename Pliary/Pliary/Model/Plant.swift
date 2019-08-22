@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 struct Plant: Equatable {
     let id: String
@@ -17,8 +18,9 @@ struct Plant: Equatable {
     var wateringInterval: Int
     var firstDate: TimeInterval
     var lastWaterDate: TimeInterval
+    var nextWaterDate: TimeInterval
     
-    init(type: PlantType, englishName: String, koreanName: String?, nickName: String, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval) {
+    init(type: PlantType, englishName: String, koreanName: String?, nickName: String, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval, nextWaterDate: TimeInterval) {
         id = UUID().uuidString
         self.type = type
         self.englishName = englishName
@@ -27,6 +29,7 @@ struct Plant: Equatable {
         self.wateringInterval = wateringInterval
         self.firstDate = firstDate
         self.lastWaterDate = lastWaterDate
+        self.nextWaterDate = nextWaterDate
     }
     
     func getTip() -> String {
@@ -111,4 +114,35 @@ struct Plant: Equatable {
         
         return [stuki, eucalyptus, sansevieria, monstera, parlourPalm, elastica, travelersPalm, schefflera, userPlants]
     }
+    
+    mutating func water() {
+        let now = Date()
+        lastWaterDate = now.timeIntervalSince1970
+    }
+    
+    func getNextWaterDate() -> TimeInterval {
+       
+        if(nextWaterDate != 0) {
+            return nextWaterDate
+        }
+        if(lastWaterDate == 0) {
+            let now = Date()
+            let dateString:String = now.timeIntervalSince1970.getSince1970String() + " 08:00:00"
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "yy/MM/dd HH:mm:ss"
+            dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+            
+            let date: Date = dateFormatter.date(from: dateString)!
+            
+            return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
+        } else {
+            return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
+        }
+    }
+    
+    mutating func delay(day : Int) {
+        nextWaterDate += Double(day * 60 * 60 * 24)
+    }
+    
 }
