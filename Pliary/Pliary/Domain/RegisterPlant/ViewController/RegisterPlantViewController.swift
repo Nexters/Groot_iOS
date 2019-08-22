@@ -18,6 +18,10 @@ class RegisterPlantViewController: UIViewController {
     private var rows: [(String, RegisterRowType)] = []
     private var selectedPlant: Plant?
     
+    private var englishNamePassed: Bool = true
+    private var koreanNamePassed: Bool = true
+    private var nickNamePassed: Bool = true
+    
     @IBAction func tabCloseButton(_ sender: Any) {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
@@ -204,14 +208,17 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             
             tableView.reloadData()
             
-        case .setEnglishName(let name):
+        case .setEnglishName(let name, let enabled):
             selectedPlant?.englishName = name
+            englishNamePassed = enabled
             
-        case .setKoreanName(let name):
+        case .setKoreanName(let name, let enabled):
             selectedPlant?.koreanName = name
+            koreanNamePassed = enabled
             
-        case .setNickName(let name):
+        case .setNickName(let name, let enabled):
             selectedPlant?.nickName = name
+            nickNamePassed = enabled
             
         case .setPeriod(let interval):
             selectedPlant?.wateringInterval = interval
@@ -261,6 +268,10 @@ extension RegisterPlantViewController: RegisterEventDelegate {
         }
         
         guard plant.lastWaterDate != 0 else {
+            return false
+        }
+        
+        guard (englishNamePassed && koreanNamePassed && nickNamePassed) else {
             return false
         }
         

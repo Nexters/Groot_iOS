@@ -31,8 +31,8 @@ enum RegisterEvent {
     case selectDate(type: RegisterRowType)
     case plantSelected(plant: Plant)
     case dateSelected(type: RegisterRowType, date: TimeInterval)
-    case setEnglishName(name: String)
-    case setKoreanName(name: String)
-    case setNickName(name: String)
+    case setEnglishName(name: String, enable: Bool)
+    case setKoreanName(name: String, enable: Bool)
+    case setNickName(name: String, enable: Bool)
     case setPeriod(interval: Int)
 }

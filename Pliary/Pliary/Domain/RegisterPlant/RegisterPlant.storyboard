@@ -83,7 +83,7 @@
                                     <action selector="tapCompleteButton:" destination="6P7-5r-40x" eventType="touchUpInside" id="9ki-P2-AXD"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="귀여운디노" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hf7-ni-qXn">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="귀여운디노" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hf7-ni-qXn">
                                 <rect key="frame" x="36" y="194" width="342" height="29"/>
                                 <color key="textColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="24"/>

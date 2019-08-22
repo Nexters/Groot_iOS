@@ -16,10 +16,6 @@ class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var referenceTextLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func setUp(with plant: Plant, type: RegisterRowType) {
         self.plant = plant
         self.type = type

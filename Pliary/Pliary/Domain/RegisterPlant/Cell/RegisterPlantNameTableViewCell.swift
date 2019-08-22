@@ -28,6 +28,7 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
     func setUp(with plant: Plant, type: RegisterRowType) {
         if (type != self.type) || (plant != self.plant) {
             nameTextField.text = nil
+            helpTextLabel.textColor = Color.gray4
         }
         
         self.plant = plant
@@ -44,18 +45,21 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
             nameTextField.placeholder = "ex. Stuki"
             nameTextField.text = plant?.englishName
             helpTextLabel.text = "영어 최대 15글자까지 입력 가능합니다."
+            checkEnglishName(nameTextField.text ?? "")
         case .koreanName:
             nameTextField.keyboardType = .default
             titleLabel.text = "한글명 (선택)"
             nameTextField.text = plant?.koreanName
             nameTextField.placeholder = "ex. 스투키"
             helpTextLabel.text = "한글 최대 10글자까지 입력 가능합니다."
+            checkKoreanName(nameTextField.text ?? "")
         case .customName:
             nameTextField.keyboardType = .default
             titleLabel.text = "식물 애칭"
             nameTextField.placeholder = "ex. 멋쟁이투투"
             nameTextField.text = plant?.nickName
             helpTextLabel.text = "애칭은 영어, 한글 최대 5글자까지 가능합니다."
+            checkCustomName(nameTextField.text ?? "")
         default:
             ()
         }
@@ -63,17 +67,53 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
     
     func checkEnglishName(_ name: String) {
         // add check logic
-        delegate?.registerEvent(event: .setEnglishName(name: name))
+        guard let textCount = nameTextField.text?.count else {
+            delegate?.registerEvent(event: .setEnglishName(name: name, enable: false))
+            helpTextLabel.textColor = Color.pink
+            return
+        }
+        
+        if textCount > 0 && textCount < 16 {
+            delegate?.registerEvent(event: .setEnglishName(name: name, enable: true))
+            helpTextLabel.textColor = Color.gray4
+        } else {
+            delegate?.registerEvent(event: .setEnglishName(name: name, enable: false))
+            helpTextLabel.textColor = Color.pink
+        }
     }
     
     func checkKoreanName(_ name: String) {
         // add check logic
-        delegate?.registerEvent(event: .setKoreanName(name: name))
+        guard let textCount = nameTextField.text?.count else {
+            delegate?.registerEvent(event: .setKoreanName(name: name, enable: false))
+            helpTextLabel.textColor = Color.pink
+            return
+        }
+        
+        if textCount > 0 && textCount < 11 {
+            delegate?.registerEvent(event: .setKoreanName(name: name, enable: true))
+            helpTextLabel.textColor = Color.gray4
+        } else {
+            delegate?.registerEvent(event: .setKoreanName(name: name, enable: false))
+            helpTextLabel.textColor = Color.pink
+        }
     }
     
     func checkCustomName(_ name: String) {
         // add check logic
-        delegate?.registerEvent(event: .setNickName(name: name))
+        guard let textCount = nameTextField.text?.count else {
+            delegate?.registerEvent(event: .setNickName(name: name, enable: false))
+            helpTextLabel.textColor = Color.pink
+            return
+        }
+        
+        if textCount > 0 && textCount < 6 {
+            delegate?.registerEvent(event: .setNickName(name: name, enable: true))
+            helpTextLabel.textColor = Color.gray4
+        } else {
+            delegate?.registerEvent(event: .setNickName(name: name, enable: false))
+            helpTextLabel.textColor = Color.pink
+        }
     }
     
 }

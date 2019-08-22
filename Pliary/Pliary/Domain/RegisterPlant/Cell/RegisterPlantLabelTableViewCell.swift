@@ -10,8 +10,4 @@ import UIKit
 
 class RegisterPlantLabelTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
 }
