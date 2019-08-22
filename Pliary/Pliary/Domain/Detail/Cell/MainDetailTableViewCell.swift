@@ -95,9 +95,9 @@ class MainDetailTableViewCell: UITableViewCell {
     
     func waterToPlant() {
         wateringAnimation.isHidden = false
-        wateringAnimation.play(completion: { _ in
-            self.wateringAnimation.isHidden = true
-        })
+        if !wateringAnimation.isAnimationPlaying {
+            wateringAnimation.play()
+        }
     }
     
     func makeDeleteMode() {

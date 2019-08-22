@@ -129,6 +129,8 @@ extension HomeViewController {
         setUpCollectionView()
         setUpSlideView()
         setPush()
+        
+        profileImageButton.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {

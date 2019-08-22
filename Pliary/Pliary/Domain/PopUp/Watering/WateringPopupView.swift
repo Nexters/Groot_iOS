@@ -57,7 +57,10 @@ class WateringPopupView: UIView {
 
 extension WateringPopupView: WateringEventDelegate {
     func wateringEvent(event: WateringEvent) {
-         var plant = Global.shared.selectedPlant!
+        guard let plant = plant else {
+            return
+        }
+        
         switch event {
         case .waterThePlant:
             delegate?.plantEvent(plant, event: .completeToWater)
@@ -65,7 +68,15 @@ extension WateringPopupView: WateringEventDelegate {
         case .convertViewToDelay:
             setDelayView()
         case .completeToDelay(let day):
-            plant.delay(day: day)
+            var plants: [Plant] = []
+            for var delayingPlant in Global.shared.plants {
+                if delayingPlant.id == plant.id {
+                    delayingPlant.delay(day: day)
+                    plants.append(delayingPlant)
+                } else {
+                    plants.append(delayingPlant)
+                }
+            }
             removeFromSuperview()
         }
     }

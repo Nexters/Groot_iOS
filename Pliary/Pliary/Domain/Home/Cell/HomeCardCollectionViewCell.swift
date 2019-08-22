@@ -46,9 +46,9 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     
     func waterToPlant() {
         wateringAnimation.isHidden = false
-        wateringAnimation.play(completion: { _ in
-            self.wateringAnimation.isHidden = true
-        })
+        if !wateringAnimation.isAnimationPlaying {
+            wateringAnimation.play()
+        }
     }
     
     func setUp(with plant: Plant) {
