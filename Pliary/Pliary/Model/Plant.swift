@@ -16,6 +16,7 @@ struct Plant: Equatable, Codable {
     var nickName: String
     var wateringInterval: Int
     var firstDate: TimeInterval
+    var waterDates: String
     var lastWaterDate: TimeInterval
     var nextWaterDate: TimeInterval
 
@@ -30,9 +31,10 @@ struct Plant: Equatable, Codable {
         case firstDate
         case lastWaterDate
         case nextWaterDate
+        case waterDates
     }
 
-    init(type: PlantType, englishName: String, koreanName: String?, nickName: String, wateringInterval: Int, firstDate: TimeInterval, lastWaterDate: TimeInterval, nextWaterDate: TimeInterval) {
+    init(type: PlantType, englishName: String, koreanName: String?, nickName: String, wateringInterval: Int, firstDate: TimeInterval, waterDates: String, lastWaterDate: TimeInterval, nextWaterDate: TimeInterval) {
         id = UUID().uuidString
         self.type = type
         self.englishName = englishName
@@ -40,6 +42,7 @@ struct Plant: Equatable, Codable {
         self.nickName = nickName
         self.wateringInterval = wateringInterval
         self.firstDate = firstDate
+        self.waterDates = waterDates
         self.lastWaterDate = lastWaterDate
         self.nextWaterDate = nextWaterDate
     }
@@ -53,6 +56,7 @@ struct Plant: Equatable, Codable {
         nickName = try values.decode(String.self, forKey: .nickName)
         wateringInterval = try values.decode(Int.self, forKey: .wateringInterval)
         firstDate = try values.decode(TimeInterval.self, forKey: .firstDate)
+        waterDates = try values.decode(String.self, forKey: .waterDates)
         lastWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
         nextWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
     }
@@ -66,6 +70,7 @@ struct Plant: Equatable, Codable {
         try container.encode(nickName, forKey: .nickName)
         try container.encode(wateringInterval, forKey: .wateringInterval)
         try container.encode(firstDate, forKey: .firstDate)
+        try container.encode(waterDates, forKey: .waterDates)
         try container.encode(lastWaterDate, forKey: .lastWaterDate)
         try container.encode(nextWaterDate, forKey: .nextWaterDate)
     }
@@ -154,8 +159,13 @@ struct Plant: Equatable, Codable {
     }
 
     mutating func water() {
-        let now = Date()
-        self.lastWaterDate = now.timeIntervalSince1970
+        let currentTimestamp = Date().timeIntervalSince1970
+        let dateString: String = currentTimestamp.getSince1970String()
+        
+        self.waterDates.append("|")
+        self.waterDates.append(dateString)
+        self.lastWaterDate = currentTimestamp
+        
     }
 
     mutating func delay(day : Int) {
@@ -168,19 +178,17 @@ struct Plant: Equatable, Codable {
             return nextWaterDate
         }
         if(lastWaterDate == 0) {
-            let now = Date()
-            let dateString:String = now.timeIntervalSince1970.getSince1970String() + " 08:00:00"
+            let currentTimestamp = Date().timeIntervalSince1970
+            let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
             let dateFormatter = DateFormatter()
 
             dateFormatter.dateFormat = "yy/MM/dd HH:mm:ss"
             dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
 
             let date: Date = dateFormatter.date(from: dateString)!
-
             return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
         } else {
             return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
         }
     }
-
 }
