@@ -17,7 +17,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     @IBOutlet weak var calendarView: UIView!
     var plant : Plant? = nil
 
-    var dates = [Date]()
+    var dates = [String]()
     var datesTodo = [String]()
     var dateList = [Int]()
 
@@ -50,22 +50,21 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         
         dateList = [1564758000, 1565017200, 1565794800]
         
-        for timestamp in dateList {
-            let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
-            dates.append(date)
-        }
+        let plant = Global.shared.selectedPlant
+        let date = Date(timeIntervalSince1970: TimeInterval(plant?.lastWaterDate ?? 0))
+        dates.append(formatter.string(from: date))
     }
     
     private func loadDatesTodo() {
 
-        var plant = Global.shared.selectedPlant
+        let plant = Global.shared.selectedPlant
         let interval = plant!.wateringInterval * 86400 // 60 * 60 * 24
         var wateringDay : Int = Int(plant?.getNextWaterDate() ?? 0)
 
         let twoMonthDay = wateringDay + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
         while wateringDay < twoMonthDay {
             wateringDay += interval
-            var date = Date(timeIntervalSince1970: TimeInterval(wateringDay))
+            let date = Date(timeIntervalSince1970: TimeInterval(wateringDay))
             datesTodo.append(formatter.string(from: date))
         }
     }
@@ -92,7 +91,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         
         
-        if dates.contains(date) {
+        if dates.contains(formatter.string(from: date)) {
             return Color.greenCalendar
         } else if datesTodo.contains(formatter.string(from: date)) {
             return Color.blueCalendar
