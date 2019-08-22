@@ -45,4 +45,23 @@ struct AssetManager {
         userDefaults.set(encodedData, forKey: key)
         userDefaults.synchronize()
     }
+    
+    static func save(image: UIImage, identifier: String) -> URL? {
+        guard let data = image.jpegData(compressionQuality: 0.9) ?? image.pngData() else {
+            return nil
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as URL else {
+            return nil
+        }
+        
+        let imageIdentifier = identifier.replacingOccurrences(of: "/", with: "")
+        let imageDirectory = directory.appendingPathComponent("\(imageIdentifier).jpeg")
+        
+        do{
+            try data.write(to: imageDirectory)
+            return imageDirectory
+        } catch {
+            return nil
+        }
+    } // saveImage
 }

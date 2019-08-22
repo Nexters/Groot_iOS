@@ -123,7 +123,7 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
             return cell
         }
             
-        if diaryCard.diaryImageIdentifier == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
+        if diaryCard.imageURL == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
             
             let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)

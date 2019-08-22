@@ -9,7 +9,6 @@
 import Foundation
 
 struct User {
-    
     var userId: String
     var idToken: String
     var fullName: String
@@ -17,5 +16,4 @@ struct User {
     var familyName: String
     var email: String
     var photo: String?
-
 }

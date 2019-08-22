@@ -9,6 +9,7 @@
 import UIKit
 import Hero
 import Photos
+import Kingfisher
 
 enum DiaryViewMode {
     case showDiary
@@ -61,12 +62,22 @@ class DiaryViewController: UIViewController {
     @IBAction func tapRightNavigationButton(_ sender: Any) {
         switch currentMode {
         case .writeNewDiary:
-            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, diaryImageIdentifier: selectedImage?.localIdentifier)
+            var imageURL: String? = nil
+            if let image = diaryImageView.image, let identifier = selectedImage?.localIdentifier {
+                let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
+                imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+            }
+            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, imageURL: imageURL)
             currentDiaryCard = card
             changeMode(.showDiary)
             saveCurrentCard()
         case .editDiary:
-            currentDiaryCard?.diaryImageIdentifier = selectedImage?.localIdentifier
+            var imageURL: String? = nil
+            if let image = diaryImageView.image, let identifier = selectedImage?.localIdentifier {
+                let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
+                imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+            }
+            currentDiaryCard?.imageURL = imageURL
             currentDiaryCard?.diaryText = diaryTextView.text
             changeMode(.showDiary)
             editCard()
@@ -132,12 +143,12 @@ class DiaryViewController: UIViewController {
             diaryTextView.isEditable = false
             addOrSubtractContentView.isHidden = true
             
-            if let identifier = currentDiaryCard?.diaryImageIdentifier {
-                if let asset = AssetManager.fetchImages(by: [identifier]).first {
-                    diaryImageView.fetchHighQualityImage(asset: asset)
-                } else {
-                    diaryImageView.image = nil
-                }
+            if let path = currentDiaryCard?.imageURL {
+                let url = URL(fileURLWithPath: path)
+                let provider = LocalFileImageDataProvider(fileURL: url)
+                diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { s in
+                    print(s)
+                })
             }
             
             diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
@@ -220,7 +231,7 @@ class DiaryViewController: UIViewController {
             diaryTextView.text = currentDiaryCard?.diaryText
         }
         
-        if let identifier = currentDiaryCard?.diaryImageIdentifier {
+        if let identifier = currentDiaryCard?.imageURL {
             diaryImageHeightConstraint.constant = 266
             setScrollViewHeight()
             addOrSubtractContentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)

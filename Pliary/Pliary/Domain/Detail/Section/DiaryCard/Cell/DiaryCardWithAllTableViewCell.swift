@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DiaryCardWithAllTableViewCell: UITableViewCell {
 
@@ -36,12 +37,11 @@ class DiaryCardWithAllTableViewCell: UITableViewCell {
         diaryTextLabel.text = diaryCard.diaryText
         dateLabel.text = diaryCard.timeStamp.getSince1970String()
         
-        if let identifier = diaryCard.diaryImageIdentifier {
-            if let asset = AssetManager.fetchImages(by: [identifier]).first {
-                diaryImageView.fetchOpportunisticImage(asset: asset)
-            } else {
-                diaryImageView.image = nil
-            }
+        
+        if let path = diaryCard.imageURL {
+            let url = URL(fileURLWithPath: path)
+            let provider = LocalFileImageDataProvider(fileURL: url)
+            diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { _ in })
         }
     }
     

@@ -32,7 +32,7 @@ extension UIImageView {
     func fetchOpportunisticImage(asset: PHAsset) {
         let options = PHImageRequestOptions()
         options.version = .current
-//        options.deliveryMode = .opportunistic
+        options.deliveryMode = .opportunistic
         options.isSynchronous = false
         options.isNetworkAccessAllowed = true
         
@@ -55,7 +55,6 @@ extension UIImageView {
         options.isSynchronous = false
         options.isNetworkAccessAllowed = true
         
-        image = UIImage()
         let imageManager = PHCachingImageManager()
         imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options, resultHandler: { [weak self] (image : UIImage?, _) in
             completion(image)
