@@ -42,15 +42,17 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "yy/MM/dd"
         return formatter
     }()
     
     private func loadDates() {
         
-        dateList = [1564758000, 1565017200, 1565794800]
-        
         let plant = Global.shared.selectedPlant
+        guard let waterDates = plant?.waterDates.split(separator: "|") else { return }
+        for date in waterDates {
+            dates.append(String(date))
+        }
         let date = Date(timeIntervalSince1970: TimeInterval(plant?.lastWaterDate ?? 0))
         dates.append(formatter.string(from: date))
     }
