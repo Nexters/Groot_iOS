@@ -58,7 +58,7 @@ struct Plant: Equatable, Codable {
         firstDate = try values.decode(TimeInterval.self, forKey: .firstDate)
         waterDates = try values.decode(String.self, forKey: .waterDates)
         lastWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
-        nextWaterDate = try values.decode(TimeInterval.self, forKey: .lastWaterDate)
+        nextWaterDate = try values.decode(TimeInterval.self, forKey: .nextWaterDate)
     }
 
     func encode(to encoder: Encoder) throws {
