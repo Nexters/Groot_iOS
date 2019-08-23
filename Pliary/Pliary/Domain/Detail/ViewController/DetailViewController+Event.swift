@@ -60,6 +60,8 @@ extension DetailViewController: DetailEventDelegate {
 
 extension DetailViewController: PlantEventDelegate {
     func plantEvent(_ plant: Plant, event: PlantEvent) {
+        tableView.reloadData()
+        
         switch event {
         case .completeToWater:
             tableView.visibleCells.forEach {

@@ -81,8 +81,6 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        setUpTableView()
     }
     
     override func viewDidLayoutSubviews() {

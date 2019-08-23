@@ -120,6 +120,9 @@ extension WateringPopupView: WateringEventDelegate {
                 Global.shared.waterRecordDict[plant.id] = dict
             }
 
+            if Global.shared.selectedPlant?.id == wateredPlant.id {
+                Global.shared.selectedPlant = wateredPlant
+            }
             
             delegate?.plantEvent(plant, event: .completeToWater)
             removeFromSuperview()
@@ -152,8 +155,13 @@ extension WateringPopupView: WateringEventDelegate {
                 }
             }
             
+            if Global.shared.selectedPlant?.id == delayedPlant.id {
+                Global.shared.selectedPlant = delayedPlant
+            }
+            
             UserNotification.watering.registerNotification()
             Global.shared.plants = plants
+            delegate?.plantEvent(plant, event: .completeToDelay)
             removeFromSuperview()
         }
     }
