@@ -137,6 +137,8 @@ extension DetailViewController {
             for plant in Global.shared.plants {
                 if let selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
                     Global.shared.selectedPlant = nil
+                    Global.shared.diaryDict[plant.id] = []
+                    Global.shared.waterRecordDict[plant.id] = []
                 } else {
                     plants.append(plant)
                 }

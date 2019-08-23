@@ -47,7 +47,7 @@ struct AssetManager {
     }
     
     static func save(image: UIImage, identifier: String) -> URL? {
-        guard let data = image.jpegData(compressionQuality: 0.9) ?? image.pngData() else {
+        guard let data = image.jpegData(compressionQuality: 0.85) ?? image.pngData() else {
             return nil
         }
         guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as URL else {
