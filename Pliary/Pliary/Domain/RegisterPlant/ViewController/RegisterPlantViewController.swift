@@ -247,9 +247,6 @@ extension RegisterPlantViewController: RegisterEventDelegate {
                 selectedPlant?.firstDate = date
             case .lastWaterDate:
                 selectedPlant?.lastWaterDate = date
-                let dateStr = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(date)))
-//                Global.shared.waterRecordDict
-//                selectedPlant?. = dateStr
             default:
                 ()
             }
