@@ -162,9 +162,4 @@ struct Plant: Equatable, Codable {
         return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
     }
 
-    fileprivate let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yy.MM.dd"
-        return formatter
-    }()
 }

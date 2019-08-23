@@ -64,8 +64,6 @@ extension WateringPopupView: WateringEventDelegate {
 
         switch event {
         case .waterThePlant:
-            delegate?.plantEvent(plant, event: .completeToWater)
-
             var wateredPlant = plant
             wateredPlant.lastWaterDate = Date().getDayStartTime()
             wateredPlant.nextWaterDate = wateredPlant.recalculateNextWaterDate()
@@ -78,6 +76,9 @@ extension WateringPopupView: WateringEventDelegate {
                     plants.append(plant)
                 }
             }
+            
+            UserNotification.watering.registerNotification()
+            Global.shared.plants = plants
 
             if var dict = Global.shared.waterRecordDict[plant.id] {
                 let formatter = DateFormatter()
@@ -93,7 +94,8 @@ extension WateringPopupView: WateringEventDelegate {
                 Global.shared.waterRecordDict[plant.id] = dict
             }
 
-            UserNotification.watering.registerNotification()
+            
+            delegate?.plantEvent(plant, event: .completeToWater)
             removeFromSuperview()
 
         case .convertViewToDelay:
@@ -112,7 +114,9 @@ extension WateringPopupView: WateringEventDelegate {
                     plants.append(plant)
                 }
             }
+            
             UserNotification.watering.registerNotification()
+            Global.shared.plants = plants
             removeFromSuperview()
         }
     }

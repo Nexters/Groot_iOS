@@ -89,6 +89,8 @@ class Global: NSObject {
                 plantArray.append(plant)
             }
         }
+        
+        plantArray = plantArray.sorted(by: { $0.nextWaterDate < $1.nextWaterDate })
         plants = plantArray
     }
     

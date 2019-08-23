@@ -76,14 +76,11 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         self.plant = plant
         nicknameLabel.text = plant.nickName + "에게 물주기"
         
-
-//        dayLeftLabel.text = "D-" + plant.getDayLeft()
-        
         // negative or postive 계산 (d-day)
-        let lastWaterDay = Date(timeIntervalSince1970: plant.lastWaterDate)
-        let interval = plant.wateringInterval
-        if let waterDiffer = daysBetween(start: lastWaterDay, end: Date()) {
-            let dDay = (interval - waterDiffer)
+        let today = Date()
+        let nextWaterDay = Date(timeIntervalSince1970: plant.nextWaterDate)
+        
+        if let dDay = daysBetween(start: today, end: nextWaterDay) {
             if dDay == 0 {
                 dayLeftLabel.text = "D-day"
                 currentStatus = .negative

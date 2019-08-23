@@ -29,10 +29,16 @@ class RegisterPlantViewController: UIViewController {
     }
     
     @IBAction func tabCompleteButton(_ sender: Any) {
-        guard let plant = selectedPlant else {
+        guard var plant = selectedPlant else {
             return
         }
-        Global.shared.plants.append(plant)
+        
+        plant.nextWaterDate = plant.recalculateNextWaterDate()
+        
+        var plantArray = Global.shared.plants
+        plantArray.append(plant)
+        plantArray = plantArray.sorted(by: { $0.nextWaterDate < $1.nextWaterDate })
+        Global.shared.plants = plantArray
         
         // Add watering record
         Global.shared.waterRecordDict[plant.id] = [plant.lastWaterDate.getMonth():[plant.lastWaterDate]]
@@ -242,7 +248,7 @@ extension RegisterPlantViewController: RegisterEventDelegate {
                 selectedPlant?.lastWaterDate = date
                 let dateStr = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(date)))
 //                Global.shared.waterRecordDict
-                selectedPlant?. = dateStr
+//                selectedPlant?. = dateStr
             default:
                 ()
             }
