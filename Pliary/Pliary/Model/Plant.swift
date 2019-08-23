@@ -160,7 +160,7 @@ struct Plant: Equatable, Codable {
 
     mutating func water() {
         let currentTimestamp = Date().timeIntervalSince1970
-        let currentDateStr: String = currentTimestamp.getSince1970String()
+        let currentDateStr: String = currentTimestamp.getSince1970StringForCalendar()
         
         if getWaterDates().contains(currentDateStr) {
             return
@@ -185,7 +185,7 @@ struct Plant: Equatable, Codable {
             dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
             
             let currentTimestamp = Date().timeIntervalSince1970
-            let currentDateStr: String = currentTimestamp.getSince1970String() + " 08:00:00"
+            let currentDateStr: String = currentTimestamp.getSince1970StringForCalendar() + " 08:00:00"
             let currentDate: Date = dateFormatter.date(from: currentDateStr) ?? Date()
             
             if(lastWaterDate == 0) {
@@ -194,7 +194,7 @@ struct Plant: Equatable, Codable {
                 
             } else {
                 
-                let lastDateString: String = lastWaterDate.getSince1970String() + " 08:00:00"
+                let lastDateString: String = lastWaterDate.getSince1970StringForCalendar() + " 08:00:00"
                 let lastDate: Date = dateFormatter.date(from: lastDateString) ?? Date()
                 let lastDateTimestamp = lastDate.timeIntervalSince1970
 
