@@ -97,12 +97,16 @@ class DiaryViewController: UIViewController {
     }
     
     private func getCurrentImageURL() -> String? {
-        var imageURL: String? = currentDiaryCard?.imageURL
-        if let image = diaryImageView.image, let identifier = selectedImage?.localIdentifier {
-            let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
-            imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+        if let image = diaryImageView.image {
+            var imageURL: String? = currentDiaryCard?.imageURL
+            if let identifier = selectedImage?.localIdentifier {
+                let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
+                imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+            }
+            return imageURL
+        } else {
+            return nil
         }
-        return imageURL
     }
     
     private func saveCurrentCard() {

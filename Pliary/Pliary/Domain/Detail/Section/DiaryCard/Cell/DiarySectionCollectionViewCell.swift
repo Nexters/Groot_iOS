@@ -116,7 +116,6 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
         
         if diaryCard.diaryText == nil , let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithImageTableViewCell.reuseIdentifier) as? DiaryCardWithImageTableViewCell {
             
-            let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)
             cell.delegate = self
             
@@ -125,7 +124,6 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
             
         if diaryCard.imageURL == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
             
-            let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)
             cell.delegate = self
             
@@ -134,7 +132,6 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
             
-            let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)
             cell.delegate = self
             
