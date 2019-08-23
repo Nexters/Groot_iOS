@@ -23,15 +23,11 @@ class Global: NSObject {
     var selectedPlant: Plant? {
         didSet {
             if oldValue != selectedPlant {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy.MM"
-                currentMonth = formatter.string(from: Date())
                 NotificationCenter.default.post(name: NotificationName.reloadSelectedPlant, object: nil)
+                NotificationCenter.default.post(name: NotificationName.reloadWateringRecord, object: nil)
             }
         }
     }
-    
-    var currentMonth: String?
     
     var diaryDict: [String: [DiaryCard]] = [:] {
         didSet {
@@ -42,7 +38,7 @@ class Global: NSObject {
         }
     }
     
-    var waterRecordDict: [String: [String: Set<TimeInterval>]] = [:] {
+    var waterRecordDict: [String: Set<TimeInterval>] = [:] {
         didSet {
             if oldValue != waterRecordDict {
                 saveWateringRecord()
@@ -108,7 +104,7 @@ class Global: NSObject {
     }
     
     private func loadWateringRecords() {
-        if let dict = AssetManager.getDictData(for: AssetKey.wateringRecord.rawValue) as? [String: [String: Set<TimeInterval>]] {
+        if let dict = AssetManager.getDictData(for: AssetKey.wateringRecord.rawValue) as? [String: Set<TimeInterval>] {
             waterRecordDict = dict
         }
     }
@@ -119,9 +115,5 @@ class Global: NSObject {
         loadCurrentPlants()
         loadDiaryCards()
         loadWateringRecords()
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM"
-        currentMonth = formatter.string(from: Date())
     }
 }

@@ -43,7 +43,7 @@ class RegisterPlantViewController: UIViewController {
         UserNotification.watering.registerNotification()
         
         // Add watering record
-        Global.shared.waterRecordDict[plant.id] = [plant.lastWaterDate.getMonth():[plant.lastWaterDate]]
+        Global.shared.waterRecordDict[plant.id] = [plant.lastWaterDate]
         
         view.endEditing(true)
         dismiss(animated: true, completion: nil)

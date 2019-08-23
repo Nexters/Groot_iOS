@@ -107,17 +107,10 @@ extension WateringPopupView: WateringEventDelegate {
             Global.shared.plants = plants
 
             if var dict = Global.shared.waterRecordDict[plant.id] {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy.MM"
-                let currentMonth = formatter.string(from: Date())
-                if var monthSet = dict[currentMonth] {
-                    monthSet.insert(Date().getDayStartTime())
-                    dict[currentMonth] = monthSet
-                } else {
-                    dict[currentMonth] = [Date().getDayStartTime()]
-                }
-
+                dict.insert(Date().getDayStartTime())
                 Global.shared.waterRecordDict[plant.id] = dict
+            } else {
+                Global.shared.waterRecordDict[plant.id] = [Date().getDayStartTime()]
             }
 
             if Global.shared.selectedPlant?.id == wateredPlant.id {

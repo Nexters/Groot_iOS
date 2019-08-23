@@ -83,6 +83,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="W7p-8C-X3a" id="x7T-Gq-ccH"/>
+                <outlet property="moreButton" destination="a2r-V6-w6G" id="C96-47-TSM"/>
                 <outlet property="msgLabel" destination="dcV-jv-cVx" id="xz1-zW-OHv"/>
                 <outlet property="waterImage" destination="1dH-bM-uG8" id="0Bx-ZZ-jyx"/>
             </connections>

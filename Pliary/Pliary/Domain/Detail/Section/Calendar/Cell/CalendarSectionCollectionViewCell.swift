@@ -12,15 +12,15 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var recordCards: Set<String> = []
+    var recordCards: [String] = []
     var planCards: String = ""
+    
     weak var delegate: DetailEventDelegate?
 
     private var recordCardsCount: Int {
         return recordCards.count + 2
     }
     
-
     private func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,11 +29,21 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         let calendarNib = UINib(nibName: calendarName, bundle: nil)
         tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
 
-        for _ in 0 ... recordCards.count{
-            let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
-            let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
-            tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
+        let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
+        let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
+        tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
+    }
+
+    func setUp() {
+        if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id] {
+            recordCards = []
+            for date in dict {
+                recordCards.append(date.getSince1970StringForCalendar())
+            }
+            recordCards = recordCards.sorted().reversed()
+            planCards = Global.shared.selectedPlant?.getNextWaterDate().getSince1970StringForCalendar() ?? ""
         }
+        
         if recordCards.isEmpty {
             tableView.isScrollEnabled = false
         } else {
@@ -41,30 +51,21 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    func setUp() {
-        if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id], let month = Global.shared.currentMonth {
-
-            let wateredArray = dict[month]
-            for date in wateredArray ?? [] {
-                recordCards.insert(date.getSince1970StringForCalendar())
-            }
-            planCards = Global.shared.selectedPlant?.getNextWaterDate().getSince1970StringForCalendar() ?? ""
-        }
-    }
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
         setTableView()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NotificationName.reloadWateringRecord, object: nil)
     }
 
     @objc func reloadData() {
+        setUp()
+        
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
     }
-
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: NotificationName.reloadWateringRecord, object: nil)
@@ -93,15 +94,20 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
             cell.setUp()
             return cell
         } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {
-            let index = indexPath.row - 1
-            if( recordCards.count > index){
-                let dateStr = Array(recordCards)[index]
-                cell.setUp(dateStr, isTodo: false)
-            } else {
+            
+            if indexPath.row == 1 {
                 cell.setUp(planCards, isTodo: true)
+            } else {
+                let index = indexPath.row - 2
+                if recordCards.count > index {
+                    let dateStr = recordCards[index]
+                    cell.setUp(dateStr, isTodo: false)
+                }
             }
+            
             return cell
         }
+        
         return UITableViewCell()
     }
 

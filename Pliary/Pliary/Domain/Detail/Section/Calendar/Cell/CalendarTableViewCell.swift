@@ -16,8 +16,21 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarView: UIView!
 
-    var dates = [String]()
-    var nextWaterDate = ""
+    var dates: [String] = [] {
+        didSet {
+            if oldValue != dates {
+                calendar.reloadData()
+            }
+        }
+    }
+    
+    var nextWaterDate = "" {
+        didSet {
+            if oldValue != nextWaterDate {
+                calendar.reloadData()
+            }
+        }
+    }
 
     fileprivate let gregorian = Calendar(identifier: .gregorian)
 
@@ -29,18 +42,14 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         calendar.dataSource = self
         setUpCalendar()
     }
-
+    
     func setUp() {
-        dates = []
-
-        if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id], let month = Global.shared.currentMonth {
-
-            let wateredArray = dict[month]
-            for date in wateredArray ?? [] {
-                
+        if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id] {
+            dates = []
+            for date in dict {
                 dates.append(date.getSince1970StringForCalendar())
             }
-
+            dates = dates.sorted().reversed()
         }
         nextWaterDate = Global.shared.selectedPlant?.getNextWaterDate().getSince1970StringForCalendar() ?? ""
     }
@@ -63,30 +72,20 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
 
     // MARK:- FSCalendarDataSource
     public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-
         let dateStr = date.timeIntervalSince1970.getSince1970StringForCalendar()
+        calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendar.frame.maxX, y: calendar.bounds.maxY), view: calendar)
         
         if dates.contains(dateStr) {
             return Color.greenCalendar
-        } else if nextWaterDate.elementsEqual(dateStr) {
+        } else if nextWaterDate == dateStr {
             return Color.blueCalendar
         }
-
-        calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendar.frame.maxX, y: calendar.bounds.maxY), view: calendar)
+        
         return nil
     }
 
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         return gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
-    }
-
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM"
-        let currentMonth = formatter.string(from: calendar.currentPage)
-        Global.shared.currentMonth = currentMonth
-
-        NotificationCenter.default.post(name: NotificationName.reloadWateringRecord, object: nil)
     }
 
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
