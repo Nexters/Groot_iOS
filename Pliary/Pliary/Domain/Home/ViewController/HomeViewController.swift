@@ -36,10 +36,13 @@ class HomeViewController: UIViewController {
         didSet {
             if oldValue != plants {
                 if oldValue.count < plants.count {
+                    loadToastView()
+                }
+                
+                if oldValue.count != plants.count {
                     collectionView.reloadData()
                     slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
                     slideViewLeadingConstraint.constant = CGFloat(currentIndex) * slideViewWidthConstraint.constant
-                    loadToastView()
                     collectionView.scrollToItem(at: IndexPath(item: plants.count, section: 0), at: .centeredHorizontally, animated: false)
                     collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
                     slideViewLeadingConstraint.constant = 0
@@ -137,7 +140,7 @@ extension HomeViewController {
         }
 
         super.viewDidLayoutSubviews()
-
+        
         plants = Global.shared.plants
 
         configureCollectionViewLayoutItemSize()

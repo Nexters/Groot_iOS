@@ -39,6 +39,21 @@ class WateringPopupView: UIView {
 
         clearCustomView()
         customView.addSubview(view)
+        
+        // negative or postive 계산 (d-day)
+        guard let plant = plant else {
+            return
+        }
+        
+        let today = Date()
+        let nextWaterDay = Date(timeIntervalSince1970: plant.nextWaterDate)
+        
+        if let dDay = daysBetween(start: today, end: nextWaterDay) {
+            if dDay <= 0 {
+                view.delayButton.alpha = 0.5
+                view.delayButton.isEnabled = false
+            }
+        }
     }
 
     func setDelayView() {
@@ -52,6 +67,17 @@ class WateringPopupView: UIView {
 
     @IBAction func tapCloseButton(_ sender: Any) {
         removeFromSuperview()
+    }
+    
+    func daysBetween(start: Date, end: Date) -> Int? {
+        let calendar = Calendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: start)
+        let date2 = calendar.startOfDay(for: end)
+        
+        let a = calendar.dateComponents([.day], from: date1, to: date2)
+        return a.value(for: .day)
     }
 
 }
@@ -102,9 +128,20 @@ extension WateringPopupView: WateringEventDelegate {
             setDelayView()
 
         case .completeToDelay(let day):
-
+            
+            // negative or postive 계산 (d-day)
+            let today = Date()
+            let nextWaterDay = Date(timeIntervalSince1970: plant.nextWaterDate)
+            
             var delayedPlant = plant
-            delayedPlant.nextWaterDate = delayedPlant.getDelayedWaterDate(day: day)
+            
+            if let dDay = daysBetween(start: today, end: nextWaterDay) {
+                if dDay <= 0 {
+                    delayedPlant.nextWaterDate = today.getDayStartTime() + Double(day * 60 * 60 * 24)
+                } else {
+                    delayedPlant.nextWaterDate = delayedPlant.getDelayedWaterDate(day: day)
+                }
+            }
 
             var plants: [Plant] = []
             for plant in Global.shared.plants {
