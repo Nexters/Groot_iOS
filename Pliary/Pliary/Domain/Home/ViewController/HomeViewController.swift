@@ -203,7 +203,7 @@ extension HomeViewController {
                 for i in (0...3) {
                     names.append(String(plants[i]))
                 }
-                content.body = "오늘은 \(plantstr) 외 \(numbrtOfPlant - 3) 물 먹는 날!"
+                content.body = "오늘은 \(plantstr) 외 \(numbrtOfPlant - 3)개 물 먹는 날!"
             } else {
                 
                 content.body = "오늘은 \(plantstr) 물 먹는 날!"
