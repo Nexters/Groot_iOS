@@ -112,7 +112,11 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
             return cell
         }
         
-        let diaryCard = diaryCards[indexPath.row - 1]
+        var diaryCard = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: " ", imageURL: nil)
+        
+        if diaryCards.count > (indexPath.row - 1) {
+            diaryCard = diaryCards[indexPath.row - 1]
+        }
         
         if diaryCard.diaryText == nil , let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithImageTableViewCell.reuseIdentifier) as? DiaryCardWithImageTableViewCell {
             
