@@ -17,6 +17,11 @@ class DayWithPlantTableViewCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(setUp), name: NotificationName.reloadSelectedPlant, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NotificationName.reloadSelectedPlant, object: nil)
     }
     
     func daysBetween(start: Date, end: Date) -> Int? {
@@ -30,7 +35,7 @@ class DayWithPlantTableViewCell: UITableViewCell {
         return a.value(for: .day)
     }
     
-    func setUp() {
+    @objc func setUp() {
         guard let plant = Global.shared.selectedPlant else {
             return
         }

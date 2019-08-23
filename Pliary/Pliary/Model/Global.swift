@@ -26,6 +26,7 @@ class Global: NSObject {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy.MM"
                 currentMonth = formatter.string(from: Date())
+                NotificationCenter.default.post(name: NotificationName.reloadSelectedPlant, object: nil)
             }
         }
     }

@@ -15,6 +15,7 @@ enum AssetKey: String {
 }
 
 struct NotificationName {
+    static let reloadSelectedPlant = Notification.Name.init("reloadSelectedPlant")
     static let reloadDiaryCard = Notification.Name.init("reloadDiaryCard")
     static let reloadWateringRecord = Notification.Name.init("reloadWateringRecord")
 }
