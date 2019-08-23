@@ -109,7 +109,6 @@ class Global: NSObject {
     
     private func loadWateringRecords() {
         if let dict = AssetManager.getDictData(for: AssetKey.wateringRecord.rawValue) as? [String: [String: Set<TimeInterval>]] {
-            print(dict)
             waterRecordDict = dict
         }
     }

@@ -40,12 +40,7 @@ class HomeViewController: UIViewController {
                 }
                 
                 if oldValue.count != plants.count {
-                    collectionView.reloadData()
-                    slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
-                    slideViewLeadingConstraint.constant = CGFloat(currentIndex) * slideViewWidthConstraint.constant
-                    collectionView.scrollToItem(at: IndexPath(item: plants.count, section: 0), at: .centeredHorizontally, animated: false)
-                    collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-                    slideViewLeadingConstraint.constant = 0
+                    layoutUpdateAfterPlantCountChanged()
                 } else {
                     collectionView.visibleCells.forEach {
                         if let cell = $0 as? HomeCardCollectionViewCell {
@@ -56,8 +51,18 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
     var plantsCount: Int {
         return plants.count + 1
+    }
+    
+    private func layoutUpdateAfterPlantCountChanged() {
+        collectionView.reloadData()
+        slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
+        slideViewLeadingConstraint.constant = CGFloat(currentIndex) * slideViewWidthConstraint.constant
+        collectionView.scrollToItem(at: IndexPath(item: plants.count, section: 0), at: .centeredHorizontally, animated: false)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+        slideViewLeadingConstraint.constant = 0
     }
 
     private func setUpSlideView() {
@@ -117,6 +122,22 @@ class HomeViewController: UIViewController {
             self.toastView?.alpha = 0.0
         })
     }
+    
+    private func firstLayout() {
+        setFirstCellSize()
+        first = false
+        
+        let toastView = BasicToastView.instance()
+        toastView.frame = CGRect(x: (view.bounds.width - toastView.bounds.width) / 2, y: view.bounds.height - 50, width: toastView.bounds.width, height: toastView.bounds.height)
+        toastView.setUp(with: "식물이 성공적으로 등록되었습니다.")
+        view.addSubview(toastView)
+        
+        toastView.alpha = 0.0
+        self.toastView = toastView
+        
+        animateCell()
+        UserNotification.watering.registerNotification()
+    }
 }
 
 extension HomeViewController {
@@ -142,24 +163,11 @@ extension HomeViewController {
         super.viewDidLayoutSubviews()
         
         plants = Global.shared.plants
-
         configureCollectionViewLayoutItemSize()
         slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
 
         if first {
-            setFirstCellSize()
-            first = false
-
-            let toastView = BasicToastView.instance()
-            toastView.frame = CGRect(x: (view.bounds.width - toastView.bounds.width) / 2, y: view.bounds.height - 50, width: toastView.bounds.width, height: toastView.bounds.height)
-            toastView.setUp(with: "식물이 성공적으로 등록되었습니다.")
-            view.addSubview(toastView)
-
-            toastView.alpha = 0.0
-            self.toastView = toastView
-
-            animateCell()
-            UserNotification.watering.registerNotification()
+            firstLayout()
         }
 
     }
