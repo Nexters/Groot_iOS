@@ -31,7 +31,7 @@ class DatePickerPopupView: UIView {
             return
         }
         
-        delegate?.registerEvent(event: .dateSelected(type: type, date: datePicker.date.timeIntervalSince1970))
+        delegate?.registerEvent(event: .dateSelected(type: type, date: datePicker.date.getDayStartTime()))
         removeFromSuperview()
     }
 }

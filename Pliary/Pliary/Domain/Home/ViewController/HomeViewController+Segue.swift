@@ -13,14 +13,7 @@ import Kingfisher
 extension HomeViewController: UICollectionViewDelegate {
     
     @IBAction func tabProfileImageButton(_ sender: Any) {
-//        let storyboard = UIStoryboard.init(name: StoryboardName.setting, bundle: Bundle(for: SettingViewController.self))
-//        guard let settingVC = storyboard.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else {
-//            return
-//        }
-//
-//        settingVC.hero.isEnabled = true
-//        settingVC.hero.modalAnimationType = .push(direction: .left)
-//        present(settingVC, animated: true, completion: nil)
+        
     }
     
     func enableHero(view: UIView, id: String) {
@@ -140,7 +133,7 @@ extension HomeViewController: PlantEventDelegate {
                 if let cell = $0 as? HomeCardCollectionViewCell, cell.plant?.id == plant.id {
                     cell.waterToPlant()
                     return
-                }
+                } 
             }
         
         default:

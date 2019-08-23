@@ -11,20 +11,20 @@ import UIKit
 class CalendarSectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    var recordCards: [RecordCard] = []
+
+    var recordCards: Set<TimeInterval> = []
     weak var delegate: DetailEventDelegate?
-    
+
     private var recordCardsCount: Int {
         return recordCards.count + 2
     }
-    
+
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         return formatter
     }()
-    
+
     fileprivate let formatterForCell: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yy.MM.dd"
@@ -33,52 +33,77 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
 
     private func setUp(_ plant : Plant) {
         let dates = plant.getWaterDates()
-        
+
         for _ in dates {
             let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
             let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
             tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
-            
+
             let card = RecordCard(dayCompareToSchedule: 0)
             recordCards.append(card)
         }
     }
-    
+
     private func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         let calendarName = CalendarTableViewCell.reuseIdentifier
         let calendarNib = UINib(nibName: calendarName, bundle: nil)
         tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
-        
+
         let plant = Global.shared.selectedPlant
         let dates = plant?.getWaterDatesTodo()
-        
+
         let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
         let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
         tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
-        
+
         let i: Int = dates?.count ?? 0
         for _ in 0..<i {
             let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
             let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
             tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
         }
-        
+
         if recordCards.isEmpty {
             tableView.isScrollEnabled = false
         } else {
             tableView.isScrollEnabled = true
         }
     }
-    
+
+    func setUp() {
+        if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id], let month = Global.shared.currentMonth {
+
+            let wateredArray = dict[month]
+            for date in wateredArray ?? [] {
+
+
+            }
+
+        }
+    }
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         guard let plant = Global.shared.selectedPlant else { return }
         setUp(plant)
         setTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NotificationName.reloadWateringRecord, object: nil)
+    }
+
+    @objc func reloadData() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NotificationName.reloadWateringRecord, object: nil)
     }
 
 }
@@ -97,9 +122,9 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordCardsCount
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell {
             return cell
         } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {

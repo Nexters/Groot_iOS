@@ -15,6 +15,7 @@ extension DetailViewController: DetailEventDelegate {
         switch event {
         case .dismiss:
             Hero.shared.cancel()
+            Global.shared.selectedPlant = nil
             dismiss(animated: true, completion: nil)
         case .changeSectionToCalendar:
             currentSection = .calendar

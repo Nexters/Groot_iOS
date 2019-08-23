@@ -29,25 +29,6 @@ extension UIImageView {
         })
     }
     
-    func fetchOpportunisticImage(asset: PHAsset) {
-        let options = PHImageRequestOptions()
-        options.version = .current
-        options.deliveryMode = .opportunistic
-        options.isSynchronous = false
-        options.isNetworkAccessAllowed = true
-        
-        let imageManager = PHCachingImageManager()
-        imageManager.requestImage(for: asset, targetSize: frame.size, contentMode: .aspectFill, options: options, resultHandler: { [weak self] (image : UIImage?, _) in
-            guard let image = image else {
-                self?.image = UIImage()
-                return
-            }
-            
-            self?.contentMode = .scaleAspectFill
-            self?.image = image
-        })
-    }
-    
     func fetchImage(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize, completion: @escaping (UIImage?) -> Void) {
         let options = PHImageRequestOptions()
         options.version = .current
