@@ -176,19 +176,19 @@ extension ModifyPlantViewController {
         let plants = Global.shared.plants
         var dateDic : Dictionary = [Int : String]()
         
-        for plant in plants {
-            let waterDate =  Int(plant.getNextWaterDate())
-            
-            var plantNames = dateDic[waterDate] ?? ""
-            if(plantNames == ""){
-                plantNames = plant.nickName
-            } else {
-                plantNames += ", "
-                plantNames += plant.nickName
-            }
-            dateDic.updateValue(plantNames, forKey: Int(waterDate))
-            
-        }
+//        for plant in plants {
+//            let waterDate =  Int(plant.getNextWaterDate())
+//            
+//            var plantNames = dateDic[waterDate] ?? ""
+//            if(plantNames == ""){
+//                plantNames = plant.nickName
+//            } else {
+//                plantNames += ", "
+//                plantNames += plant.nickName
+//            }
+//            dateDic.updateValue(plantNames, forKey: Int(waterDate))
+//            
+//        }
         
         for (waterDate, plantNames)  in dateDic {
             let content = UNMutableNotificationContent()

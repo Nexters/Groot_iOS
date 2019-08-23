@@ -162,40 +162,6 @@ struct Plant: Equatable, Codable {
         return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
     }
 
-    func getWaterDatesTodo() -> [String] {
-
-        let interval = self.wateringInterval * 86400 // 60 * 60 * 24
-        var waterDate : Int = Int(self.getNextWaterDate())
-        var datesTodo = [String]()
-        let twoMonthDay = waterDate + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
-
-        while waterDate < twoMonthDay {
-            waterDate += interval
-            let date = Date(timeIntervalSince1970: TimeInterval(waterDate))
-            datesTodo.append(formatter.string(from: date))
-        }
-
-        return datesTodo
-    }
-
-    func getWaterDates() -> [String] {
-        var dates = [String]()
-        let waterDates = self.waterDates.split(separator: "|")
-        for date in waterDates {
-            dates.append(String(date))
-        }
-        return dates
-    }
-
-    func getDayLeft() -> String {
-        let currnt = Date().timeIntervalSince1970
-        let next = TimeInterval(self.getNextWaterDate())
-        let interval = Int(next - currnt)
-
-        let days = Int(interval / 86400) + 1
-        return String(days)
-    }
-
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yy.MM.dd"

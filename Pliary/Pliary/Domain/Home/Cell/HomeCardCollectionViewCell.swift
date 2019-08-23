@@ -70,7 +70,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         nicknameLabel.text = plant.nickName + "에게 물주기"
         
 
-        dayLeftLabel.text = "D-" + plant.getDayLeft()
+//        dayLeftLabel.text = "D-" + plant.getDayLeft()
         
         // negative or postive 계산 (d-day)
         let lastWaterDay = Date(timeIntervalSince1970: plant.lastWaterDate)

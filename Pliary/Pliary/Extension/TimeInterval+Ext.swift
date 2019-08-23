@@ -28,6 +28,7 @@ extension Double {
 
         return dateString
     }
+    
     func getSince1970StringForCalendar() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yy.MM.dd"
@@ -37,5 +38,20 @@ extension Double {
 
         return dateString
     }
+    
+    func getMonth() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM"
+        
+        let date = Date.init(timeIntervalSince1970: self)
+        let dateString = dateFormatter.string(from: date)
+        
+        return dateString
+    }
+}
 
+extension Date {
+    func getDayStartTime() -> TimeInterval {
+        return Calendar.current.startOfDay(for: self).timeIntervalSince1970
+    }
 }

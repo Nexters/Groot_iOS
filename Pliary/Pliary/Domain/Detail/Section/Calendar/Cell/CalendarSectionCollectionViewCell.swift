@@ -18,31 +18,7 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
     private var recordCardsCount: Int {
         return recordCards.count + 2
     }
-
-    fileprivate let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        return formatter
-    }()
-
-    fileprivate let formatterForCell: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yy.MM.dd"
-        return formatter
-    }()
-
-    private func setUp(_ plant : Plant) {
-        let dates = plant.getWaterDates()
-
-        for _ in dates {
-            let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
-            let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
-            tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
-
-            let card = RecordCard(dayCompareToSchedule: 0)
-            recordCards.append(card)
-        }
-    }
+    
 
     private func setTableView() {
         tableView.delegate = self
@@ -53,18 +29,18 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
 
         let plant = Global.shared.selectedPlant
-        let dates = plant?.getWaterDatesTodo()
+//        let dates = plant?.getWaterDatesTodo()
 
         let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
         let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
         tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
 
-        let i: Int = dates?.count ?? 0
-        for _ in 0..<i {
-            let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
-            let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
-            tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
-        }
+//        let i: Int = dates?.count ?? 0
+//        for _ in 0..<i {
+//            let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
+//            let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
+//            tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
+//        }
 
         if recordCards.isEmpty {
             tableView.isScrollEnabled = false
@@ -89,8 +65,6 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        guard let plant = Global.shared.selectedPlant else { return }
-        setUp(plant)
         setTableView()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NotificationName.reloadWateringRecord, object: nil)
     }
@@ -126,19 +100,21 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell {
+            cell.setUp()
+
             return cell
         } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {
-            let index = indexPath.row - 1
-            let plant = Global.shared.selectedPlant
-            let dates = plant?.getWaterDates()
-            if(dates?.count ?? 0 > index ){
-                let dateStr = String(dates?[index] ?? "")
-                cell.setUp(dateStr, isTodo: false)
-            } else {
-                let date = Date(timeIntervalSince1970: TimeInterval(plant?.getNextWaterDate() ?? 0))
-                let dateStr = formatterForCell.string(from: date)
-                cell.setUp(dateStr, isTodo: true)
-            }
+//            let index = indexPath.row - 1
+//            let plant = Global.shared.selectedPlant
+//            let dates = plant.getWaterDates()
+//            if(dates?.count ?? 0 > index ){
+//                let dateStr = String(dates?[index] ?? "")
+//                cell.setUp(dateStr, isTodo: false)
+//            } else {
+//                let date = Date(timeIntervalSince1970: TimeInterval(plant?.getNextWaterDate() ?? 0))
+//                let dateStr = formatterForCell.string(from: date)
+//                cell.setUp(dateStr, isTodo: true)
+//            }
             return cell
         }
         return UITableViewCell()

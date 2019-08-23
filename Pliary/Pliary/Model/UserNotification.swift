@@ -21,7 +21,7 @@ enum UserNotification {
         var dateDic : Dictionary = [Int : String]()
         
         for plant in plants {
-            let waterDate =  Int(plant.getNextWaterDate())
+            let waterDate =  Int(plant.nextWaterDate)
             
             var plantNames = dateDic[waterDate] ?? ""
             if(plantNames == ""){

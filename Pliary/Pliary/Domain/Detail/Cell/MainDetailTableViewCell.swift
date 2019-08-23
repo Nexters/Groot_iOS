@@ -80,7 +80,7 @@ class MainDetailTableViewCell: UITableViewCell {
         guard let plant = Global.shared.selectedPlant else {
             return
         }
-        dayLeftLabel.text = "D-" + plant.getDayLeft()
+//        dayLeftLabel.text = "D-" + plant.getDayLeft()
     }
 
     func animateImage() {

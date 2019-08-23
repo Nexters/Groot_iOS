@@ -241,7 +241,7 @@ extension RegisterPlantViewController: RegisterEventDelegate {
             case .lastWaterDate:
                 selectedPlant?.lastWaterDate = date
                 let dateStr = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(date)))
-                selectedPlant?.waterDates = dateStr
+//                selectedPlant?.waterDates = dateStr
             default:
                 ()
             }
@@ -305,7 +305,7 @@ extension RegisterPlantViewController {
         var dateDic : Dictionary = [Int : String]()
         
         for plant in plants {
-            let waterDate =  Int(plant.getNextWaterDate())
+            let waterDate =  Int(plant.nextWaterDate)
             
             var plantNames = dateDic[waterDate] ?? ""
             if(plantNames == ""){
