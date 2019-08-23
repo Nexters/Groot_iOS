@@ -131,6 +131,7 @@ extension HomeViewController: PlantEventDelegate {
         case .completeToWater:
             collectionView.visibleCells.forEach {
                 if let cell = $0 as? HomeCardCollectionViewCell, cell.plant?.id == plant.id {
+                    cell.reload()
                     cell.waterToPlant()
                     return
                 } 

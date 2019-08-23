@@ -38,14 +38,15 @@ class RegisterPlantViewController: UIViewController {
         var plantArray = Global.shared.plants
         plantArray.append(plant)
         plantArray = plantArray.sorted(by: { $0.nextWaterDate < $1.nextWaterDate })
+        
         Global.shared.plants = plantArray
+        UserNotification.watering.registerNotification()
         
         // Add watering record
         Global.shared.waterRecordDict[plant.id] = [plant.lastWaterDate.getMonth():[plant.lastWaterDate]]
         
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
-        UserNotification.watering.registerNotification()
     }
     
     fileprivate let formatter: DateFormatter = {

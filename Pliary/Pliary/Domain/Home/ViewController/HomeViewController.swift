@@ -35,15 +35,20 @@ class HomeViewController: UIViewController {
     var plants: [Plant] = [] {
         didSet {
             if oldValue != plants {
-                collectionView.reloadData()
-                slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
-                slideViewLeadingConstraint.constant = CGFloat(currentIndex) * slideViewWidthConstraint.constant
-
                 if oldValue.count < plants.count {
+                    collectionView.reloadData()
+                    slideViewWidthConstraint.constant = slideBackgroundView.frame.width / CGFloat(plantsCount)
+                    slideViewLeadingConstraint.constant = CGFloat(currentIndex) * slideViewWidthConstraint.constant
                     loadToastView()
                     collectionView.scrollToItem(at: IndexPath(item: plants.count, section: 0), at: .centeredHorizontally, animated: false)
                     collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
                     slideViewLeadingConstraint.constant = 0
+                } else {
+                    collectionView.visibleCells.forEach {
+                        if let cell = $0 as? HomeCardCollectionViewCell {
+                            cell.reload()
+                        }
+                    }
                 }
             }
         }

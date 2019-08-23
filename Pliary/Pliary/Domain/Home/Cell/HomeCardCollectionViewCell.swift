@@ -68,6 +68,20 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         return a.value(for: .day)
     }
     
+    func reload() {
+        guard let plant = plant else {
+            return
+        }
+        
+        for p in Global.shared.plants {
+            if p.id == plant.id {
+                setUp(with: p)
+                return
+            }
+        }
+        
+    }
+    
     func setUp(with plant: Plant) {
         if self.plant != plant {
             wateringAnimation.isHidden = true

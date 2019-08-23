@@ -80,7 +80,22 @@ class MainDetailTableViewCell: UITableViewCell {
         guard let plant = Global.shared.selectedPlant else {
             return
         }
-//        dayLeftLabel.text = "D-" + plant.getDayLeft()
+        
+        let today = Date()
+        let nextWaterDay = Date(timeIntervalSince1970: plant.nextWaterDate)
+        
+        if let dDay = daysBetween(start: today, end: nextWaterDay) {
+            if dDay == 0 {
+                dayLeftLabel.text = "D-day"
+                currentStatus = .negative
+            } else if dDay < 0 {
+                dayLeftLabel.text = "D+" + abs(dDay).description
+                currentStatus = .negative
+            } else {
+                dayLeftLabel.text = "D-" + dDay.description
+                currentStatus = .positive
+            }
+        }
     }
 
     func animateImage() {
