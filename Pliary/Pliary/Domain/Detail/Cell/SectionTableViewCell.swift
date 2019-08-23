@@ -68,7 +68,7 @@ extension SectionTableViewCell: UICollectionViewDataSource {
             cell.delegate = self
             return cell
         } else if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarSectionCollectionViewCell.identifier, for: indexPath) as? CalendarSectionCollectionViewCell {
-            
+            cell.setUp()
             cell.delegate = self
             return cell
         }

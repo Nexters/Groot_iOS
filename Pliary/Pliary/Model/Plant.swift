@@ -161,5 +161,24 @@ struct Plant: Equatable, Codable {
     func recalculateNextWaterDate() -> TimeInterval {
         return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
     }
-
+    
+    func getNextWaterDate() -> TimeInterval {
+        
+        if(nextWaterDate != 0) {
+            return nextWaterDate
+        }
+        if(lastWaterDate == 0) {
+            let currentTimestamp = Date().timeIntervalSince1970
+            let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
+            dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+            
+            let date: Date = dateFormatter.date(from: dateString)!
+            return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
+        } else {
+            return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
+        }
+    }
 }

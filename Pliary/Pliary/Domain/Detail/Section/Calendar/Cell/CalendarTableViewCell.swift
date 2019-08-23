@@ -17,7 +17,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     @IBOutlet weak var calendarView: UIView!
 
     var dates = [String]()
-    var datesTodo = [String]()
+    var nextWaterDate = ""
 
     fileprivate let gregorian = Calendar(identifier: .gregorian)
 
@@ -37,10 +37,12 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
 
             let wateredArray = dict[month]
             for date in wateredArray ?? [] {
-                dates.append(date.getSince1970String())
+                
+                dates.append(date.getSince1970StringForCalendar())
             }
 
         }
+        nextWaterDate = Global.shared.selectedPlant?.getNextWaterDate().getSince1970StringForCalendar() ?? ""
     }
 
     func setUpCalendar(){
@@ -62,12 +64,11 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     // MARK:- FSCalendarDataSource
     public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yy.MM.dd"
-
-        if dates.contains(formatter.string(from: date)) {
+        let dateStr = date.timeIntervalSince1970.getSince1970StringForCalendar()
+        
+        if dates.contains(dateStr) {
             return Color.greenCalendar
-        } else if datesTodo.contains(formatter.string(from: date)) {
+        } else if nextWaterDate.elementsEqual(dateStr) {
             return Color.blueCalendar
         }
 
