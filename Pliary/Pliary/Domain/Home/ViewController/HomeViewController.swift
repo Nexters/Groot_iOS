@@ -117,7 +117,7 @@ extension HomeViewController {
 
         setUpCollectionView()
         setUpSlideView()
-        setPush()
+        registerNotification()
         
         profileImageButton.isHidden = true
     }
@@ -154,13 +154,10 @@ extension HomeViewController {
         }
 
     }
-
-    func setPush() {
-        registerNotification()
-    }
     
     
     func registerNotification(){
+        
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         var dates : Dictionary = [Int : String]()
@@ -168,8 +165,7 @@ extension HomeViewController {
         let plants = Global.shared.plants
         
 //        for plant in plants {
-//            let wateringInterval = plant.wateringInterval * 43200 // 60 * 60 * 12
-////            var wateringDay =  Int(plant.getNextWaterDate())
+//            let wateringDay =  Int(plant.getNextWaterDate())
 //
 //            var str = dates[wateringDay] ?? ""
 //            if(str == ""){
@@ -187,6 +183,23 @@ extension HomeViewController {
             
             content.title = "식물 물주기 알람"
             content.body = "오늘은 \(plantstr) 물 먹는 날!"
+            
+            let numbrtOfPlant = plantstr.split(separator: ",").count
+            if(numbrtOfPlant == 1) {
+                
+                content.body = "\(plantstr): 목이 조금 마릅니다만..?"
+            } else if(numbrtOfPlant > 3) {
+                var names = ""
+                let plants = plantstr.trimmingCharacters(in: .whitespaces).split(separator: ",")
+                for i in (0...3) {
+                    names.append(String(plants[i]))
+                }
+                content.body = "오늘은 \(plantstr) 외 \(numbrtOfPlant - 3)개 물 먹는 날!"
+            } else {
+                
+                content.body = "오늘은 \(plantstr) 물 먹는 날!"
+            }
+            print( content.body )
             content.sound = UNNotificationSound.default
             content.categoryIdentifier = "watering"
             
