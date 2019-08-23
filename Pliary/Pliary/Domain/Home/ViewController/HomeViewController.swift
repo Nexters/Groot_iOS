@@ -199,10 +199,11 @@ extension HomeViewController {
                 
             } else if(numbrtOfPlant > 3) {
                 
-                var names = ""
-                let plants = plantNames.trimmingCharacters(in: .whitespaces).split(separator: ",")
+                let plants = plantNames.split(separator: ",")
                 
-                for i in (0...3) {
+                var names = String(plants.first ?? "")
+                for i in (1...2) {
+                    names.append(",")
                     names.append(String(plants[i]))
                 }
                 content.body = "오늘은 \(names) 외 \(numbrtOfPlant - 3)개 물 먹는 날!"
@@ -211,7 +212,6 @@ extension HomeViewController {
                 
                 content.body = "오늘은 \(plantNames) 물 먹는 날!"
             }
-            
             content.sound = UNNotificationSound.default
             content.categoryIdentifier = "watering"
             
