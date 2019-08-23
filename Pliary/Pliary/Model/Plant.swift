@@ -160,12 +160,14 @@ struct Plant: Equatable, Codable {
 
     mutating func water() {
         let currentTimestamp = Date().timeIntervalSince1970
-        let dateString: String = currentTimestamp.getSince1970String()
+        let currentDateStr: String = currentTimestamp.getSince1970String()
         
+        if getWaterDates().contains(currentDateStr) {
+            return
+        }
         self.waterDates.append("|")
-        self.waterDates.append(dateString)
+        self.waterDates.append(currentDateStr)
         self.lastWaterDate = currentTimestamp
-        
     }
 
     mutating func delay(day : Int) {
@@ -173,57 +175,50 @@ struct Plant: Equatable, Codable {
     }
 
     func getNextWaterDate() -> TimeInterval {
-
+        
         if(nextWaterDate != 0) {
             return nextWaterDate
         }
-        if(lastWaterDate == 0) {
-            let currentTimestamp = Date().timeIntervalSince1970
-            let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
+        else{
             let dateFormatter = DateFormatter()
-
-            dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
-            dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
-
-            let date: Date = dateFormatter.date(from: dateString) ?? Date()
-            return date.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
-        } else {
-            let dateString: String = lastWaterDate.getSince1970String() + " 08:00:00"
-            let dateFormatter = DateFormatter()
-            
             dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
             dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
             
-            let date: Date = dateFormatter.date(from: dateString) ?? Date()
-            let dateTimestamp = date.timeIntervalSince1970
             let currentTimestamp = Date().timeIntervalSince1970
+            let currentDateStr: String = currentTimestamp.getSince1970String() + " 08:00:00"
+            let currentDate: Date = dateFormatter.date(from: currentDateStr) ?? Date()
+            
+            if(lastWaterDate == 0) {
+                
+                return currentDate.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
+                
+            } else {
+                
+                let lastDateString: String = lastWaterDate.getSince1970String() + " 08:00:00"
+                let lastDate: Date = dateFormatter.date(from: lastDateString) ?? Date()
+                let lastDateTimestamp = lastDate.timeIntervalSince1970
 
-            if(dateTimestamp < currentTimestamp){
-                let currentTimestamp = Date().timeIntervalSince1970
-                let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
-                let dateFormatter = DateFormatter()
-                
-                dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
-                dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
-                
-                let date: Date = dateFormatter.date(from: dateString) ?? Date()
-                return date.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
+                if(lastDateTimestamp < currentTimestamp){
+                    return currentDate.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
+                }
+                return lastDate.timeIntervalSince1970
             }
-            return date.timeIntervalSince1970
         }
     }
     
     func getWaterDatesTodo() -> [String] {
         
         let interval = self.wateringInterval * 86400 // 60 * 60 * 24
-        var wateringDay : Int = Int(self.getNextWaterDate() )
+        var waterDate : Int = Int(self.getNextWaterDate())
         var datesTodo = [String]()
-        let twoMonthDay = wateringDay + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
-        while wateringDay < twoMonthDay {
-            wateringDay += interval
-            let date = Date(timeIntervalSince1970: TimeInterval(wateringDay))
+        let twoMonthDay = waterDate + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
+        
+        while waterDate < twoMonthDay {
+            waterDate += interval
+            let date = Date(timeIntervalSince1970: TimeInterval(waterDate))
             datesTodo.append(formatter.string(from: date))
         }
+        
         return datesTodo
     }
     
