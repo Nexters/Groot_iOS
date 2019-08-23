@@ -20,16 +20,15 @@ class WateringInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
-
-        let date = formatterForCell.date(from:dateLabel.text ?? "")
-        timestamp = Int(date?.timeIntervalSince1970 ?? 0)
     }
     
-    fileprivate let formatterForCell: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yy.MM.dd"
-        return formatter
-    }()
+    func setUp(_ date: String, isTodo: Bool) {
+        if(isTodo){
+            waterImage.image = UIImage(named: ImageName.waterBlue)
+            msgLabel.text = "물 주는 날 입니다."
+        }
+        dateLabel.text = date
+    }
     
     @IBAction func moreButtonClicked(_ sender: Any) {
         let alert = UIAlertController(title: "기록을 삭제하시겠습니까?", message: "", preferredStyle: .alert)
