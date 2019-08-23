@@ -128,7 +128,7 @@ extension HomeViewController {
 
         setUpCollectionView()
         setUpSlideView()
-        setPush()
+        registerNotification()
         
         profileImageButton.isHidden = true
     }
@@ -165,11 +165,6 @@ extension HomeViewController {
         }
 
     }
-
-    func setPush() {
-        registerNotification()
-    }
-    
     
     func registerNotification(){
         
@@ -180,8 +175,7 @@ extension HomeViewController {
         let plants = Global.shared.plants
         
         for plant in plants {
-            let wateringInterval = plant.wateringInterval * 43200 // 60 * 60 * 12
-            var wateringDay =  Int(plant.getNextWaterDate())
+            let wateringDay =  Int(plant.getNextWaterDate())
             
             var str = dates[wateringDay] ?? ""
             if(str == ""){
