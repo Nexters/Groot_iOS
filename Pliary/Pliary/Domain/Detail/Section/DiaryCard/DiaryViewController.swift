@@ -66,7 +66,7 @@ class DiaryViewController: UIViewController {
                 showEmptyCardAlert()
                 return
             }
-            let card = DiaryCard(timeStamp: Date().getDayStartTime(), diaryText: diaryTextView.text, imageURL: getCurrentImageURL())
+            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, imageURL: getCurrentImageURL())
             currentDiaryCard = card
             changeMode(.showDiary)
             saveCurrentCard()
@@ -75,7 +75,8 @@ class DiaryViewController: UIViewController {
                 showEmptyCardAlert()
                 return
             }
-            currentDiaryCard?.imageURL = getCurrentImageURL()
+            let url = getCurrentImageURL()
+            currentDiaryCard?.imageURL = url
             currentDiaryCard?.diaryText = diaryTextView.text
             changeMode(.showDiary)
             editCard()
@@ -96,7 +97,7 @@ class DiaryViewController: UIViewController {
     }
     
     private func getCurrentImageURL() -> String? {
-        var imageURL: String? = nil
+        var imageURL: String? = currentDiaryCard?.imageURL
         if let image = diaryImageView.image, let identifier = selectedImage?.localIdentifier {
             let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
             imageURL = path?.replacingOccurrences(of: "file:///", with: "")
@@ -146,6 +147,7 @@ class DiaryViewController: UIViewController {
     private func changeMode(_ mode: DiaryViewMode) {
         currentMode = mode
         switch mode {
+            
         case .writeNewDiary, .editDiary:
             let image = UIImage(named: ImageName.completeButton)
             navigationRightButton.setImage(image, for: .normal)
@@ -154,6 +156,7 @@ class DiaryViewController: UIViewController {
             addOrSubtractContentView.isHidden = false
             diaryImageHeightConstraint.constant = 266
             setScrollViewHeight()
+            
         case .showDiary:
             let image = UIImage(named: ImageName.moreButton)
             navigationRightButton.setImage(image, for: .normal)
@@ -164,8 +167,7 @@ class DiaryViewController: UIViewController {
             if let path = currentDiaryCard?.imageURL {
                 let url = URL(fileURLWithPath: path)
                 let provider = LocalFileImageDataProvider(fileURL: url)
-                diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { s in
-                    print(s)
+                diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { _ in
                 })
             }
             

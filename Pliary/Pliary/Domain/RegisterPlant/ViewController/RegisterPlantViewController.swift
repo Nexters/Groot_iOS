@@ -49,12 +49,6 @@ class RegisterPlantViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    fileprivate let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yy.MM.dd"
-        return formatter
-    }()
-    
     private func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
