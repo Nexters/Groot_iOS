@@ -170,52 +170,55 @@ extension HomeViewController {
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
-        var dates : Dictionary = [Int : String]()
-        
         let plants = Global.shared.plants
+        var dateDic : Dictionary = [Int : String]()
         
         for plant in plants {
-            let wateringDay =  Int(plant.getNextWaterDate())
+            let waterDate =  Int(plant.getNextWaterDate())
             
-            var str = dates[wateringDay] ?? ""
-            if(str == ""){
-                str = plant.nickName
+            var plantNames = dateDic[waterDate] ?? ""
+            if(plantNames == ""){
+                plantNames = plant.nickName
             } else {
-                str += ", "
-                str += plant.nickName
+                plantNames += ", "
+                plantNames += plant.nickName
             }
-            dates.updateValue(str, forKey: Int(wateringDay))
+            dateDic.updateValue(plantNames, forKey: Int(waterDate))
             
         }
         
-        for (wateringDay, plantstr)  in dates {
+        for (waterDate, plantNames)  in dateDic {
             let content = UNMutableNotificationContent()
             
             content.title = "식물 물주기 알람"
             
-            let numbrtOfPlant = plantstr.split(separator: ",").count
+            let numbrtOfPlant = plantNames.split(separator: ",").count
             if(numbrtOfPlant == 1) {
                 
-                content.body = "\(plantstr): 목이 조금 마릅니다만..?"
+                content.body = "\(plantNames): 목이 조금 마릅니다만..?"
+                
             } else if(numbrtOfPlant > 3) {
+                
                 var names = ""
-                let plants = plantstr.trimmingCharacters(in: .whitespaces).split(separator: ",")
+                let plants = plantNames.trimmingCharacters(in: .whitespaces).split(separator: ",")
+                
                 for i in (0...3) {
                     names.append(String(plants[i]))
                 }
-                content.body = "오늘은 \(plantstr) 외 \(numbrtOfPlant - 3)개 물 먹는 날!"
+                content.body = "오늘은 \(names) 외 \(numbrtOfPlant - 3)개 물 먹는 날!"
+                
             } else {
                 
-                content.body = "오늘은 \(plantstr) 물 먹는 날!"
+                content.body = "오늘은 \(plantNames) 물 먹는 날!"
             }
-            print( content.body )
+            
             content.sound = UNNotificationSound.default
             content.categoryIdentifier = "watering"
             
-            let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: Date.init(timeIntervalSince1970: TimeInterval(wateringDay)))
+            let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: Date.init(timeIntervalSince1970: TimeInterval(waterDate)))
             
             let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-            let request = UNNotificationRequest(identifier: String(wateringDay), content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: String(waterDate), content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request){ (error) in
                 if let error = error {
