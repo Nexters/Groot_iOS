@@ -192,7 +192,23 @@ extension HomeViewController {
             let content = UNMutableNotificationContent()
             
             content.title = "식물 물주기 알람"
-            content.body = "오늘은 \(plantstr) 물 먹는 날!"
+            
+            let numbrtOfPlant = plantstr.split(separator: ",").count
+            if(numbrtOfPlant == 1) {
+                
+                content.body = "\(plantstr): 목이 조금 마릅니다만..?"
+            } else if(numbrtOfPlant > 3) {
+                var names = ""
+                let plants = plantstr.trimmingCharacters(in: .whitespaces).split(separator: ",")
+                for i in (0...3) {
+                    names.append(String(plants[i]))
+                }
+                content.body = "오늘은 \(plantstr) 외 \(numbrtOfPlant - 3) 물 먹는 날!"
+            } else {
+                
+                content.body = "오늘은 \(plantstr) 물 먹는 날!"
+            }
+            print( content.body )
             content.sound = UNNotificationSound.default
             content.categoryIdentifier = "watering"
             
