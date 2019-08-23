@@ -69,6 +69,10 @@ class MainDetailTableViewCell: UITableViewCell {
         wateringAnimation.isHidden = true
         
         // negative or postive 계산 (d-day)
+        guard let plant = Global.shared.selectedPlant else {
+            return
+        }
+        dayLeftLabel.text = "D-" + plant.getDayLeft()
     }
     
     func animateImage() {

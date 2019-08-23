@@ -63,6 +63,9 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         wateringAnimation.isHidden = true
         nicknameLabel.text = plant.nickName + "에게 물주기"
         
+
+        dayLeftLabel.text = "D-" + plant.getDayLeft()
+        
         // negative or postive 계산 (d-day)
         currentStatus = .negative
     }

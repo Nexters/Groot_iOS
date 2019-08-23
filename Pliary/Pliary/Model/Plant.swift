@@ -231,6 +231,15 @@ struct Plant: Equatable, Codable {
         return dates
     }
     
+    func getDayLeft() -> String {
+        let currnt = Date().timeIntervalSince1970
+        let next = TimeInterval(self.getNextWaterDate())
+        let interval = Int(next - currnt)
+        
+        let days = Int(interval / 86400) + 1
+        return String(days)
+    }
+    
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yy.MM.dd"
