@@ -107,7 +107,7 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
                 cell.setUp(String(dates?[index] ?? ""), isTodo: true)
             } else {
                 let date = Date(timeIntervalSince1970: TimeInterval(plant?.lastWaterDate ?? 0))
-                let dateStr = formatter.string(from: date)
+                let dateStr = formatterForCell.string(from: date)
                 cell.setUp(dateStr, isTodo: false)
             }
             return cell
