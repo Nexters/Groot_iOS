@@ -47,11 +47,11 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id] {
             dates = []
             for date in dict {
-                dates.append(date.getSince1970StringForCalendar())
+                dates.append(date.getSince1970String())
             }
             dates = dates.sorted().reversed()
         }
-        nextWaterDate = Global.shared.selectedPlant?.getNextWaterDate().getSince1970StringForCalendar() ?? ""
+        nextWaterDate = Global.shared.selectedPlant?.getNextWaterDate().getSince1970String() ?? ""
     }
 
     func setUpCalendar(){
@@ -72,7 +72,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
 
     // MARK:- FSCalendarDataSource
     public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        let dateStr = date.timeIntervalSince1970.getSince1970StringForCalendar()
+        let dateStr = date.timeIntervalSince1970.getSince1970String()
         calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendar.frame.maxX, y: calendar.bounds.maxY), view: calendar)
         
         if dates.contains(dateStr) {

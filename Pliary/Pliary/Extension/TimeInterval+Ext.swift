@@ -11,7 +11,7 @@ import Foundation
 extension Double {
     func getSince1970String() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yy/MM/dd"
+        dateFormatter.dateFormat = "yy.MM.dd"
 
         let date = Date.init(timeIntervalSince1970: self)
         let dateString = dateFormatter.string(from: date)
@@ -29,15 +29,6 @@ extension Double {
         return dateString
     }
     
-    func getSince1970StringForCalendar() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yy.MM.dd"
-
-        let date = Date.init(timeIntervalSince1970: self)
-        let dateString = dateFormatter.string(from: date)
-
-        return dateString
-    }
     
     func getMonth() -> String {
         let dateFormatter = DateFormatter()

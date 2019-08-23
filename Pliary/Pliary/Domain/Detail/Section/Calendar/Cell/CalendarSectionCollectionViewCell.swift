@@ -38,10 +38,10 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id] {
             recordCards = []
             for date in dict {
-                recordCards.append(date.getSince1970StringForCalendar())
+                recordCards.append(date.getSince1970String())
             }
             recordCards = recordCards.sorted().reversed()
-            planCards = Global.shared.selectedPlant?.getNextWaterDate().getSince1970StringForCalendar() ?? ""
+            planCards = Global.shared.selectedPlant?.getNextWaterDate().getSince1970String() ?? ""
         }
         
         if recordCards.isEmpty {

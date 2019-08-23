@@ -44,7 +44,7 @@ class WateringInfoTableViewCell: UITableViewCell {
             
             if let id = Global.shared.selectedPlant?.id, var dict = Global.shared.waterRecordDict[id] {
                 for date in dict {
-                    let dateStr = date.getSince1970StringForCalendar()
+                    let dateStr = date.getSince1970String()
                     if dateStr != self.dateLabel.text {
                         dict.remove(date)
                     }
