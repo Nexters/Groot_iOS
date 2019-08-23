@@ -62,7 +62,6 @@ enum UserNotification {
             content.sound = UNNotificationSound.default
             content.categoryIdentifier = "watering"
             
-            print(content.body)
             let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: Date.init(timeIntervalSince1970: TimeInterval(waterDate)))
             
             let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
