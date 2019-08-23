@@ -31,11 +31,16 @@ class RegisterPlantViewController: UIViewController {
         guard let plant = selectedPlant else {
             return
         }
-        
         Global.shared.plants.append(plant)
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
+    
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy/MM/dd"
+        return formatter
+    }()
     
     private func setUpTableView() {
         tableView.delegate = self
@@ -229,6 +234,8 @@ extension RegisterPlantViewController: RegisterEventDelegate {
                 selectedPlant?.firstDate = date
             case .lastWaterDate:
                 selectedPlant?.lastWaterDate = date
+                let dateStr = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(date)))
+                selectedPlant?.waterDates = dateStr
             default:
                 ()
             }
@@ -277,5 +284,7 @@ extension RegisterPlantViewController: RegisterEventDelegate {
         
         return true
     }
+
+
 }
 

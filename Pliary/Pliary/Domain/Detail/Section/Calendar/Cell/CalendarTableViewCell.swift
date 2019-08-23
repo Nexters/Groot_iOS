@@ -42,7 +42,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yy/MM/dd"
+        formatter.dateFormat = "yy.MM.dd"
         return formatter
     }()
     
@@ -58,17 +58,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     }
     
     private func loadDatesTodo() {
-
         let plant = Global.shared.selectedPlant
-        let interval = plant!.wateringInterval * 86400 // 60 * 60 * 24
-        var wateringDay : Int = Int(plant?.getNextWaterDate() ?? 0)
-
-        let twoMonthDay = wateringDay + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
-        while wateringDay < twoMonthDay {
-            wateringDay += interval
-            let date = Date(timeIntervalSince1970: TimeInterval(wateringDay))
-            datesTodo.append(formatter.string(from: date))
-        }
+        datesTodo = plant?.getWaterDatesTodo() ?? []
     }
     
     func setUpCalendar(){

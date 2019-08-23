@@ -169,7 +169,7 @@ struct Plant: Equatable, Codable {
     }
 
     mutating func delay(day : Int) {
-        self.nextWaterDate = getNextWaterDate() + Double(day * 60 * 60 * 24)
+        self.nextWaterDate = getNextWaterDate() + Double(day * 86400) // 60 * 60 * 24
     }
 
     func getNextWaterDate() -> TimeInterval {
@@ -183,12 +183,38 @@ struct Plant: Equatable, Codable {
             let dateFormatter = DateFormatter()
 
             dateFormatter.dateFormat = "yy/MM/dd HH:mm:ss"
-            dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+            dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
 
             let date: Date = dateFormatter.date(from: dateString)!
-            return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
+            return date.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
         } else {
-            return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
+            let dateString: String = lastWaterDate.getSince1970String() + " 08:00:00"
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "yy/MM/dd HH:mm:ss"
+            dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
+            
+            let date: Date = dateFormatter.date(from: dateString)!
+            return date.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
         }
     }
+    func getWaterDatesTodo() -> [String] {
+        
+        let interval = self.wateringInterval * 86400 // 60 * 60 * 24
+        var wateringDay : Int = Int(self.getNextWaterDate() )
+        var datesTodo = [String]()
+        let twoMonthDay = wateringDay + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
+        while wateringDay < twoMonthDay {
+            wateringDay += interval
+            let date = Date(timeIntervalSince1970: TimeInterval(wateringDay))
+            datesTodo.append(formatter.string(from: date))
+        }
+        return datesTodo
+    }
+    
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy.MM.dd"
+        return formatter
+    }()
 }

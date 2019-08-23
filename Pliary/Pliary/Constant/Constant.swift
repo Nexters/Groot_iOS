@@ -35,6 +35,7 @@ struct ImageName {
     static let minusButton = "BtnSubtract"
     static let profileCameraButton = "Camera2"
     static let loginImage = "LoginAnimation"
+    static let waterBlue = "WaterBlue"
 }
 
 struct Color {

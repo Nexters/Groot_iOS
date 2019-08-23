@@ -25,6 +25,13 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         return formatter
     }()
     
+    
+    fileprivate let formatterForCell: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy.MM.dd"
+        return formatter
+    }()
+    
     private func setExample() {
         let card = RecordCard(timeStamp: "2019.11.02", dayCompareToSchedule: 0)
         recordCards.append(card)
@@ -42,6 +49,16 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         let calendarName = CalendarTableViewCell.reuseIdentifier
         let calendarNib = UINib(nibName: calendarName, bundle: nil)
         tableView.register(calendarNib, forCellReuseIdentifier: calendarName)
+        
+        let plant = Global.shared.selectedPlant
+        let dates = plant?.getWaterDatesTodo()
+        
+        let i: Int = dates?.count ?? 0
+        for _ in 0..<i {
+            let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
+            let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
+            tableView.register(wateringInfoNib, forCellReuseIdentifier: wateringInfoName)
+        }
         
         let wateringInfoName = WateringInfoTableViewCell.reuseIdentifier
         let wateringInfoNib = UINib(nibName: wateringInfoName, bundle: nil)
@@ -81,10 +98,18 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell {
-            
             return cell
         } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {
-            
+            let index = indexPath.row - 1
+            let plant = Global.shared.selectedPlant
+            let dates = plant?.getWaterDatesTodo()
+            if(dates?.count ?? 0 > index ){
+                cell.setUp(String(dates?[index] ?? ""), isTodo: true)
+            } else {
+                let date = Date(timeIntervalSince1970: TimeInterval(plant?.lastWaterDate ?? 0))
+                let dateStr = formatter.string(from: date)
+                cell.setUp(dateStr, isTodo: false)
+            }
             return cell
         }
         
