@@ -21,7 +21,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var wateringAnimation: AnimationView!
     
     weak var delegate: PlantEventDelegate?
-    var currentStatus: PlantStatus = .negative
+    var currentStatus: PlantStatus?
     var plant: Plant? {
         didSet {
             if oldValue != plant {
@@ -79,7 +79,6 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
                 return
             }
         }
-        
     }
     
     func setUp(with plant: Plant) {
@@ -118,8 +117,12 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
             return
         }
         
+        guard let status = currentStatus else {
+            return
+        }
+        
         var imageName: String {
-            switch currentStatus {
+            switch status {
             case .positive:
                 return plant.getPositiveImageName()
             case .negative:
@@ -145,8 +148,12 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
             return
         }
         
+        guard let status = currentStatus else {
+            return
+        }
+        
         var imageName: String {
-            switch currentStatus {
+            switch status {
             case .positive:
                 return plant.getPositiveImageName()
             case .negative:
