@@ -139,7 +139,7 @@ extension DetailViewController {
                 }
             }
             Global.shared.plants = plants
-            self.registerNotification()
+            UserNotification.watering.registerNotification()
             self.dismiss(animated: true, completion: nil)
         }
         

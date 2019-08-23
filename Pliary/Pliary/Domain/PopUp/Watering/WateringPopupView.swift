@@ -74,7 +74,8 @@ extension WateringPopupView: WateringEventDelegate {
                     plants.append(wateringPlant)
                 }
             }
-            registerNotification()
+            
+            UserNotification.watering.registerNotification()
             removeFromSuperview()
         case .convertViewToDelay:
             setDelayView()
@@ -89,7 +90,7 @@ extension WateringPopupView: WateringEventDelegate {
                 }
                 
             }
-            registerNotification()
+            UserNotification.watering.registerNotification()
             removeFromSuperview()
         }
     }

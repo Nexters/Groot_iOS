@@ -35,7 +35,7 @@ class RegisterPlantViewController: UIViewController {
         Global.shared.plants.append(plant)
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
-        registerNotification()
+        UserNotification.watering.registerNotification()
     }
     
     fileprivate let formatter: DateFormatter = {

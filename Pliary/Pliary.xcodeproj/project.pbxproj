@@ -12,6 +12,7 @@
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
+		76E45E6423101D1900C0045A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E6323101D1900C0045A /* UserNotification.swift */; };
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
 		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
@@ -123,6 +124,7 @@
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
 		76E45E5B230D5BD800C0045A /* BasicToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicToastView.swift; sourceTree = "<group>"; };
 		76E45E5D230D5BF100C0045A /* BasicToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicToastView.xib; sourceTree = "<group>"; };
+		76E45E6323101D1900C0045A /* UserNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
 		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
 		CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pliary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 		CE5F520522F1F45700F2E777 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76E45E6323101D1900C0045A /* UserNotification.swift */,
 				CE5F520622F1F45700F2E777 /* Plant.swift */,
 				CE90E40423094FAE00096731 /* PlantType.swift */,
 				CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */,
@@ -862,6 +865,7 @@
 				CE90E40523094FAE00096731 /* PlantType.swift in Sources */,
 				CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */,
 				CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */,
+				76E45E6423101D1900C0045A /* UserNotification.swift in Sources */,
 				CE8C84242306D3EA0083B3A9 /* ModifyPlantViewController.swift in Sources */,
 				CE885ADE230873B3008DB1FB /* RegisterPlantNameTableViewCell.swift in Sources */,
 				CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */,

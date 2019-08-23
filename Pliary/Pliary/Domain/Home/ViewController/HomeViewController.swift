@@ -128,8 +128,8 @@ extension HomeViewController {
 
         setUpCollectionView()
         setUpSlideView()
-        registerNotification()
-        
+        UserNotification.watering.registerNotification()
+
         profileImageButton.isHidden = true
     }
 
@@ -162,7 +162,7 @@ extension HomeViewController {
             self.toastView = toastView
 
             animateCell()
-            registerNotification()
+            UserNotification.watering.registerNotification()
         }
 
     }

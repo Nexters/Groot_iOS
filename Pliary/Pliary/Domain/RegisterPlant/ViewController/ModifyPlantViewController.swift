@@ -40,7 +40,7 @@ class ModifyPlantViewController: UIViewController {
             }
             Global.shared.plants = plants
             
-            registerNotification()
+            UserNotification.watering.registerNotification()
             dismiss(animated: true, completion: nil)
         }
     }
