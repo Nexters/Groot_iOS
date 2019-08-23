@@ -173,9 +173,9 @@ struct Plant: Equatable, Codable {
             let dateFormatter = DateFormatter()
             
             dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
-            dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+            dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
             
-            let date: Date = dateFormatter.date(from: dateString)!
+            let date: Date = dateFormatter.date(from: dateString) ?? Date()
             return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
         } else {
             return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
