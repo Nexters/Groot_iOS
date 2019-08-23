@@ -99,7 +99,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     }
     
     func animateImage() {
-        if !wateringAnimation.isAnimationPlaying else {
+        if !wateringAnimation.isAnimationPlaying {
             wateringAnimation.isHidden = true
         }
         
@@ -126,7 +126,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     }
     
     func stopImage() {
-        if !wateringAnimation.isAnimationPlaying else {
+        if !wateringAnimation.isAnimationPlaying {
             wateringAnimation.isHidden = true
         }
         
