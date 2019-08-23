@@ -15,5 +15,6 @@ protocol PlantEventDelegate: class {
 enum PlantEvent {
     case waterToPlant
     case completeToWater
+    case completeToDelay
     case modifyOrDeletePlant
 }
