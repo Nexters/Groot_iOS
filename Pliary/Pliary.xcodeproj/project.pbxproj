@@ -68,7 +68,6 @@
 		CE8C840C2305BDA20083B3A9 /* DetailViewController+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */; };
 		CE8C840F230645200083B3A9 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */; };
 		CE8C8410230645200083B3A9 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */; };
-		CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841523064DB00083B3A9 /* RecordCard.swift */; };
 		CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */; };
 		CE8C841A230654170083B3A9 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */; };
 		CE8C841D230655B60083B3A9 /* DiarySectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */; };
@@ -197,7 +196,6 @@
 		CE8C840B2305BDA20083B3A9 /* DetailViewController+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Event.swift"; sourceTree = "<group>"; };
 		CE8C840D230645200083B3A9 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		CE8C840E230645200083B3A9 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
-		CE8C841523064DB00083B3A9 /* RecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCard.swift; sourceTree = "<group>"; };
 		CE8C8417230654170083B3A9 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		CE8C8418230654170083B3A9 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
 		CE8C841B230655B60083B3A9 /* DiarySectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -336,7 +334,6 @@
 				CE5F520622F1F45700F2E777 /* Plant.swift */,
 				CE90E40423094FAE00096731 /* PlantType.swift */,
 				CEE0E1B222FB32FF00ED0C31 /* DiaryCard.swift */,
-				CE8C841523064DB00083B3A9 /* RecordCard.swift */,
 				CE885A942307C735008DB1FB /* Global.swift */,
 			);
 			path = Model;
@@ -900,7 +897,6 @@
 				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,
 				CE8C841D230655B60083B3A9 /* DiarySectionCollectionViewCell.swift in Sources */,
-				CE8C841623064DB00083B3A9 /* RecordCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

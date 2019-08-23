@@ -11,10 +11,12 @@ import UIKit
 enum AssetKey: String {
     case plants
     case diaryCard
+    case wateringRecord
 }
 
 struct NotificationName {
     static let reloadDiaryCard = Notification.Name.init("reloadDiaryCard")
+    static let reloadWateringRecord = Notification.Name.init("reloadWateringRecord")
 }
 
 struct StoryboardName {

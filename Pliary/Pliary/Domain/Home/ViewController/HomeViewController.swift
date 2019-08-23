@@ -103,17 +103,6 @@ class HomeViewController: UIViewController {
         collectionView.layoutIfNeeded()
     }
 
-//    func checkLogin() {
-//        if Global.shared.user == nil {
-//            let storyboard = UIStoryboard.init(name: StoryboardName.login, bundle: nil)
-//            guard let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController else {
-//                return
-//            }
-//
-//            //present(loginVC, animated: true, completion: nil)
-//        }
-//    }
-
     func loadToastView() {
         toastView?.alpha = 1.0
         UIView.animate(withDuration: 5.0, delay: 0.01, options: .curveEaseOut, animations: {
@@ -172,27 +161,26 @@ extension HomeViewController {
     
     
     func registerNotification(){
-        
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         var dates : Dictionary = [Int : String]()
         
         let plants = Global.shared.plants
         
-        for plant in plants {
-            let wateringInterval = plant.wateringInterval * 43200 // 60 * 60 * 12
-            var wateringDay =  Int(plant.getNextWaterDate())
-            
-            var str = dates[wateringDay] ?? ""
-            if(str == ""){
-                str = plant.nickName
-            } else {
-                str += ", "
-                str += plant.nickName
-            }
-            dates.updateValue(str, forKey: Int(wateringDay))
-            
-        }
+//        for plant in plants {
+//            let wateringInterval = plant.wateringInterval * 43200 // 60 * 60 * 12
+////            var wateringDay =  Int(plant.getNextWaterDate())
+//
+//            var str = dates[wateringDay] ?? ""
+//            if(str == ""){
+//                str = plant.nickName
+//            } else {
+//                str += ", "
+//                str += plant.nickName
+//            }
+//            dates.updateValue(str, forKey: Int(wateringDay))
+//
+//        }
         
         for (wateringDay, plantstr)  in dates {
             let content = UNMutableNotificationContent()

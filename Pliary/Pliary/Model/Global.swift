@@ -20,7 +20,18 @@ class Global: NSObject {
         }
     }
     
-    var selectedPlant: Plant?
+    var selectedPlant: Plant? {
+        didSet {
+            if oldValue != selectedPlant {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy.MM"
+                currentMonth = formatter.string(from: Date())
+
+            }
+        }
+    }
+    
+    var currentMonth: String?
     
     var diaryDict: [String: [DiaryCard]] = [:] {
         didSet {
@@ -31,9 +42,16 @@ class Global: NSObject {
         }
     }
     
-    var recordDict: [String: [RecordCard]] = [:]
+    var waterRecordDict: [String: [String: Set<TimeInterval>]] = [:] {
+        didSet {
+            if oldValue != waterRecordDict {
+                saveWateringRecord()
+                NotificationCenter.default.post(name: NotificationName.reloadWateringRecord, object: nil)
+            }
+        }
+    }
     
-    func saveCurrentPlants() {
+    private func saveCurrentPlants() {
         let encoder = JSONEncoder()
         var dict: [String: Any] = [:]
         for plant in plants {
@@ -45,7 +63,7 @@ class Global: NSObject {
         AssetManager.save(data: dict, for: AssetKey.plants.rawValue)
     }
     
-    func saveDiaryCards() {
+    private func saveDiaryCards() {
         let encoder = JSONEncoder()
         var dict: [String: Any] = [:]
         for key in diaryDict.keys {
@@ -57,7 +75,11 @@ class Global: NSObject {
         AssetManager.save(data: dict, for: AssetKey.diaryCard.rawValue)
     }
     
-    func loadCurrentPlants() {
+    private func saveWateringRecord() {
+        AssetManager.save(data: waterRecordDict, for: AssetKey.wateringRecord.rawValue)
+    }
+    
+    private func loadCurrentPlants() {
         let decoder = JSONDecoder()
         let dict = AssetManager.getDictData(for: AssetKey.plants.rawValue)
         var plantArray: [Plant] = []
@@ -70,7 +92,7 @@ class Global: NSObject {
         plants = plantArray
     }
     
-    func loadDiaryCards() {
+    private func loadDiaryCards() {
         let decoder = JSONDecoder()
         let dict = AssetManager.getDictData(for: AssetKey.diaryCard.rawValue)
         var newDict: [String: [DiaryCard]] = [:]
@@ -83,9 +105,22 @@ class Global: NSObject {
         diaryDict = newDict
     }
     
+    private func loadWateringRecords() {
+        if let dict = AssetManager.getDictData(for: AssetKey.wateringRecord.rawValue) as? [String: [String: Set<TimeInterval>]] {
+            print(dict)
+            waterRecordDict = dict
+        }
+    }
+    
+    
     override init() {
         super.init()
         loadCurrentPlants()
         loadDiaryCards()
+        loadWateringRecords()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM"
+        currentMonth = formatter.string(from: Date())
     }
 }

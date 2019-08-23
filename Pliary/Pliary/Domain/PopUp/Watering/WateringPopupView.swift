@@ -64,29 +64,56 @@ extension WateringPopupView: WateringEventDelegate {
         switch event {
         case .waterThePlant:
             delegate?.plantEvent(plant, event: .completeToWater)
-            for var wateringPlant in Global.shared.plants {
-                var plants: [Plant] = []
-                if wateringPlant.id == plant.id {
-                    wateringPlant.water()
-                    plants.append(wateringPlant)
+            
+            var wateredPlant = plant
+            wateredPlant.lastWaterDate = Date().getDayStartTime()
+            wateredPlant.nextWaterDate = wateredPlant.recalculateNextWaterDate()
+            
+            var plants: [Plant] = []
+            for plant in Global.shared.plants {
+                if plant.id == wateredPlant.id {
+                    plants.append(wateredPlant)
                 } else {
-                    plants.append(wateringPlant)
+                    plants.append(plant)
                 }
             }
-            removeFromSuperview()
-        case .convertViewToDelay:
-            setDelayView()
-        case .completeToDelay(let day):
-            var plants: [Plant] = []
-            for var delayingPlant in Global.shared.plants {
-                if delayingPlant.id == plant.id {
-                    delayingPlant.delay(day: day)
-                    plants.append(delayingPlant)
+            
+            if var dict = Global.shared.waterRecordDict[plant.id] {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy.MM"
+                let currentMonth = formatter.string(from: Date())
+                if var monthSet = dict[currentMonth] {
+                    monthSet.insert(Date().getDayStartTime())
+                    dict[currentMonth] = monthSet
                 } else {
-                    plants.append(delayingPlant)
+                    dict[currentMonth] = [Date().getDayStartTime()]
                 }
                 
+                Global.shared.waterRecordDict[plant.id] = dict
             }
+            
+            Global.shared.plants = plants
+            
+            removeFromSuperview()
+            
+        case .convertViewToDelay:
+            setDelayView()
+            
+        case .completeToDelay(let day):
+            
+            var delayedPlant = plant
+            delayedPlant.nextWaterDate = delayedPlant.getDelayedWaterDate(day: day)
+            
+            var plants: [Plant] = []
+            for plant in Global.shared.plants {
+                if plant.id == delayedPlant.id {
+                    plants.append(delayedPlant)
+                } else {
+                    plants.append(plant)
+                }
+            }
+            Global.shared.plants = plants
+            
             removeFromSuperview()
         }
     }

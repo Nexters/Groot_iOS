@@ -15,64 +15,35 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarView: UIView!
-    var plant : Plant? = nil
 
     var dates = [String]()
     var datesTodo = [String]()
-    var dateList = [Int]()
-
-    static func instance() -> CalendarTableViewCell {
-        let view: CalendarTableViewCell = UIView.createViewFromNib(nibName: CalendarTableViewCell.identifier)
-        return view
-    }
     
+    fileprivate let gregorian = Calendar(identifier: .gregorian)
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-
-        loadDates()
-        loadDatesTodo()
         
         calendar.delegate = self
         calendar.dataSource = self
         setUpCalendar()
     }
     
-    fileprivate let gregorian = Calendar(identifier: .gregorian)
-    
-    fileprivate let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yy/MM/dd"
-        return formatter
-    }()
-    
-    private func loadDates() {
+    func setUp() {
+        dates = []
         
-        let plant = Global.shared.selectedPlant
-        guard let waterDates = plant?.waterDates.split(separator: "|") else { return }
-        for date in waterDates {
-            dates.append(String(date))
-        }
-        let date = Date(timeIntervalSince1970: TimeInterval(plant?.lastWaterDate ?? 0))
-        dates.append(formatter.string(from: date))
-    }
-    
-    private func loadDatesTodo() {
-
-        let plant = Global.shared.selectedPlant
-        let interval = plant!.wateringInterval * 86400 // 60 * 60 * 24
-        var wateringDay : Int = Int(plant?.getNextWaterDate() ?? 0)
-
-        let twoMonthDay = wateringDay + 5184000 // 60 * 60 * 24 * 30 * 2 // 2 month
-        while wateringDay < twoMonthDay {
-            wateringDay += interval
-            let date = Date(timeIntervalSince1970: TimeInterval(wateringDay))
-            datesTodo.append(formatter.string(from: date))
+        if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id], let month = Global.shared.currentMonth {
+            
+            let wateredArray = dict[month]
+            for date in wateredArray ?? [] {
+                dates.append(date.getSince1970String())
+            }
+            
         }
     }
     
     func setUpCalendar(){
-    
         calendar.today = Date()
         calendar.locale = Locale(identifier: "ko_KR")
         
@@ -88,27 +59,33 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         calendar.appearance.headerMinimumDissolvedAlpha = 0.0
     }
     
-//    // MARK:- FSCalendarDataSource
-    
+    // MARK:- FSCalendarDataSource
     public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy.MM.dd"
         
         if dates.contains(formatter.string(from: date)) {
             return Color.greenCalendar
         } else if datesTodo.contains(formatter.string(from: date)) {
             return Color.blueCalendar
         }
+        
         calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendar.frame.maxX, y: calendar.bounds.maxY), view: calendar)
         return nil
     }
 
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-
-        return self.gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
+        return gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        print("\(formatter.string(from: calendar.currentPage))")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM"
+        let currentMonth = formatter.string(from: calendar.currentPage)
+        Global.shared.currentMonth = currentMonth
+        
+        NotificationCenter.default.post(name: NotificationName.reloadWateringRecord, object: nil)
     }
     
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {

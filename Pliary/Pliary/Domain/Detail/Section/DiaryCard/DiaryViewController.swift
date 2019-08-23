@@ -66,7 +66,7 @@ class DiaryViewController: UIViewController {
                 showEmptyCardAlert()
                 return
             }
-            let card = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: diaryTextView.text, imageURL: getCurrentImageURL())
+            let card = DiaryCard(timeStamp: Date().getDayStartTime(), diaryText: diaryTextView.text, imageURL: getCurrentImageURL())
             currentDiaryCard = card
             changeMode(.showDiary)
             saveCurrentCard()

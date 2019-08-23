@@ -18,6 +18,7 @@ extension DetailViewController: UITableViewDelegate {
         }
         
         if scrollView.contentOffset.y < -3 && !first {
+            Global.shared.selectedPlant = nil
             dismiss(animated: true, completion: nil)
         }
     }

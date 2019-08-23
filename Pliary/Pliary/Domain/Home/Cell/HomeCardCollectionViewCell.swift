@@ -36,9 +36,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
         wateringAnimation.center = center
         wateringAnimation.contentMode = .scaleAspectFill
         wateringAnimation.isUserInteractionEnabled = false
-        wateringAnimation.isHidden = true
         layer.applySketchShadow( color: #colorLiteral(red: 0.3490196078, green: 0.3529411765, blue: 0.4235294118, alpha: 0.08), alpha: 0.8, x: 0, y: 9, blur: 15, spread: 0)
-
     }
 
     @IBAction func tapAddWaterButton(_ sender: Any) {
@@ -49,22 +47,45 @@ class HomeCardCollectionViewCell: UICollectionViewCell {
     }
     
     func waterToPlant() {
-        wateringAnimation.isHidden = false
-        if !wateringAnimation.isAnimationPlaying {
-            wateringAnimation.play(completion: { _ in
-                self.currentStatus = .positive
-                self.animateImage()
-            })
-        }
+        currentStatus = .positive
+        wateringAnimation.stop()
+        wateringAnimation.play(completion: { _ in
+            self.animateImage()
+        })
+    }
+    
+    func daysBetween(start: Date, end: Date) -> Int? {
+        let calendar = Calendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: start)
+        let date2 = calendar.startOfDay(for: end)
+        
+        let a = calendar.dateComponents([.day], from: date1, to: date2)
+        return a.value(for: .day)
     }
     
     func setUp(with plant: Plant) {
         self.plant = plant
-        wateringAnimation.isHidden = true
         nicknameLabel.text = plant.nickName + "에게 물주기"
         
         // negative or postive 계산 (d-day)
-        currentStatus = .negative
+        let lastWaterDay = Date(timeIntervalSince1970: plant.lastWaterDate)
+        let interval = plant.wateringInterval
+        if let waterDiffer = daysBetween(start: lastWaterDay, end: Date()) {
+            let dDay = (interval - waterDiffer)
+            if dDay == 0 {
+                dayLeftLabel.text = "D-day"
+                currentStatus = .negative
+            } else if dDay < 0 {
+                dayLeftLabel.text = "D+" + abs(dDay).description
+                currentStatus = .negative
+            } else {
+                dayLeftLabel.text = "D-" + dDay.description
+                currentStatus = .positive
+            }
+        }
+        
     }
     
     func animateImage() {

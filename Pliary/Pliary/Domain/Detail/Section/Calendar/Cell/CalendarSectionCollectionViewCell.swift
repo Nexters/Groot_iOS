@@ -12,27 +12,11 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var recordCards: [RecordCard] = []
+    var recordCards: Set<TimeInterval> = []
     weak var delegate: DetailEventDelegate?
     
     private var recordCardsCount: Int {
         return recordCards.count + 1
-    }
-    
-    fileprivate let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
-        return formatter
-    }()
-    
-    private func setExample() {
-        let card = RecordCard(timeStamp: "2019.11.02", dayCompareToSchedule: 0)
-        recordCards.append(card)
-    }
-    
-    private func setUp(_ date : Date) {
-        let card = RecordCard(timeStamp: formatter.string(from: date) , dayCompareToSchedule: 0)
-        recordCards.append(card)
     }
     
     private func setTableView() {
@@ -54,11 +38,34 @@ class CalendarSectionCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func setUp() {
+        if let id = Global.shared.selectedPlant?.id, let dict = Global.shared.waterRecordDict[id], let month = Global.shared.currentMonth {
+            
+            let wateredArray = dict[month]
+            for date in wateredArray ?? [] {
+                
+                
+            }
+            
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        setExample()
         setTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NotificationName.reloadWateringRecord, object: nil)
+    }
+    
+    @objc func reloadData() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NotificationName.reloadWateringRecord, object: nil)
     }
 
 }
@@ -81,6 +88,7 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0,  let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell {
+            cell.setUp()
             
             return cell
         } else if let cell = tableView.dequeueReusableCell(withIdentifier: WateringInfoTableViewCell.identifier) as? WateringInfoTableViewCell {

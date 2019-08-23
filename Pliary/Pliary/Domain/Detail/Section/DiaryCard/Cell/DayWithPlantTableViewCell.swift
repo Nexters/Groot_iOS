@@ -40,7 +40,7 @@ class DayWithPlantTableViewCell: UITableViewCell {
         
         if let day = daysBetween(start: firstDay, end: today) {
             dayWithLabel.text = (day + 1).description + "일"
-            dayWithPlantLabel.text = (Global.shared.selectedPlant?.nickName ?? "") + "와(과) " + (day + 1).description + "일을 함게 했어요!"
+            dayWithPlantLabel.text = (Global.shared.selectedPlant?.nickName ?? "") + " 식물과 " + (day + 1).description + "일을 함게 했어요!"
         }
         
     }

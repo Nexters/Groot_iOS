@@ -33,7 +33,6 @@ class MainDetailTableViewCell: UITableViewCell {
         wateringAnimation.center = center
         wateringAnimation.contentMode = .scaleAspectFill
         wateringAnimation.isUserInteractionEnabled = false
-        wateringAnimation.isHidden = true
     }
     
     @IBAction func tapCloseButton(_ sender: Any) {
@@ -60,15 +59,43 @@ class MainDetailTableViewCell: UITableViewCell {
         delegate?.detailEvent(event: .scrollToNextPage)
     }
     
+    func daysBetween(start: Date, end: Date) -> Int? {
+        let calendar = Calendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: start)
+        let date2 = calendar.startOfDay(for: end)
+        
+        let a = calendar.dateComponents([.day], from: date1, to: date2)
+        return a.value(for: .day)
+    }
+    
     func setUp() {
         englishNameLabel.text = Global.shared.selectedPlant?.englishName
         koreanNameLabel.text = Global.shared.selectedPlant?.koreanName
         customNameLabel.text = Global.shared.selectedPlant?.nickName
         tipLabel.text = Global.shared.selectedPlant?.getTip()
         
-        wateringAnimation.isHidden = true
-        
         // negative or postive 계산 (d-day)
+        guard let plant = Global.shared.selectedPlant else {
+            return
+        }
+        
+        let lastWaterDay = Date(timeIntervalSince1970: plant.lastWaterDate)
+        let interval = plant.wateringInterval
+        if let waterDiffer = daysBetween(start: lastWaterDay, end: Date()) {
+            let dDay = (interval - waterDiffer)
+            if dDay == 0 {
+                dayLeftLabel.text = "D-day"
+                currentStatus = .negative
+            } else if dDay < 0 {
+                dayLeftLabel.text = "D+" + abs(dDay).description
+                currentStatus = .negative
+            } else {
+                dayLeftLabel.text = "D-" + dDay.description
+                currentStatus = .positive
+            }
+        }
     }
     
     func animateImage() {
@@ -113,13 +140,11 @@ class MainDetailTableViewCell: UITableViewCell {
     }
     
     func waterToPlant() {
-        wateringAnimation.isHidden = false
-        if !wateringAnimation.isAnimationPlaying {
-            wateringAnimation.play(completion: { _ in
-                self.currentStatus = .positive
-                self.animateImage()
-            })
-        }
+        currentStatus = .positive
+        wateringAnimation.stop()
+        wateringAnimation.play(completion: { _ in
+            self.animateImage()
+        })
     }
     
     func makeDeleteMode() {
