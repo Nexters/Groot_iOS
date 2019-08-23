@@ -38,7 +38,7 @@ class RegisterPlantViewController: UIViewController {
     
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yy/MM/dd"
+        formatter.dateFormat = "yy.MM.dd"
         return formatter
     }()
     

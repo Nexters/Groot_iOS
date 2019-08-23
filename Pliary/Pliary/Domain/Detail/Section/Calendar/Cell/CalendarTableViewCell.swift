@@ -49,7 +49,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     private func loadDates() {
         
         let plant = Global.shared.selectedPlant
-        guard let waterDates = plant?.waterDates.split(separator: "|") else { return }
+        guard let waterDates = plant?.getWaterDates() else { return }
+            
         for date in waterDates {
             dates.append(String(date))
         }
@@ -60,6 +61,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     private func loadDatesTodo() {
         let plant = Global.shared.selectedPlant
         datesTodo = plant?.getWaterDatesTodo() ?? []
+        let date = Date(timeIntervalSince1970: TimeInterval(plant?.getNextWaterDate() ?? 0))
+        datesTodo.append(formatter.string(from: date))
     }
     
     func setUpCalendar(){

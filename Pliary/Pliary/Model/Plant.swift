@@ -182,22 +182,37 @@ struct Plant: Equatable, Codable {
             let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
             let dateFormatter = DateFormatter()
 
-            dateFormatter.dateFormat = "yy/MM/dd HH:mm:ss"
+            dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
             dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
 
-            let date: Date = dateFormatter.date(from: dateString)!
+            let date: Date = dateFormatter.date(from: dateString) ?? Date()
             return date.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
         } else {
             let dateString: String = lastWaterDate.getSince1970String() + " 08:00:00"
             let dateFormatter = DateFormatter()
             
-            dateFormatter.dateFormat = "yy/MM/dd HH:mm:ss"
+            dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
             dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
             
-            let date: Date = dateFormatter.date(from: dateString)!
-            return date.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
+            let date: Date = dateFormatter.date(from: dateString) ?? Date()
+            let dateTimestamp = date.timeIntervalSince1970
+            let currentTimestamp = Date().timeIntervalSince1970
+
+            if(dateTimestamp < currentTimestamp){
+                let currentTimestamp = Date().timeIntervalSince1970
+                let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
+                let dateFormatter = DateFormatter()
+                
+                dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
+                dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
+                
+                let date: Date = dateFormatter.date(from: dateString) ?? Date()
+                return date.timeIntervalSince1970 + Double(wateringInterval * 86400) // 60 * 60 * 24
+            }
+            return date.timeIntervalSince1970
         }
     }
+    
     func getWaterDatesTodo() -> [String] {
         
         let interval = self.wateringInterval * 86400 // 60 * 60 * 24
@@ -210,6 +225,15 @@ struct Plant: Equatable, Codable {
             datesTodo.append(formatter.string(from: date))
         }
         return datesTodo
+    }
+    
+    func getWaterDates() -> [String] {
+        var dates = [String]()
+        let waterDates = self.waterDates.split(separator: "|")
+        for date in waterDates {
+            dates.append(String(date))
+        }
+        return dates
     }
     
     fileprivate let formatter: DateFormatter = {
