@@ -13,14 +13,7 @@ import Kingfisher
 extension HomeViewController: UICollectionViewDelegate {
     
     @IBAction func tabProfileImageButton(_ sender: Any) {
-        let storyboard = UIStoryboard.init(name: StoryboardName.setting, bundle: Bundle(for: SettingViewController.self))
-        guard let settingVC = storyboard.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else {
-            return
-        }
         
-        settingVC.hero.isEnabled = true
-        settingVC.hero.modalAnimationType = .push(direction: .left)
-        present(settingVC, animated: true, completion: nil)
     }
     
     func enableHero(view: UIView, id: String) {
@@ -90,8 +83,9 @@ extension HomeViewController: UICollectionViewDelegate {
         
         detailVC.hero.isEnabled = true
         detailVC.hero.modalAnimationType = .none
-        detailVC.selectedPlant = selectedCell.plant
         detailVC.view.hero.modifiers = [.cascade]
+        
+        Global.shared.selectedPlant = selectedCell.plant
         
         enableHero(view: detailVC.view, id: cellID)
         
@@ -124,14 +118,27 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-extension HomeViewController: HomeEventDelegate {
-    func homeEvent(_ plant: Plant, event: HomeEvent) {
+extension HomeViewController: PlantEventDelegate {
+    func plantEvent(_ plant: Plant, event: PlantEvent) {
         switch event {
         case .waterToPlant:
             let waterPopup = WateringPopupView.instance(with: plant)
             waterPopup.frame = view.frame
             waterPopup.setSelectView()
+            waterPopup.delegate = self
             view.addSubview(waterPopup)
+            
+        case .completeToWater:
+            collectionView.visibleCells.forEach {
+                if let cell = $0 as? HomeCardCollectionViewCell, cell.plant?.id == plant.id {
+                    cell.reload()
+                    cell.waterToPlant()
+                    return
+                } 
+            }
+        
+        default:
+            ()
         }
     }
 }

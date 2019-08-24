@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Lottie
 
 class MainDetailTableViewCell: UITableViewCell {
 
@@ -20,88 +21,148 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nameSplitLabel: UILabel!
     @IBOutlet weak var customNameLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
-    
+    @IBOutlet weak var wateringAnimation: AnimationView!
+
     weak var delegate: DetailEventDelegate?
-    private var plant: Plant?
-    
+    var currentStatus: PlantStatus = .negative
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+
+        wateringAnimation.center = center
+        wateringAnimation.contentMode = .scaleAspectFill
+        wateringAnimation.isUserInteractionEnabled = false
     }
-    
+
     @IBAction func tapCloseButton(_ sender: Any) {
         delegate?.detailEvent(event: .dismiss)
     }
-    
+
     @IBAction func tapMoreButton(_ sender: Any) {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
-        
+
         delegate?.detailEvent(plant, event: .modifyOrDeletePlant)
     }
-    
+
     @IBAction func tapAddWaterButton(_ sender: Any) {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
-        
+
         delegate?.detailEvent(plant, event: .waterToPlant)
     }
-    
+
     @IBAction func tapNextPageButton(_ sender: Any) {
         delegate?.detailEvent(event: .scrollToNextPage)
     }
-    
-    func setUp(with plant: Plant?) {
-        self.plant = plant
-        englishNameLabel.text = plant?.englishName
-        koreanNameLabel.text = plant?.koreanName
-        customNameLabel.text = plant?.nickName
-        tipLabel.text = plant?.getTip()
+
+    func daysBetween(start: Date, end: Date) -> Int? {
+        let calendar = Calendar.current
+
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: start)
+        let date2 = calendar.startOfDay(for: end)
+
+        let a = calendar.dateComponents([.day], from: date1, to: date2)
+        return a.value(for: .day)
     }
-    
-    func animateImage() {
-        guard let plant = plant else {
+
+    func setUp() {
+        englishNameLabel.text = Global.shared.selectedPlant?.englishName
+        koreanNameLabel.text = Global.shared.selectedPlant?.koreanName
+        customNameLabel.text = Global.shared.selectedPlant?.nickName
+        tipLabel.text = Global.shared.selectedPlant?.getTip()
+
+        // negative or postive 계산 (d-day)
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
         
-        let imageName = plant.getPositiveImageName()
-        let appendPath = "/" + imageName.replacingOccurrences(of: "iOS", with: "And") + ".gif"
+        let today = Date()
+        let nextWaterDay = Date(timeIntervalSince1970: plant.nextWaterDate)
+        
+        if let dDay = daysBetween(start: today, end: nextWaterDay) {
+            if dDay == 0 {
+                dayLeftLabel.text = "D-day"
+                currentStatus = .negative
+            } else if dDay < 0 {
+                dayLeftLabel.text = "D+" + abs(dDay).description
+                currentStatus = .negative
+            } else {
+                dayLeftLabel.text = "D-" + dDay.description
+                currentStatus = .positive
+            }
+        }
+    }
+
+    func animateImage() {
+        guard let plant = Global.shared.selectedPlant else {
+            return
+        }
+
+        var imageName: String {
+            switch currentStatus {
+            case .positive:
+                return plant.getPositiveImageName()
+            case .negative:
+                return plant.getNegativeImageName()
+            }
+        }
+
+        let appendPath = imageName + ".gif"
         let host = API.gifHost?.appendingPathComponent(appendPath)
         let placeHolder = UIImage(named: imageName)
-        
+
         plantView.kf.setImage(with: host, placeholder: placeHolder, options: nil, progressBlock: nil, completionHandler: { _ in
-            
+
         })
     }
-    
+
     func stopImage() {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
-        
-        let imageName = plant.getPositiveImageName()
+
+        var imageName: String {
+            switch currentStatus {
+            case .positive:
+                return plant.getPositiveImageName()
+            case .negative:
+                return plant.getNegativeImageName()
+            }
+        }
+
         let placeHolder = UIImage(named: imageName)
         plantView.image = placeHolder
     }
-    
+
+    func waterToPlant() {
+        currentStatus = .positive
+        wateringAnimation.stop()
+        wateringAnimation.play(completion: { _ in
+            self.animateImage()
+        })
+    }
+
     func makeDeleteMode() {
-        guard let plant = plant else {
+        guard let plant = Global.shared.selectedPlant else {
             return
         }
-        
+
         let imageName = plant.getPositiveImageName()
         let placeHolder = UIImage(named: imageName)?.convertToGrayScale()
         plantView.image = placeHolder
-        
+
         let blackImage = UIImage(named: ImageName.addWaterGrayButton)
         addWaterButton.setImage(blackImage, for: .normal)
     }
-    
+
     func clearDeleteMode() {
         animateImage()
-        
+
         let image = UIImage(named: ImageName.addWaterButton)
         addWaterButton.setImage(image, for: .normal)
     }

@@ -68,12 +68,24 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NotificationName.reloadDiaryCard, object: nil)
     }
     
-    func setUp(with plant: Plant?) {
-        if let id = plant?.id {
+    func setUp() {
+        if let id = Global.shared.selectedPlant?.id {
             diaryCards = Global.shared.diaryDict[id] ?? []
         }
+    }
+    
+    @objc func reloadData() {
+        setUp()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NotificationName.reloadDiaryCard, object: nil)
     }
 
 }
@@ -96,24 +108,26 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0, let cell = tableView.dequeueReusableCell(withIdentifier: DayWithPlantTableViewCell.reuseIdentifier) as? DayWithPlantTableViewCell {
-            
+            cell.setUp()
             return cell
         }
         
-        let diaryCard = diaryCards[indexPath.row - 1]
+        var diaryCard = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: " ", imageURL: nil)
+        
+        if diaryCards.count > (indexPath.row - 1) {
+            diaryCard = diaryCards[indexPath.row - 1]
+        }
         
         if diaryCard.diaryText == nil , let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithImageTableViewCell.reuseIdentifier) as? DiaryCardWithImageTableViewCell {
             
-            let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)
             cell.delegate = self
             
             return cell
         }
             
-        if diaryCard.diaryImage == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
+        if diaryCard.imageURL == nil, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithTextTableViewCell.reuseIdentifier) as? DiaryCardWithTextTableViewCell {
             
-            let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)
             cell.delegate = self
             
@@ -122,7 +136,6 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithAllTableViewCell.reuseIdentifier) as? DiaryCardWithAllTableViewCell {
             
-            let diaryCard = diaryCards[indexPath.row - 1]
             cell.setUp(with: diaryCard)
             cell.delegate = self
             
@@ -139,7 +152,7 @@ extension DiarySectionCollectionViewCell: DetailEventDelegate {
         delegate?.detailEvent(event: event)
     }
     
-    func detailEvent(_ plant: Plant, event: DetailPlantEvent) {
+    func detailEvent(_ plant: Plant, event: PlantEvent) {
         delegate?.detailEvent(plant, event: event)
     }
     

@@ -9,8 +9,5 @@
 import Foundation
 
 struct RecordCard {
-    
-    let timeStamp: String
     let dayCompareToSchedule: Int
-    
 }

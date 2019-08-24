@@ -8,12 +8,25 @@
 
 import UIKit
 
+enum AssetKey: String {
+    case plants
+    case diaryCard
+    case wateringRecord
+}
+
+struct NotificationName {
+    static let reloadSelectedPlant = Notification.Name.init("reloadSelectedPlant")
+    static let reloadDiaryCard = Notification.Name.init("reloadDiaryCard")
+    static let reloadWateringRecord = Notification.Name.init("reloadWateringRecord")
+}
+
 struct StoryboardName {
     static let home = "Home"
     static let setting = "Setting"
     static let detail = "Detail"
     static let regiserPlant = "RegisterPlant"
     static let login = "Login"
+    static let selectPhoto = "SelectPhoto"
 }
 
 struct ImageName {
@@ -25,6 +38,7 @@ struct ImageName {
     static let minusButton = "BtnSubtract"
     static let profileCameraButton = "Camera2"
     static let loginImage = "LoginAnimation"
+    static let waterBlue = "WaterBlue"
 }
 
 struct Color {

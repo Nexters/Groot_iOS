@@ -13,10 +13,10 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedPlant: Plant?
     var animating: Bool = true
     var headerView: DetailTableHeaderView?
     var first = true
+    var layoutFirst = true
     
     var currentSection: Section = .diaryCard {
         didSet {
@@ -43,7 +43,6 @@ class DetailViewController: UIViewController {
         
         writeDiaryVC.hero.isEnabled = true
         writeDiaryVC.hero.modalAnimationType = .push(direction: .left)
-        writeDiaryVC.plant = selectedPlant
         
         if diaryCard != nil {
             writeDiaryVC.currentMode = .showDiary
@@ -83,8 +82,6 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setUpTableView()
     }
     
     override func viewDidLayoutSubviews() {

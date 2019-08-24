@@ -12,7 +12,6 @@ class SectionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: DetailEventDelegate?
-    var plant: Plant?
     
     func changeSection(to section: Section, animated: Bool) {
         switch section {
@@ -27,11 +26,13 @@ class SectionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         selectionStyle = .none
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsSelection = false
         
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         let diaryNib = UINib(nibName: DiarySectionCollectionViewCell.identifier, bundle: nil)
         collectionView.register(diaryNib, forCellWithReuseIdentifier: DiarySectionCollectionViewCell.identifier)
         
@@ -39,15 +40,11 @@ class SectionTableViewCell: UITableViewCell {
         collectionView.register(calendarNib, forCellWithReuseIdentifier: CalendarSectionCollectionViewCell.identifier)
     }
     
-    func setUp() {
-        collectionView.reloadData()
-    }
-    
 }
 
 extension SectionTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return frame.size
+        return collectionView.frame.size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -66,15 +63,12 @@ extension SectionTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
         if indexPath.item == 0, let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DiarySectionCollectionViewCell.identifier, for: indexPath) as? DiarySectionCollectionViewCell {
-            
-            cell.setUp(with: plant)
-            cell.tableView.reloadData()
+            cell.setUp()
             cell.delegate = self
             return cell
         } else if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarSectionCollectionViewCell.identifier, for: indexPath) as? CalendarSectionCollectionViewCell {
-            
+            cell.setUp()
             cell.delegate = self
             return cell
         }
@@ -98,7 +92,7 @@ extension SectionTableViewCell: DetailEventDelegate {
         delegate?.detailEvent(event: event)
     }
     
-    func detailEvent(_ plant: Plant, event: DetailPlantEvent) {
+    func detailEvent(_ plant: Plant, event: PlantEvent) {
         delegate?.detailEvent(plant, event: event)
     }
     

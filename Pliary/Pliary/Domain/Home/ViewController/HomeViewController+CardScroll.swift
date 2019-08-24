@@ -51,12 +51,18 @@ extension HomeViewController {
         }
     }
     
-    func animateCell() {
+    func animateCell(for index: Int? = nil) {
         // For CPU 
         let inset: CGFloat = 40
         let unitScrollSize: CGFloat = collectionView.frame.size.width - inset * 2
         let currentIndex = collectionView.contentOffset.x / unitScrollSize
-        let indexPath = IndexPath(item: Int(currentIndex), section: 0)
+        
+        var intIndex = Int(currentIndex)
+        if let animatingIndex = index {
+            intIndex = animatingIndex
+        }
+        
+        let indexPath = IndexPath(item: intIndex, section: 0)
         
         adjustInset()
         
@@ -99,9 +105,9 @@ extension HomeViewController {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
                 scrollView.contentOffset = CGPoint(x: toValue, y: 0)
                 scrollView.layoutIfNeeded()
-            }, completion: { _ in
-                self.adjustInset()
-                self.animateCell()
+                
+                self.animateCell(for: snapToIndex)
+                self.currentIndex = snapToIndex
             })
             
             slideViewLeadingConstraint.constant = CGFloat(snapToIndex) * slideViewWidthConstraint.constant
@@ -109,6 +115,7 @@ extension HomeViewController {
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             
+            currentIndex = indexOfMajorCell
             slideViewLeadingConstraint.constant = CGFloat(indexOfMajorCell) * slideViewWidthConstraint.constant
         }
     }
@@ -130,6 +137,8 @@ extension HomeViewController: UICollectionViewDataSource {
             let plant = plants[indexPath.item]
             cell.setUp(with: plant)
             cell.delegate = self
+            cell.hero.isEnabled = false
+            
             return cell
         }
     }

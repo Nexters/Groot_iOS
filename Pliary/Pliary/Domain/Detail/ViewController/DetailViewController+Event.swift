@@ -8,12 +8,14 @@
 
 import UIKit
 import Hero
+import UserNotifications
 
 extension DetailViewController: DetailEventDelegate {
     func detailEvent(event: DetailLayoutEvent) {
         switch event {
         case .dismiss:
             Hero.shared.cancel()
+            Global.shared.selectedPlant = nil
             dismiss(animated: true, completion: nil)
         case .changeSectionToCalendar:
             currentSection = .calendar
@@ -32,7 +34,7 @@ extension DetailViewController: DetailEventDelegate {
         }
     }
     
-    func detailEvent(_ plant: Plant, event: DetailPlantEvent) {
+    func detailEvent(_ plant: Plant, event: PlantEvent) {
         switch event {
         case .modifyOrDeletePlant:
             showModifyDeleteAlert()
@@ -40,7 +42,10 @@ extension DetailViewController: DetailEventDelegate {
             let waterPopup = WateringPopupView.instance(with: plant)
             waterPopup.frame = view.frame
             waterPopup.setSelectView()
+            waterPopup.delegate = self
             view.addSubview(waterPopup)
+        default:
+            ()
         }
     }
     
@@ -48,6 +53,25 @@ extension DetailViewController: DetailEventDelegate {
         switch event {
         case .modifyOrDeleteDiaryCard:
             showDeleteCardAlert(diaryCard)
+        }
+    }
+    
+}
+
+extension DetailViewController: PlantEventDelegate {
+    func plantEvent(_ plant: Plant, event: PlantEvent) {
+        tableView.reloadData()
+        
+        switch event {
+        case .completeToWater:
+            tableView.visibleCells.forEach {
+                if let cell = $0 as? MainDetailTableViewCell {
+                    cell.waterToPlant()
+                    return
+                }
+            }
+        default:
+            ()
         }
     }
     
@@ -67,7 +91,6 @@ extension DetailViewController {
             guard let modifyVC = storyboard.instantiateViewController(withIdentifier: ModifyPlantViewController.identifier) as? ModifyPlantViewController else {
                 return
             }
-            modifyVC.plant = self.selectedPlant
             self.present(modifyVC, animated: true, completion: nil)
         })
         let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
@@ -110,6 +133,19 @@ extension DetailViewController {
             self.clearDeleteMode()
         })
         let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            var plants: [Plant] = []
+            for plant in Global.shared.plants {
+                if let selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
+                    Global.shared.selectedPlant = nil
+                    Global.shared.diaryDict[plant.id] = []
+                    Global.shared.waterRecordDict[plant.id] = []
+                } else {
+                    plants.append(plant)
+                }
+            }
+            Global.shared.plants = plants
+            UserNotification.watering.registerNotification()
+            
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -120,11 +156,22 @@ extension DetailViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
     private func showDeleteCardAlert(_ diaryCard: DiaryCard) {
         let alert = UIAlertController(title: "카드를 삭제하시겠습니까?", message: "", preferredStyle: .alert)
         
         let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
-        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            if let id = Global.shared.selectedPlant?.id {
+                let array = Global.shared.diaryDict[id] ?? []
+                var newArray: [DiaryCard] = []
+                for card in array {
+                    if card.timeStamp != diaryCard.timeStamp {
+                        newArray.append(card)
+                    }
+                }
+                Global.shared.diaryDict[id] = newArray
+            }
         }
         
         alert.addAction(cancleAction)

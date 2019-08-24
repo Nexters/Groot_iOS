@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Photo View Controller-->
+        <scene sceneID="L8J-Rc-ZOr">
+            <objects>
+                <viewController storyboardIdentifier="SelectPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="boR-SS-0WP" customClass="SelectPhotoViewController" customModule="Pliary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="exw-em-VtU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R9V-Mn-Zjo">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rqo-Lw-lWN">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ3-1I-m49">
+                                <rect key="frame" x="354" y="49" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WWS-6E-gB8"/>
+                                    <constraint firstAttribute="width" constant="50" id="vFC-eo-7II"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="선택">
+                                    <color key="titleColor" red="0.1764705882352941" green="0.1803921568627451" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapChooseButton:" destination="boR-SS-0WP" eventType="touchUpInside" id="mKa-Pg-3vT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIe-vU-rbx">
+                                <rect key="frame" x="10" y="49" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0zq-JW-TzR"/>
+                                    <constraint firstAttribute="width" constant="50" id="NlG-Vo-oAF"/>
+                                </constraints>
+                                <state key="normal" image="BtnCloseBlack"/>
+                                <connections>
+                                    <action selector="tapCloseButton:" destination="boR-SS-0WP" eventType="touchUpInside" id="PUK-Nu-k4D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모든 사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-VJ-vMe">
+                                <rect key="frame" x="175" y="49" width="64" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="t2o-GY-FqY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" red="0.1764705882" green="0.18039215689999999" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R9V-Mn-Zjo" firstAttribute="leading" secondItem="CJW-ac-mV9" secondAttribute="leading" id="5Pd-dv-EWe"/>
+                            <constraint firstItem="R9V-Mn-Zjo" firstAttribute="top" secondItem="OIe-vU-rbx" secondAttribute="bottom" constant="5" id="Ha6-US-7aQ"/>
+                            <constraint firstItem="R9V-Mn-Zjo" firstAttribute="trailing" secondItem="CJW-ac-mV9" secondAttribute="trailing" id="O22-3s-a4X"/>
+                            <constraint firstItem="R9V-Mn-Zjo" firstAttribute="bottom" secondItem="CJW-ac-mV9" secondAttribute="bottom" id="Rxo-i7-QVm"/>
+                            <constraint firstItem="NZ3-1I-m49" firstAttribute="top" secondItem="CJW-ac-mV9" secondAttribute="top" constant="5" id="U6s-j9-BZP"/>
+                            <constraint firstItem="Jlz-VJ-vMe" firstAttribute="centerX" secondItem="exw-em-VtU" secondAttribute="centerX" id="XGq-oV-Hjm"/>
+                            <constraint firstItem="Jlz-VJ-vMe" firstAttribute="top" secondItem="CJW-ac-mV9" secondAttribute="top" constant="5" id="dUl-EX-91f"/>
+                            <constraint firstItem="CJW-ac-mV9" firstAttribute="trailing" secondItem="NZ3-1I-m49" secondAttribute="trailing" constant="10" id="fFw-Jg-SuE"/>
+                            <constraint firstItem="OIe-vU-rbx" firstAttribute="top" secondItem="CJW-ac-mV9" secondAttribute="top" constant="5" id="kTS-mU-qjc"/>
+                            <constraint firstItem="OIe-vU-rbx" firstAttribute="leading" secondItem="CJW-ac-mV9" secondAttribute="leading" constant="10" id="r4g-aw-cw6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CJW-ac-mV9"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="R9V-Mn-Zjo" id="9uh-K4-Klg"/>
+                        <outlet property="completeButton" destination="NZ3-1I-m49" id="u2p-Yp-N2n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="weT-li-PGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-34.782608695652179" y="-114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BtnCloseBlack" width="24" height="24"/>
+    </resources>
+</document>
