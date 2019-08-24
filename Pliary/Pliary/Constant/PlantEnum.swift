@@ -30,6 +30,18 @@ enum PlantKoreanName: String {
     case schefflera = "홍콩야자"
 }
 
+enum PlantRegisterImageName: String {
+    case stuki = "stuki"
+    case eucalyptus = "eucalyptus"
+    case sansevieria = "sansevieria"
+    case monstera = "monstera"
+    case parlourPalm = "parlourPalm"
+    case elastica = "elastica"
+    case travelersPalm = "travelerSPalm"
+    case schefflera = "schefflera"
+    case userPlants = "userplant"
+}
+
 enum PlantPositiveImageName: String {
     case stuki = "iOS_Posi_Stuki"
     case eucalyptus = "iOS_Posi_Eucalyptus"

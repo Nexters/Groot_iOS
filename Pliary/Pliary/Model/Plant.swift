@@ -94,6 +94,29 @@ struct Plant: Equatable, Codable {
         }
     }
 
+    func getRegisterImageName() -> String {
+        switch type {
+        case .stuki:
+            return PlantRegisterImageName.stuki.rawValue
+        case .eucalyptus:
+            return PlantRegisterImageName.eucalyptus.rawValue
+        case .sansevieria:
+            return PlantRegisterImageName.sansevieria.rawValue
+        case .monstera:
+            return PlantRegisterImageName.monstera.rawValue
+        case .parlourPalm:
+            return PlantRegisterImageName.parlourPalm.rawValue
+        case .elastica:
+            return PlantRegisterImageName.elastica.rawValue
+        case .travelersPalm:
+            return PlantRegisterImageName.travelersPalm.rawValue
+        case .schefflera:
+            return PlantRegisterImageName.schefflera.rawValue
+        case .userPlants:
+            return PlantRegisterImageName.userPlants.rawValue
+        }
+    }
+    
     func getPositiveImageName() -> String {
         switch type {
         case .stuki:

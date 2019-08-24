@@ -20,7 +20,7 @@ class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
         self.plant = plant
         self.type = type
         
-        let imageName = plant.getPositiveImageName()
+        let imageName = plant.getRegisterImageName()
         plantImageView.image = UIImage(named: imageName)
         
         switch plant.type {
