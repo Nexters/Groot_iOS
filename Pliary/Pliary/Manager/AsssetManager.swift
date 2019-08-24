@@ -8,6 +8,7 @@
 
 import Foundation
 import Photos
+import UIKit
 
 struct AssetManager {
     // MARK: - Method
