@@ -26,11 +26,13 @@ class SectionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         selectionStyle = .none
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsSelection = false
         
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         let diaryNib = UINib(nibName: DiarySectionCollectionViewCell.identifier, bundle: nil)
         collectionView.register(diaryNib, forCellWithReuseIdentifier: DiarySectionCollectionViewCell.identifier)
         
@@ -42,7 +44,7 @@ class SectionTableViewCell: UITableViewCell {
 
 extension SectionTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return frame.size
+        return collectionView.frame.size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

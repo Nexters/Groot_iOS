@@ -75,6 +75,12 @@ extension DetailViewController: UITableViewDataSource {
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.reuseIdentifier) as? SectionTableViewCell {
+                
+                if layoutFirst == true && first == false {
+                    layoutFirst = false
+                    cell.collectionView.reloadData()
+                }
+                
                 cell.delegate = self
                 return cell
             }

@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     var animating: Bool = true
     var headerView: DetailTableHeaderView?
     var first = true
+    var layoutFirst = true
     
     var currentSection: Section = .diaryCard {
         didSet {
