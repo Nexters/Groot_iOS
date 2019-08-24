@@ -31,14 +31,17 @@ class ModifyPlantViewController: UIViewController {
             Global.shared.selectedPlant?.wateringInterval = currentInterval
             
             var plants: [Plant] = []
-            for plant in Global.shared.plants {
-                if let selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
+            for var plant in Global.shared.plants {
+                if var selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
+                    selectedPlant.nextWaterDate = selectedPlant.recalculateNextWaterDate()
                     plants.append(selectedPlant)
                 } else {
+                    plant.nextWaterDate = plant.recalculateNextWaterDate()
                     plants.append(plant)
                 }
             }
             Global.shared.plants = plants
+
             UserNotification.watering.registerNotification()
             
             dismiss(animated: true, completion: nil)
