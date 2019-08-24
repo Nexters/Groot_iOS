@@ -38,6 +38,7 @@ class DiaryViewController: UIViewController {
     var selectedImage: PHAsset?
     
     @IBAction func tapBackButton(_ sender: Any) {
+        Hero.shared.cancel()
         hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
     }
