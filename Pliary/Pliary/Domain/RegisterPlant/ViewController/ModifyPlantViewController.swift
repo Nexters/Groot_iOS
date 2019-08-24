@@ -35,6 +35,8 @@ class ModifyPlantViewController: UIViewController {
                 if var selectedPlant = Global.shared.selectedPlant, plant.id == selectedPlant.id {
                     selectedPlant.nextWaterDate = selectedPlant.recalculateNextWaterDate()
                     plants.append(selectedPlant)
+                    
+                    Global.shared.selectedPlant = selectedPlant
                 } else {
                     plant.nextWaterDate = plant.recalculateNextWaterDate()
                     plants.append(plant)
