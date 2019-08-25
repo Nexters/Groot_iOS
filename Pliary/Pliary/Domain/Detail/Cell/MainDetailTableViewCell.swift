@@ -96,6 +96,8 @@ class MainDetailTableViewCell: UITableViewCell {
                 currentStatus = .positive
             }
         }
+        
+        animateImage()
     }
 
     func animateImage() {

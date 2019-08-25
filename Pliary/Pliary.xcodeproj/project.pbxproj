@@ -41,7 +41,6 @@
 		CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */; };
 		CE885A952307C735008DB1FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A942307C735008DB1FB /* Global.swift */; };
 		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
-		CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE885A9E23080A17008DB1FB /* LoginAnimation.gif */; };
 		CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */; };
 		CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */; };
 		CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */; };
@@ -768,7 +767,6 @@
 				CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
-				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */,
