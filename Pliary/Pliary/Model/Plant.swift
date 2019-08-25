@@ -191,17 +191,11 @@ struct Plant: Equatable, Codable {
             return nextWaterDate
         }
         if(lastWaterDate == 0) {
-            let currentTimestamp = Date().timeIntervalSince1970
-            let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
-            let dateFormatter = DateFormatter()
-            
-            dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
-            dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
-            
-            let date: Date = dateFormatter.date(from: dateString) ?? Date()
-            return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
+            let currentTimestamp = Date().getDayStartTime()
+            return currentTimestamp + Double(wateringInterval * 60 * 60 * 24)
         } else {
             return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
         }
     }
 }
+
