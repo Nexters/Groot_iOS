@@ -10,6 +10,7 @@
 		26A082DE0FFD946C9B334E27 /* Pods_Pliary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */; };
 		760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB41D22F6DED50035F22E /* UITextField+Ext.swift */; };
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
+		76C3625B2351782800FF2DE4 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
 		76E45E6423101D1900C0045A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E6323101D1900C0045A /* UserNotification.swift */; };
@@ -118,6 +119,7 @@
 		76889560230973BE00CE7F40 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
+		76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WateringInfoTableViewCell.swift; sourceTree = "<group>"; };
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
 		76E45E5B230D5BD800C0045A /* BasicToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicToastView.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */,
 				760DB41D22F6DED50035F22E /* UITextField+Ext.swift */,
 				CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */,
+				76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */,
+				76C3625B2351782800FF2DE4 /* UILabel+Ext.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */,
