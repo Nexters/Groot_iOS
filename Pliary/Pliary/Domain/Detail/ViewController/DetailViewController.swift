@@ -49,6 +49,7 @@ class DetailViewController: UIViewController {
             writeDiaryVC.currentDiaryCard = diaryCard
         }
         
+        writeDiaryVC.modalPresentationStyle = .fullScreen
         present(writeDiaryVC, animated: true, completion: nil)
     }
     
