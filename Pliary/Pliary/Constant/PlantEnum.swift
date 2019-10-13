@@ -17,6 +17,7 @@ enum PlantEnglishName: String {
     case elastica = "Elastica"
     case travelersPalm = "Traveler's Palm"
     case schefflera = "Schefflera"
+    case hangingPlant = "Hanging Plant"
 }
 
 enum PlantKoreanName: String {
@@ -28,6 +29,7 @@ enum PlantKoreanName: String {
     case elastica = "고무나무"
     case travelersPalm = "여인초"
     case schefflera = "홍콩야자"
+    case hangingPlant = "행잉 플랜트"
 }
 
 enum PlantRegisterImageName: String {
@@ -39,6 +41,7 @@ enum PlantRegisterImageName: String {
     case elastica = "elastica"
     case travelersPalm = "travelerSPalm"
     case schefflera = "schefflera"
+    case hangingPlant = "hangingPlant"
     case userPlants = "userplant"
 }
 
@@ -51,6 +54,7 @@ enum PlantPositiveImageName: String {
     case elastica = "iOS_Posi_gomu"
     case travelersPalm = "iOS_Posi_traveler_s palm"
     case schefflera = "iOS_Posi_hongkong"
+    case hangingPlant = "iOS_Posi_hanging"
     case userPlants = "iOS_Posi_UserMakePlant"
 }
 
@@ -63,6 +67,7 @@ enum PlantNegativeImageName: String {
     case elastica = "iOS_Nega_gomu"
     case travelersPalm = "iOS_Nega_Traveler’s-palm"
     case schefflera = "iOS_Nega_hongkong"
+    case hangingPlant = "iOS_Nega_hanging"
     case userPlants = "iOS_Nega_UserMakePlant"
 }
 
@@ -75,6 +80,7 @@ enum PlantReference: String {
     case elastica = "고무나무는 대부분 7일에 1번 물을 주는 것을 추천합니다."
     case travelersPalm = "여인초는 대부분 10일에 1번 물을 주는 것을 추천합니다."
     case schefflera = "홍콩야자는 대부분 5일에 1번 물을 주는 것을 추천합니다."
+    case hangingPlant = "행잉플랜트는 물을주는 것보다 물의 흡수를 위해 통풍을 잘 해주는 것이 중요합니다."
     case userPlants = "물을 줄때 겉흙이 말랐는지 참고해주세요."
 }
 
@@ -87,5 +93,6 @@ enum PlantTip: String {
     case elastica = "고무나무는 실내 밝은 그늘에서 관리하는 것이 좋습니다. 암모니아 제거에 탁월한 효능이 있습니다. 겉흙이 말라있다면 물을 주세요."
     case travelersPalm = "여인초는 통풍이 잘 되는 곳을 선호합니다. 잦은 장소 이동은 스트레스를 줄 수 있습니다."
     case schefflera = "홍콩야자는 증산작용이 뛰어나 가습기 역할을 합니다. 새집증후군을 없애는데 탁월합니다. 홍콩야자의 겉흙이 마르면 물을 주세요."
+    case hangingPlant = "행잉플랜트는 물을주는 것보다 물의 흡수를 위해 통풍을 잘 해주는 것이 중요합니다. 바람이 잘통하는 곳에서 키워주세요."
     case userPlants = "물을 줄때 겉흙이 말랐는지 참고해주세요. 햇빛과 통풍 모두 신경써주는게 좋습니다."
 }

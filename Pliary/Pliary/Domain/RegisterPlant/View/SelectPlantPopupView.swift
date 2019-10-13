@@ -32,6 +32,7 @@ class SelectPlantPopupView: UIView {
     private func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsMultipleSelection = false
         
         let nib = UINib(nibName: SelectPlantTableViewCell.reuseIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: SelectPlantTableViewCell.reuseIdentifier)

@@ -54,6 +54,7 @@ class DiaryViewController: UIViewController {
             }
             
             bigImageVC.modalPresentationStyle = .fullScreen
+            bigImageVC.modalTransitionStyle = .crossDissolve
             present(bigImageVC, animated: false, completion: nil)
             bigImageVC.diaryImageView.image = diaryImageView.image
         default:

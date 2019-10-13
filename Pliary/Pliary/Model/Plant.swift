@@ -89,6 +89,8 @@ struct Plant: Equatable, Codable {
             return PlantTip.travelersPalm.rawValue
         case .schefflera:
             return PlantTip.schefflera.rawValue
+        case .hangingPlant:
+            return PlantTip.hangingPlant.rawValue
         case .userPlants:
             return PlantTip.userPlants.rawValue
         }
@@ -112,6 +114,8 @@ struct Plant: Equatable, Codable {
             return PlantRegisterImageName.travelersPalm.rawValue
         case .schefflera:
             return PlantRegisterImageName.schefflera.rawValue
+        case .hangingPlant:
+            return PlantRegisterImageName.hangingPlant.rawValue
         case .userPlants:
             return PlantRegisterImageName.userPlants.rawValue
         }
@@ -135,6 +139,8 @@ struct Plant: Equatable, Codable {
             return PlantPositiveImageName.travelersPalm.rawValue
         case .schefflera:
             return PlantPositiveImageName.schefflera.rawValue
+        case .hangingPlant:
+            return PlantPositiveImageName.hangingPlant.rawValue
         case .userPlants:
             return PlantPositiveImageName.userPlants.rawValue
         }
@@ -158,6 +164,8 @@ struct Plant: Equatable, Codable {
             return PlantNegativeImageName.travelersPalm.rawValue
         case .schefflera:
             return PlantNegativeImageName.schefflera.rawValue
+        case .hangingPlant:
+            return PlantNegativeImageName.hangingPlant.rawValue
         case .userPlants:
             return PlantNegativeImageName.userPlants.rawValue
         }
@@ -172,9 +180,10 @@ struct Plant: Equatable, Codable {
         let elastica = PlantType.elastica.getPlantInstance()
         let travelersPalm = PlantType.travelersPalm.getPlantInstance()
         let schefflera = PlantType.schefflera.getPlantInstance()
+        let hangingPlant = PlantType.hangingPlant.getPlantInstance()
         let userPlants = PlantType.userPlants.getPlantInstance()
 
-        return [stuki, eucalyptus, sansevieria, monstera, parlourPalm, elastica, travelersPalm, schefflera, userPlants]
+        return [stuki, eucalyptus, sansevieria, monstera, parlourPalm, elastica, travelersPalm, schefflera, hangingPlant, userPlants]
     }
 
     func getDelayedWaterDate(day : Int) -> TimeInterval {

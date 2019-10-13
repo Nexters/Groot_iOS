@@ -40,6 +40,8 @@ class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
             referenceTextLabel.text = PlantReference.travelersPalm.rawValue
         case .schefflera:
             referenceTextLabel.text = PlantReference.schefflera.rawValue
+        case .hangingPlant:
+            referenceTextLabel.text = PlantReference.hangingPlant.rawValue
         case .userPlants:
             referenceTextLabel.text = PlantReference.userPlants.rawValue
         }

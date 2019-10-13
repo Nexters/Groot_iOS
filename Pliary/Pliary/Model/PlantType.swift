@@ -17,6 +17,7 @@ enum PlantType: String, Codable {
     case elastica
     case travelersPalm
     case schefflera
+    case hangingPlant
     case userPlants
     
     func getPlantInstance() -> Plant {
@@ -45,8 +46,11 @@ enum PlantType: String, Codable {
         case .schefflera:
             let plant = Plant(type: .schefflera, englishName: PlantEnglishName.schefflera.rawValue, koreanName: PlantKoreanName.schefflera.rawValue, nickName: "", wateringInterval: 5, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
             return plant
+        case .hangingPlant:
+            let plant = Plant(type: .hangingPlant, englishName: PlantEnglishName.hangingPlant.rawValue, koreanName: PlantKoreanName.hangingPlant.rawValue, nickName: "", wateringInterval: 10, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
+            return plant
         case .userPlants:
-            let plant = Plant(type: .userPlants, englishName: "", koreanName: nil, nickName: "", wateringInterval: 3, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
+            let plant = Plant(type: .userPlants, englishName: "My Plant", koreanName: nil, nickName: "", wateringInterval: 3, firstDate: 0, lastWaterDate: 0, nextWaterDate: 0)
             return plant
         }
     }
