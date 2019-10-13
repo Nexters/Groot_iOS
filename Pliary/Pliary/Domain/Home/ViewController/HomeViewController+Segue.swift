@@ -38,6 +38,7 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
         
+        registerVC.modalPresentationStyle = .fullScreen
         present(registerVC, animated: true, completion: nil)
     }
     

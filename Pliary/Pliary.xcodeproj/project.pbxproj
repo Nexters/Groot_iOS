@@ -15,6 +15,7 @@
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
 		76E45E6423101D1900C0045A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E6323101D1900C0045A /* UserNotification.swift */; };
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
+		CE504F772351E8D6008C7286 /* BigImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE504F762351E8D6008C7286 /* BigImageViewController.swift */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
 		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
 		CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F521722F1F7CF00F2E777 /* Home.storyboard */; };
@@ -137,6 +138,7 @@
 		CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		CE0947AA23003B9700E7C8A8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		CE504F762351E8D6008C7286 /* BigImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageViewController.swift; sourceTree = "<group>"; };
 		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -644,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */,
+				CE504F762351E8D6008C7286 /* BigImageViewController.swift */,
 				CEE0E1A722FB26FC00ED0C31 /* Cell */,
 			);
 			path = DiaryCard;
@@ -848,6 +851,7 @@
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
+				CE504F772351E8D6008C7286 /* BigImageViewController.swift in Sources */,
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */,

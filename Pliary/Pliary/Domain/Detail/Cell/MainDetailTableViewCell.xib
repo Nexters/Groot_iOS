@@ -92,10 +92,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-Ze-Utk">
-                        <rect key="frame" x="285" y="400" width="70" height="70"/>
+                        <rect key="frame" x="280" y="395" width="75" height="75"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70" id="8JD-dJ-Ecq"/>
-                            <constraint firstAttribute="height" constant="70" id="lpg-F9-mgS"/>
+                            <constraint firstAttribute="width" constant="75" id="8JD-dJ-Ecq"/>
+                            <constraint firstAttribute="height" constant="75" id="lpg-F9-mgS"/>
                         </constraints>
                         <state key="normal" image="AddWater"/>
                         <connections>
