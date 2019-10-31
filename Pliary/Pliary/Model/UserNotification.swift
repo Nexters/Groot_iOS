@@ -40,11 +40,8 @@ enum UserNotification {
             content.title = "식물 물주기 알람"
             
             let numbrtOfPlant = plantNames.split(separator: ",").count
-            if(numbrtOfPlant == 1) {
-                
-                content.body = "\(plantNames): 목이 조금 마릅니다만..?"
-                
-            } else if(numbrtOfPlant > 3) {
+            
+            if(numbrtOfPlant > 3) {
                 
                 let plants = plantNames.split(separator: ",")
                 

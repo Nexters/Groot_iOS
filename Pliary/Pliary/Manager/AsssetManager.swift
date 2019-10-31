@@ -65,4 +65,17 @@ struct AssetManager {
             return nil
         }
     } // saveImage
+    
+    static func getImageURL(path: String) -> URL? {
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as URL else {
+            return nil
+        }
+        
+        guard let imageName = path.split(separator: "/").last else {
+            return nil
+        }
+        
+        let imageDirectory = directory.appendingPathComponent(String(imageName))
+        return imageDirectory
+    }
 }

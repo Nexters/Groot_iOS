@@ -121,7 +121,11 @@ class DiaryViewController: UIViewController {
             var imageURL: String? = currentDiaryCard?.imageURL
             if let identifier = selectedImage?.localIdentifier {
                 let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
-                imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+                if let last = path?.split(separator: "/").last {
+                    imageURL = String(last)
+                } else {
+                    return nil
+                }
             }
             return imageURL
         } else {
@@ -188,11 +192,10 @@ class DiaryViewController: UIViewController {
             diaryTextView.isEditable = false
             addOrSubtractContentView.isHidden = true
             
-            if let path = currentDiaryCard?.imageURL {
-                let url = URL(fileURLWithPath: path)
-                let provider = LocalFileImageDataProvider(fileURL: url)
-                diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { _ in
-                })
+            diaryImageView.image = nil
+            if let path = currentDiaryCard?.imageURL, let url = AssetManager.getImageURL(path: path) {
+               let provider = LocalFileImageDataProvider(fileURL: url)
+               diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { _ in })
             }
             
             diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
