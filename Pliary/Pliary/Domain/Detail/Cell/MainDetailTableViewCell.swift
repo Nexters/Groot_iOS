@@ -123,7 +123,7 @@ class MainDetailTableViewCell: UITableViewCell {
         let host = API.gifHost?.appendingPathComponent(appendPath)
         let placeHolder = UIImage(named: imageName)
 
-        plantView.kf.setImage(with: host, placeholder: placeHolder, options: nil, progressBlock: nil, completionHandler: { _ in
+        plantView.kf.setImage(with: host, placeholder: placeHolder, options: [.diskCacheExpiration(.never)], progressBlock: nil, completionHandler: { _ in
 
         })
     }
