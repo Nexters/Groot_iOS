@@ -997,7 +997,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.1;
+				MARKETING_VERSION = 7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1022,7 +1022,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.1;
+				MARKETING_VERSION = 7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
