@@ -37,6 +37,10 @@ extension URL {
     /// returns the directory total size on disk
     func sizeOnDisk() throws -> String? {
         guard let size = try directoryTotalAllocatedSize(includingSubfolders: true) else { return nil }
+        guard size > 0 else {
+            return nil
+        }
+        
         URL.byteCountFormatter.countStyle = .file
         URL.byteCountFormatter.allowedUnits = [.useMB]
         guard let byteCount = URL.byteCountFormatter.string(for: size) else { return nil}

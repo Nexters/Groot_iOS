@@ -153,6 +153,7 @@ class Global: NSObject {
             return
         }
         let savedSize = AssetManager.getString(for: key)
+        print(realSize)
         if realSize != savedSize {
             DatabaseManager.uploadTotalImageSize(uuid: uuid, value: realSize)
             AssetManager.save(string: realSize, for: key)

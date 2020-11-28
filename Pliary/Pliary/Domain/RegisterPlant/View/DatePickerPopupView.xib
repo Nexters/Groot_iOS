@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +23,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3A-EY-W0R">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-8N-7LG">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-8N-7LG">
                                             <rect key="frame" x="20" y="0.0" width="30" height="44"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                             <state key="normal" title="취소">
@@ -35,7 +33,7 @@
                                                 <action selector="tapCancelButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="lkX-2g-PGf"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TP-lO-4Mo">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TP-lO-4Mo">
                                             <rect key="frame" x="364" y="0.0" width="30" height="44"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                             <state key="normal" title="완료">
@@ -57,11 +55,8 @@
                                         <constraint firstAttribute="bottom" secondItem="1TP-lO-4Mo" secondAttribute="bottom" id="m9d-cp-IJr"/>
                                     </constraints>
                                 </view>
-                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bCL-yu-eIu">
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="bCL-yu-eIu">
                                     <rect key="frame" x="0.0" y="44" width="414" height="216"/>
-                                    <date key="date" timeIntervalSinceReferenceDate="587803248.85508001">
-                                        <!--2019-08-18 06:40:48 +0000-->
-                                    </date>
                                     <locale key="locale" localeIdentifier="ko_KR"/>
                                 </datePicker>
                             </subviews>
@@ -85,6 +80,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="5Ja-ce-IxI" secondAttribute="bottom" id="Mf4-qc-EOM"/>
@@ -92,7 +88,6 @@
                 <constraint firstItem="5Ja-ce-IxI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="orm-SB-DQH"/>
                 <constraint firstItem="5Ja-ce-IxI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wsv-vV-vJ8"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="datePicker" destination="bCL-yu-eIu" id="iec-aX-9qj"/>
             </connections>
