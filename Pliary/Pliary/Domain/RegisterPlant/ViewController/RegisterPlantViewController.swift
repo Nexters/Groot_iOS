@@ -157,7 +157,10 @@ extension RegisterPlantViewController: UITableViewDataSource {
             return cell
         }
         
-        let row = rows[indexPath.row]
+        guard let row = rows[safe: indexPath.row] else {
+            return UITableViewCell()
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: row.0)
         
         if let typeCell = cell as? RegisterCell, let plant = selectedPlant {
@@ -289,6 +292,4 @@ extension RegisterPlantViewController: RegisterEventDelegate {
         
         return true
     }
-
-
 }

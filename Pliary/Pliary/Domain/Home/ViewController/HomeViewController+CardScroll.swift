@@ -134,8 +134,9 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCardCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeCardCollectionViewCell ?? HomeCardCollectionViewCell()
-            let plant = plants[indexPath.item]
-            cell.setUp(with: plant)
+            if let plant = plants[safe: indexPath.item] {
+                cell.setUp(with: plant)
+            }
             cell.delegate = self
             cell.hero.isEnabled = false
             

@@ -53,7 +53,7 @@ class RegisterPlantDateTableViewCell: UITableViewCell, RegisterCell {
                 dateButton.setTitleColor(Color.gray6, for: .normal)
             }
         default:
-            ()
+            break
         }
     }
 }

@@ -71,7 +71,7 @@ extension DetailViewController: PlantEventDelegate {
                 }
             }
         default:
-            ()
+            break
         }
     }
     

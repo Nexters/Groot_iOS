@@ -73,12 +73,13 @@ extension SelectPlantPopupView: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: SelectPlantTableViewCell.identifier) as? SelectPlantTableViewCell {
             
-            let plant = list[indexPath.row]
-            
-            if currentPlant?.englishName == plant.englishName {
-                cell.setUp(with: plant, selected: true)
-            } else {
-                cell.setUp(with: plant)
+            if let plant = list[safe: indexPath.row] {
+                if currentPlant?.englishName == plant.englishName {
+                    cell.setUp(with: plant, selected: true)
+                } else {
+                    cell.setUp(with: plant)
+                }
+                
             }
             
             return cell

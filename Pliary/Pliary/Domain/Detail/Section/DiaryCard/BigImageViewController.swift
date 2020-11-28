@@ -18,6 +18,7 @@ class BigImageViewController: UIViewController {
 }
 
 extension BigImageViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

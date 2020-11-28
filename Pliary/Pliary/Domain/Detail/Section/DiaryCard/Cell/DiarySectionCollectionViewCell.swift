@@ -93,8 +93,7 @@ class DiarySectionCollectionViewCell: UICollectionViewCell {
 extension DiarySectionCollectionViewCell: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row != 0  {
-            let diaryCard = diaryCards[indexPath.row - 1]
+        if indexPath.row != 0, let diaryCard = diaryCards[safe: indexPath.row - 1]  {
             delegate?.detailEvent(event: .goDiaryViewController(with: diaryCard))
         }
     }
@@ -114,8 +113,8 @@ extension DiarySectionCollectionViewCell: UITableViewDataSource {
         
         var diaryCard = DiaryCard(timeStamp: Date().timeIntervalSince1970, diaryText: " ", imageURL: nil)
         
-        if diaryCards.count > (indexPath.row - 1) {
-            diaryCard = diaryCards[indexPath.row - 1]
+        if let card = diaryCards[safe: indexPath.row - 1] {
+            diaryCard = card
         }
         
         if diaryCard.diaryText == nil , let cell = tableView.dequeueReusableCell(withIdentifier: DiaryCardWithImageTableViewCell.reuseIdentifier) as? DiaryCardWithImageTableViewCell {

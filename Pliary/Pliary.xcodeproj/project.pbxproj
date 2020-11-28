@@ -95,6 +95,7 @@
 		CEA3D197230F0563004AB7F6 /* BasicToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E5B230D5BD800C0045A /* BasicToastView.swift */; };
 		CEA3D19A230F170B004AB7F6 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D199230F170B004AB7F6 /* Watering.json */; };
 		CEC65D8B257274C2008B1647 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEC65D8A257274C2008B1647 /* GoogleService-Info.plist */; };
+		CEC65D9325727BE0008B1647 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC65D9225727BE0008B1647 /* Array+Ext.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -114,13 +115,7 @@
 		33B6DE139F2B3BBBECBB2112 /* Pods-Pliary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.debug.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.debug.xcconfig"; sourceTree = "<group>"; };
 		760DB41D22F6DED50035F22E /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		760DB41F22F6FB2E0035F22E /* Pliary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pliary.entitlements; sourceTree = "<group>"; };
-		762B4FF122F1B129002C24EF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		763D972E22F1D58600E50F21 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		7688955F230973BE00CE7F40 /* BasicPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPopupView.swift; sourceTree = "<group>"; };
-		76889560230973BE00CE7F40 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
-		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
 		76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WateringInfoTableViewCell.swift; sourceTree = "<group>"; };
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -130,19 +125,9 @@
 		C46F2079B0DADD29D418E32D /* Pods-Pliary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pliary.release.xcconfig"; path = "Target Support Files/Pods-Pliary/Pods-Pliary.release.xcconfig"; sourceTree = "<group>"; };
 		CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pliary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
-		CE09477522FDEC8200E7C8A8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
-		CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
-		CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
-		CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNextTableViewCell.swift; sourceTree = "<group>"; };
-		CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNextTableViewCell.xib; sourceTree = "<group>"; };
-		CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
-		CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
-		CE0947AA23003B9700E7C8A8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		CE504F762351E8D6008C7286 /* BigImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageViewController.swift; sourceTree = "<group>"; };
 		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
-		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE5F521722F1F7CF00F2E777 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		CE5F522122F1FE1700F2E777 /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE5F522222F1FE1700F2E777 /* HomeCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -170,7 +155,6 @@
 		CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE885A942307C735008DB1FB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CE885A9C2307DDD6008DB1FB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		CE885A9E23080A17008DB1FB /* LoginAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginAnimation.gif; sourceTree = "<group>"; };
 		CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantHeaderView.swift; sourceTree = "<group>"; };
 		CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEventDelegate.swift; sourceTree = "<group>"; };
 		CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlantTableViewCell.swift; sourceTree = "<group>"; };
@@ -185,10 +169,6 @@
 		CE885AE52308741F008DB1FB /* RegisterPlantDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantDateTableViewCell.xib; sourceTree = "<group>"; };
 		CE885AE823087443008DB1FB /* RegisterPlantPeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlantPeriodTableViewCell.swift; sourceTree = "<group>"; };
 		CE885AE923087443008DB1FB /* RegisterPlantPeriodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPlantPeriodTableViewCell.xib; sourceTree = "<group>"; };
-		CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
-		CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewContoller+UIImage.swift"; sourceTree = "<group>"; };
-		CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8C83F623059D4E0083B3A9 /* WateringPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringPopupView.swift; sourceTree = "<group>"; };
 		CE8C83F823059D590083B3A9 /* WateringPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WateringPopupView.xib; sourceTree = "<group>"; };
 		CE8C83FA2305A1BA0083B3A9 /* PlantEventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEventDelegate.swift; sourceTree = "<group>"; };
@@ -223,10 +203,9 @@
 		CE90E4122309A04B00096731 /* DiaryCardWithTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryCardWithTextTableViewCell.xib; sourceTree = "<group>"; };
 		CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Ext.swift"; sourceTree = "<group>"; };
 		CE90E4172309C01300096731 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
-		CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingViewController+UIImage.swift"; sourceTree = "<group>"; };
-		CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraEventDelegate.swift; sourceTree = "<group>"; };
 		CEA3D199230F170B004AB7F6 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
 		CEC65D8A257274C2008B1647 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEC65D9225727BE0008B1647 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -301,40 +280,6 @@
 			path = Section;
 			sourceTree = "<group>";
 		};
-		CE09477422FDEC6D00E7C8A8 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				CE09477E22FE6D9100E7C8A8 /* ViewController */,
-				CE09477D22FE6D8D00E7C8A8 /* Cell */,
-				CE09477522FDEC8200E7C8A8 /* Setting.storyboard */,
-				CE0947AA23003B9700E7C8A8 /* Setting.swift */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		CE09477D22FE6D8D00E7C8A8 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CE09477922FE6C9300E7C8A8 /* UserProfileView.swift */,
-				CE09477B22FE6CAF00E7C8A8 /* UserProfileView.xib */,
-				CE09477F22FE6EA500E7C8A8 /* SettingNextTableViewCell.swift */,
-				CE09478022FE6EA600E7C8A8 /* SettingNextTableViewCell.xib */,
-				CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */,
-				CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		CE09477E22FE6D9100E7C8A8 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CE09477722FDEC9E00E7C8A8 /* SettingViewController.swift */,
-				CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */,
-				CE885AF22308CF0D008DB1FB /* ChangePasswordViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		CE5F520522F1F45700F2E777 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,28 +290,6 @@
 				CE885A942307C735008DB1FB /* Global.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CE5F520F22F1F62A00F2E777 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				CE5F521022F1F64600F2E777 /* ViewController */,
-				763D972E22F1D58600E50F21 /* Login.storyboard */,
-				CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		CE5F521022F1F64600F2E777 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CE8C83EB2301954D0083B3A9 /* LoginViewController.swift */,
-				762B4FF122F1B129002C24EF /* SignInViewController.swift */,
-				76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */,
-				CE885AF02308CEE3008DB1FB /* SignUpViewContoller+UIImage.swift */,
-				CE885AEE2308CED7008DB1FB /* FindPasswordViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CE5F521222F1F68F00F2E777 /* Home */ = {
@@ -415,6 +338,7 @@
 				760DB41D22F6DED50035F22E /* UITextField+Ext.swift */,
 				CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */,
 				76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */,
+				CEC65D9225727BE0008B1647 /* Array+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -463,7 +387,6 @@
 		CE69262A22E2EC0E00264114 /* Pliary */ = {
 			isa = PBXGroup;
 			children = (
-				CEA3D195230F0473004AB7F6 /* WithServer(Non-Beta) */,
 				CE8384B9230DA485005B44E1 /* Manager */,
 				CE09476322FC6A7000E7C8A8 /* Domain */,
 				CE5F522622F1FED000F2E777 /* Constant */,
@@ -500,8 +423,7 @@
 		CE69264122E2EC3C00264114 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				CEA3D199230F170B004AB7F6 /* Watering.json */,
-				CE885A9E23080A17008DB1FB /* LoginAnimation.gif */,
+				CEC65D8F257279CD008B1647 /* LottieJson */,
 				CE69263222E2EC1000264114 /* Assets.xcassets */,
 				CE90E3FC230939F300096731 /* Plant.xcassets */,
 			);
@@ -602,25 +524,12 @@
 			path = Watering;
 			sourceTree = "<group>";
 		};
-		CEA3D195230F0473004AB7F6 /* WithServer(Non-Beta) */ = {
+		CEC65D8F257279CD008B1647 /* LottieJson */ = {
 			isa = PBXGroup;
 			children = (
-				76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */,
-				CE5F520722F1F45700F2E777 /* User.swift */,
-				CEA3D198230F056B004AB7F6 /* PopUp */,
-				CE5F520F22F1F62A00F2E777 /* Login */,
-				CE09477422FDEC6D00E7C8A8 /* Setting */,
+				CEA3D199230F170B004AB7F6 /* Watering.json */,
 			);
-			path = "WithServer(Non-Beta)";
-			sourceTree = "<group>";
-		};
-		CEA3D198230F056B004AB7F6 /* PopUp */ = {
-			isa = PBXGroup;
-			children = (
-				7688955F230973BE00CE7F40 /* BasicPopupView.swift */,
-				76889560230973BE00CE7F40 /* BasicPopupView.xib */,
-			);
-			path = PopUp;
+			path = LottieJson;
 			sourceTree = "<group>";
 		};
 		CEE0E19422F848CB00ED0C31 /* ViewController */ = {
@@ -853,6 +762,7 @@
 				CE8384BD230DA4FB005B44E1 /* UIImageView+Ext.swift in Sources */,
 				CEE0E1A322FB044C00ED0C31 /* RegisterPlantViewController.swift in Sources */,
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
+				CEC65D9325727BE0008B1647 /* Array+Ext.swift in Sources */,
 				CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
 				CE504F772351E8D6008C7286 /* BigImageViewController.swift in Sources */,
@@ -1054,7 +964,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
 				INFOPLIST_FILE = Pliary/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1078,7 +988,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
 				INFOPLIST_FILE = Pliary/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

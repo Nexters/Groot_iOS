@@ -9,6 +9,7 @@
 import UIKit
 
 extension DetailViewController: UITableViewDelegate {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if scrollView.contentOffset.y <= 20 {

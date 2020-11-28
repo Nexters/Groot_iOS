@@ -61,7 +61,7 @@ class RegisterPlantNameTableViewCell: UITableViewCell, RegisterCell {
             helpTextLabel.text = "애칭은 영어, 한글 최대 5글자까지 가능합니다."
             checkCustomName(nameTextField.text ?? "")
         default:
-            ()
+            break
         }
     }
     
@@ -130,7 +130,7 @@ extension RegisterPlantNameTableViewCell: UITextFieldDelegate {
         case .customName:
             checkCustomName(textField.text ?? "")
         default:
-            ()
+            break
         }
     }
     

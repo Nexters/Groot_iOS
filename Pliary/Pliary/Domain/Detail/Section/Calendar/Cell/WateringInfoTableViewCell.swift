@@ -30,6 +30,8 @@ class WateringInfoTableViewCell: UITableViewCell {
             waterImage.image = UIImage(named: ImageName.waterBlue)
             msgLabel.text = "물 주는 날 입니다."
         } else {
+            waterImage.image = UIImage(named: ImageName.waterGreen)
+            msgLabel.text = "물을 주었습니다."
         }
         
         dateLabel.text = date
@@ -39,7 +41,7 @@ class WateringInfoTableViewCell: UITableViewCell {
         let alert = UIAlertController(title: "기록을 삭제하시겠습니까?", message: "", preferredStyle: .alert)
         
         let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler : nil)
-        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { (alert: UIAlertAction!) in
+        let deleteAccountAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
             // 기록 삭제
             
             if let id = Global.shared.selectedPlant?.id, var dict = Global.shared.waterRecordDict[id] {
@@ -60,8 +62,8 @@ class WateringInfoTableViewCell: UITableViewCell {
         alert.view.tintColor = Color.gray1
    
         var topVC = UIApplication.shared.keyWindow?.rootViewController
-        while((topVC!.presentedViewController) != nil){
-            topVC = topVC!.presentedViewController
+        while((topVC?.presentedViewController) != nil){
+            topVC = topVC?.presentedViewController
         }
         topVC?.present(alert, animated: true, completion: nil)
         

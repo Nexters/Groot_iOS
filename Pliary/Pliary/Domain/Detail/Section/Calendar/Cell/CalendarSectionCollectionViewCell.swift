@@ -99,8 +99,7 @@ extension CalendarSectionCollectionViewCell: UITableViewDataSource {
                 cell.setUp(planCards, isTodo: true)
             } else {
                 let index = indexPath.row - 2
-                if recordCards.count > index {
-                    let dateStr = recordCards[index]
+                if let dateStr = recordCards[safe: index] {
                     cell.setUp(dateStr, isTodo: false)
                 }
             }

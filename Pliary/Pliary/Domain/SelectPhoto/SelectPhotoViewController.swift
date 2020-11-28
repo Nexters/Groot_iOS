@@ -139,7 +139,9 @@ extension SelectPhotoViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let photo = photos[indexPath.item]
+        guard let photo = photos[safe: indexPath.item] else {
+            return UICollectionViewCell()
+        }
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectPhotoCollectionViewCell.reuseIdentifier, for: indexPath) as? SelectPhotoCollectionViewCell {
             cell.setUp(with: photo)

@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIImage {
+    
     func convertToGrayScale() -> UIImage {
         
         // Create image rectangle with current image width/height
@@ -36,11 +37,12 @@ extension UIImage {
             return self
         }
         
-        let imageRef = ct.makeImage()
-        
-        // Create a new UIImage object
-        let newImage = UIImage(cgImage: imageRef!)
-        
-        return newImage
+        if let imageRef = ct.makeImage() {
+            // Create a new UIImage object
+            let newImage = UIImage(cgImage: imageRef)
+            return newImage
+        } else {
+            return self
+        }
     }
 }
