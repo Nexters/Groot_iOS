@@ -190,6 +190,7 @@ class DiaryViewController: UIViewController {
                 }
             }
             Global.shared.diaryDict[id] = newArray
+            Global.shared.clearUnusedImageSource()
         }
     }
     
@@ -203,6 +204,7 @@ class DiaryViewController: UIViewController {
                 }
             }
             Global.shared.diaryDict[id] = newArray
+            Global.shared.clearUnusedImageSource()
         }
     }
     

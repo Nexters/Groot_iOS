@@ -51,6 +51,19 @@ class Global: NSObject {
         }
     }
     
+    func clearUnusedImageSource() {
+        var imageSet: Set<String> = Set()
+        for diaryCards in diaryDict.values {
+            for card in diaryCards {
+                if let urlString = card.imageURL, let imageName = urlString.split(separator: "/").last {
+                    imageSet.insert(String(imageName))
+                }
+            }
+        }
+        
+        AssetManager.deleteAllImages(except: imageSet)
+    }
+    
     private func saveCurrentPlants() {
         let encoder = JSONEncoder()
         var dict: [String: Any] = [:]
@@ -126,11 +139,12 @@ class Global: NSObject {
         let key = AssetKey.uuid.rawValue
         if let uuid = AssetManager.getString(for: key) {
             return uuid
+        } else {
+            let uuid = UUID().uuidString
+            AssetManager.save(string: uuid, for: key)
+            clearUnusedImageSource()
+            return uuid
         }
-        
-        let uuid = UUID().uuidString
-        AssetManager.save(string: uuid, for: key)
-        return uuid
     }
     
     private func uploadSizeIfNeeded() {

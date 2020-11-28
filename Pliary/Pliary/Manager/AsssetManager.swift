@@ -65,7 +65,7 @@ struct AssetManager {
         guard let data = image.jpegData(compressionQuality: 0.85) ?? image.pngData() else {
             return nil
         }
-        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as URL else {
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
             return nil
         }
         
@@ -91,5 +91,25 @@ struct AssetManager {
         
         let imageDirectory = directory.appendingPathComponent(String(imageName))
         return imageDirectory
+    }
+    
+    static func deleteAllImages(except urls: Set<String>) {
+        let fileManager = FileManager.default
+        let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        guard let documentsPath = documentsUrl?.path else {
+            return
+        }
+        
+        do {
+            let fileNames = try fileManager.contentsOfDirectory(atPath: "\(documentsPath)")
+            for fileName in fileNames {
+                if !urls.contains(fileName) {
+                    let filePathName = "\(documentsPath)/\(fileName)"
+                    try fileManager.removeItem(atPath: filePathName)
+                }
+            }
+        } catch {
+            print("Could not delete: \(error)")
+        }
     }
 }
