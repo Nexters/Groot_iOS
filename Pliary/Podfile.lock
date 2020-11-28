@@ -11,7 +11,7 @@ DEPENDENCIES:
   - lottie-ios
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - FSCalendar
     - Hero
     - Kingfisher
@@ -25,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c7a3af90f8719e489850fb58ef69ba6f08fa1424
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.8.1

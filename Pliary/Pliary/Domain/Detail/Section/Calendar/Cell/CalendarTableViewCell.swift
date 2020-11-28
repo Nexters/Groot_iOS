@@ -15,6 +15,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
 
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarView: UIView!
+    var first = true
 
     var dates: [String] = [] {
         didSet {
@@ -73,7 +74,11 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
     // MARK:- FSCalendarDataSource
     public func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         let dateStr = date.timeIntervalSince1970.getSince1970String()
-        calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendar.frame.maxX, y: calendar.bounds.maxY), view: calendar)
+        
+        if first {
+            calendar.drawDottedLine(start: CGPoint(x: calendar.bounds.minX, y: calendar.bounds.maxY), end: CGPoint(x: calendar.frame.maxX, y: calendar.bounds.maxY), view: calendar)
+            first = false
+        }
         
         if dates.contains(dateStr) {
             return Color.greenCalendar
@@ -82,10 +87,6 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDelegate, FSCalendarData
         }
         
         return nil
-    }
-
-    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-        return gregorian.isDateInToday(date) ? UIImage(named: "TodayLine") : nil
     }
 
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {

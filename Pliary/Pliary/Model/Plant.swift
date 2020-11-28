@@ -89,11 +89,38 @@ struct Plant: Equatable, Codable {
             return PlantTip.travelersPalm.rawValue
         case .schefflera:
             return PlantTip.schefflera.rawValue
+        case .hangingPlant:
+            return PlantTip.hangingPlant.rawValue
         case .userPlants:
             return PlantTip.userPlants.rawValue
         }
     }
 
+    func getRegisterImageName() -> String {
+        switch type {
+        case .stuki:
+            return PlantRegisterImageName.stuki.rawValue
+        case .eucalyptus:
+            return PlantRegisterImageName.eucalyptus.rawValue
+        case .sansevieria:
+            return PlantRegisterImageName.sansevieria.rawValue
+        case .monstera:
+            return PlantRegisterImageName.monstera.rawValue
+        case .parlourPalm:
+            return PlantRegisterImageName.parlourPalm.rawValue
+        case .elastica:
+            return PlantRegisterImageName.elastica.rawValue
+        case .travelersPalm:
+            return PlantRegisterImageName.travelersPalm.rawValue
+        case .schefflera:
+            return PlantRegisterImageName.schefflera.rawValue
+        case .hangingPlant:
+            return PlantRegisterImageName.hangingPlant.rawValue
+        case .userPlants:
+            return PlantRegisterImageName.userPlants.rawValue
+        }
+    }
+    
     func getPositiveImageName() -> String {
         switch type {
         case .stuki:
@@ -112,6 +139,8 @@ struct Plant: Equatable, Codable {
             return PlantPositiveImageName.travelersPalm.rawValue
         case .schefflera:
             return PlantPositiveImageName.schefflera.rawValue
+        case .hangingPlant:
+            return PlantPositiveImageName.hangingPlant.rawValue
         case .userPlants:
             return PlantPositiveImageName.userPlants.rawValue
         }
@@ -135,6 +164,8 @@ struct Plant: Equatable, Codable {
             return PlantNegativeImageName.travelersPalm.rawValue
         case .schefflera:
             return PlantNegativeImageName.schefflera.rawValue
+        case .hangingPlant:
+            return PlantNegativeImageName.hangingPlant.rawValue
         case .userPlants:
             return PlantNegativeImageName.userPlants.rawValue
         }
@@ -149,9 +180,10 @@ struct Plant: Equatable, Codable {
         let elastica = PlantType.elastica.getPlantInstance()
         let travelersPalm = PlantType.travelersPalm.getPlantInstance()
         let schefflera = PlantType.schefflera.getPlantInstance()
+        let hangingPlant = PlantType.hangingPlant.getPlantInstance()
         let userPlants = PlantType.userPlants.getPlantInstance()
 
-        return [stuki, eucalyptus, sansevieria, monstera, parlourPalm, elastica, travelersPalm, schefflera, userPlants]
+        return [stuki, eucalyptus, sansevieria, monstera, parlourPalm, elastica, travelersPalm, schefflera, hangingPlant, userPlants]
     }
 
     func getDelayedWaterDate(day : Int) -> TimeInterval {
@@ -168,17 +200,11 @@ struct Plant: Equatable, Codable {
             return nextWaterDate
         }
         if(lastWaterDate == 0) {
-            let currentTimestamp = Date().timeIntervalSince1970
-            let dateString: String = currentTimestamp.getSince1970String() + " 08:00:00"
-            let dateFormatter = DateFormatter()
-            
-            dateFormatter.dateFormat = "yy.MM.dd HH:mm:ss"
-            dateFormatter.timeZone = NSTimeZone(name: "KST") as TimeZone?
-            
-            let date: Date = dateFormatter.date(from: dateString) ?? Date()
-            return date.timeIntervalSince1970 + Double(wateringInterval * 60 * 60 * 24)
+            let currentTimestamp = Date().getDayStartTime()
+            return currentTimestamp + Double(wateringInterval * 60 * 60 * 24)
         } else {
             return lastWaterDate + Double(wateringInterval * 60 * 60 * 24)
         }
     }
 }
+

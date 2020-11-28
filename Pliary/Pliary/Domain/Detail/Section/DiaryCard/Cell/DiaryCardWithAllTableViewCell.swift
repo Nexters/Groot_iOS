@@ -38,9 +38,8 @@ class DiaryCardWithAllTableViewCell: UITableViewCell {
         diaryTextLabel.text = diaryCard.diaryText
         dateLabel.text = diaryCard.timeStamp.getSince1970String()
         
-        
-        if let path = diaryCard.imageURL {
-            let url = URL(fileURLWithPath: path)
+        diaryImageView.image = nil
+        if let path = diaryCard.imageURL, let url = AssetManager.getImageURL(path: path) {
             let provider = LocalFileImageDataProvider(fileURL: url)
             diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { _ in })
         }

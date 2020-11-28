@@ -19,6 +19,7 @@ enum DiaryViewMode {
 
 class DiaryViewController: UIViewController {
     
+    @IBOutlet weak var bigImageButton: UIButton!
     @IBOutlet weak var contentHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var navigationView: UIView!
@@ -41,6 +42,24 @@ class DiaryViewController: UIViewController {
         Hero.shared.cancel()
         hero.modalAnimationType = .pull(direction: .right)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func tapBigImageButton(_ sender: Any) {
+        switch currentMode {
+        case .showDiary:
+            let storyboard = UIStoryboard.init(name: StoryboardName.detail, bundle: nil)
+            
+            guard let bigImageVC = storyboard.instantiateViewController(withIdentifier: BigImageViewController.identifier) as? BigImageViewController else {
+                return
+            }
+            
+            bigImageVC.modalPresentationStyle = .fullScreen
+            bigImageVC.modalTransitionStyle = .crossDissolve
+            present(bigImageVC, animated: false, completion: nil)
+            bigImageVC.diaryImageView.image = diaryImageView.image
+        default:
+            break
+        }
     }
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
@@ -102,7 +121,11 @@ class DiaryViewController: UIViewController {
             var imageURL: String? = currentDiaryCard?.imageURL
             if let identifier = selectedImage?.localIdentifier {
                 let path = AssetManager.save(image: image, identifier: identifier)?.absoluteString
-                imageURL = path?.replacingOccurrences(of: "file:///", with: "")
+                if let last = path?.split(separator: "/").last {
+                    imageURL = String(last)
+                } else {
+                    return nil
+                }
             }
             return imageURL
         } else {
@@ -169,16 +192,16 @@ class DiaryViewController: UIViewController {
             diaryTextView.isEditable = false
             addOrSubtractContentView.isHidden = true
             
-            if let path = currentDiaryCard?.imageURL {
-                let url = URL(fileURLWithPath: path)
-                let provider = LocalFileImageDataProvider(fileURL: url)
-                diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { _ in
-                })
+            diaryImageView.image = nil
+            if let path = currentDiaryCard?.imageURL, let url = AssetManager.getImageURL(path: path) {
+               let provider = LocalFileImageDataProvider(fileURL: url)
+               diaryImageView.kf.setImage(with: provider, placeholder: UIImage(), options: nil, progressBlock: nil, completionHandler: { _ in })
             }
             
             diaryDateLabel.text = currentDiaryCard?.timeStamp.getSince1970String()
             if diaryImageView.image == nil {
                 diaryImageHeightConstraint.constant = 0
+                bigImageButton.isHidden = true
                 setScrollViewHeight()
             }
         }
@@ -271,6 +294,7 @@ class DiaryViewController: UIViewController {
             addOrSubtractImageView.image = image
         } else {
             diaryImageHeightConstraint.constant = 0
+            bigImageButton.isHidden = true
             setScrollViewHeight()
             addOrSubtractContentView.isHidden = false
             diaryImageView.image = nil
@@ -334,7 +358,6 @@ extension DiaryViewController {
         reload()
         changeMode(currentMode)
         setTextView()
-        
     }
     
     override func viewDidLayoutSubviews() {
