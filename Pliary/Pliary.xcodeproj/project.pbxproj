@@ -96,6 +96,8 @@
 		CEA3D19A230F170B004AB7F6 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D199230F170B004AB7F6 /* Watering.json */; };
 		CEC65D8B257274C2008B1647 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEC65D8A257274C2008B1647 /* GoogleService-Info.plist */; };
 		CEC65D9325727BE0008B1647 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC65D9225727BE0008B1647 /* Array+Ext.swift */; };
+		CEC65DB42572B7AE008B1647 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC65DB32572B7AE008B1647 /* URL+Ext.swift */; };
+		CEC65DCB2572BBEF008B1647 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC65DCA2572BBEF008B1647 /* DatabaseManager.swift */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -206,6 +208,8 @@
 		CEA3D199230F170B004AB7F6 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
 		CEC65D8A257274C2008B1647 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEC65D9225727BE0008B1647 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		CEC65DB32572B7AE008B1647 /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
+		CEC65DCA2572BBEF008B1647 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */,
 				76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */,
 				CEC65D9225727BE0008B1647 /* Array+Ext.swift */,
+				CEC65DB32572B7AE008B1647 /* URL+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8384BA230DA49C005B44E1 /* AsssetManager.swift */,
+				CEC65DCA2572BBEF008B1647 /* DatabaseManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -831,10 +837,12 @@
 				CEE0E1B322FB32FF00ED0C31 /* DiaryCard.swift in Sources */,
 				CEE0E1AA22FB28ED00ED0C31 /* DayWithPlantTableViewCell.swift in Sources */,
 				CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */,
+				CEC65DCB2572BBEF008B1647 /* DatabaseManager.swift in Sources */,
 				CE90E407230955FD00096731 /* PlantEnum.swift in Sources */,
 				CE8C840A2305BB480083B3A9 /* DetailViewController+TableView.swift in Sources */,
 				CE8C83FB2305A1BA0083B3A9 /* PlantEventDelegate.swift in Sources */,
 				CEE0E1AD22FB2BE900ED0C31 /* DetailTableHeaderView.swift in Sources */,
+				CEC65DB42572B7AE008B1647 /* URL+Ext.swift in Sources */,
 				CE8384C9230DA864005B44E1 /* SelectPhotoCollectionViewCell.swift in Sources */,
 				CE8C84062305AFAB0083B3A9 /* WateringEventDelegate.swift in Sources */,
 				CE5F523822F20AE700F2E777 /* DiaryCardWithAllTableViewCell.swift in Sources */,

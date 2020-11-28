@@ -13,6 +13,7 @@ enum AssetKey: String {
     case plants
     case diaryCard
     case wateringRecord
+    case totalImageSize
 }
 
 struct NotificationName {

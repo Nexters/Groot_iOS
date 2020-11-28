@@ -13,7 +13,7 @@ class Global: NSObject {
     
     static let shared: Global = Global()
     
-    let uuid: String = AssetManager.getUUID()
+    let uuid: String
     
     var plants: [Plant] = [] {
         didSet {
@@ -113,10 +113,52 @@ class Global: NSObject {
         }
     }
     
+    private func getSizeOfUserDefaults() -> String? {
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
+            return nil
+        }
+        
+        let size = try? directory.sizeOnDisk()
+        return size
+    }
+    
+    private func getUUID() -> String {
+        let key = AssetKey.uuid.rawValue
+        if let uuid = AssetManager.getString(for: key) {
+            return uuid
+        }
+        
+        let uuid = UUID().uuidString
+        AssetManager.save(string: uuid, for: key)
+        return uuid
+    }
+    
+    private func uploadSizeIfNeeded() {
+        let key = AssetKey.totalImageSize.rawValue
+        guard let realSize = getSizeOfUserDefaults() else {
+            return
+        }
+        let savedSize = AssetManager.getString(for: key)
+        if realSize != savedSize {
+            DatabaseManager.uploadTotalImageSize(uuid: uuid, value: realSize)
+            AssetManager.save(string: realSize, for: key)
+        }
+    }
+    
     override init() {
+        let key = AssetKey.uuid.rawValue
+        if let uuidString = AssetManager.getString(for: key) {
+            uuid = uuidString
+        } else {
+            let uuidString = UUID().uuidString
+            AssetManager.save(string: uuidString, for: key)
+            uuid = uuidString
+        }
+        
         super.init()
         loadCurrentPlants()
         loadDiaryCards()
         loadWateringRecords()
+        uploadSizeIfNeeded()
     }
 }

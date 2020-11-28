@@ -8,6 +8,7 @@ target 'Pliary' do
   #pod 'Firebase/Auth'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
   pod 'FSCalendar'
   pod 'Kingfisher'
   pod 'Hero'

@@ -9,6 +9,9 @@ PODS:
   - Firebase/Crashlytics (6.34.0):
     - Firebase/CoreOnly
     - FirebaseCrashlytics (~> 4.6.2)
+  - Firebase/Database (6.34.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 6.6.0)
   - FirebaseAnalytics (6.9.0):
     - FirebaseCore (~> 6.10)
     - FirebaseInstallations (~> 1.7)
@@ -33,6 +36,9 @@ PODS:
     - GoogleDataTransport (~> 7.2)
     - nanopb (~> 1.30906.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseDatabase (6.6.0):
+    - FirebaseCore (~> 6.10)
+    - leveldb-library (~> 1.22)
   - FirebaseInstallations (1.7.0):
     - FirebaseCore (~> 6.10)
     - GoogleUtilities/Environment (~> 6.7)
@@ -68,6 +74,7 @@ PODS:
     - GoogleUtilities/Logger
   - Hero (1.4.0)
   - Kingfisher (5.7.0)
+  - leveldb-library (1.22)
   - lottie-ios (3.1.2)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
@@ -79,6 +86,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
+  - Firebase/Database
   - FSCalendar
   - Hero
   - Kingfisher
@@ -96,10 +104,12 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCrashlytics
+    - FirebaseDatabase
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - leveldb-library
     - nanopb
     - PromisesObjC
 
@@ -109,6 +119,7 @@ SPEC CHECKSUMS:
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
   FirebaseCrashlytics: 1a747c9cc084a24dc6d9511c991db1cd078154eb
+  FirebaseDatabase: 13a865a4b85897462b930eb683bda8f52583713f
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
@@ -116,10 +127,11 @@ SPEC CHECKSUMS:
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
+  leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: ac317984a05fbb27147e89769347f6b685923305
+PODFILE CHECKSUM: 403f24669e707061f21d909ae8702e25dff05b04
 
 COCOAPODS: 1.9.3
