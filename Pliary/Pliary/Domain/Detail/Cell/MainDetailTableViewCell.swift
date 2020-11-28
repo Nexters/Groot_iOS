@@ -33,6 +33,11 @@ class MainDetailTableViewCell: UITableViewCell {
         wateringAnimation.center = center
         wateringAnimation.contentMode = .scaleAspectFill
         wateringAnimation.isUserInteractionEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(setUp), name: NotificationName.reloadSelectedPlant, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NotificationName.reloadSelectedPlant, object: nil)
     }
 
     @IBAction func tapCloseButton(_ sender: Any) {
@@ -70,17 +75,16 @@ class MainDetailTableViewCell: UITableViewCell {
         return a.value(for: .day)
     }
 
-    func setUp() {
-        englishNameLabel.text = Global.shared.selectedPlant?.englishName
-        koreanNameLabel.text = Global.shared.selectedPlant?.koreanName
-        customNameLabel.text = Global.shared.selectedPlant?.nickName
-        tipLabel.text = Global.shared.selectedPlant?.getTip()
-        tipLabel.setLineHeight(lineHeight: 5)
-
-        // negative or postive 계산 (d-day)
+    @objc func setUp() {
         guard let plant = Global.shared.selectedPlant else {
             return
         }
+        
+        englishNameLabel.text = plant.englishName
+        koreanNameLabel.text = plant.koreanName
+        customNameLabel.text = plant.nickName
+        tipLabel.text = plant.getTip()
+        tipLabel.setLineHeight(lineHeight: 5)
         
         let today = Date()
         let nextWaterDay = Date(timeIntervalSince1970: plant.nextWaterDate)
