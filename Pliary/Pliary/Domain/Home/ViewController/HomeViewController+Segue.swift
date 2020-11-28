@@ -38,6 +38,7 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
         
+        registerVC.modalPresentationStyle = .fullScreen
         present(registerVC, animated: true, completion: nil)
     }
     
@@ -81,6 +82,7 @@ extension HomeViewController: UICollectionViewDelegate {
             return
         }
         
+        detailVC.modalPresentationStyle = .fullScreen
         detailVC.hero.isEnabled = true
         detailVC.hero.modalAnimationType = .none
         detailVC.view.hero.modifiers = [.cascade]

@@ -10,10 +10,12 @@
 		26A082DE0FFD946C9B334E27 /* Pods_Pliary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7931C17FF651E654A9E65E /* Pods_Pliary.framework */; };
 		760DB41E22F6DED50035F22E /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB41D22F6DED50035F22E /* UITextField+Ext.swift */; };
 		765DC25C22F5E8E900F4DBE6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DC25B22F5E8E900F4DBE6 /* UIView+Ext.swift */; };
+		76C3625B2351782800FF2DE4 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */; };
 		76C7530922FB0C7700F4443E /* WateringInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */; };
 		76C7530A22FB0C7700F4443E /* WateringInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */; };
 		76E45E6423101D1900C0045A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E6323101D1900C0045A /* UserNotification.swift */; };
 		CE09477222FC6BBF00E7C8A8 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */; };
+		CE504F772351E8D6008C7286 /* BigImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE504F762351E8D6008C7286 /* BigImageViewController.swift */; };
 		CE5F520422F1F43500F2E777 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520322F1F43500F2E777 /* HomeViewController.swift */; };
 		CE5F520822F1F45700F2E777 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F520622F1F45700F2E777 /* Plant.swift */; };
 		CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5F521722F1F7CF00F2E777 /* Home.storyboard */; };
@@ -41,7 +43,6 @@
 		CE885A922306DDF4008DB1FB /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE885A902306DDF4008DB1FB /* NumberCollectionViewCell.xib */; };
 		CE885A952307C735008DB1FB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A942307C735008DB1FB /* Global.swift */; };
 		CE885A9D2307DDD6008DB1FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885A9C2307DDD6008DB1FB /* API.swift */; };
-		CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE885A9E23080A17008DB1FB /* LoginAnimation.gif */; };
 		CE885AC723085D5C008DB1FB /* RegisterPlantHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AC623085D5C008DB1FB /* RegisterPlantHeaderView.swift */; };
 		CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD2230869D1008DB1FB /* RegisterEventDelegate.swift */; };
 		CE885AD623086A31008DB1FB /* SelectPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE885AD423086A31008DB1FB /* SelectPlantTableViewCell.swift */; };
@@ -119,6 +120,7 @@
 		76889560230973BE00CE7F40 /* BasicPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicPopupView.xib; sourceTree = "<group>"; };
 		76BB50BD22E73D09007EF9D5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		76BB50BF22E74689007EF9D5 /* FirebaseAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationManager.swift; sourceTree = "<group>"; };
+		76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		76C7530722FB0C7700F4443E /* WateringInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WateringInfoTableViewCell.swift; sourceTree = "<group>"; };
 		76C7530822FB0C7700F4443E /* WateringInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WateringInfoTableViewCell.xib; sourceTree = "<group>"; };
 		76E45E5B230D5BD800C0045A /* BasicToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicToastView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		CE09478322FE6EE300E7C8A8 /* SettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		CE09478422FE6EE300E7C8A8 /* SettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		CE0947AA23003B9700E7C8A8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		CE504F762351E8D6008C7286 /* BigImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageViewController.swift; sourceTree = "<group>"; };
 		CE5F520322F1F43500F2E777 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5F520622F1F45700F2E777 /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		CE5F520722F1F45700F2E777 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -409,6 +412,7 @@
 				CE5F523A22F20AFF00F2E777 /* UITableViewCell+Ext.swift */,
 				760DB41D22F6DED50035F22E /* UITextField+Ext.swift */,
 				CE90E4152309A2D800096731 /* TimeInterval+Ext.swift */,
+				76C3625A2351782800FF2DE4 /* UILabel+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -642,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				CE09477122FC6BBF00E7C8A8 /* DiaryViewController.swift */,
+				CE504F762351E8D6008C7286 /* BigImageViewController.swift */,
 				CEE0E1A722FB26FC00ED0C31 /* Cell */,
 			);
 			path = DiaryCard;
@@ -768,7 +773,6 @@
 				CE90E4012309417C00096731 /* SelectPlantPopupView.xib in Resources */,
 				CEE0E19A22F9DB3A00ED0C31 /* MainDetailTableViewCell.xib in Resources */,
 				CE5F523922F20AE700F2E777 /* DiaryCardWithAllTableViewCell.xib in Resources */,
-				CE885A9F23080A17008DB1FB /* LoginAnimation.gif in Resources */,
 				CE5F521822F1F7CF00F2E777 /* Home.storyboard in Resources */,
 				CE69263622E2EC1000264114 /* LaunchScreen.storyboard in Resources */,
 				CE885AE72308741F008DB1FB /* RegisterPlantDateTableViewCell.xib in Resources */,
@@ -847,9 +851,11 @@
 				CE5F522D22F2055300F2E777 /* AddCardCollectionViewCell.swift in Sources */,
 				CE885AE62308741F008DB1FB /* RegisterPlantDateTableViewCell.swift in Sources */,
 				CE5F520822F1F45700F2E777 /* Plant.swift in Sources */,
+				CE504F772351E8D6008C7286 /* BigImageViewController.swift in Sources */,
 				CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */,
 				CE5F522822F1FEF000F2E777 /* UICollectionViewCell+Ext.swift in Sources */,
 				CE885AD3230869D1008DB1FB /* RegisterEventDelegate.swift in Sources */,
+				76C3625B2351782800FF2DE4 /* UILabel+Ext.swift in Sources */,
 				CEE0E19C22FAEF0D00ED0C31 /* HomeViewController+CardScroll.swift in Sources */,
 				CE5F522322F1FE1700F2E777 /* HomeCardCollectionViewCell.swift in Sources */,
 				CE8C8419230654170083B3A9 /* SectionTableViewCell.swift in Sources */,
@@ -1040,7 +1046,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
 				INFOPLIST_FILE = Pliary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1048,11 +1055,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = PliaryProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1062,7 +1070,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pliary/Pliary.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6ZBD6VFGD;
 				INFOPLIST_FILE = Pliary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1070,11 +1079,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = groot.nexters.pliary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = PliaryProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

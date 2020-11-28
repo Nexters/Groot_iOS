@@ -63,6 +63,7 @@ class HomeViewController: UIViewController {
         collectionView.scrollToItem(at: IndexPath(item: plants.count, section: 0), at: .centeredHorizontally, animated: false)
         collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
         slideViewLeadingConstraint.constant = 0
+        collectionView.layoutIfNeeded()
     }
 
     private func setUpSlideView() {
@@ -153,6 +154,10 @@ extension HomeViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if !first {
+            plants = Global.shared.plants
+        }
     }
 
     override func viewDidLayoutSubviews() {

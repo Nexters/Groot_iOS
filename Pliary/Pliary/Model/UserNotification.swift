@@ -21,7 +21,7 @@ enum UserNotification {
         var dateDic : Dictionary = [Int : String]()
         
         for plant in plants {
-            let waterDate =  Int(plant.getNextWaterDate())
+            let waterDate =  Int(plant.getNextWaterDate()) + 60 * 60 * 8
             
             var plantNames = dateDic[waterDate] ?? ""
             if(plantNames == ""){
@@ -40,11 +40,8 @@ enum UserNotification {
             content.title = "식물 물주기 알람"
             
             let numbrtOfPlant = plantNames.split(separator: ",").count
-            if(numbrtOfPlant == 1) {
-                
-                content.body = "\(plantNames): 목이 조금 마릅니다만..?"
-                
-            } else if(numbrtOfPlant > 3) {
+            
+            if(numbrtOfPlant > 3) {
                 
                 let plants = plantNames.split(separator: ",")
                 

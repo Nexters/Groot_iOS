@@ -35,11 +35,16 @@ class SelectPlantTableViewCell: UITableViewCell {
     func setUp(with plant: Plant, selected: Bool = false) {
         self.plant = plant
         
-        if plant.type == .userPlants {
+        switch plant.type {
+        case .userPlants:
             englishNameLabel.text = "직접 입력"
             englishNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16)
             koreanNameLabel.isHidden = true
-        } else {
+        case .hangingPlant:
+            englishNameLabel.text = "행잉플랜트 등록"
+            englishNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 16)
+            koreanNameLabel.isHidden = true
+        default:
             englishNameLabel.text = plant.englishName
             englishNameLabel.font = UIFont(name: "Baskerville-Bold", size: 18)
             koreanNameLabel.text = plant.koreanName
@@ -48,6 +53,8 @@ class SelectPlantTableViewCell: UITableViewCell {
         
         if selected {
             self.selected()
+        } else {
+            self.deselected()
         }
     }
 }

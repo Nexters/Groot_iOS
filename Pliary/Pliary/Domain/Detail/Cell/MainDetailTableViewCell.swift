@@ -75,6 +75,7 @@ class MainDetailTableViewCell: UITableViewCell {
         koreanNameLabel.text = Global.shared.selectedPlant?.koreanName
         customNameLabel.text = Global.shared.selectedPlant?.nickName
         tipLabel.text = Global.shared.selectedPlant?.getTip()
+        tipLabel.setLineHeight(lineHeight: 5)
 
         // negative or postive 계산 (d-day)
         guard let plant = Global.shared.selectedPlant else {
@@ -96,6 +97,8 @@ class MainDetailTableViewCell: UITableViewCell {
                 currentStatus = .positive
             }
         }
+        
+        animateImage()
     }
 
     func animateImage() {

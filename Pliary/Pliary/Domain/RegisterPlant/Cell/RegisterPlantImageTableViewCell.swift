@@ -20,7 +20,7 @@ class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
         self.plant = plant
         self.type = type
         
-        let imageName = plant.getPositiveImageName()
+        let imageName = plant.getRegisterImageName()
         plantImageView.image = UIImage(named: imageName)
         
         switch plant.type {
@@ -40,6 +40,8 @@ class RegisterPlantImageTableViewCell: UITableViewCell, RegisterCell {
             referenceTextLabel.text = PlantReference.travelersPalm.rawValue
         case .schefflera:
             referenceTextLabel.text = PlantReference.schefflera.rawValue
+        case .hangingPlant:
+            referenceTextLabel.text = PlantReference.hangingPlant.rawValue
         case .userPlants:
             referenceTextLabel.text = PlantReference.userPlants.rawValue
         }
