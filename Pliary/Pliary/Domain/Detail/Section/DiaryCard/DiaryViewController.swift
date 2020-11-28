@@ -64,16 +64,7 @@ class DiaryViewController: UIViewController {
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
         if diaryImageView.image == nil {
-            guard checkAlbumAuth() else {
-                return
-            }
-            
-            let storyboard = UIStoryboard.init(name: StoryboardName.selectPhoto, bundle: nil)
-            guard let photoVC = storyboard.instantiateViewController(withIdentifier: SelectPhotoViewController.identifier) as? SelectPhotoViewController else {
-                return
-            }
-            photoVC.delegate = self
-            present(photoVC, animated: true, completion: nil)
+            showAlbum()
         } else {
             let image = UIImage(named: ImageName.plusButton)
             diaryImageView.image = nil
@@ -109,21 +100,43 @@ class DiaryViewController: UIViewController {
         }
     }
     
-    private func checkAlbumAuth() -> Bool {
+    private func showAlbum() {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .authorized:
-            return true
+            showPhotoVC()
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({ (status) in
+                DispatchQueue.main.async { [weak self] in
+                    switch status {
+                    case .authorized:
+                        self?.showPhotoVC()
+                    default:
+                        self?.showAlbumAuthError()
+                    }
+                }
+            })
         default:
-            let alert = UIAlertController(title: "아이폰 설정에서 앨범 권한을 허용해주세요!", message: "", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            alert.view.tintColor = Color.gray1
-            
-            present(alert, animated: true, completion: nil)
-            return false
+            showAlbumAuthError()
         }
+    }
+    
+    private func showPhotoVC() {
+        let storyboard = UIStoryboard.init(name: StoryboardName.selectPhoto, bundle: nil)
+        guard let photoVC = storyboard.instantiateViewController(withIdentifier: SelectPhotoViewController.identifier) as? SelectPhotoViewController else {
+            return
+        }
+        photoVC.delegate = self
+        present(photoVC, animated: true, completion: nil)
+    }
+    
+    private func showAlbumAuthError() {
+        let alert = UIAlertController(title: "아이폰 설정에서 앨범 권한을 허용해주세요!", message: "", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        alert.view.tintColor = Color.gray1
+        present(alert, animated: true, completion: nil)
     }
     
     private func showEmptyCardAlert() {
