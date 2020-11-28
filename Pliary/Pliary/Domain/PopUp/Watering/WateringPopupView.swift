@@ -103,7 +103,6 @@ extension WateringPopupView: WateringEventDelegate {
                 }
             }
             
-            UserNotification.watering.registerNotification()
             Global.shared.plants = plants
 
             if var dict = Global.shared.waterRecordDict[plant.id] {
@@ -152,7 +151,6 @@ extension WateringPopupView: WateringEventDelegate {
                 Global.shared.selectedPlant = delayedPlant
             }
             
-            UserNotification.watering.registerNotification()
             Global.shared.plants = plants
             delegate?.plantEvent(plant, event: .completeToDelay)
             removeFromSuperview()

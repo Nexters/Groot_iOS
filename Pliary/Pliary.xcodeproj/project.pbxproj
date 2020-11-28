@@ -614,6 +614,7 @@
 				CE69262522E2EC0E00264114 /* Frameworks */,
 				CE69262622E2EC0E00264114 /* Resources */,
 				48AB865B23899A63137AE69A /* [CP] Embed Pods Frameworks */,
+				CEC65DA625728A9D008B1647 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -727,6 +728,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pliary/Pods-Pliary-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CEC65DA625728A9D008B1647 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		E1E9DA1FEEAAB7276A77964E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

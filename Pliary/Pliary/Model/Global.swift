@@ -10,12 +10,14 @@ import Foundation
 //import FirebaseAuth
 
 class Global: NSObject {
+    
     static let shared: Global = Global()
     
     var plants: [Plant] = [] {
         didSet {
             if oldValue != plants {
                 saveCurrentPlants()
+                UserNotification.watering.registerNotification(plants: plants)
             }
         }
     }

@@ -40,7 +40,6 @@ class RegisterPlantViewController: UIViewController {
         plantArray = plantArray.sorted(by: { $0.nextWaterDate < $1.nextWaterDate })
         
         Global.shared.plants = plantArray
-        UserNotification.watering.registerNotification()
         
         // Add watering record
         Global.shared.waterRecordDict[plant.id] = [plant.lastWaterDate]

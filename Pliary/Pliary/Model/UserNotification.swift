@@ -13,11 +13,9 @@ enum UserNotification {
     
     case watering
   
-    func registerNotification(){
+    func registerNotification(plants: [Plant]){
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        
-        let plants = Global.shared.plants
         var dateDic : Dictionary = [Int : String]()
         
         for plant in plants {
@@ -31,7 +29,6 @@ enum UserNotification {
                 plantNames += plant.nickName
             }
             dateDic.updateValue(plantNames, forKey: Int(waterDate))
-            
         }
         
         for (waterDate, plantNames)  in dateDic {
@@ -64,7 +61,7 @@ enum UserNotification {
             let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
             let request = UNNotificationRequest(identifier: String(waterDate), content: content, trigger: trigger)
             
-            UNUserNotificationCenter.current().add(request){ (error) in
+            UNUserNotificationCenter.current().add(request) { (error) in
                 if let error = error {
                     print("Error:\(error.localizedDescription)")
                 }

@@ -7,6 +7,7 @@ target 'Pliary' do
   #pod 'GoogleSignIn'
   #pod 'Firebase/Auth'
   pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   pod 'FSCalendar'
   pod 'Kingfisher'
   pod 'Hero'

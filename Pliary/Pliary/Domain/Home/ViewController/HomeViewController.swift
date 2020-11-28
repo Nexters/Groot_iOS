@@ -137,7 +137,6 @@ class HomeViewController: UIViewController {
         self.toastView = toastView
         
         animateCell()
-        UserNotification.watering.registerNotification()
     }
 }
 
@@ -147,8 +146,6 @@ extension HomeViewController {
 
         setUpCollectionView()
         setUpSlideView()
-        UserNotification.watering.registerNotification()
-
         profileImageButton.isHidden = true
     }
 
