@@ -94,6 +94,7 @@
 		CEA3D196230F0560004AB7F6 /* BasicToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E45E5D230D5BF100C0045A /* BasicToastView.xib */; };
 		CEA3D197230F0563004AB7F6 /* BasicToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E45E5B230D5BD800C0045A /* BasicToastView.swift */; };
 		CEA3D19A230F170B004AB7F6 /* Watering.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D199230F170B004AB7F6 /* Watering.json */; };
+		CEC65D8B257274C2008B1647 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEC65D8A257274C2008B1647 /* GoogleService-Info.plist */; };
 		CEE0E19322F848BB00ED0C31 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */; };
 		CEE0E19622F84B1D00ED0C31 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */; };
 		CEE0E19922F9DB3A00ED0C31 /* MainDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */; };
@@ -225,6 +226,7 @@
 		CE90E439230AF5BA00096731 /* SettingViewController+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingViewController+UIImage.swift"; sourceTree = "<group>"; };
 		CE90E43B230AF5E200096731 /* CameraEventDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraEventDelegate.swift; sourceTree = "<group>"; };
 		CEA3D199230F170B004AB7F6 /* Watering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watering.json; sourceTree = "<group>"; };
+		CEC65D8A257274C2008B1647 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEE0E19222F848BB00ED0C31 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE0E19522F84B1D00ED0C31 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CEE0E19722F9DB3A00ED0C31 /* MainDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				CE69264122E2EC3C00264114 /* Asset */,
 				CE69264022E2EC2C00264114 /* Etc. */,
 				CE69263722E2EC1000264114 /* Info.plist */,
+				CEC65D8A257274C2008B1647 /* GoogleService-Info.plist */,
 				760DB41F22F6FB2E0035F22E /* Pliary.entitlements */,
 			);
 			path = Pliary;
@@ -762,6 +765,7 @@
 				CEE0E1AB22FB28ED00ED0C31 /* DayWithPlantTableViewCell.xib in Resources */,
 				CEA3D19A230F170B004AB7F6 /* Watering.json in Resources */,
 				CE5F522E22F2055300F2E777 /* AddCardCollectionViewCell.xib in Resources */,
+				CEC65D8B257274C2008B1647 /* GoogleService-Info.plist in Resources */,
 				CE8C841E230655B60083B3A9 /* DiarySectionCollectionViewCell.xib in Resources */,
 				CE8384C1230DA56A005B44E1 /* SelectPhoto.storyboard in Resources */,
 				CE5F522422F1FE1700F2E777 /* HomeCardCollectionViewCell.xib in Resources */,
@@ -975,7 +979,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1030,7 +1034,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
