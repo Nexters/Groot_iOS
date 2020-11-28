@@ -64,6 +64,10 @@ class DiaryViewController: UIViewController {
     
     @IBAction func tapAddOrSubtractButton(_ sender: Any) {
         if diaryImageView.image == nil {
+            guard checkAlbumAuth() else {
+                return
+            }
+            
             let storyboard = UIStoryboard.init(name: StoryboardName.selectPhoto, bundle: nil)
             guard let photoVC = storyboard.instantiateViewController(withIdentifier: SelectPhotoViewController.identifier) as? SelectPhotoViewController else {
                 return
@@ -102,6 +106,23 @@ class DiaryViewController: UIViewController {
             editCard()
         case .showDiary:
             showModifyDeleteAlert()
+        }
+    }
+    
+    private func checkAlbumAuth() -> Bool {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            return true
+        default:
+            let alert = UIAlertController(title: "아이폰 설정에서 앨범 권한을 허용해주세요!", message: "", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            alert.view.tintColor = Color.gray1
+            
+            present(alert, animated: true, completion: nil)
+            return false
         }
     }
     

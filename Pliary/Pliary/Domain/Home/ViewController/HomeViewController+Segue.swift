@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 // MARK: - Delegate UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
