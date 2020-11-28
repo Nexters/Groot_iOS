@@ -9,6 +9,7 @@
 import UIKit
 
 enum AssetKey: String {
+    case uuid
     case plants
     case diaryCard
     case wateringRecord

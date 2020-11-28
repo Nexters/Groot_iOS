@@ -31,6 +31,19 @@ struct AssetManager {
         return fetchResult.objects(at: indexSet)
     }
     
+    static func getUUID() -> String {
+        let key = AssetKey.uuid.rawValue
+        if let uuid = UserDefaults.standard.object(forKey: key) as? String {
+            return uuid
+        }
+        
+        let uuid = UUID().uuidString
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(uuid, forKey: key)
+        userDefaults.synchronize()
+        return uuid
+    }
+    
     static func getDictData(for key: String) -> [String: Any] {
         if let data = UserDefaults.standard.object(forKey: key) as? Data {
             if let dictionary = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String: Any] {

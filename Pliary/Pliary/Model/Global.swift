@@ -13,6 +13,8 @@ class Global: NSObject {
     
     static let shared: Global = Global()
     
+    let uuid: String = AssetManager.getUUID()
+    
     var plants: [Plant] = [] {
         didSet {
             if oldValue != plants {
@@ -110,7 +112,6 @@ class Global: NSObject {
             waterRecordDict = dict
         }
     }
-    
     
     override init() {
         super.init()
